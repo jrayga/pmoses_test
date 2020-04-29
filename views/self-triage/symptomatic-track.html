@@ -1,0 +1,1217 @@
+<!-- SYMPTOMATIC SECTIONS -->
+<div ng-if="selfTriageSection.triageDemographicsSymptomatic" class="triage-container"
+    id="triage-demographics-symptomatic">
+    <section class="triage-head">
+        <div class="title">
+            <h1>COVID-19 Self Assessment and Triage Tool</h1>
+        </div>
+        <div class="progress-indicator">
+            <div class="step-name">
+                Symptomatic Track > <span class="current-step">Demographic Information</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-color p12" id="progress"></div>
+            </div>
+        </div>
+    </section>
+    <section class="triage-main">
+        <div class="question-wrapper">
+            <div class="question-component">
+                <div class="question-actual">
+                    <h1>When were you born?</h1>
+                </div>
+                <div class="birthdate">
+                    <div class="field-element">
+                        <label for="" class="input-label">Month</label>
+                        <div class="input-field-container">
+                            <input type="text" class="input-field text combobox"
+                                ng-model="form.triageUser.birthDate.month" ng-change="formChange('birthDate')"
+                                tabindex="1" placeholder="July (07)">
+                            <span class="combobox-dropper icon-chevron-down"></span>
+                            <div class="leftbar"></div>
+                            <div class="dropdown-panel">
+                                <li ng-repeat="(k,v) in months | filter: form.triageUser.birthDate.month track by $index"
+                                    ng-mousedown="form.triageUser.birthDate.month = v.fullMonth; formChange('birthDate');">
+                                    {{v.fullMonth}}
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field-element">
+                        <label for="" class="input-label">Day</label>
+                        <div class="input-field-container">
+                            <input type="num" class="input-field text" ng-model="form.triageUser.birthDate.day"
+                                ng-change="formChange('birthDate')" is-number tabindex="2" min="1" max="31"
+                                maxlength="2" placeholder="20">
+                            <div class="leftbar"></div>
+                        </div>
+                    </div>
+                    <div class="field-element">
+                        <label for="" class="input-label">Year</label>
+                        <div class="input-field-container">
+                            <input type="num" class="input-field text" ng-model="form.triageUser.birthDate.year"
+                                ng-change="formChange('birthDate')" is-number tabindex="3" min="1898" max="2020"
+                                maxlength="4" placeholder="1969">
+                            <div class="leftbar"></div>
+                        </div>
+                    </div>
+                    <div class="button calendar" tabindex="4">
+                        <span class="icon-calendar"></span>
+                    </div>
+                </div>
+                <div class="response-description age" ng-if="showField.ageResponse">
+                    <span ng-if="customValues.age > 0">I am <strong>{{customValues.age}} years old</strong>.</span>
+                    <span ng-if="customValues.age === 0">I am doing triage for a child that is
+                        <strong>{{customValues.months}} months old</strong>.</span>
+                </div>
+            </div>
+            <div class="question-component">
+                <div class="question-actual">
+                    <h1>What was your assigned sex at birth?</h1>
+                </div>
+                <div class="button-group sex">
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" name="sex" ng-model="form.triageUser.gender" value="female"
+                                tabindex="5">
+                            <div class="button iconed-button">
+                                <span class="icon icon-female"></span>
+                                <span class="button-text">Female</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" name="sex" ng-model="form.triageUser.gender" value="male" tabindex="6">
+                            <div class="button iconed-button">
+                                <span class="icon icon-male"></span>
+                                <span class="button-text">Male</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="response-description" ng-if="form.triageUser.gender === 'female'">
+                    <span>I was born a <strong>female</strong>.</span>
+                </div>
+                <div class="response-description" ng-if="form.triageUser.gender === 'male'">
+                    <span>I was born a <strong>male</strong>.</span>
+                </div>
+            </div>
+            <div ng-if="form.triageUser.gender === 'female'" class="question-component" id="pregnancy">
+                <div class="question-actual">
+                    <h2>Are you currently pregnant?</h2>
+                </div>
+                <div class="button-group pregnancy">
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" name="pregnant" ng-model="form.triageUser.pregnant" value="yes"
+                                tabindex="7">
+                            <div class="button iconed-button">
+                                <span class="icon icon-check"></span>
+                                <span class="button-text">Yes</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" name="pregnant" ng-model="form.triageUser.pregnant" value="no"
+                                tabindex="8">
+                            <div class="button iconed-button">
+                                <span class="icon icon-cancel"></span>
+                                <span class="button-text">No</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div ng-if="form.triageUser.pregnant === 'no'" class="response-description">
+                    <span>I am not pregnant and had my menstrual period within the last 28 days <i>or</i> I am already
+                        in menopause.</span>
+                </div>
+                <div ng-if="form.triageUser.pregnant === 'yes'" class="response-description">
+                    <span>I am definitely pregnant <i>or</i> I am not 100% sure that I am not.</span>
+                </div>
+            </div>
+            <div class="question-component">
+                <div class="question-actual">
+                    <h1>Where are you currently residing?</h1>
+                </div>
+                <div class="location">
+                    <div class="field-element">
+                        <label for="" class="input-label">Region</label>
+                        <div class="input-field-container">
+                            <input type="text" ng-model="form.triageUser.address.region"
+                                ng-change="formChange('address')" class="input-field text combobox" tabindex="9"
+                                placeholder="Metro Manila">
+                            <div class="leftbar"></div>
+                            <span class="combobox-dropper icon-chevron-down"></span>
+                        </div>
+                    </div>
+                    <div class="field-element">
+                        <label for="" class="input-label">City</label>
+                        <div class="input-field-container">
+                            <input type="text" ng-model="form.triageUser.address.city" ng-change="formChange('address')"
+                                class="input-field text combobox" tabindex="10" placeholder="Manila City">
+                            <div class="leftbar"></div>
+                            <span class="combobox-dropper icon-chevron-down"></span>
+                        </div>
+                    </div>
+                    <div class="field-element">
+                        <label for="" class="input-label">Barangay and Street Address</label>
+                        <div class="input-field-container">
+                            <input type="text" ng-model="form.triageUser.address.barangay"
+                                ng-change="formChange('address')" class="input-field text combobox" tabindex="11"
+                                placeholder="99 España St., San Miguel">
+                            <div class="leftbar"></div>
+                            <span class="combobox-dropper icon-chevron-down"></span>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="showField.addressResponse" class="response-description">
+                    <span>I currently live in <strong>{{customValues.address}}</strong></span>
+                </div>
+            </div>
+            <div class="question-component">
+                <div class="question-actual">
+                    <h1>Are you a health care worker currently on active duty?</h1>
+                </div>
+                <div class="button-group pregnancy">
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.healthCareWorker" value="yes" name="hcw"
+                                tabindex="12">
+                            <div class="button iconed-button">
+                                <span class="icon icon-check"></span>
+                                <span class="button-text">Yes</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.healthCareWorker" value="no" name="hcw"
+                                tabindex="13">
+                            <div class="button iconed-button">
+                                <span class="icon icon-cancel"></span>
+                                <span class="button-text">No</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div ng-if="form.triageUser.healthCareWorker === 'no'" class="response-description">
+                    <span>I am not a Health Care Worker <i>or</i> I do not go on active duty.</span>
+                </div>
+                <div ng-if="form.triageUser.healthCareWorker === 'yes'" class="response-description">
+                    <span>I am a Health Care Worker presently going on active duty.</span>
+                </div>
+            </div>
+            <div class="question-component">
+                <div class="question-actual">
+                    <h1>Can we collect your responses?</h1>
+                </div>
+                <div class="checkbox-element confirm">
+                    <label class="checkbox-collect">
+                        <input type="checkbox" ng-model="form.triageUser.understoodTerms" class="checkbox-visible">
+                        <span class="checkbox-text">I have read and understood the <a
+                                href="https://docs.google.com/document/d/e/2PACX-1vS3DhlAQgm_0AvMpUW95lP9a-x_IUWC1oSDlBzq05aFcgYXUPrI6hVLBXIQ-5LzzzowzV6QClAdzCPQ/pub"
+                                target="_blank">terms of
+                                use and data privacy policy</a> and consent for my personal data, sensitive or
+                            otherwise, to be collected by Project Moses.</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="movement-group">
+            <button class="button forward" ng-class="{'disabled' : !buttonStatus.proceedTriageDemographicsSymptomatic}"
+                ng-disabled="!buttonStatus.proceedTriageDemographicsSymptomatic"
+                ng-click="goToNextSection('testing-symptomatic')">
+                <span>Proceed to Next Step</span>
+            </button>
+            <button class="button back" ng-click="goBack('triageHome')">
+                <span>Back</span>
+            </button>
+        </div>
+        <div class="disclaimer">
+            Disclaimer: This online self-triage tool is not a replacement for a consultation with a trained health
+            care professional and is for informational purposes only. Do not ignore or delay obtaining professional
+            medical advice, diagnosis, or treatment because of information provided by Project Moses. If you are
+            concerned about your health or the health of your loved ones, please visit or contact a hospital or
+            clinic as soon as you can. Stay safe and wash your hands.
+        </div>
+    </section>
+</div>
+<div ng-if="selfTriageSection.triageTestingSymptomatic" class="triage-container" id="triage-testing-symptomatic">
+    <section class="triage-head">
+        <div class="title">
+            <h1>COVID-19 Self Assessment and Triage Tool</h1>
+        </div>
+        <div class="progress-indicator">
+            <div class="step-name">
+                Symptomatic Track > <span class="current-step">Testing History</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-color p25" id="progress"></div>
+            </div>
+        </div>
+    </section>
+    <section class="triage-main">
+        <div class="question-wrapper">
+            <div class="question-component">
+                <div class="question-actual">
+                    <h1>Have you been tested for COVID-19?</h1>
+                    <p>Whatever your results, we just need to know if you've had the RT-PCR Test done</p>
+                </div>
+                <div class="button-group">
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.testInfo.tested" value="yes" name="tested"
+                                tabindex="1">
+                            <div class="button iconed-button">
+                                <span class="icon icon-check"></span>
+                                <span class="button-text">Yes</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.testInfo.tested" value="no" name="tested"
+                                tabindex="2">
+                            <div class="button iconed-button">
+                                <span class="icon icon-cancel"></span>
+                                <span class="button-text">No</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div ng-if="form.triageUser.testInfo.tested === 'no'" class="response-description">
+                    <span>I have not been tested via RT-PCR at an accredited laboratory yet.</span>
+                </div>
+            </div>
+            <div ng-if="form.triageUser.testInfo.tested === 'yes'">
+                <div class="question-component" id="accredited-lab">
+                    <div class="question-actual">
+                        <h2>Was the procedure done by an accredited laboratory using the RT-PCR test?</h2>
+                        <p>To be 100% sure, it must have been done officially recognized laboratory using the COVID-19
+                            RT-PCR Test.<br>For a list of accredited labs, <a
+                                href="https://www.cnnphilippines.com/news/2020/4/17/Philippines-now-has-17-testing-facilities-COVID-19-.html"
+                                target="_blank">click here</a></p>
+                    </div>
+                    <div class="button-group">
+                        <div class="button-wrapper">
+                            <label>
+                                <input type="radio" ng-model="form.triageUser.testInfo.accreditedTester" value="yes"
+                                    name="accredited-lab" tabindex="1">
+                                <div class="button iconed-button">
+                                    <span class="icon icon-check"></span>
+                                    <span class="button-text">Yes</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="button-wrapper">
+                            <label>
+                                <input type="radio" ng-model="form.triageUser.testInfo.accreditedTester" value="no"
+                                    name="accredited-lab" tabindex="2">
+                                <div class="button iconed-button">
+                                    <span class="icon icon-cancel"></span>
+                                    <span class="button-text">No</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div ng-if="form.triageUser.testInfo.accreditedTester === 'yes'" class="response-description">
+                        <span>Fortunately, the lab that tested me was one of the accredited facilities and they used the
+                            COVID-19 RT-PCR Test.</span>
+                    </div>
+                    <div ng-if="form.triageUser.testInfo.accreditedTester === 'no'" class="response-description">
+                        <span>Unfortunately, The lab that tested me is not one of the accredited facilities
+                            <i>or</i>
+                            the test used was not the COVID-19 RT-PCR Test.</span>
+                    </div>
+                </div>
+                <div ng-if="form.triageUser.testInfo.accreditedTester === 'yes'" class="question-component">
+                    <div class="question-actual">
+                        <h2>What was the result of the test?</h2>
+                    </div>
+                    <div class="button-group">
+                        <div class="button-group results">
+                            <div class="button-wrapper">
+                                <label>
+                                    <input type="radio" ng-model="form.triageUser.testInfo.result" value="positive"
+                                        name="results" tabindex="3">
+                                    <div class="button iconed-button positive-button">
+                                        <span class="icon icon-positive"></span>
+                                        <span class="button-text">Positive</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="button-wrapper">
+                                <label>
+                                    <input type="radio" ng-model="form.triageUser.testInfo.result" value="negative"
+                                        name="results" tabindex="4">
+                                    <div class="button iconed-button negative-button">
+                                        <span class="icon icon-negative"></span>
+                                        <span class="button-text">Negative</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="button-wrapper">
+                                <label>
+                                    <input type="radio" ng-model="form.triageUser.testInfo.result" value="inconclusive"
+                                        name="results" tabindex="5">
+                                    <div class="button iconed-button">
+                                        <span class="icon icon-uncertain"></span>
+                                        <span class="button-text">Inconclusive</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="button-wrapper">
+                                <label>
+                                    <input type="radio" ng-model="form.triageUser.testInfo.result"
+                                        value="have-not-received-yet" name="results" tabindex="6">
+                                    <div class="button iconed-button waiting-button">
+                                        <span class="icon icon-waiting"></span>
+                                        <span class="button-text">I haven’t received my results back yet</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-if="form.triageUser.testInfo.result === 'positive'" class="response-description">
+                        <span>I was tested via RT-PCR at an accredited laboratory and my result was
+                            <strong>POSITIVE</strong>.</span>
+                    </div>
+                    <div ng-if="form.triageUser.testInfo.result === 'negative'" class="response-description">
+                        <span>I was tested via RT-PCR at an accredited laboratory and my result was
+                            <strong>NEGATIVE</strong>.</span>
+                    </div>
+                    <div ng-if="form.triageUser.testInfo.result === 'inconclusive'" class="response-description">
+                        <span>I was tested via RT-PCR at an accredited laboratory and my result was
+                            <strong>INCONCLUSIVE</strong>.</span>
+                    </div>
+                    <div ng-if="form.triageUser.testInfo.result === 'have-not-received-yet'"
+                        class="response-description">
+                        <span>I was tested via RT-PCR at an accredited laboratory and have not back received my result
+                            yet.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="movement-group">
+            <div class="button forward" ng-class="{'disabled' : !buttonStatus.proceedTriageTestingSymptomatic}"
+                ng-disabled="!buttonStatus.proceedTriageTestingSymptomatic"
+                ng-click="goToNextSection('travel-symptomatic')">
+                <span>Proceed to Next Step</span>
+            </div>
+            <div class="button back" ng-click="goBack('triageDemographicsSymptomatic')">
+                <span>Back</span>
+            </div>
+        </div>
+        <div class="disclaimer">
+            Disclaimer: This online self-triage tool is not a replacement for a consultation with a trained health
+            care professional and is for informational purposes only. Do not ignore or delay obtaining professional
+            medical advice, diagnosis, or treatment because of information provided by Project Moses. If you are
+            concerned about your health or the health of your loved ones, please visit or contact a hospital or
+            clinic as soon as you can. Stay safe and wash your hands.
+        </div>
+    </section>
+</div>
+<div ng-if="selfTriageSection.triageTravelSymptomatic" class="triage-container" id="triage-travel-symptomatic">
+    <section class="triage-head">
+        <div class="title">
+            <h1>COVID-19 Self Assessment and Triage Tool</h1>
+        </div>
+        <div class="progress-indicator">
+            <div class="step-name">
+                Symptomatic Track > <span class="current-step">Travel History</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-color p37" id="progress"></div>
+            </div>
+        </div>
+    </section>
+    <section class="triage-main">
+        <div class="question-wrapper">
+            <div class="question-component">
+                <div class="question-actual">
+                    <h1>Have you recently traveled to or lived outside the Philippines?</h1>
+                </div>
+                <div class="button-group">
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.recentlyTraveled" value="yes" name="travel"
+                                tabindex="7">
+                            <div class="button iconed-button">
+                                <span class="icon icon-check"></span>
+                                <span class="button-text">Yes</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.recentlyTraveled" value="no" name="travel"
+                                tabindex="8">
+                            <div class="button iconed-button">
+                                <span class="icon icon-cancel"></span>
+                                <span class="button-text">No</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div ng-if="form.triageUser.recentlyTraveled === 'no'" class="response-description">
+                    <span>I haven't left the Philippines since December {{lastYear}}.</span>
+                </div>
+            </div>
+            <div ng-if="form.triageUser.recentlyTraveled === 'yes'">
+                <div class="question-component" id="country-input">
+                    <div class="question-actual">
+                        <h2>Which countries outside of the Philippines have you recently visited?</h2>
+                        <p class="instructions">Simply type in each country you've traveled to below; press enter to add
+                            more countries</p>
+                    </div>
+                    <div class="field-element">
+                        <div class="input-field-container">
+                            <input type="text" class="input-field text combobox" ng-model="form.countrySelector"
+                                ng-change="searchCountries()"
+                                ng-keypress="($event.charCode==13)?addCountry(null,null,'addOne'):return" tabindex="11"
+                                placeholder="China">
+                            <div class="leftbar"></div>
+                            <span class="combobox-dropper icon-chevron-down"></span>
+                            <div class="dropdown-panel">
+                                <li ng-if="!isLoadingCountries"
+                                    ng-repeat="c in countries | limitTo : 5 | filter: form.countrySelector track by $index"
+                                    ng-mousedown="addCountry(c.alpha3Code, c.name)">
+                                    {{c.name}}
+                                </li>
+                                <li ng-if="isLoadingCountries">
+                                    Loading countries....
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="validated-country-list">
+                        <li ng-repeat="country in visitedCountries track by $index" ng-click="removeCountry($index)">
+                            {{country}}</li>
+                    </div>
+                    <div ng-if="form.triageUser.countriesVisitedCountryCode.length > 0" class="response-description">
+                        <span>I've been to the country or countries listed above since December {{lastYear}}.</span>
+                    </div>
+                </div>
+                <div class="question-component" id="country-14days">
+                    <div class="question-actual">
+                        <h2>Did your symptoms start within 14 days of being in the country or countries in question?
+                        </h2>
+                    </div>
+                    <div class="button-group">
+                        <div class="button-wrapper">
+                            <label>
+                                <input type="radio" ng-model="form.triageUser.symptomStartsWithin14DaysBeingInCountry"
+                                    value="yes" name="travel-14days" tabindex="9">
+                                <div class="button iconed-button">
+                                    <span class="icon icon-check"></span>
+                                    <span class="button-text">Yes</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="button-wrapper">
+                            <label>
+                                <input type="radio" ng-model="form.triageUser.symptomStartsWithin14DaysBeingInCountry"
+                                    value="no" name="travel-14days" tabindex="10">
+                                <div class="button iconed-button">
+                                    <span class="icon icon-cancel"></span>
+                                    <span class="button-text">No</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div ng-if="form.triageUser.symptomStartsWithin14DaysBeingInCountry === 'yes'"
+                        class="response-description">
+                        <span>The symptoms I selected earlier only began within 14 days since I last
+                            traveled.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="movement-group">
+            <div class="button forward" ng-class="{'disabled' : !buttonStatus.proceedTriageTravelSymptomatic}"
+                ng-disabled="!buttonStatus.proceedTriageTravelSymptomatic"
+                ng-click="goToNextSection('exposure-symptomatic')">
+                <span>Proceed to Next Step</span>
+            </div>
+            <div class="button back" ng-click="goBack('triageTestingSymptomatic')">
+                <span>Back</span>
+            </div>
+        </div>
+        <div class="disclaimer">
+            Disclaimer: This online self-triage tool is not a replacement for a consultation with a trained health
+            care professional and is for informational purposes only. Do not ignore or delay obtaining professional
+            medical advice, diagnosis, or treatment because of information provided by Project Moses. If you are
+            concerned about your health or the health of your loved ones, please visit or contact a hospital or
+            clinic as soon as you can. Stay safe and wash your hands.
+        </div>
+    </section>
+</div>
+<div ng-if="selfTriageSection.triageExposureSymptomatic" class="triage-container" id="triage-exposure-symptomatic">
+    <section class="triage-head">
+        <div class="title">
+            <h1>COVID-19 Self Assessment and Triage Tool</h1>
+        </div>
+        <div class="progress-indicator">
+            <div class="step-name">
+                Symptomatic Track > <span class="current-step">Direct Exposure History</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-color p50" id="progress"></div>
+            </div>
+        </div>
+    </section>
+    <section class="triage-main">
+        <div class="question-wrapper">
+            <div class="question-component" id="exposure-ppe">
+                <div class="question-actual">
+                    <h1>Have you taken care of a probable or confirmed COVID-19 case without wearing proper
+                        PPE?</h1>
+                    <p>Proper Personal Protective Equipment (PPE) consists of the following:</p>
+                </div>
+                <div class="illustrations">
+                    <div class="illus-container">
+                        <div class="image-wrapper">
+                            <img src="./ASSETS/img/ppe-mask.png" alt="">
+                        </div>
+                        <span class="caption">N95 Mask
+                            <br />
+                            <i>(Fit-Tested)</i>
+                        </span>
+                    </div>
+                    <div class="illus-container">
+                        <div class="image-wrapper">
+                            <img src="./ASSETS/img/ppe-eye.png" alt="">
+                        </div>
+                        <span class="caption">Eye Protection
+                            <br />
+                            <i>(Goggles or Face-Shield)</i>
+                        </span>
+                    </div>
+                    <div class="illus-container">
+                        <div class="image-wrapper">
+                            <img src="./ASSETS/img/ppe-gown.png" alt="">
+                        </div>
+                        <span class="caption">Impermeable Gown</span>
+                    </div>
+                    <div class="illus-container">
+                        <div class="image-wrapper">
+                            <img src="./ASSETS/img/ppe-gloves.png" alt="">
+                        </div>
+                        <span class="caption">Surgical Gloves</span>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.takenCaredOfConfirmedPatients" value="yes"
+                                name="ppe" tabindex="7">
+                            <div class="button iconed-button">
+                                <span class="icon icon-check"></span>
+                                <span class="button-text">Yes</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.takenCaredOfConfirmedPatients" value="no"
+                                name="ppe" tabindex="8">
+                            <div class="button iconed-button">
+                                <span class="icon icon-cancel"></span>
+                                <span class="button-text">No</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div ng-if="form.triageUser.takenCaredOfConfirmedPatients === 'yes'" class="response-description">
+                    <span>I have indeed cared for a probable or confirmed COVID-19 case without complete or
+                        proper PPE.</span>
+                </div>
+                <div ng-if="form.triageUser.takenCaredOfConfirmedPatients === 'no'" class="response-description">
+                    <span>I have not taken care of a probable or confirmed COVID-19 case <i>or</i> I made
+                        sure to use proper PPE.</span>
+                </div>
+            </div>
+
+            <div class="question-component" id="ppe-14days">
+                <div class="question-actual">
+                    <h2>Did your symptoms start within 14 days of being exposed to the probable or confirmed
+                        COVID-19 case?</h2>
+                </div>
+                <div class="button-group">
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.ppe14Days" value="yes" name="ppe-14days"
+                                tabindex="9">
+                            <div class="button iconed-button">
+                                <span class="icon icon-check"></span>
+                                <span class="button-text">Yes</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.ppe14Days" value="no" name="ppe-14days"
+                                tabindex="10">
+                            <div class="button iconed-button">
+                                <span class="icon icon-cancel"></span>
+                                <span class="button-text">No</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div ng-if="form.triageUser.ppe14Days === 'no'" class="response-description">
+                    <span>The symptoms I selected earlier only began within 14 days since I was exposed to a
+                        probable or confirmed COVID-19 case.</span>
+                </div>
+                <div ng-if="form.triageUser.ppe14Days === 'yes'" class="response-description">
+                    <span>The symptoms I selected earlier began before or after 14 days since I was exposed
+                        to a COVID-19 paitent.</span>
+                </div>
+            </div>
+
+            <div class="question-component" id="exposure-environment">
+                <div class="question-actual">
+                    <h1>Have you stayed in a close environment with a probable or confirmed COVID-19 case?
+                    </h1>
+                    <p>Examples of close environments are:</p>
+                </div>
+                <div class="illustrations">
+                    <div class="illus-container">
+                        <div class="image-wrapper env">
+                            <span class="icon-env-office"></span>
+                        </div>
+                        <span class="caption">Workplace
+                        </span>
+                    </div>
+                    <div class="illus-container">
+                        <div class="image-wrapper env">
+                            <span class="icon-env-classroom"></span>
+                        </div>
+                        <span class="caption">Classroom
+                        </span>
+                    </div>
+                    <div class="illus-container">
+                        <div class="image-wrapper env">
+                            <span class="icon-env-home"></span>
+                        </div>
+                        <span class="caption">Residence</span>
+                    </div>
+                    <div class="illus-container">
+                        <div class="image-wrapper env">
+                            <span class="icon-env-church"></span>
+                        </div>
+                        <span class="caption">Church</span>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.stayedInClose" value="yes" name="environment"
+                                tabindex="7">
+                            <div class="button iconed-button">
+                                <span class="icon icon-check"></span>
+                                <span class="button-text">Yes</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.stayedInClose" value="no" name="environment"
+                                tabindex="8">
+                            <div class="button iconed-button">
+                                <span class="icon icon-cancel"></span>
+                                <span class="button-text">No</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div ng-if="form.triageUser.stayedInClose === 'no'" class="response-description">
+                    <span>I have not stayed in any close environment with a probable or confirmed COVID-19
+                        case.</span>
+                </div>
+                <div ng-if="form.triageUser.stayedInClose === 'yes'" class="response-description">
+                    <span>I have stayed in any close environment with a probable or confirmed COVID-19
+                        case.</span>
+                </div>
+            </div>
+
+            <div ng-if="form.triageUser.takenCaredOfConfirmedPatients === 'yes'" class="question-component"
+                id="environment-14days">
+                <div class="question-actual">
+                    <h2>Did your symptoms start within 14 days of being exposed to the probable or confirmed
+                        COVID-19 case?</h2>
+                </div>
+                <div class="button-group">
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.symptomsStartWithin14Days" value="yes"
+                                name="environment-14days" tabindex="9">
+                            <div class="button iconed-button">
+                                <span class="icon icon-check"></span>
+                                <span class="button-text">Yes</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.symptomsStartWithin14Days" value="no"
+                                name="environment-14days" tabindex="10">
+                            <div class="button iconed-button">
+                                <span class="icon icon-cancel"></span>
+                                <span class="button-text">No</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div ng-if="form.triageUser.symptomsStartWithin14Days === 'no'" class="response-description">
+                    <span>The symptoms I selected earlier only began within 14 days since I was exposed to a
+                        probable or confirmed COVID-19 case.</span>
+                </div>
+                <div ng-if="form.triageUser.symptomsStartWithin14Days === 'yes'" class="response-description">
+                    <span>The symptoms I selected earlier began before or after 14 days since I was exposed
+                        to a COVID-19 paitent.</span>
+                </div>
+            </div>
+
+            <div class="question-component" id="exposure-biyahe">
+                <div class="question-actual">
+                    <h1>Have you traveled together in close proximity with a probable or confirmed COVID-19
+                        case?</h1>
+                    <p>Close proximity means within 1 to 3 meters (3.2 - 9.8 feet)</p>
+                </div>
+                <div class="illustrations">
+                    <div class="illus-container">
+                        <div class="image-wrapper env">
+                            <span class="icon-social-distancing"></span>
+                        </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.traveledTogetherWithConfirmed" value="yes"
+                                name=" biyahe" tabindex="7">
+                            <div class="button iconed-button">
+                                <span class="icon icon-check"></span>
+                                <span class="button-text">Yes</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.traveledTogetherWithConfirmed" value="no"
+                                name="biyahe" tabindex="8">
+                            <div class="button iconed-button">
+                                <span class="icon icon-cancel"></span>
+                                <span class="button-text">No</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div ng-if="form.triageUser.traveledTogetherWithConfirmed === 'no'" class="response-description">
+                    <span>I have not traveled together in close proximity with a probable or confirmed
+                        COVID-19 case.</span>
+                </div>
+                <div ng-if="form.triageUser.traveledTogetherWithConfirmed === 'yes'" class="response-description">
+                    <span>I have traveled together in close proximity with a probable or confirmed COVID-19
+                        case.</span>
+                </div>
+            </div>
+
+            <div ng-if="form.triageUser.traveledTogetherWithConfirmed === 'yes'" class="question-component"
+                id="biyahe-14days">
+                <div class="question-actual">
+                    <h2>Did your symptoms start within 14 days of being exposed to the probable or confirmed
+                        COVID-19 case?</h2>
+                </div>
+                <div class="button-group">
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.symptomsStartWithin14DaysBeingExposed"
+                                value="yes" name="biyahe-14days" tabindex="9">
+                            <div class="button iconed-button">
+                                <span class="icon icon-check"></span>
+                                <span class="button-text">Yes</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.symptomsStartWithin14DaysBeingExposed"
+                                value="no" name="biyahe-14days" tabindex="10">
+                            <div class="button iconed-button">
+                                <span class="icon icon-cancel"></span>
+                                <span class="button-text">No</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div ng-if="form.triageUser.symptomsStartWithin14DaysBeingExposed === 'no'"
+                    class="response-description">
+                    <span>The symptoms I selected earlier only began within 14 days since I was exposed to a
+                        probable or confirmed COVID-19 case.</span>
+                </div>
+                <div ng-if="form.triageUser.symptomsStartWithin14DaysBeingExposed === 'yes'"
+                    class="response-description">
+                    <span>The symptoms I selected earlier began before or after 14 days since I was exposed
+                        to a COVID-19 paitent.</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="movement-group">
+            <div class="button forward" ng-class="{'disabled' : !buttonStatus.proceedTriageExposureSymptomatic}"
+                ng-disabled="!buttonStatus.proceedTriageExposureSymptomatic"
+                ng-click="goToNextSection('direct-exposure-history')">
+                <span>Proceed to Next Step</span>
+            </div>
+            <div class="button back" ng-click="goBack('triageTravelSymptomatic')">
+                <span>Back</span>
+            </div>
+        </div>
+        <div class="disclaimer">
+            Disclaimer: This online self-triage tool is not a replacement for a consultation with a trained
+            health care professional and is for informational purposes only. Do not ignore or delay
+            obtaining professional medical advice, diagnosis, or treatment because of information provided
+            by Project Moses. If you are concerned about your health or the health of your loved ones,
+            please visit or contact a hospital or clinic as soon as you can. Stay safe and wash your hands.
+        </div>
+    </section>
+</div>
+<div ng-if="selfTriageSection.triageILISymptomatic" class="triage-container" id="triage-ili-symptomatic">
+    <section class="triage-head">
+        <div class="title">
+            <h1>COVID-19 Self Assessment and Triage Tool</h1>
+        </div>
+        <div class="progress-indicator">
+            <div class="step-name">
+                Symptomatic Track > <span class="current-step">ILI Exposure History</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-color p62" id="progress"></div>
+            </div>
+        </div>
+    </section>
+    <section class="triage-main">
+        <div class="question-wrapper">
+            <div class="question-component" id="exposure-ppe">
+                <div class="question-actual">
+                    <h1>Does anyone in your workplace, home, or classroom have flu-like symptoms?</h1>
+                    <p>Symptoms of an Influenza-Like Illness include:</p>
+                </div>
+                <div class="flu-symptoms-container">
+                    <li>Fever or Feeling Feverish/Chills</li>
+                    <li>Cough</li>
+                    <li>Sore Throat</li>
+                    <li>Runny or Stuffy Nose</li>
+                    <li>Muscle or Body Aches</li>
+                    <li>Headaches</li>
+                    <li>Fatigue (Tiredness)</li>
+                    <li>Vomiting</li>
+                    <li>Diarrhea</li>
+                </div>
+                <div class="button-group">
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.iliExposureHistory" value="yes" name="ppe"
+                                tabindex="7">
+                            <div class="button iconed-button">
+                                <span class="icon icon-check"></span>
+                                <span class="button-text">Yes</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.iliExposureHistory" value="no" name="ppe"
+                                tabindex="8">
+                            <div class="button iconed-button">
+                                <span class="icon icon-cancel"></span>
+                                <span class="button-text">No</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div ng-if="form.triageUser.iliExposureHistory === 'no'" class="response-description">
+                    <span>No one in my workplace, home, or classroom have any of the symptoms listed
+                        above.</span>
+                </div>
+                <div ng-if="form.triageUser.iliExposureHistory === 'yes'" class="response-description">
+                    <span>At least one person in my workplace, home, or classroom has one of the
+                        symptoms listed above.</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="movement-group">
+            <div class="button forward" ng-class="{'disabled' : !buttonStatus.proceedILIExposureHistorySymptomatic}"
+                ng-disabled="!buttonStatus.proceedILIExposureHistorySymptomatic"
+                ng-click="goToNextSection('ili-exposure-history')">
+                <span>Proceed to Next Step</span>
+            </div>
+            <div class="button back" ng-click="goBack('triageExposureSymptomatic')">
+                <span>Back</span>
+            </div>
+        </div>
+        <div class="disclaimer">
+            Disclaimer: This online self-triage tool is not a replacement for a consultation with a
+            trained health care professional and is for informational purposes only. Do not ignore or
+            delay obtaining professional medical advice, diagnosis, or treatment because of information
+            provided by Project Moses. If you are concerned about your health or the health of your
+            loved ones, please visit or contact a hospital or clinic as soon as you can. Stay safe and
+            wash your hands.
+        </div>
+    </section>
+</div>
+<div ng-if="selfTriageSection.triageComorbiditySymptomatic" class="triage-container"
+    id="triage-comorbidity-symptomatic">
+    <section class="triage-head">
+        <div class="title">
+            <h1>COVID-19 Self Assessment and Triage Tool</h1>
+        </div>
+        <div class="progress-indicator">
+            <div class="step-name">
+                Symptomatic Track > <span class="current-step">Comorbidity</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-color p87" id="progress"></div>
+            </div>
+        </div>
+    </section>
+    <section class="triage-main">
+        <div class="question-wrapper">
+            <div class="question-component">
+                <div class="question-actual">
+                    <h1>Do you have any other serious illnesses or conditions?</h1>
+                    <p>Examples: <em>Diabetes mellitus</em>, <em>Cardiovascular Disease</em>,
+                        <em>Hypertension</em>, <em>Cancer</em>, <em>Autoimmune Diseases</em>,
+                        <i>etc</i>.</p>
+                </div>
+                <div class="button-group">
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.otherSeriousIllnessesOrConditions" value="yes"
+                                name="travel" tabindex="7">
+                            <div class="button iconed-button">
+                                <span class="icon icon-check"></span>
+                                <span class="button-text">Yes</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="button-wrapper">
+                        <label>
+                            <input type="radio" ng-model="form.triageUser.otherSeriousIllnessesOrConditions" value="no"
+                                name="travel" tabindex="8">
+                            <div class="button iconed-button">
+                                <span class="icon icon-cancel"></span>
+                                <span class="button-text">No</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div ng-if="form.triageUser.otherSeriousIllnessesOrConditions === 'no'" class="response-description">
+                    <span>I do not have any existing illnesses or conditions aside from what I'm
+                        currently experiencing.</span>
+                </div>
+            </div>
+            <div ng-if="form.triageUser.otherSeriousIllnessesOrConditions === 'yes'" class="question-component"
+                id="comorbid-input">
+                <div class="question-actual">
+                    <h2>What are your other diseases or conditions?</h2>
+                    <p class="instructions">Simply type in each pre-existing illness you have;
+                        press enter to add more</p>
+                </div>
+                <div class="field-element">
+                    <div class="input-field-container">
+                        <input type="text" class="input-field text combobox" ng-model="selector.diseasesSelector"
+                            tabindex="1" ng-keypress="($event.charCode==13)?addDisease(null,'entered'):return"
+                            placeholder="Diabetes miletus (Type-2)">
+                        <div class="leftbar"></div>
+                        <span class="combobox-dropper icon-chevron-down"></span>
+                        <div class="dropdown-panel">
+                            <li ng-repeat="d in illnessesOrConditions | limitTo : 5 | filter: selector.diseasesSelector track by $index"
+                                ng-mousedown="addDisease(d)">
+                                {{d}}
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                <div class="validated-comorbid-list">
+                    <li ng-if="comorbidList.length > 0" ng-repeat="cL in comorbidList track by $index"
+                        ng-click="removeComorbid($index)">
+                        {{cL}}
+                    </li>
+                </div>
+                <div ng-if="comorbidList.length > 0" class="response-description">
+                    <span>I have comorbid contions and diseases listed above prior to
+                        experiencing the symptoms I'm reporting.</span>
+                </div>
+            </div>
+        </div>
+        <div class="movement-group">
+            <div class="button forward" ng-class="{'disabled' : !buttonStatus.proceedTriageComorbiditySymptomatic}"
+                ng-disabled="!buttonStatus.proceedTriageComorbiditySymptomatic"
+                ng-click="goToNextSection('comorbidity-symptomatic')">
+                <span>Proceed to Next Step</span>
+            </div>
+            <div class="button back" ng-click="goBack('triageILISymptomatic')">
+                <span>Back</span>
+            </div>
+        </div>
+        <div class="disclaimer">
+            Disclaimer: This online self-triage tool is not a replacement for a consultation
+            with a trained health care professional and is for informational purposes only. Do
+            not ignore or delay obtaining professional medical advice, diagnosis, or treatment
+            because of information provided by Project Moses. If you are concerned about your
+            health or the health of your loved ones, please visit or contact a hospital or
+            clinic as soon as you can. Stay safe and wash your hands.
+        </div>
+    </section>
+</div>
+<div ng-if="selfTriageSection.triageSymptomsChecklistSymptomatic" class="triage-container"
+    id="triage-symptoms-checklist-symptomatic">
+    <section class="triage-head">
+        <div class="title">
+            <h1>COVID-19 Self Assessment and Triage Tool</h1>
+        </div>
+        <div class="progress-indicator">
+            <div class="step-name">
+                Symptomatic Track > <span class="current-step">Symptoms Checklist</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-color p75" id="progress"></div>
+            </div>
+        </div>
+    </section>
+    <section class="triage-main">
+        <div class="question-wrapper">
+            <div class="question-component" id="exposure-ppe">
+                <div class="question-actual">
+                    <h1>Are you experiencing any of the following signs or symptoms?</h1>
+                    <p class="instructions">To make sure we've got everything right, please review
+                        and check all the symptoms that you have below</p>
+                </div>
+                <div class="symptoms-checklist">
+                    <div class="checkbox-element symptom-checkbox">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span class="checkbox-text">Fever<span class="details">(38°C or
+                                    higher)</span></span>
+                        </label>
+                    </div>
+                    <div class="checkbox-element symptom-checkbox">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span class="checkbox-text">Dry Cough</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-element symptom-checkbox">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span class="checkbox-text">Fatigue</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-element symptom-checkbox">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span class="checkbox-text">Sputum Production<span class="details">(Phlegm)</span></span>
+                        </label>
+                    </div>
+                    <div class="checkbox-element symptom-checkbox">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span class="checkbox-text">Sore Throat</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-element symptom-checkbox">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span class="checkbox-text">Headaches</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-element symptom-checkbox">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span class="checkbox-text">Myalgia<span class="details">(Muscle
+                                    Pain)</span></span>
+                        </label>
+                    </div>
+                    <div class="checkbox-element symptom-checkbox">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span class="checkbox-text">Arthralgia<span class="details">(Joint
+                                    Pain)</span></span>
+                        </label>
+                    </div>
+                    <div class="checkbox-element symptom-checkbox">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span class="checkbox-text">Chills</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-element symptom-checkbox">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span class="checkbox-text">Nausea</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-element symptom-checkbox">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span class="checkbox-text">Vomiting</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-element symptom-checkbox">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span class="checkbox-text">Nasal Congestion<span class="details">(Runny
+                                    or Stuffed Nose)</span></span>
+                        </label>
+                    </div>
+                    <div class="checkbox-element symptom-checkbox">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span class="checkbox-text">Diarrhea</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-element symptom-checkbox">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span class="checkbox-text">Difficulty Breathing</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-element symptom-checkbox">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span class="checkbox-text">Shortness of Breath<span class="details">(30
+                                    Breaths or more per minute)</span></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="response-description">
+                    <span>I am experiencing the symptom(s) I've checked above.</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="movement-group">
+            <div class="button forward">
+                <span>Proceed to Next Step</span>
+            </div>
+            <div class="button back">
+                <span>Back</span>
+            </div>
+        </div>
+        <div class="disclaimer">
+            Disclaimer: This online self-triage tool is not a replacement for a consultation with a
+            trained health care professional and is for informational purposes only. Do not ignore
+            or delay obtaining professional medical advice, diagnosis, or treatment because of
+            information provided by Project Moses. If you are concerned about your health or the
+            health of your loved ones, please visit or contact a hospital or clinic as soon as you
+            can. Stay safe and wash your hands.
+        </div>
+    </section>
+</div>

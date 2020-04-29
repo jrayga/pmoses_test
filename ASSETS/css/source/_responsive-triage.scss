@@ -1,0 +1,146 @@
+@media (max-width:352px) {
+    .notification-form-container .notification-form .button-group-notify {
+        .button.ok {
+            &:hover, &:focus {
+                    &::after {
+                    content: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .triage-container .hotlines-container .button.hotline.landline {
+        .landline-icon {
+            font-size: 2em;
+        }
+        .landline-area {
+            font-size: 1.15em;
+        }
+        .landline-big {
+            font-size: 2.20em;
+        }
+        .landline-number {
+            font-size: 1.2em;
+        }
+        .landline-alpha {
+            font-size: 0.75em
+        }
+    }
+}
+
+@media (min-width: 500px) {
+    .triage-container {
+        .birthdate {
+            display: flex;
+            align-items: center;
+    
+            .field-element {
+                margin-right: 1em;
+            }
+        }
+    
+    
+        .button-group {
+            display: flex;
+            align-items: center;
+    
+            .button-wrapper {
+                margin-right: 1em;
+    
+                &:nth-last-child(1) {
+                    margin-right: 0;
+                }
+            }
+
+            &.results {
+                display: block;
+                width: 80vw;
+                max-width: 500px;
+                margin: 0 auto;
+
+                .button-wrapper {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .blue-box-container {
+            grid-template-areas: 
+                "imagebox textbox";
+
+            .result-image-container {
+                max-height: 350px;
+            }
+        }
+
+    }
+}
+
+@media (min-width: 769px) {
+    .triage-container {
+        .triage-head {
+            flex-direction: row;
+
+            .title {
+                h1 {
+                    font-size: 1.4em;
+                }
+            }
+
+            .progress-indicator {
+                .step-name {
+                    display: block;
+                }
+                .progress-bar {
+                    margin: 0.25em 0;
+                }
+                
+            }
+        }
+
+        .notification-form-container .notification-form {
+            flex-direction: row;
+            .description,.form-actual {flex:1};
+            .description{
+                border-radius: 10px 0 0 10px;
+            }
+            .form-actual{
+                border-radius: 0 10px 10px 0;
+            }
+            .description.request {
+                position: relative;
+    
+                .sticky-text {
+                    position: sticky;
+                    z-index: 600;
+                    top: 2em;
+                    margin-bottom: 1em;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 914px) {
+    .triage-container {
+        .symptoms-buttons-container {
+            .grid-wrapper-1, .grid-wrapper-2 {
+                margin: -1em auto 0 auto;
+                display: grid;
+                grid-gap: 1em;
+            }
+
+            .grid-wrapper-1 {
+                grid-template-columns: auto auto auto;
+            }
+
+            .grid-wrapper-2 {
+                max-width: 800px;
+                grid-template-columns: auto auto;
+            }
+
+        }
+    }
+}

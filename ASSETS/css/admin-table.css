@@ -1,0 +1,92 @@
+table.adminTable {
+    border          : 1px solid #2692C7;
+    background-color: #FFFFFF;
+    text-align      : center;
+    border-collapse : collapse;
+    margin          : 0;
+    padding         : 0;
+    width           : 100%;
+    table-layout    : fixed;
+}
+
+table.adminTable caption {
+    font-size: 2rem;
+    margin   : .5em 0 .75em;
+    color    : #000000;
+}
+
+table.adminTable tr {
+    background-color: #f8f8f8;
+    border          : 1px solid #ddd;
+    padding         : .35em;
+}
+
+table.adminTable th,
+table.adminTable td {
+    overflow-wrap: break-word;
+    padding      : .625em;
+    text-align   : center;
+    border       : 1px solid black;
+}
+
+table.adminTable th {
+    font-size     : 0.90rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    background    : #2692C7;
+    background    : -moz-linear-gradient(top, #5cadd5 0%, #3b9dcc 66%, #2692C7 100%);
+    background    : -webkit-linear-gradient(top, #5cadd5 0%, #3b9dcc 66%, #2692C7 100%);
+    background    : linear-gradient(to bottom, #5cadd5 0%, #3b9dcc 66%, #2692C7 100%);
+    color         : #FFFFFF;
+    border        : 1px solid black;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 880px) and (-webkit-min-device-pixel-ratio: 2) {
+    table.adminTable {
+        border: 0;
+    }
+
+    table.adminTable caption {
+        font-size: 1.3em;
+    }
+
+    table.adminTable thead {
+        border  : none;
+        clip    : rect(0 0 0 0);
+        height  : 1px;
+        margin  : -1px;
+        overflow: hidden;
+        padding : 0;
+        position: absolute;
+        width   : 1px;
+    }
+
+    table.adminTable tr {
+        border-bottom: 3px solid #ddd;
+        display      : block;
+        margin-bottom: .625em;
+    }
+
+    table.adminTable td {
+        border-bottom: 1px solid #ddd;
+        display      : block;
+        font-size    : .8em;
+        text-align   : right;
+        border       : 0px solid black;
+    }
+
+    table.adminTable td::before {
+        /*
+      * aria-label has no advantage, it won't be read inside a table.adminTable
+      content: attr(aria-label);
+      */
+        content       : attr(data-label);
+        float         : left;
+        font-weight   : bold;
+        text-transform: uppercase;
+    }
+
+    table.adminTable td:last-child {
+        border-bottom: 0;
+    }
+}

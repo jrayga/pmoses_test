@@ -1,0 +1,498 @@
+<div ng-if="isLoadingDetails" class="container">
+    <div class="row loader-row">
+        <div class="col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="!isLoadingDetails" class="hospital-portal">
+    <div class="breadcrumb"><a href="#/hospital-portal">Hospital Portal</a> > <span class="current-location">Update
+            Hospital Information</span></div>
+    <section class="update-info">
+        <div class="update-info-form">
+            <div class="form-header">
+                <h1>Update Hospital Information</h1>
+                <p>All fields except <i>Notes</i> are required.</p>
+            </div>
+            <div class="form-proper">
+                <div class="label-blue">
+                    <span>Hospital Name</span>
+                </div>
+                <div class="form-element">
+                    <div class="field-element">
+                        <label for="" class="input-label actual">Hospital Name</label>
+                        <label for="" class="input-label context">Make sure to include name of site or campus</label>
+                        <div class="input-field-container">
+                            <input type="text" class="input-field text" ng-model="hospitalInfo.hospital_name"
+                                tabindex="1" autofocus>
+                            <div class="leftbar"></div>
+                        </div>
+                        <label for="" class="input-label bottom-hint">Make sure to include name of site or
+                            campus</label>
+                    </div>
+                </div>
+                <div class="label-blue">
+                    <span>Complete Address</span>
+                </div>
+                <div class="form-element keep-labels">
+                    <div class="field-element">
+                        <label for="" class="input-label actual">Complete Address</label>
+                        <label for="" class="input-label context ">Region</label>
+                        <div class="input-field-container">
+                            <input type="text" class="input-field text combobox" ng-model="hospitalInfo.address_1"
+                                tabindex="2">
+                            <span class="combobox-dropper icon-chevron-down"></span>
+                            <div class="leftbar"></div>
+                        </div>
+                        <label for="" class="input-label context">City or Municipality</label>
+                        <div class="input-field-container">
+                            <input type="text" class="input-field text combobox" ng-model="hospitalInfo.address_2"
+                                tabindex="3">
+                            <span class="combobox-dropper icon-chevron-down"></span>
+                            <div class="leftbar"></div>
+                        </div>
+                        <label for="" class="input-label context">Barangay and Street</label>
+                        <div class="input-field-container">
+                            <input type="text" class="input-field text" ng-model="hospitalInfo.address_3" tabindex="4">
+                            <div class="leftbar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="label-blue">
+                    <span>Contact Number(s)</span>
+                </div>
+                <div class="form-element">
+                    <div class="field-element">
+                        <label for="" class="input-label actual">Contact Number(s)</label>
+                        <label for="" class="input-label context">Separate numbers with a semicolon</label>
+                        <div class="input-field-container">
+                            <input type="text" class="input-field text" ng-model="hospitalInfo.contact_num"
+                                tabindex="5">
+                            <div class="leftbar"></div>
+                        </div>
+                        <label for="" class="input-label bottom-hint">Separate numbers with a semicolon.
+                            <strong>Example: (02) 8554 8400; (02) 8554 8401; (02) 8554 8402</strong></label>
+                    </div>
+                </div>
+                <div class="label-blue">
+                    <span>Hospital Policies</span>
+                </div>
+                <div class="form-element keep-labels">
+                    <div class="field-element">
+                        <label for="" class="input-label actual">Hospital Policies</label>
+
+                        <label for="" class="input-label context">Admitting Confirmed COVID-19 Patients</label>
+                        <div class="button-group-yn">
+                            <div class="button-wrapper">
+                                <label>
+                                    <input type="radio" ng-model="hospitalInfo.admitting_confirmed" value="yes"
+                                        name="admitting" tabindex="6">
+                                    <div class="button-yes">
+                                        <span class="button-icon icon-check"></span>
+                                        <span class="button-text">Yes</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="button-wrapper">
+                                <label>
+                                    <input type="radio" ng-model="hospitalInfo.admitting_confirmed" value="no"
+                                        name="admitting" tabindex="7">
+                                    <div class="button-no">
+                                        <span class="button-icon icon-cancel"></span>
+                                        <span class="button-text">No</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <label for="" class="input-label context">Accepting Patients For Testing</label>
+                        <div class="button-group-yn">
+                            <div class="button-wrapper">
+                                <label>
+                                    <input type="radio" ng-model="hospitalInfo.accepting_for_test" value="yes"
+                                        name="testing" tabindex="8">
+                                    <div class="button-yes">
+                                        <span class="button-icon icon-check"></span>
+                                        <span class="button-text">Yes</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="button-wrapper">
+                                <label>
+                                    <input type="radio" ng-model="hospitalInfo.accepting_for_test" value="no"
+                                        name="testing" tabindex="9">
+                                    <div class="button-no">
+                                        <span class="button-icon icon-cancel"></span>
+                                        <span class="button-text">No</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <label for="" class="input-label context">Designated COVID-19 Referral Hospital</label>
+                        <div class="button-group-yn">
+                            <div class="button-wrapper">
+                                <label>
+                                    <input type="radio" ng-model="hospitalInfo.designated_for_covid" value="yes"
+                                        name="designated" tabindex="10">
+                                    <div class="button-yes">
+                                        <span class="button-icon icon-check"></span>
+                                        <span class="button-text">Yes</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="button-wrapper">
+                                <label>
+                                    <input type="radio" ng-model="hospitalInfo.designated_for_covid" value="no"
+                                        name="designated" tabindex="11">
+                                    <div class="button-no">
+                                        <span class="button-icon icon-cancel"></span>
+                                        <span class="button-text">No</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <label for="" class="input-label context">Requesting Supplies</label>
+                        <div class="button-group-yn">
+                            <div class="button-wrapper">
+                                <label>
+                                    <input type="radio" ng-model="hospitalInfo.requesting_supplies" value="yes"
+                                        name="supplies" tabindex="12">
+                                    <div class="button-yes">
+                                        <span class="button-icon icon-check"></span>
+                                        <span class="button-text">Yes</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="button-wrapper">
+                                <label>
+                                    <input type="radio" ng-model="hospitalInfo.requesting_supplies" value="no"
+                                        name="supplies" tabindex="13">
+                                    <div class="button-no">
+                                        <span class="button-icon icon-cancel"></span>
+                                        <span class="button-text">No</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="label-blue">
+                    <span>COVID-19 Admissions</span>
+                </div>
+                <div class="form-element keep-labels">
+                    <div class="field-element">
+                        <label for="" class="input-label actual">COVID-19 Admissions</label>
+                        <label for="" class="input-label context ">Confirmed COVID-19 Patients Admitted</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_confirmed_covid" tabindex="14" min="0">
+                            <!-- <div class="valuation">
+                                <span class="good">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="bad hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+                        <label for="" class="input-label context">COVID-19 Patients Under Investigation (PUIs)
+                            Admitted</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input" ng-model="hospitalInfo.num_pui"
+                                tabindex="15" min="0">
+                            <!-- <div class="valuation">
+                                <span class="good hidden">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="bad">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="label-blue">
+                    <span>Inventory</span>
+                </div>
+                <div class="form-element keep-labels">
+                    <div class="field-element">
+                        <label for="" class="input-label actual">Inventory</label>
+
+                        <label for="" class="input-label context ">RT-PCR COVID-19 Testing Kits</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_covid_kits" tabindex="16" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+
+                        <label for="" class="input-label context ">Rapid IgM-igG Combined Antibody Testing Kits</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_antibody_testing_kits" tabindex="17" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+
+                        <label for="" class="input-label context ">Bottles of Isopropyl Alcohol</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input" ng-model="hospitalInfo.num_alcohol"
+                                tabindex="18" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+
+                        <label for="" class="input-label context ">Bottles of Disinfectant (Hospital Grade)</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_of_disinfectants" tabindex="19" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+
+                        <label for="" class="input-label context ">Disposable Face Masks</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_face_masks" tabindex="20" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+
+                        <label for="" class="input-label context ">Pairs of Disposable Surgical Gloves</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_surgical_gloves" tabindex="21" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+
+                        <label for="" class="input-label context ">Goggles</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_of_goggles" tabindex="22" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+
+                        <label for="" class="input-label context ">Face Shields</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_face_shield" tabindex="23" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+
+                        <label for="" class="input-label context ">Disposable Hoods</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input" ng-model="hospitalInfo.num_hoods"
+                                tabindex="24" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+
+                        <label for="" class="input-label context ">Pairs of Shoe Covers</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_shoe_covers" tabindex="25" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+
+                        <label for="" class="input-label context ">Body Bags</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_body_bags" tabindex="26" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="label-blue">
+                    <span>Resources</span>
+                </div>
+                <div class="form-element keep-labels">
+                    <div class="field-element">
+                        <label for="" class="input-label actual">Resources</label>
+
+
+                        <label for="" class="input-label context ">Available Ventilators</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_ventilators" tabindex="27" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+                        <label for="" class="input-label context ">Available Ambulances</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_ambulance" tabindex="28" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+                        <label for="" class="input-label context ">Available Morgue Freezer Space</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_morgue_freezers_space" tabindex="29" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+                        <label for="" class="input-label context ">Available Negative Pressure Rooms</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_negative_pressure_rooms" tabindex="30" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+                        <label for="" class="input-label context ">Beds Assigned for Confirmed COVID-19 Cases</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_beds_confirmed" tabindex="31" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+                        <label for="" class="input-label context ">Beds Assigned for Probable/Suspect COVID-19
+                            PUIs</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input" ng-model="hospitalInfo.num_beds_pui"
+                                tabindex="32" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+                        <label for="" class="input-label context ">Physicians available and capable of managing COVID-19
+                            Cases</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_doctors_for_covid" tabindex="33" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+                        <label for="" class="input-label context ">Nurses available and capable of managing COVID-19
+                            Cases</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_nurses_for_covid" tabindex="34" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+                        <label for="" class="input-label context ">Allied Medical Professionals available and capable of
+                            managing COVID-19 Cases</label>
+                        <div class="input-field-container">
+                            <input type="number" class="input-field text num-input"
+                                ng-model="hospitalInfo.num_medstaff_for_covid" tabindex="35" min="0">
+                            <!-- <div class="valuation">
+                                <span class="bad">This is <strong>LOW</strong></span>
+                                <span class="meh hidden">This is <strong>AVERAGE</strong></span>
+                                <span class="good hidden">This is <strong>HIGH</strong></span>
+                            </div> -->
+                            <div class="leftbar"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="label-blue">
+                    <span>Notes</span>
+                </div>
+                <div class="form-element">
+                    <div class="field-element">
+                        <label for="" class="input-label actual">Notes</label>
+                        <div class="input-field-container">
+                            <textarea class="input-field text" ng-model="hospitalInfo.notes" tabindex="1"></textarea>
+                            <div class="leftbar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="label-blue">
+                </div>
+                <div class="form-element">
+                    <div class="button-group-notify" ng-click="updateInfo()">
+                        <div class="ok button" tabindex="60">
+                            Update Hospital Information
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            By clicking <strong>‘Update Hospital Information’</strong> you hereby certify that you are a duly authorized
+            representative of the Hospital and that the above information you’ve provided is true and correct to the
+            best of your knowledge.
+        </div>
+    </section>
+</div>

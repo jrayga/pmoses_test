@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- SEO/SMO Values-->
+    <title>You’re All Right! | COVID-19 Self Assessment and Triage Tool | Project Moses</title>
+    <title>It’s Too Soon to Tell | COVID-19 Self Assessment and Triage Tool | Project Moses</title>
+    <title>Looks Like It’s Not COVID-19! | COVID-19 Self Assessment and Triage Tool | Project Moses</title>
+    <title>You're a PROBABLE COVID-19 Case! | COVID-19 Self Assessment and Triage Tool | Project Moses</title>
+    <title>You're a SUSPECT COVID-19 Case! | COVID-19 Self Assessment and Triage Tool | Project Moses</title>
+    <title>You're a CONFIRMED COVID-19 Case! | COVID-19 Self Assessment and Triage Tool | Project Moses</title>
+    <meta itemprop="name" content="Project Moses">
+    <meta itemprop="url" content="https://projectmoses.ph/">
+    <meta name="description" content="Project Moses is a Crisis Response Toolbox that aims to be an all-in-one web dashboard for Filipinos in times of calamity and crisis.">
+
+    <!-- Schema -->
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="Project Moses">
+    <meta name="twitter:site" content="">
+
+    <!-- Facebook Opengraph data -->
+    <meta property="og:title" content="Welcome to Project Moses">
+    <meta property="og:description" content="Project Moses is a Crisis Response Toolbox that aims to be an all-in-one web dashboard for Filipinos in times of calamity and crisis.">
+    <meta property="og:image" content="./ASSETS/img/project-moses-social.jpg">
+    <meta property="og:url" itemprop="url" content="https://projectmoses.ph/">
+    <meta property="og:site_name" content="Project Moses">
+    <meta property="og:type" content="website">
+
+    <!-- FAVICONS START -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#299bd7">
+    <meta name="apple-mobile-web-app-title" content="Project Moses">
+    <meta name="application-name" content="Project Moses">
+    <meta name="msapplication-TileColor" content="#299bd7">
+    <meta name="theme-color" content="#299bd7">
+    <!-- FAVICONS END -->
+
+    <!-- GOOGLE ANALYTICS START -->
+
+    <!-- GOOGLE ANALYTICS END -->
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/triage.min.css">
+    <link rel="stylesheet" href="css/responsive.min.css">
+    <link rel="stylesheet" href="css/icons.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+</head>
+<body class="preload-transitions">
+    <div class="language-selector-bar" id="langBar">
+        <div class="language-selector">
+            <p><strong>English</strong> | <a href="">Select Language</a> <span class="icon right icon-cancel" id="langbarClose"></span></p>
+        </div>
+    </div>
+    <header>
+        <div class="header-logo">
+            <a href="/" title="Project Moses" alt="Project Moses"><img src="./ASSETS/img/main-logo.png" alt="Project Moses Logo" title="Project Moses"></a>
+        </div>
+        <div class="header-buttons for-wide">
+            <div class="button triage">
+                <a href="/triage">Feeling <strong>Sick?</strong></a>
+            </div>
+            <div class="button hospital">
+                <a href="hospital-login.html">Hospital Login</a>
+            </div>
+        </div>
+    </header>
+    <div class="bottom-cta-buttons-bar">
+        <div class="header-buttons">
+            <div class="button triage">
+                <a href="/triage">Feeling <strong>Sick?</strong></a>
+            </div>
+            <div class="button hospital">
+                <a href="hospital-login.html">Hospital Login</a>
+            </div>
+        </div>
+    </div>
+    <nav class="mobile">
+        <div class="nav-bar" id="mobile-nav-menulink"><span class="icon-th-menu icon left"></span>MENU</div>
+        <div class="nav-dropdown" id="mobile-nav-dropdown">
+            <li><a href="/" >Home</a></li>
+            <li class="current"><a href="triage.html">Self-Triage</a></li>
+            <li class="navlink" id="navlink-trackers">Real-Time Trackers</li>
+                <ul class="secondary-dropdown" id="nav-trackers">
+                    <li><a href="doh-tracker.html">DOH nCoV Tracker</a></li>
+                    <li><a href="jhu-tracker.html">JHU Interactive Map</a></li>
+                </ul>
+            <li><a href="hospital-directory.html">Hospital Directory</a></li>
+            <li class="navlink" id="navlink-citizens">Citizens Patrol</li>
+                <ul class="secondary-dropdown" id="nav-citizens">
+                    <li><a href="">Clinics</a></li>
+                    <li><a href="">Grocery Stores</a></li>
+                    <li><a href="">Pharmacies</a></li>
+                    <li><a href="">Roads</a></li>
+                    <li><a href="">Submit Report</a></li>
+                </ul>
+            <li class="navlink" id="navlink-news">Latest News</li>
+                <ul class="secondary-dropdown" id="nav-news">
+                    <li><a href="government-announcements.html">Government Announcements</a></li>
+                    <li><a href="news-aggregator.html">News Media</a></li>
+                </ul>
+            <li class="navlink" id="navlink-resources">Resources</li>
+                <ul class="secondary-dropdown" id="nav-resources">
+                    <li><a href="official-statements.html">Official Statements Archive</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="emerging-research.html">Emerging Research</a></li>
+                    <li><a href="useful-links.html">Useful Links</a></li>
+                    <li><a href="covid-19-apps.html">COVID-19 Apps</a></li>
+                </ul>
+        </div>
+    </nav>
+    <nav class="wide">
+        <div class="main-nav-bar">
+            <li><a href="/">Home</a></li>
+            <li class="current"><a href="triage.html">Self-Triage</a></li>
+            <li class="navlink" id="navlink-trackers-w">Real-Time Trackers</li>
+            <li><a href="hospital-directory.html">Hospital Directory</a></li>
+            <li class="navlink" id="navlink-citizens-w">Citizens Patrol</li>
+            <li class="navlink" id="navlink-news-w">Latest News</li>
+            <li class="navlink" id="navlink-resources-w">Resources</li> 
+        </div>
+        <div class="nav-panel" id="nav-trackers-w"> 
+            <div class="panel-container">
+                <div class="col1">
+                    <h4>Real-Time COVID-19 Tracker Dashboards</h4>
+                    <p>These online tools are handy for getting both a overview of the how local and internal populations are faring. They feature real-time data organized for easy analysis and are maintained by leading organizations both within the Philippines and the world at large.</p>
+                </div>
+                <div class="col2 trackers">
+                    <a href="doh-tracker.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/doh.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Department of Health COVID-19 Tracker</h5>
+                                <p>This is the official and updated COVID-19 Case Tracker. Originally the DOH nCoV Tracker, the new version collates case data and health system capacity accross the Phiippines</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="jhu-tracker.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/jhu.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Johns Hopkins University Interactive Map</h5>
+                                <p>The JHU Coronavirus COVID-19 Global Cases Dashboard by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU) is an online dashboard featuring a real-time world map, US Map, and trends tracker</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-panel" id="nav-citizens-w"> 
+            <div class="panel-container">
+                <div class="col1">
+                    <h4>Citizens Patrol</h4>
+                    <p>We continuously collect and collate crowdsourced information about establishments and infrastructure so you know which ones are still open for business and use.</p>
+                    <p>If you have any information about a location, please contribute by submitting a Citizen Report!</p>
+                </div>
+                <div class="col2 citizens">
+                    <div class="citizens-cards-container">
+                        <div class="card">
+                            <div class="card-image-container"><img src="./ASSETS/img/icon-clinic.png" alt=""></div>
+                            <div class="card-text-container"><h6>Clinics</h6></div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image-container"><img src="./ASSETS/img/icon-grocery.png" alt=""></div>
+                            <div class="card-text-container"><h6>Grocery Stores</h6></div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image-container"><img src="./ASSETS/img/icon-drugstore.png" alt=""></div>
+                            <div class="card-text-container"><h6>Pharmacies</h6></div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image-container"><img src="./ASSETS/img/icon-road.png" alt=""></div>
+                            <div class="card-text-container"><h6>Roads</h6></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-left"><img src="./ASSETS/img/icon-submit-report.png" alt=""></div>
+                        <div class="card-right">
+                            <h6>Submit Citizen's Report Now</h6>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="nav-panel" id="nav-news-w"> 
+            <div class="panel-container">
+                <div class="col1">
+                    <h4>Latest News and Announcements</h4>
+                    <p>Keep yourself informed by staying up to date with the latest developments of the COVID-19 Pandemic in the Philippines and the rest of the global community.</p>
+                </div>
+                <div class="col2 news">
+                    <a href="government-announcements.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-govt-news.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Government Announcements</h5>
+                                <p>Browse through the archive of all the official announcements, press releases, resolutions, and briefings published by the Philippine Government</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="news-aggregator.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-news-media.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>News Media</h5>
+                                <p>The News Media Aggregator automatically collects the latest updates and reports of a curated list of trusted news sources</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-panel" id="nav-resources-w"> 
+            <div class="panel-container">
+                <div class="col1 resources">
+                    <h4>Resources and Tools</h4>
+                    <p>Our collection of online tools and platforms and content resources will help you and your loved ones stay safe during this time of crisis.</p>
+                </div>
+                <div class="col2 resources">
+                    <a href="official-statements.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-official-statements.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Official Statements Archive</h5>
+                                <p>An archive of all policies, statements, guidelines, reports, and advisories made by the Philippine government and its agencies.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="faqs.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-faq.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>FAQ<small>s</small></h5>
+                                <p>A collection of the most frequently asked and relevant inquiries and their answers</p>
+                            </div>
+
+                        </div>
+                    </a>
+                    <a href="emerging-research.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-research.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Emerging Research</h5>
+                                <p>A curated list of sources and links to research being done in the fight against COVID-19</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="useful-links.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-links.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Useful Links</h5>
+                                <p>Links to useful websites, including those for government agencies and interntional organizations tasked with managing the pandemic and its effects</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="covid-19-apps.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-apps.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>COVID-19 Apps</h5>
+                                <p>Online applications and tools meant to help you stay healthy and informed</p>
+                            </div>
+                            
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>                        
+    </nav>
+
+    <main class="triage-container" id="triage-result-allright">
+        <section class="triage-head">
+            <div class="title"><h1>COVID-19 Self Assessment and Triage Tool</h1></div>
+            <div class="progress-indicator">
+                <div class="step-name">
+                    <span class="current-step">Result: You're all right!</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-color p100" id="progress"></div>
+                </div>
+            </div>
+        </section>
+        <section class="triage-main">
+            <div class="result-headline">
+                <h1>You're all right!</h1>
+                <h2>According to your submitted answers, your risk for COVID-19 is <span class="risk green">low</span>.</h2>
+            </div>
+            <div class="blue-box-container">
+                <div class="result-image-container allright">
+                    <img src="https://source.unsplash.com/random/500" alt="">
+                </div>
+                <div class="result-text">
+                    <div class="text-actual">
+                        <p>There doesn’t seem to be a cause for immediate concern. It’s still better to be safe than sorry, so please follow <strong>community quarantine guidelines</strong> and the <a href="#guidelines">information outlined below</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="guidelines-container" id="guidelines">
+                <p>Here’s some basic advice on how to keep yourself and the people around you safe:</p>
+                <ol>
+                    <li>Wash your hands frequently</li>
+                    <li>Practice social distancing</li>
+                    <li>Avoid touching eyes, nose, and mouth</li>
+                    <li>Cover your mouth and nose with your bent elbow or tissue when you cough or sneeze; dispose of the tissue right away</li>
+                    <li>Stay informed and make sure you’re up to date on the latest developments and guidelines</li>
+                    <li>If you start showing any symptoms, consult a health care professional immediately</li>
+                </ol>
+            </div>
+
+            <div class="disclaimer">
+                Disclaimer: This online self-triage tool is not a replacement for a consultation with a trained health care professional and is for informational purposes only. Do not ignore or delay obtaining professional medical advice, diagnosis, or treatment because of information provided by Project Moses. If you are concerned about your health or the health of your loved ones, please visit or contact a hospital or clinic as soon as you can. Stay safe and wash your hands.
+            </div>
+        </section>
+    </main>
+    <main class="triage-container" id="triage-result-pum">
+        <section class="triage-head">
+            <div class="title"><h1>COVID-19 Self Assessment and Triage Tool</h1></div>
+            <div class="progress-indicator">
+                <div class="step-name">
+                    <span class="current-step">Result: It's too soon to tell</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-color p100" id="progress"></div>
+                </div>
+            </div>
+        </section>
+        <section class="triage-main">
+            <div class="result-headline">
+                <h1>It's too soon to tell</h1>
+                <h2>According to your submitted answers, your risk for COVID-19 is <span class="risk green">low</span>.</h2>
+            </div>
+            <div class="blue-box-container">
+                <div class="result-image-container allright">
+                    <img src="https://source.unsplash.com/random/500" alt="">
+                </div>
+                <div class="result-text">
+                    <div class="text-actual">
+                        <p>Because you’ve been exposed to someone with COVID-19 or have traveled somewhere where there's a lot of confirmed cases, you might already be infected, but simply not showing any symptoms yet. </p>
+                        <p>Even if you don’t end up suffering any symptoms at all, you can <strong>still be a carrier</strong>! </p>
+                        <p>Please stay at home and <strong>SELF-QUARANTINE for at least 14 days</strong>. Make sure to monitor how you’re feeling, and <strong>talk to a health care professional if you start showing symptoms</strong>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="guidelines-container" id="guidelines">
+                <p>Here’s some basic advice on how to keep yourself and the people around you safe:</p>
+                <ol>
+                    <li>Wash your hands frequently</li>
+                    <li>Practice social distancing</li>
+                    <li>Avoid touching eyes, nose, and mouth</li>
+                    <li>Cover your mouth and nose with your bent elbow or tissue when you cough or sneeze; dispose of the tissue right away</li>
+                    <li>Stay informed and make sure you’re up to date on the latest developments and guidelines</li>
+                    <li>If you start showing any symptoms, consult a health care professional immediately</li>
+                </ol>
+            </div>
+
+            <div class="disclaimer">
+                Disclaimer: This online self-triage tool is not a replacement for a consultation with a trained health care professional and is for informational purposes only. Do not ignore or delay obtaining professional medical advice, diagnosis, or treatment because of information provided by Project Moses. If you are concerned about your health or the health of your loved ones, please visit or contact a hospital or clinic as soon as you can. Stay safe and wash your hands.
+            </div>
+        </section>
+    </main>
+    <main class="triage-container bad" id="triage-result-confirmed">
+        <section class="triage-head">
+            <div class="title"><h1>COVID-19 Self Assessment and Triage Tool</h1></div>
+            <div class="progress-indicator">
+                <div class="step-name">
+                    <span class="current-step">Result: You're a CONFIRMED Case!</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-color p100" id="progress"></div>
+                </div>
+            </div>
+        </section>
+        <section class="triage-main">
+            <div class="result-headline">
+                <h1>You are a <strong>CONFIRMED COVID-19 Case</strong>!</h1>
+                <h2>According to your submitted answers, <span class="risk red">you should be in hospital right now</span>.</h2>
+            </div>
+            <div class="blue-box-container">
+                <div class="result-image-container allright">
+                    <img src="https://source.unsplash.com/random/500" alt="">
+                </div>
+                <div class="result-text">
+                    <div class="text-actual">
+                        <p>If you are currently not yet admitted to a hospital, <strong>please head straight to an ER immediately</strong>.</p>
+                        <p>If you are unable to make the trip by yourself, please call <a href="#hotlines">the hotlines listed below</a> immediately for assistance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hotlines-container" id="hotlines">
+                <p>DOH COVID-19 Hotlines (NCR)</p>
+                <a href="tel:+63289426843" title="Call hotline now!">
+                    <div class="button hotline landline">
+                        <span class="landline-icon icon-phone"></span>
+                        <span class="landline-area">(02)</span>
+                        <span class="landline-big">894</span>
+                        <span class="landline-no">
+                            <span class="n1 landline-number">2</span>
+                            <span class="n2 landline-number">6</span>
+                            <span class="n3 landline-number">8</span>
+                            <span class="n4 landline-number">4</span>
+                            <span class="n5 landline-number">3</span>
+                            <span class="a1 landline-alpha">C</span>
+                            <span class="a2 landline-alpha">O</span>
+                            <span class="a3 landline-alpha">V</span>
+                            <span class="a4 landline-alpha">I</span>
+                            <span class="a5 landline-alpha">D</span>
+                        </span>
+                    </div>
+                </a>
+                <a href="tel:+6321555" title="Call hotline now!">
+                    <div class="button hotline mobile">
+                        <div class="mobile-no">
+                            <span class="mobile-icon icon-mobile"></span>
+                            <span class="mobile-number">1555</span>
+                        </div>
+                    </div>
+                </a>
+                <span class="bottom-utility-link">Not in Metro Manila? <a class="redlink" href="https://sites.google.com/view/covid-19-info-ph/hotlines" target="_blank" tabindex="3">See List of Regional Hotlines Here</a></span>
+            </div>
+            <div class="notification-form-container">
+                <div class="notification-form">
+                    <div class="description">
+                        <div>
+                            <p>You may also choose to disclose your personal information so that we may forward your case to the hospital and healthcare professionals best suited to help you. </p>
+                            <p>Please expect a representative from a hospital to contact you within 24-48 hours to verify your preliminary assessment and discuss their recommendations on how you should proceed.</p>
+                            <p>Although our partner hospitals have committed to being responsive, we still <strong>strongly recommend that you take the initiative to either go to the appropriate Hospital ER or COVID Isolation Area near you or call the phone numbers listed above as soon as you can</strong>.</p>
+                            <p>If your symptoms worsen before a hospital gets in touch with you, <strong>DO NOT WAIT AND PLEASE <a href="https://sites.google.com/view/covid-19-info-ph/hotlines" target="_blank"></a>CALL THE HOTLINES IMMEDIATELY</a></strong>.</p>
+                        </div>
+                    </div>
+                    <div class="form-actual cyan">
+                        <div class="form-fields">
+                            <div class="field-element">
+                                <label for="" class="input-label">Complete Name</label>
+                                <div class="input-field-container">
+                                    <input type="text" class="input-field text" tabindex="21" placeholder="Required">
+                                    <div class="leftbar"></div>
+                                </div>
+                            </div>
+                            <div class="field-element">
+                                <label for="" class="input-label">Email Address</label>
+                                <div class="input-field-container">
+                                    <input type="email" class="input-field text"  tabindex="22" placeholder="Required">
+                                    <div class="leftbar"></div>
+                                </div>
+                            </div>
+                            <div class="field-element">
+                                <label for="" class="input-label">Contact Number</label>
+                                <div class="input-field-container">
+                                    <input type="tel" class="input-field text"  tabindex="23" placeholder="Required">
+                                    <div class="leftbar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkbox-element confirm">
+                            <label class="checkbox-collect">
+                                <input type="checkbox" class="checkbox-visible">
+                                <span  class="checkbox-text">I have read and understood the <a href="https://docs.google.com/document/d/e/2PACX-1vS3DhlAQgm_0AvMpUW95lP9a-x_IUWC1oSDlBzq05aFcgYXUPrI6hVLBXIQ-5LzzzowzV6QClAdzCPQ/pub" target="_blank">terms of use and data privacy policy</a> and consent for my personal data, sensitive or otherwise, to be collected by Project Moses.</span>
+                            </label>
+                        </div>
+                        <div class="button-group-notify">
+                            <div class="ok button" tabindex="24">
+                                Notify Healthcare Professionals
+                            </div>
+                            <div class="cancel button" tabindex="25">
+                                Not Right Now
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="disclaimer">
+                Disclaimer: This online self-triage tool is not a replacement for a consultation with a trained health care professional and is for informational purposes only. Do not ignore or delay obtaining professional medical advice, diagnosis, or treatment because of information provided by Project Moses. If you are concerned about your health or the health of your loved ones, please visit or contact a hospital or clinic as soon as you can. Stay safe and wash your hands.
+            </div>
+        </section>
+    </main>
+    <main class="triage-container warning" id="triage-result-probable-noresults">
+        <section class="triage-head">
+            <div class="title"><h1>COVID-19 Self Assessment and Triage Tool</h1></div>
+            <div class="progress-indicator">
+                <div class="step-name">
+                    <span class="current-step">Result: You're a PROBOBALE Case!</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-color p100" id="progress"></div>
+                </div>
+            </div>
+        </section>
+        <section class="triage-main">
+            <div class="result-headline">
+                <h1>You are a <strong>PROBABLE COVID-19 Case</strong>!</h1>
+                <h2>According to your submitted answers, your risk for COVID-19 is <span class="risk red">high</span>.</h2>
+            </div>
+            <div class="blue-box-container">
+                <div class="result-image-container allright">
+                    <img src="https://source.unsplash.com/random/500" alt="">
+                </div>
+                <div class="result-text">
+                    <div class="text-actual">
+                        <p>Please wait patiently for your test results—<strong>follow-up if necessary</strong>.</p>
+                        <p>Observe SELF-QUARANTINE measures strictly and be rigorous with keeping minimal contact with everyone—including those in your home.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="guidelines-container" id="guidelines">
+                <p>Here’s some basic advice on how to keep yourself and the people around you safe:</p>
+                <ol>
+                    <li>Wash your hands frequently</li>
+                    <li>Practice social distancing</li>
+                    <li>Avoid touching eyes, nose, and mouth</li>
+                    <li>Cover your mouth and nose with your bent elbow or tissue when you cough or sneeze; dispose of the tissue right away</li>
+                    <li>Stay informed and make sure you’re up to date on the latest developments and guidelines</li>
+                    <li>If you start showing any symptoms, consult a health care professional immediately</li>
+                </ol>
+            </div>
+            <div class="notification-form-container">
+                <div class="notification-form">
+                    <div class="description">
+                        <div>
+                            <p>You may also choose to disclose your personal information so that we may forward your case to the hospital and healthcare professionals best suited to help you. </p>
+                            <p>Please expect a representative from a hospital to contact you within 24-48 hours to verify your preliminary assessment and discuss their recommendations on how you should proceed.</p>
+                            <p>Although our partner hospitals have committed to being responsive, we still <strong>strongly recommend that you take the initiative to either go to the appropriate Hospital ER or COVID Isolation Area near you or call the phone numbers listed above as soon as you can</strong>.</p>
+                            <p>If your symptoms worsen before a hospital gets in touch with you, <strong>DO NOT WAIT AND PLEASE <a href="https://sites.google.com/view/covid-19-info-ph/hotlines" target="_blank">CALL THE HOTLINES IMMEDIATELY</a></strong>.</p>
+                        </div>
+                    </div>
+                    <div class="form-actual cyan">
+                        <div class="form-fields">
+                            <div class="field-element">
+                                <label for="" class="input-label">Complete Name</label>
+                                <div class="input-field-container">
+                                    <input type="text" class="input-field text" tabindex="21" placeholder="Required">
+                                    <div class="leftbar"></div>
+                                </div>
+                            </div>
+                            <div class="field-element">
+                                <label for="" class="input-label">Email Address</label>
+                                <div class="input-field-container">
+                                    <input type="email" class="input-field text"  tabindex="22" placeholder="Required">
+                                    <div class="leftbar"></div>
+                                </div>
+                            </div>
+                            <div class="field-element">
+                                <label for="" class="input-label">Contact Number</label>
+                                <div class="input-field-container">
+                                    <input type="tel" class="input-field text"  tabindex="23" placeholder="Required">
+                                    <div class="leftbar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkbox-element confirm">
+                            <label class="checkbox-collect">
+                                <input type="checkbox" class="checkbox-visible">
+                                <span  class="checkbox-text">I have read and understood the <a href="https://docs.google.com/document/d/e/2PACX-1vS3DhlAQgm_0AvMpUW95lP9a-x_IUWC1oSDlBzq05aFcgYXUPrI6hVLBXIQ-5LzzzowzV6QClAdzCPQ/pub" target="_blank">terms of use and data privacy policy</a> and consent for my personal data, sensitive or otherwise, to be collected by Project Moses.</span>
+                            </label>
+                        </div>
+                        <div class="button-group-notify">
+                            <div class="ok button" tabindex="24">
+                                Notify Healthcare Professionals
+                            </div>
+                            <div class="cancel button" tabindex="25">
+                                Not Right Now
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="disclaimer">
+                Disclaimer: This online self-triage tool is not a replacement for a consultation with a trained health care professional and is for informational purposes only. Do not ignore or delay obtaining professional medical advice, diagnosis, or treatment because of information provided by Project Moses. If you are concerned about your health or the health of your loved ones, please visit or contact a hospital or clinic as soon as you can. Stay safe and wash your hands.
+            </div>
+        </section>
+    </main>
+    <main class="triage-container warning" id="triage-result-probable-inconclusive">
+        <section class="triage-head">
+            <div class="title"><h1>COVID-19 Self Assessment and Triage Tool</h1></div>
+            <div class="progress-indicator">
+                <div class="step-name">
+                    <span class="current-step">Result: You're a PROBOBALE Case!</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-color p100" id="progress"></div>
+                </div>
+            </div>
+        </section>
+        <section class="triage-main">
+            <div class="result-headline">
+                <h1>You are a <strong>PROBABLE COVID-19 Case</strong>!</h1>
+                <h2>According to your submitted answers, your risk for COVID-19 is <span class="risk red">high</span>.</h2>
+            </div>
+            <div class="blue-box-container">
+                <div class="result-image-container allright">
+                    <img src="https://source.unsplash.com/random/500" alt="">
+                </div>
+                <div class="result-text">
+                    <div class="text-actual">
+                        <p>You need to get tested <strong>(RT-PCR)</strong> definitively at an <strong>accredited</strong> laboratory as soon as possible. Until then, please strictly SELF-QUARANTINE and be rigorous with keeping minimal contact with everyone—including those in your home.</p>
+                        <p>Make sure to monitor how you’re feeling, and <strong>head to the nearest ER immediately and seek medical assistance</strong> if you start experiencing difficulty breathing or shortness of breath.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="guidelines-container" id="guidelines">
+                <p>Here’s some basic advice on how to keep yourself and the people around you safe:</p>
+                <ol>
+                    <li>Wash your hands frequently</li>
+                    <li>Practice social distancing</li>
+                    <li>Avoid touching eyes, nose, and mouth</li>
+                    <li>Cover your mouth and nose with your bent elbow or tissue when you cough or sneeze; dispose of the tissue right away</li>
+                    <li>Stay informed and make sure you’re up to date on the latest developments and guidelines</li>
+                    <li>If you start showing any symptoms, consult a health care professional immediately</li>
+                </ol>
+            </div>
+            <div class="notification-form-container">
+                <div class="notification-form">
+                    <div class="description">
+                        <div>
+                            <p>You may also choose to disclose your personal information so that we may forward your case to the hospital and healthcare professionals best suited to help you. </p>
+                            <p>Please expect a representative from a hospital to contact you within 24-48 hours to verify your preliminary assessment and discuss their recommendations on how you should proceed.</p>
+                            <p>Although our partner hospitals have committed to being responsive, we still <strong>strongly recommend that you take the initiative to either go to the appropriate Hospital ER or COVID Isolation Area near you or call the phone numbers listed above as soon as you can</strong>.</p>
+                            <p>If your symptoms worsen before a hospital gets in touch with you, <strong>DO NOT WAIT AND PLEASE <a href="https://sites.google.com/view/covid-19-info-ph/hotlines" target="_blank">CALL THE HOTLINES IMMEDIATELY</a></strong>.</p>
+                        </div>
+                    </div>
+                    <div class="form-actual cyan">
+                        <div class="form-fields">
+                            <div class="field-element">
+                                <label for="" class="input-label">Complete Name</label>
+                                <div class="input-field-container">
+                                    <input type="text" class="input-field text" tabindex="21" placeholder="Required">
+                                    <div class="leftbar"></div>
+                                </div>
+                            </div>
+                            <div class="field-element">
+                                <label for="" class="input-label">Email Address</label>
+                                <div class="input-field-container">
+                                    <input type="email" class="input-field text"  tabindex="22" placeholder="Required">
+                                    <div class="leftbar"></div>
+                                </div>
+                            </div>
+                            <div class="field-element">
+                                <label for="" class="input-label">Contact Number</label>
+                                <div class="input-field-container">
+                                    <input type="tel" class="input-field text"  tabindex="23" placeholder="Required">
+                                    <div class="leftbar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkbox-element confirm">
+                            <label class="checkbox-collect">
+                                <input type="checkbox" class="checkbox-visible">
+                                <span  class="checkbox-text">I have read and understood the <a href="https://docs.google.com/document/d/e/2PACX-1vS3DhlAQgm_0AvMpUW95lP9a-x_IUWC1oSDlBzq05aFcgYXUPrI6hVLBXIQ-5LzzzowzV6QClAdzCPQ/pub" target="_blank">terms of use and data privacy policy</a> and consent for my personal data, sensitive or otherwise, to be collected by Project Moses.</span>
+                            </label>
+                        </div>
+                        <div class="button-group-notify">
+                            <div class="ok button" tabindex="24">
+                                Notify Healthcare Professionals
+                            </div>
+                            <div class="cancel button" tabindex="25">
+                                Not Right Now
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="disclaimer">
+                Disclaimer: This online self-triage tool is not a replacement for a consultation with a trained health care professional and is for informational purposes only. Do not ignore or delay obtaining professional medical advice, diagnosis, or treatment because of information provided by Project Moses. If you are concerned about your health or the health of your loved ones, please visit or contact a hospital or clinic as soon as you can. Stay safe and wash your hands.
+            </div>
+        </section>
+    </main>
+    <main class="triage-container" id="triage-result-notcovid">
+        <section class="triage-head">
+            <div class="title"><h1>COVID-19 Self Assessment and Triage Tool</h1></div>
+            <div class="progress-indicator">
+                <div class="step-name">
+                    <span class="current-step">Result: It's not COVID-19</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-color p100" id="progress"></div>
+                </div>
+            </div>
+        </section>
+        <section class="triage-main">
+            <div class="result-headline">
+                <h1>Looks like it’s not COVID-19! But <strong>stay vigilant!</strong></h1>
+                <h2>According to your submitted answers, your risk for COVID-19 is <span class="risk green">low</span>.</h2>
+            </div>
+            <div class="blue-box-container">
+                <div class="result-image-container allright">
+                    <img src="https://source.unsplash.com/random/500" alt="">
+                </div>
+                <div class="result-text">
+                    <div class="text-actual">
+                        <p>Because of your symptoms, please make sure to <strong>visit an ER or clinic</strong> soon to be examined by a healthcare professional to find out what’s making you feel sick.</p>
+                        <p>You do not need to self-isolate, but <strong>please follow community quarantine</strong> guidelines and the <a href="#guidelines">basic information outlined below</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="guidelines-container" id="guidelines">
+                <p>Here’s some basic advice on how to keep yourself and the people around you safe:</p>
+                <ol>
+                    <li>Wash your hands frequently</li>
+                    <li>Practice social distancing</li>
+                    <li>Avoid touching eyes, nose, and mouth</li>
+                    <li>Cover your mouth and nose with your bent elbow or tissue when you cough or sneeze; dispose of the tissue right away</li>
+                    <li>Stay informed and make sure you’re up to date on the latest developments and guidelines</li>
+                    <li>If you start showing any symptoms, consult a health care professional immediately</li>
+                </ol>
+            </div>
+
+            <div class="disclaimer">
+                Disclaimer: This online self-triage tool is not a replacement for a consultation with a trained health care professional and is for informational purposes only. Do not ignore or delay obtaining professional medical advice, diagnosis, or treatment because of information provided by Project Moses. If you are concerned about your health or the health of your loved ones, please visit or contact a hospital or clinic as soon as you can. Stay safe and wash your hands.
+            </div>
+        </section>
+    </main>
+    <main class="triage-container bad" id="triage-result-suspect-a">
+        <section class="triage-head">
+            <div class="title"><h1>COVID-19 Self Assessment and Triage Tool</h1></div>
+            <div class="progress-indicator">
+                <div class="step-name">
+                    <span class="current-step">Result: You're a SUSPECT Case!</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-color p100" id="progress"></div>
+                </div>
+            </div>
+        </section>
+        <section class="triage-main">
+            <div class="result-headline">
+                <h1>You are a <strong>SUSPECT COVID-19 Case!</strong></h1>
+                <h2>According to your submitted answers, your risk for COVID-19 is <span class="risk red">high</span>.</h2>
+            </div>
+            <div class="blue-box-container">
+                <div class="result-image-container allright">
+                    <img src="https://source.unsplash.com/random/500" alt="">
+                </div>
+                <div class="result-text">
+                    <div class="text-actual">
+                        <p>You are in need of <strong>IMMEDIATE MEDICAL ATTENTION</strong>. Please head to the nearest COVID Isolation Area or Healthcare facility for testing (or re-testing) and isolation <strong>right away</strong>.</p>
+                        <p>If you are unable to make the trip by yourself, please call <a href="#hotlines">the hotlines listed below</a> immediately for assistance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hotlines-container" id="hotlines">
+                <p>DOH COVID-19 Hotlines (NCR)</p>
+                <a href="tel:+63289426843" title="Call hotline now!">
+                    <div class="button hotline landline">
+                        <span class="landline-icon icon-phone"></span>
+                        <span class="landline-area">(02)</span>
+                        <span class="landline-big">894</span>
+                        <span class="landline-no">
+                            <span class="n1 landline-number">2</span>
+                            <span class="n2 landline-number">6</span>
+                            <span class="n3 landline-number">8</span>
+                            <span class="n4 landline-number">4</span>
+                            <span class="n5 landline-number">3</span>
+                            <span class="a1 landline-alpha">C</span>
+                            <span class="a2 landline-alpha">O</span>
+                            <span class="a3 landline-alpha">V</span>
+                            <span class="a4 landline-alpha">I</span>
+                            <span class="a5 landline-alpha">D</span>
+                        </span>
+                    </div>
+                </a>
+                <a href="tel:+6321555" title="Call hotline now!">
+                    <div class="button hotline mobile">
+                        <div class="mobile-no">
+                            <span class="mobile-icon icon-mobile"></span>
+                            <span class="mobile-number">1555</span>
+                        </div>
+                    </div>
+                </a>
+                <span class="bottom-utility-link">Not in Metro Manila? <a class="redlink" href="https://sites.google.com/view/covid-19-info-ph/hotlines" target="_blank" tabindex="3">See List of Regional Hotlines Here</a></span>
+            </div>
+            <div class="notification-form-container">
+                <div class="notification-form">
+                    <div class="description">
+                        <div>
+                            <p>You may also choose to disclose your personal information so that we may forward your case to the hospital and healthcare professionals best suited to help you. </p>
+                            <p>Please expect a representative from a hospital to contact you within 24-48 hours to verify your preliminary assessment and discuss their recommendations on how you should proceed.</p>
+                            <p>Although our partner hospitals have committed to being responsive, we still <strong>strongly recommend that you take the initiative to either go to the appropriate Hospital ER or COVID Isolation Area near you or call the phone numbers listed above as soon as you can</strong>.</p>
+                            <p>If your symptoms worsen before a hospital gets in touch with you, <strong>DO NOT WAIT AND PLEASE <a href="https://sites.google.com/view/covid-19-info-ph/hotlines" target="_blank"></a>CALL THE HOTLINES IMMEDIATELY</a></strong>.</p>
+                        </div>
+                    </div>
+                    <div class="form-actual cyan">
+                        <div class="form-fields">
+                            <div class="field-element">
+                                <label for="" class="input-label">Complete Name</label>
+                                <div class="input-field-container">
+                                    <input type="text" class="input-field text" tabindex="21" placeholder="Required">
+                                    <div class="leftbar"></div>
+                                </div>
+                            </div>
+                            <div class="field-element">
+                                <label for="" class="input-label">Email Address</label>
+                                <div class="input-field-container">
+                                    <input type="email" class="input-field text"  tabindex="22" placeholder="Required">
+                                    <div class="leftbar"></div>
+                                </div>
+                            </div>
+                            <div class="field-element">
+                                <label for="" class="input-label">Contact Number</label>
+                                <div class="input-field-container">
+                                    <input type="tel" class="input-field text"  tabindex="23" placeholder="Required">
+                                    <div class="leftbar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkbox-element confirm">
+                            <label class="checkbox-collect">
+                                <input type="checkbox" class="checkbox-visible">
+                                <span  class="checkbox-text">I have read and understood the <a href="https://docs.google.com/document/d/e/2PACX-1vS3DhlAQgm_0AvMpUW95lP9a-x_IUWC1oSDlBzq05aFcgYXUPrI6hVLBXIQ-5LzzzowzV6QClAdzCPQ/pub" target="_blank">terms of use and data privacy policy</a> and consent for my personal data, sensitive or otherwise, to be collected by Project Moses.</span>
+                            </label>
+                        </div>
+                        <div class="button-group-notify">
+                            <div class="ok button" tabindex="24">
+                                Notify Healthcare Professionals
+                            </div>
+                            <div class="cancel button" tabindex="25">
+                                Not Right Now
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="disclaimer">
+                Disclaimer: This online self-triage tool is not a replacement for a consultation with a trained health care professional and is for informational purposes only. Do not ignore or delay obtaining professional medical advice, diagnosis, or treatment because of information provided by Project Moses. If you are concerned about your health or the health of your loved ones, please visit or contact a hospital or clinic as soon as you can. Stay safe and wash your hands.
+            </div>
+        </section>
+    </main>
+    <main class="triage-container bad" id="triage-result-suspect-b">
+        <section class="triage-head">
+            <div class="title"><h1>COVID-19 Self Assessment and Triage Tool</h1></div>
+            <div class="progress-indicator">
+                <div class="step-name">
+                    <span class="current-step">Result: You may be a SUSPECT Case!</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-color p100" id="progress"></div>
+                </div>
+            </div>
+        </section>
+        <section class="triage-main">
+            <div class="result-headline">
+                <h1>You may be a <strong>SUSPECT COVID-19 Case!</strong></h1>
+                <h2>According to your submitted answers, your risk for COVID-19 is <span class="risk red">high</span>.</h2>
+            </div>
+            <div class="blue-box-container">
+                <div class="result-image-container allright">
+                    <img src="https://source.unsplash.com/random/500" alt="">
+                </div>
+                <div class="result-text">
+                    <div class="text-actual">
+                        <p>Because of your symptoms and the fact that you: 
+                            <ul>
+                                <li>have <strong>other illnesses and conditions</strong>,</li>
+                                <li>are <strong>pregnant</strong>,</li>
+                                <li>are in a <strong>high-risk age-group</strong>, <i>or</i></li>
+                                <li>are an active-duty <strong>health care worker</strong>,</li>
+                            </ul>
+                            you need to <strong>contact your physician to be assessed</strong> on whether or not you should get tested for COVID-19.</p>
+                        <p>If you are unable to get in touch with a medical professional for advice, please call <a href="#hotlines">the hotlines listed below</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hotlines-container" id="hotlines">
+                <p>DOH COVID-19 Hotlines (NCR)</p>
+                <a href="tel:+63289426843" title="Call hotline now!">
+                    <div class="button hotline landline">
+                        <span class="landline-icon icon-phone"></span>
+                        <span class="landline-area">(02)</span>
+                        <span class="landline-big">894</span>
+                        <span class="landline-no">
+                            <span class="n1 landline-number">2</span>
+                            <span class="n2 landline-number">6</span>
+                            <span class="n3 landline-number">8</span>
+                            <span class="n4 landline-number">4</span>
+                            <span class="n5 landline-number">3</span>
+                            <span class="a1 landline-alpha">C</span>
+                            <span class="a2 landline-alpha">O</span>
+                            <span class="a3 landline-alpha">V</span>
+                            <span class="a4 landline-alpha">I</span>
+                            <span class="a5 landline-alpha">D</span>
+                        </span>
+                    </div>
+                </a>
+                <a href="tel:+6321555" title="Call hotline now!">
+                    <div class="button hotline mobile">
+                        <div class="mobile-no">
+                            <span class="mobile-icon icon-mobile"></span>
+                            <span class="mobile-number">1555</span>
+                        </div>
+                    </div>
+                </a>
+                <span class="bottom-utility-link">Not in Metro Manila? <a class="redlink" href="https://sites.google.com/view/covid-19-info-ph/hotlines" target="_blank" tabindex="3">See List of Regional Hotlines Here</a></span>
+            </div>
+            <div class="notification-form-container">
+                <div class="notification-form">
+                    <div class="description">
+                        <div>
+                            <p>You may also choose to disclose your personal information so that we may forward your case to the hospital and healthcare professionals best suited to help you. </p>
+                            <p>Please expect a representative from a hospital to contact you within 24-48 hours to verify your preliminary assessment and discuss their recommendations on how you should proceed.</p>
+                            <p>Although our partner hospitals have committed to being responsive, we still <strong>strongly recommend that you take the initiative to either go to the appropriate Hospital ER or COVID Isolation Area near you or call the phone numbers listed above as soon as you can</strong>.</p>
+                            <p>If your symptoms worsen before a hospital gets in touch with you, <strong>DO NOT WAIT AND PLEASE <a href="https://sites.google.com/view/covid-19-info-ph/hotlines" target="_blank">CALL THE HOTLINES IMMEDIATELY</a></strong>.</p>
+                        </div>
+                    </div>
+                    <div class="form-actual cyan">
+                        <div class="form-fields">
+                            <div class="field-element">
+                                <label for="" class="input-label">Complete Name</label>
+                                <div class="input-field-container">
+                                    <input type="text" class="input-field text" tabindex="21" placeholder="Required">
+                                    <div class="leftbar"></div>
+                                </div>
+                            </div>
+                            <div class="field-element">
+                                <label for="" class="input-label">Email Address</label>
+                                <div class="input-field-container">
+                                    <input type="email" class="input-field text"  tabindex="22" placeholder="Required">
+                                    <div class="leftbar"></div>
+                                </div>
+                            </div>
+                            <div class="field-element">
+                                <label for="" class="input-label">Contact Number</label>
+                                <div class="input-field-container">
+                                    <input type="tel" class="input-field text"  tabindex="23" placeholder="Required">
+                                    <div class="leftbar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-group-notify">
+                            <div class="ok button" tabindex="24">
+                                Notify Healthcare Professionals
+                            </div>
+                            <div class="cancel button" tabindex="25">
+                                Not Right Now
+                            </div>
+                        </div>
+                        <p class="disclaimer">
+                            Clicking <strong>‘Notify Healthcare Professionals’</strong> means that you have read and agree to <a href="https://docs.google.com/document/d/e/2PACX-1vS3DhlAQgm_0AvMpUW95lP9a-x_IUWC1oSDlBzq05aFcgYXUPrI6hVLBXIQ-5LzzzowzV6QClAdzCPQ/pub" target="_blank">our terms of use and data privacy policy</a> and consent for your personal data, sensitive or otherwise, to be collected by Project Moses and forwarded to relevant third parties.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="disclaimer">
+                Disclaimer: This online self-triage tool is not a replacement for a consultation with a trained health care professional and is for informational purposes only. Do not ignore or delay obtaining professional medical advice, diagnosis, or treatment because of information provided by Project Moses. If you are concerned about your health or the health of your loved ones, please visit or contact a hospital or clinic as soon as you can. Stay safe and wash your hands.
+            </div>
+        </section>
+    </main>
+
+    <main class="triage-container" id="triage-result-assigned">
+        <section class="triage-head">
+            <div class="title"><h1>COVID-19 Self Assessment and Triage Tool</h1></div>
+            <div class="progress-indicator">
+                <div class="step-name">
+                    <span class="current-step">Case Forwarded to Healthcare Professionals</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-color p100" id="progress"></div>
+                </div>
+            </div>
+        </section>
+        <section class="triage-main">
+            <div class="result-headline">
+                <h1>Your case has been <strong>assigned</strong></h1>
+                <h2>Thank you for your trust and for being responsible for your health and the health of those around you.</h2>
+                <p>Based on the information you’ve provided, we have determined that the best hospital to manage your case is:</p>
+            </div>
+            <div class="directory-card-container">
+                <div class="card hospital ready-high">
+                    <div class="top-info">
+                        <div class="name-addy">
+                            <h1>Philippine General Hospital</h1>
+                            <h2>Manila City, Metro Manila</h2>
+                        </div>
+                        <div class="icons-score-wrap">
+                            <div class="square designated" title="Designated COVID-19 Referral Hospital"><img src="./ASSETS/img/icon-hospital.png" alt=""></div>
+                            <div class="square supplies" title="Hospital is Requesting Supplies"><img src="./ASSETS/img/icon-supply.png" alt=""></div>
+                            <div class="square test" title="COVID-19 Test Kits Availale"><img src="./ASSETS/img/icon-test.png" alt=""></div>
+                            <div class="square admitting" title="Hospital is Admitting Confirmed Cases"><img src="./ASSETS/img/icon-patient.png" alt=""></div>
+                            <div class="score" title="Readiness Score"><span>9.0</span></div>
+                        </div>
+                    </div>
+                    <div class="thirdrow">
+                        <div><p>University of the Philippines Manila, Taft Ave, Ermita</p></div>
+                        <div class="number-of-cases wide">Confirmed COVID-19 Patients<span class="answer black">99</span></div>
+                    </div>
+                    <div class="misc-info">
+                        <div class="col1">
+                            <div>
+                                <span class="feature-point">Designated COVID-19 Referral Hospital</span>
+                                <span class="answer good">yes</span>
+                                <span class="answer meh hidden">no</span>
+                            </div>
+                            <div>
+                                <span class="feature-point">Requesting Supplies</span>
+                                <span class="answer bad">yes</span>
+                                <span class="answer good hidden">no</span>
+                            </div>
+                        </div>
+                        <div class="col2">
+                            <div>
+                                <span class="feature-point">Accepting Patients for Testing</span>
+                                <span class="answer good">yes</span>
+                                <span class="answer meh hidden">no</span>
+                            </div>
+                            <div>
+                                <span class="feature-point">Admitting Confirmed COVID-19 Patients</span>
+                                <span class="answer good">yes</span>
+                                <span class="answer meh hidden">no</span>
+                            </div>
+                        </div>
+                        <div class="col3">
+                            <div>
+                                <span class="feature-point">Contact Number(s)</span>
+                                <span class="answer black"><a href="tel:+63285548400">(02) 8554 8400</a><br /><a href="tel:+63285548400">(02) 8554 8400</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-only-area">
+                        <div class="icons-score-wrap">
+                            <div class="square designated"><img src="./ASSETS/img/icon-hospital.png" alt=""></div>
+                            <div class="square supplies"><img src="./ASSETS/img/icon-supply.png" alt=""></div>
+                            <div class="square test"><img src="./ASSETS/img/icon-test.png" alt=""></div>
+                            <div class="square admitting"><img src="./ASSETS/img/icon-patient.png" alt=""></div>
+                        </div>
+                        <span class="number-of-cases mobile">Confirmed COVID-19 Patients<span class="answer black">99</span></span>
+                    </div>
+                    <div class="bottom-cta">
+                        <span>View Hospital Listing</span>
+                    </div>
+                </div>
+            </div>
+            <p class="more-info">
+                We have notified their representatives. Please expect a call from them within 24-48 hours.<br />If your symptoms worsen, call the DOH Hotlines: <a href="tel:+63289426843">02-894-COVID (02-894-26843)</a> or <a href="tel:+6321555">1555</a> immediately.
+            </p>
+            <div class="disclaimer">
+                <p>Although our partner hospitals have committed to being responsive, we still strongly recommend that you take the initiative to either go to the appropriate Hospital ER or COVID Isolation Area near you or call the phone numbers listed above as soon as you can.</p>
+                <br>
+                <p>If your symptoms worsen before a hospital gets in touch with you, <strong>DO NOT WAIT AND PLEASE <a href="https://sites.google.com/view/covid-19-info-ph/hotlines" target="_blank">CALL THE HOTLINES IMMEDIATELY</a></strong>.</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="violator">
+        <div class="violator-text">
+            <h1>Is it ok to collect some data for analytics and UX research?</h1>
+            <p>The data we gather for this will be anonymous. We respect your privacy.</p>
+        </div>
+        <div class="violator-button">
+            <div class="button disagree"><span>Don't collect my data</span></div>
+            <div class="button agree"><span>Sure, I'd like to contribute!</span></div>
+        </div>
+    </div>
+
+    <footer>
+        <section class="kneeler">
+            <div class="kneeler-proper">
+                <div class="about">
+                    <h4>About</h4>
+                    <p>Project Moses is a Crisis Response Toolbox that aims to be an all-in-one web dashboard for Filipinos in times of calamity and crisis mainly and should still be relevant even in times of peace. We are starting with a Virtual Triage that could match patients with hospitals. It is a publicly accessible collaboration tool using Information Communication Technology (ICT) meant to connect COVID-19 response actors.</p>
+                    <a href="about-project-moses.html">Learn More About the Project</a>
+                </div>
+                <div class="kneeler-links col1">
+                    <h4>Tools</h4>
+                    <li><a href="triage.html">Self-Triage Tool</a></li>
+                    <li><a href="hospital-directory.html">Hospital Directory</a></li>
+                    <li><a href="hospital-portal.html">Hospital Portal</a></li>
+                </div>
+                <div class="kneeler-links col2">
+                    <h4>Info</h4>
+                    <li><a href="clinics.html">Clinics</a></li>
+                    <li><a href="grocery-stories.html">Grocery Stores</a></li>
+                    <li><a href="pharmacies.html">Pharmacies</a></li>
+                    <li><a href="roads.html">Roads</a></li>
+                </div>
+                <div class="kneeler-links col3">
+                    <h4>News</h4>
+                    <li><a href="government-announcements.html">Government Announcements</a></li>
+                    <li><a href="news-aggregator.html">News Media Aggregator</a></li>
+                </div>
+                <div class="kneeler-links col4">
+                    <h4>Resources</h4>
+                    <li><a href="official-statements.html">Official Statements Archive</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="emerging-research.html">Emerging Research</a></li>
+                    <li><a href="useful-links.html">Useful Links</a></li>
+                    <li><a href="covid-19-apps.html">COVID-19 Apps</a></li>
+                </div>
+            </div>
+            <img src="./ASSETS/img/logo-white.png" alt="" class="white-logo">
+            <div class="socmed-container">
+                <a href="https://www.facebook.com/Bridge360PH" title="Like us on Facebook!" target="_blank"><span class="icon icon-facebook-square"></span></a>
+                <a href="https://twitter.com/bridge360PH" title="Follow us on Twitter!" target="_blank"><span class="icon icon-twitter-square"></span></a>
+                <a href="https://www.linkedin.com/company/bridge360ph/" title="Follow us on LinkedIn!" target="_blank"><span class="icon icon-linkedin-square"></span></a>
+            </div>
+        </section>
+        <section class="foot">
+            <p>2020 Copyright Bridge 360. All Rights Reserved.</p>
+        </section>
+
+    </footer>
+
+    <script src="js/main.min.js"></script>
+</body>
+
+
+</html>

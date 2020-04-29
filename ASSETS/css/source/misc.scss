@@ -1,0 +1,2119 @@
+@import "_colors.scss";
+@import "_subnav.scss";
+@import "_modals.scss";
+
+.tracker-iframe {
+    margin: 2em auto;
+
+    .tableauPlaceholder {
+        margin: auto;
+    }
+
+    &.jhu {
+        margin: auto;
+
+        .jhu-wide {
+            display: none;
+        }
+
+        .jhu-mobile {
+            display: block;
+        }
+    }
+}
+
+iframe {
+    width : 100%;
+    height: 100vh;
+
+    &.gdrive {
+        width     : 100%;
+        height    : 600px;
+        border    : 1px solid color(medium);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.05);
+    }
+}
+
+.apps, .faqs, .about-project-moses, .statements, .links, .research, .announcements {
+    display: block;
+    margin: 2em auto 3.5em auto;
+    padding: 0 1em;
+    max-width: 1000px;
+
+    h1,
+    h2,
+    h3 {
+        color      : color(signature);
+        font-weight: 500;
+        margin     : 0 0 0.25em 0;
+    }
+
+    h3 {
+        margin: 0.5em 0 0.5em 0;
+    }
+
+    p {
+        margin-block-start: 0.5em;
+        margin-block-end  : 1em;
+        line-height       : 1.4;
+    }
+}
+
+
+.about-project-moses {
+
+    p {
+        line-height: 1.85 !important;
+    }
+
+    ul {
+        margin-bottom: 1em;
+    }
+
+    ul li {
+        margin: 0.25em 0;
+        padding: 0.8em 1em;
+        display: flex;
+        transition: 300ms ease-in-out;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        cursor       : default;
+
+        .about-image-container {
+            display    : flex;
+            align-items: center;
+
+            img {
+                width     : 20vw;
+                max-width : 100px;
+                height    : auto;
+                filter    : grayscale(1);
+                transition: 2-00ms ease-in-out;
+                border    : 1px solid rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        .about-name {
+            margin        : auto 1em;
+            display       : flex;
+            flex-direction: column;
+
+            h4 {
+                font-size: 1.25em;
+            }
+
+            h5 {
+                font-size  : 1em;
+                font-weight: 300;
+                font-style : italic;
+            }
+        }
+
+    }
+
+    ol li {
+        list-style-type:lower-alpha;
+        margin: 0.5em 2.25em;
+        line-height: 1.3;
+    }
+
+    .team,
+    .contributors {
+        margin : 1.5em 0;
+        padding: 1.5em;
+
+        h3 {
+            margin-bottom: 0.25em;
+        }
+    }
+
+    .grid-container {
+        display              : grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    }
+
+    .team {
+        border-top: 3px solid color(blue-2);
+
+        h2,
+        h3 {
+            color: color(blue-2);
+        }
+
+        ul li {
+            list-style-type: none;
+            max-width: 80vw;
+                    
+            &:hover, &:focus {
+                //background: rgba(color(blue-light), 0.04);
+                //box-shadow: 3px 3px 6px rgba(0,0,0,0.15), -3px -3px 6px rgba(0,0,0,0.15);
+                //border: 1px solid rgba(0,0,0,0.1);
+
+                .about-image-container img {
+                    filter: grayscale(0);
+                    box-shadow: none;
+                }
+
+                .about-name {
+                    h4 {color: color(blue-4);}
+                    h5 {color: color(signature);}
+                }
+            }
+        }
+    }
+
+    .contributors {
+        border-top: 3px solid color(blue-4);
+
+        h2,
+        h3 {
+            color: color(blue-4);
+        }
+
+        ul li {
+            list-style-type: none;
+            max-width: 80vw;
+
+            .about-name {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.apps {
+
+    .app-group {
+        margin: 1em;
+
+<<<<<<< HEAD
+        &:target {
+            &::before {
+                content: "";
+                display: block;
+                height : 125px;
+                margin : -125px 0 0;
+            }
+        }
+
+=======
+>>>>>>> project-moses-static/master
+        &.trackers {
+            color: color(green-2);
+
+            .app-card-container a {
+                &:nth-child(6n+1) {
+                    .topbar {
+                        background: color(green-1)
+                    }
+                }
+
+                &:nth-child(6n+2) {
+                    .topbar {
+                        background: color(green-2)
+                    }
+                }
+
+                &:nth-child(6n+3) {
+                    .topbar {
+                        background: color(green-3)
+                    }
+                }
+
+                &:nth-child(6n+4) {
+                    .topbar {
+                        background: color(green-4)
+                    }
+                }
+
+                &:nth-child(6n+5) {
+                    .topbar {
+                        background: color(green-3)
+                    }
+                }
+
+                &:nth-child(6n+6) {
+                    .topbar {
+                        background: color(green-2)
+                    }
+                }
+            }
+        }
+
+        &.triage {
+            color: color(yellow-2);
+
+            .app-card-container a {
+                &:nth-child(6n+1) {
+                    .topbar {
+                        background: color(yellow-1)
+                    }
+                }
+
+                &:nth-child(6n+2) {
+                    .topbar {
+                        background: color(yellow-2)
+                    }
+                }
+
+                &:nth-child(6n+3) {
+                    .topbar {
+                        background: color(yellow-3)
+                    }
+                }
+
+                &:nth-child(6n+4) {
+                    .topbar {
+                        background: color(yellow-4)
+                    }
+                }
+
+                &:nth-child(6n+5) {
+                    .topbar {
+                        background: color(yellow-3)
+                    }
+                }
+
+                &:nth-child(6n+6) {
+                    .topbar {
+                        background: color(yellow-2)
+                    }
+                }
+            }
+        }
+
+        &.mobile-apps {
+            color: color(orange-2);
+
+            .app-card-container a {
+                &:nth-child(6n+1) {
+                    .topbar {
+                        background: color(orange-1)
+                    }
+                }
+
+                &:nth-child(6n+2) {
+                    .topbar {
+                        background: color(orange-2)
+                    }
+                }
+
+                &:nth-child(6n+3) {
+                    .topbar {
+                        background: color(orange-3)
+                    }
+                }
+
+                &:nth-child(6n+4) {
+                    .topbar {
+                        background: color(orange-4)
+                    }
+                }
+
+                &:nth-child(6n+5) {
+                    .topbar {
+                        background: color(orange-3)
+                    }
+                }
+
+                &:nth-child(6n+6) {
+                    .topbar {
+                        background: color(orange-2)
+                    }
+                }
+            }
+        }
+
+        &.donations {
+            color: color(red-3);
+
+            .app-card-container a {
+                &:nth-child(6n+1) {
+                    .topbar {
+                        background: color(red-1)
+                    }
+                }
+
+                &:nth-child(6n+2) {
+                    .topbar {
+                        background: color(red-2)
+                    }
+                }
+
+                &:nth-child(6n+3) {
+                    .topbar {
+                        background: color(red-3)
+                    }
+                }
+
+                &:nth-child(6n+4) {
+                    .topbar {
+                        background: color(red-4)
+                    }
+                }
+
+                &:nth-child(6n+5) {
+                    .topbar {
+                        background: color(red-3)
+                    }
+                }
+
+                &:nth-child(6n+6) {
+                    .topbar {
+                        background: color(red-2)
+                    }
+                }
+            }
+        }
+
+        &.transpo {
+            color: color(violet-3);
+
+            .app-card-container a {
+                &:nth-child(6n+1) {
+                    .topbar {
+                        background: color(violet-1)
+                    }
+                }
+
+                &:nth-child(6n+2) {
+                    .topbar {
+                        background: color(violet-2)
+                    }
+                }
+
+                &:nth-child(6n+3) {
+                    .topbar {
+                        background: color(violet-3)
+                    }
+                }
+
+                &:nth-child(6n+4) {
+                    .topbar {
+                        background: color(violet-4)
+                    }
+                }
+
+                &:nth-child(6n+5) {
+                    .topbar {
+                        background: color(violet-3)
+                    }
+                }
+
+                &:nth-child(6n+6) {
+                    .topbar {
+                        background: color(violet-2)
+                    }
+                }
+            }
+        }
+
+        &.citizens {
+            color: color(indigo-3);
+
+            .app-card-container a {
+                &:nth-child(6n+1) {
+                    .topbar {
+                        background: color(indigo-1)
+                    }
+                }
+
+                &:nth-child(6n+2) {
+                    .topbar {
+                        background: color(indigo-2)
+                    }
+                }
+
+                &:nth-child(6n+3) {
+                    .topbar {
+                        background: color(indigo-3)
+                    }
+                }
+
+                &:nth-child(6n+4) {
+                    .topbar {
+                        background: color(indigo-4)
+                    }
+                }
+
+                &:nth-child(6n+5) {
+                    .topbar {
+                        background: color(indigo-3)
+                    }
+                }
+
+                &:nth-child(6n+6) {
+                    .topbar {
+                        background: color(indigo-2)
+                    }
+                }
+            }
+        }
+
+        &.government {
+            color: color(cyan-2);
+
+            .app-card-container a {
+                &:nth-child(6n+1) {
+                    .topbar {
+                        background: color(cyan-1)
+                    }
+                }
+
+                &:nth-child(6n+2) {
+                    .topbar {
+                        background: color(cyan-2)
+                    }
+                }
+
+                &:nth-child(6n+3) {
+                    .topbar {
+                        background: color(cyan-3)
+                    }
+                }
+
+                &:nth-child(6n+4) {
+                    .topbar {
+                        background: color(cyan-4)
+                    }
+                }
+
+                &:nth-child(6n+5) {
+                    .topbar {
+                        background: color(cyan-3)
+                    }
+                }
+
+                &:nth-child(6n+6) {
+                    .topbar {
+                        background: color(cyan-2)
+                    }
+                }
+            }
+        }
+
+        &.devs {
+            color: color(blue-2);
+            .app-card-container a {
+                &:nth-child(6n+1) {
+                    .topbar {background: color(blue-1)}
+                }
+                &:nth-child(6n+2) {
+                    .topbar {background: color(blue-2)}
+                }
+                &:nth-child(6n+3) {
+                    .topbar {background: color(blue-3)}
+                }
+                &:nth-child(6n+4) {
+                    .topbar {background: color(blue-4)}
+                }
+                &:nth-child(6n+5) {
+                    .topbar {background: color(blue-3)}
+                }
+                &:nth-child(6n+6) {
+                    .topbar {background: color(blue-2)}
+                }
+            }
+        }
+
+        h2 {
+            margin    : 0 0 1em 0;
+            font-size : 1.8em;
+            text-align: center;
+            color     : inherit;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            color    : rgba(color(dark), 0.8);
+        }
+
+        p {
+            font-size: 0.8em;
+            margin-top: -5px;
+        }
+
+        .app-card-container {
+            display              : grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap             : 1em;
+            column-gap           : 1em;
+
+
+            .card {
+                transition   : 200ms ease-in-out;
+                border-radius: 10px;
+                margin: 1em auto;
+                width: 100%;
+                max-width: 300px;
+                
+
+                .topbar {
+                    height       : 10px;
+                    border-radius: 5px 5px 0 0;
+                    width        : 100%;
+                }
+
+                .img-container {
+                    display: flex;
+                    align-items: center;
+                    height: auto;
+                    width: 100%;
+                    max-width: 300px;
+                    border-bottom: 1px solid color(light);
+                    position: relative;
+
+                    img {
+                        width  : 100%;
+                        display: block;
+                        margin : 0 auto;
+                    }
+                }
+
+                .name-container {
+                    padding: 0.3em 1em 0.5em 1em;
+                }
+
+                .overlay {
+                    opacity: 0;
+                    transition: 100ms linear;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    background: rgba(color(darkest), 0.8);
+                    align-items: center;
+
+
+                    span {
+                        font-size: 2em;
+                        font-weight: 600;
+                        color: color(lightest);
+                        margin-left: -0.5em;
+                    }
+
+                    .go-link {
+                        margin: 0 auto;
+                    }
+                }
+                
+                &:hover, &:focus {
+                    transform: scale(1.005);
+                    box-shadow: 0 3px 6px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.15);
+
+                    .overlay {
+                        opacity: 1;
+
+                        .go-link {
+
+                            &::after {
+                                font-family: 'icomoon' !important;
+                                content: '\e904';
+                                position: absolute;
+                                left: 13.5em;
+                                top: 50%;
+                                font-weight: 600;
+                                color: color(lightest);
+                                transform: translateY(-50%) rotate(-90deg);
+                                animation: slideToRight 300ms;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+        }
+    }
+
+}
+
+.links {
+
+    .link-group {
+        margin: 1em;
+
+
+        &.iatf, &.international {
+            color: color(blue-3);
+            .link-card-container a {
+                &:nth-child(6n+1) {
+                    .topbar {background: color(blue-1)}
+                }
+                &:nth-child(6n+2) {
+                    .topbar {background: color(blue-2)}
+                }
+                &:nth-child(6n+3) {
+                    .topbar {background: color(blue-3)}
+                }
+                &:nth-child(6n+4) {
+                    .topbar {background: color(blue-4)}
+                }
+                &:nth-child(6n+5) {
+                    .topbar {background: color(blue-3)}
+                }
+                &:nth-child(6n+6) {
+                    .topbar {background: color(blue-2)}
+                }
+            }
+        }
+        
+        h2 {
+            margin: 1em 0 0.25em 0;
+            font-size: 1.8em;
+            text-align: center;
+            color: inherit;
+        } 
+
+        h3 {
+            font-size: 1.25em;
+            color: rgba(color(dark), 0.9);
+        }
+        p {
+            font-size: 0.8em;
+            margin-top: -5px;
+        }
+
+        .link-card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 1em;
+            column-gap: 1em;
+                        
+            .card {
+                transition: 200ms ease-in-out;
+                border-radius: 10px;
+                margin: 1em auto;
+                width: 100%;
+                max-width: 300px;
+
+                .topbar {
+                    height: 10px;
+                    border-radius: 5px 5px 0 0;
+                    width: 100%;
+                }
+
+                .img-container {
+                    display: flex;
+                    align-items: center;
+                    height: auto;
+                    width: 100%;
+                    max-width: 300px;
+                    border-bottom: 1px solid color(light);
+                    position: relative;
+
+                    img {
+                        width: 100%;
+                        display: block;
+                        margin: 0 auto;
+                    }
+                }
+
+                .name-container {
+                    padding: 0.3em 1em 0.5em 1em;
+                }
+                
+                .overlay {
+                    opacity: 0;
+                    transition: 100ms linear;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    background: rgba(color(darkest), 0.8);
+                    align-items: center;
+
+
+                    span {
+                        font-size: 2em;
+                        font-weight: 600;
+                        color: color(lightest);
+                        margin-left: -0.5em;
+                    }
+
+                    .go-link {
+                        margin: 0 auto;
+                    }
+                }
+                
+                &:hover, &:focus {
+                    transform: scale(1.005);
+                    box-shadow: 0 3px 6px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.15);
+
+                    .overlay {
+                        opacity: 1;
+
+                        .go-link {
+
+                            &::after {
+                                font-family: 'icomoon' !important;
+                                content: '\e904';
+                                position: absolute;
+                                left: 13.5em;
+                                top: 50%;
+                                font-weight: 600;
+                                color: color(lightest);
+                                transform: translateY(-50%) rotate(-90deg);
+                                animation: slideToRight 300ms;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+        }
+    }
+
+}
+
+.faqs {
+
+    .question-group {
+        margin: 2em 1em;
+
+        h2 {
+            font-size: 1.8em;
+        }
+
+<<<<<<< HEAD
+        &.disease h2 {
+            color: color(green-2)
+        }
+
+        &.pandemic h2 {
+            color: color(yellow-2)
+        }
+
+        &.project-moses h2 {
+            color: color(orange-2)
+        }
+
+        &:target {
+            &::before {
+                content: "";
+                display: block;
+                height : 115px;
+                margin : -115px 0 0;
+            }
+        }
+
+=======
+        &.disease h2 {color: color(green-2)}
+        &.pandemic h2 {color: color(yellow-2)}
+        &.project-moses h2 {color: color(orange-2)}
+        
+>>>>>>> project-moses-static/master
+    }
+
+    .question-block {
+        margin    : 1em 0;
+        display   : block;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.05);
+
+        .question-container.question-open {
+            border-radius: 5px 5px 0 0;
+            border-bottom: 1px solid blue;
+
+            &::before {
+                border-radius: 5px 0 0 0;
+            }
+
+            &::after {
+                font-family: 'icomoon' !important;
+                content    : '\e904';
+                position   : absolute;
+                right      : 1em;
+                top        : 50%;
+                color      : inherit;
+                transform  : translateY(-50%) rotate(-180deg);
+                transition : 150ms linear;
+            }
+
+            &:hover,
+            &:focus {
+                &::before {
+                    border-radius: 5px 0 0 0 !important;
+                }
+            }
+        }
+    }
+
+    .question-container {
+        display      : block;
+        border-radius: 5px;
+        position     : relative;
+        background   : color(lightest);
+        padding      : 0.5em 1em;
+        cursor       : pointer;
+        border       : 1px solid color(light);
+        border-left  : none;
+        transition   : all 180ms linear;
+
+        h3 {
+            margin: 0 0 0 0.5em;
+            font-size: 1.3em;
+            color: rgba(color(grey), 0.8);
+        }
+
+        &::after {
+            font-family: 'icomoon' !important;
+            content    : '\e904';
+            position   : absolute;
+            right      : 1em;
+            top        : 50%;
+            color      : rgba(color(grey), 0.8);
+            transform  : translateY(-50%) rotate(-90deg);
+            transition : 150ms linear;
+        }
+
+        &::before {
+            content      : '';
+            position     : absolute;
+            top          : 0;
+            left         : 0;
+            height       : 100%;
+            width        : 10px;
+            background   : rgba(color(grey), 0.8);
+            border-radius: 5px 0 0 5px;
+        }
+    }
+
+    .answer-container {
+        border-radius: 0 0 5px 5px;
+        position     : relative;
+        overflow-y   : hidden;
+        max-height   : 0;
+        transition   : 300ms ease-in-out;
+
+        .answer-wrap {
+            padding: 0.5em 1em 0.25em 1em;
+        }
+
+        .answer {
+            line-height: 1.5;
+            font-weight: 300;
+            margin-left: 0.5em;
+
+            strong {
+                font-weight: 450;
+            }
+        }
+
+        &::before {
+            content      : '';
+            position     : absolute;
+            top          : 0;
+            left         : 0;
+            height       : 100%;
+            width        : 10px;
+            border-radius: 0 0 0 5px;
+        }
+    }
+
+    .disease .question-block {
+
+        .question-container {
+
+            &::before {
+                background: rgba(color(grey), 0.8);
+            }
+
+            &:hover,
+            &:focus {
+                background : rgba(color(green-1), 0.1);
+                border     : 1px solid color(green-3);
+                border-left: none;
+
+                h3 {
+                    color: color(green-2);
+                }
+
+                &::before {
+                    border-radius: 5px 0 0 5px;
+                    background   : color(green-3);
+                }
+
+                &::after {
+                    content: '\e904';
+                    color  : color(green-2);
+                }
+
+            }
+        }
+
+        .answer-container {
+            background: rgba(color(green-1), 0.07);
+
+            &::before {
+                background: color(green-3);
+            }
+        }
+
+        .question-container.question-open {
+            border-bottom: 1px solid color(green-3);
+
+            h3 {
+                color: color(green-2);
+            }
+
+            &::before {
+                background: color(green-3);
+            }
+
+            &::after {
+                content: '\e904';
+                color  : color(green-2);
+            }
+        }
+    }
+
+    .pandemic .question-block {
+
+        .question-container {
+
+            &::before {
+                background: rgba(color(grey), 0.8);
+            }
+
+            &:hover,
+            &:focus {
+                background : rgba(color(yellow-1), 0.1);
+                border     : 1px solid color(yellow-3);
+                border-left: none;
+
+                h3 {
+                    color: color(yellow-2);
+                }
+
+                &::before {
+                    border-radius: 5px 0 0 5px;
+                    background   : color(yellow-3);
+                }
+
+                &::after {
+                    content: '\e904';
+                    color  : color(yellow-2);
+                }
+
+            }
+        }
+
+        .answer-container {
+            background: rgba(color(yellow-1), 0.07);
+
+            &::before {
+                background: color(yellow-3);
+            }
+        }
+
+        .question-container.question-open {
+            border-bottom: 1px solid color(yellow-3);
+
+            h3 {
+                color: color(yellow-2);
+            }
+
+            &::before {
+                background: color(yellow-3);
+            }
+
+            &::after {
+                content: '\e904';
+                color  : color(yellow-2);
+            }
+        }
+    }
+
+    .project-moses .question-block {
+
+        .question-container {
+
+            &::before {
+                background: rgba(color(grey), 0.8);
+            }
+
+            &:hover,
+            &:focus {
+                background : rgba(color(orange-1), 0.1);
+                border     : 1px solid color(orange-3);
+                border-left: none;
+
+                h3 {
+                    color: color(orange-2);
+                }
+
+                &::before {
+                    border-radius: 5px 0 0 5px;
+                    background   : color(orange-3);
+                }
+
+                &::after {
+                    content: '\e904';
+                    color  : color(orange-2);
+                }
+
+            }
+        }
+
+        .answer-container {
+            background: rgba(color(orange-1), 0.07);
+
+            &::before {
+                background: color(orange-3);
+            }
+        }
+
+        .question-container.question-open {
+            border-bottom: 1px solid color(orange-3);
+
+            h3 {
+                color: color(orange-2);
+            }
+
+            &::before {
+                background: color(orange-3);
+            }
+
+            &::after {
+                content: '\e904';
+                color  : color(orange-2);
+            }
+        }
+    }
+
+    .sources {
+        padding: 0 2em 0 2em;
+        color  : color(grey);
+
+        h5 {
+            font-size  : 1em;
+            font-weight: 400;
+        }
+
+        li {
+            font-size      : 0.8em;
+            font-weight    : 300;
+            margin         : 1em 0 1em 2em;
+            list-style-type: circle;
+        }
+
+        a {
+
+            &:hover,
+            &:focus {
+                color          : color(signature);
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.announcements {
+    h1 {
+        font-size: 2.3em;
+    }
+}
+
+.announcements, .research {
+
+    .announcements-container, .research-container {
+
+        a {
+            &:nth-child(6n+1) .card {
+                &::before {
+                    background-color: color(blue-1);
+                }
+                .data-field-label, .read-more-cta {
+                    color: color(blue-1);
+                }
+                &::after {
+                    color: color(blue-1);
+                }
+            }
+            &:nth-child(6n+2) .card  {
+                &::before {
+                    background-color: color(blue-2);
+                }
+                .data-field-label, .read-more-cta {
+                    color: color(blue-2);
+                }
+                &::after {
+                    color: color(blue-2);
+                }
+            }
+            &:nth-child(6n+3) .card  {
+                &::before {
+                    background-color: color(blue-3);
+                }
+                .data-field-label, .read-more-cta {
+                    color: color(blue-3);
+                }
+                &::after {
+                    color: color(blue-3);
+                }
+            }
+            &:nth-child(6n+4) .card  {
+                &::before {
+                    background-color: color(blue-4);
+                }
+                .data-field-label, .read-more-cta {
+                    color: color(blue-4);
+                }
+                &::after {
+                    color: color(blue-4);
+                }
+            }
+            &:nth-child(6n+5) .card  {
+                &::before {
+                    background-color: color(blue-3);
+                }
+                .data-field-label, .read-more-cta {
+                    color: color(blue-3);
+                }
+                &::after {
+                    color: color(blue-3);
+                }
+            }
+            &:nth-child(6n+6) .card  {
+                &::before {
+                    background-color: color(blue-2);
+                }
+                .data-field-label, .read-more-cta {
+                    color: color(blue-2);
+                }
+                &::after {
+                    color: color(blue-2);
+                }
+            }
+        }
+
+        .card {
+            padding: 0.75em 0.75em 0.75em 1.25em;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.15);
+            border-radius: 5px;
+            position: relative;
+            margin: 1em 0;
+            transition: 200ms ease-in-out;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 10px;
+                border-radius: 5px 0 0 5px;
+            }
+
+            &:hover, &:focus {
+                background-color: rgba(color(signature), 0.05);
+                transform: scale(1.005);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+                .read-more-cta {
+                    font-weight: 500;
+                }
+
+                &::after {
+                    font-family: 'icomoon' !important;
+                    content: '\e904';
+                    position: absolute;
+                    right: 0.75em;
+                    top: 50%;
+                    transform: translateY(-50%) rotate(-90deg);
+                    animation: slideToRight 300ms;
+                    display: none;
+                }
+            }
+        }
+
+        .data-fields {
+            grid-gap: 1em;
+            column-gap: 1em;
+            grid-template-columns: 1fr 1fr 5fr;
+        }
+
+        .data-field-label {
+            font-size: 0.6em;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            display: block;
+            margin: 1.25em 0 0.5em 0;
+
+            &:nth-child(1) {
+                margin-top: 0.5em;
+            }
+        }
+
+        .data-field-content {
+            color: color(dark);
+            font-weight: 300;
+            line-height: 1.5;
+
+            
+            &:nth-child(6) {
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical; 
+                overflow: hidden;
+            }
+
+            &.research-title {
+                font-weight: 400;
+            }
+
+            &.abstract {
+                display: block;
+                overflow: unset;
+                font-size: 0.9em;
+            }
+
+
+        }
+
+        .header-row {
+            display: none;
+            grid-gap: 1em;
+            column-gap: 1em;
+            grid-template-columns: 1fr 1fr 5fr;
+            padding: 0.5em 0;
+            background: color(blue-dark);
+            color: color(lightest);
+            font-size: 0.6em;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            border-radius: 5px;
+            padding-left: calc(10px + 0.75em);
+
+            span {
+                text-align: center;
+            }
+        }
+
+    }
+
+    .read-more-cta {
+        margin: 1em 0 0.25em 0;
+        display: block;
+        position: relative;
+
+        &::after {
+            font-family: 'icomoon' !important;
+            content: '\e904';
+            position: absolute;
+            top: 50%;
+            color: inherit;
+            transform: translateY(-50%) rotate(-90deg);
+            transition: 150ms linear;
+        }
+    }
+
+    .announcements-container .read-more-cta::after {
+        left: 5em;
+    }
+    .research-container .read-more-cta::after {
+        left: 5.5em;
+    }
+
+}
+
+.research {
+    .research-group {
+        margin: 1em 0;
+
+        &#who, &#animal {
+            h2 {color: color(blue-2);}
+            .read-more-cta {color: color(blue-2);}
+        
+            .research-card-container a {
+                &:nth-child(6n+1) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(blue-1);
+                        }
+                    
+                        &::before {
+                            background: color(blue-1);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(blue-1), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+2) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(blue-2);
+                        }
+                    
+                        &::before {
+                            background: color(blue-2);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(blue-2), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+3) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(blue-3);
+                        }
+                    
+                        &::before {
+                            background: color(blue-3);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(blue-3), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+4) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(blue-4);
+                        }
+                    
+                        &::before {
+                            background: color(blue-4);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(blue-4), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+5) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(blue-3);
+                        }
+                    
+                        &::before {
+                            background: color(blue-3);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(blue-2), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+6) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(blue-2);
+                        }
+                    
+                        &::before {
+                            background: color(blue-2);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(blue-2), 0.05);
+                        }
+                    }
+                }
+            }
+        }
+
+        &#data-modeling, &#treatment {
+            h2 {color: color(green-2);}
+            .read-more-cta {color: color(green-2);}
+        
+            .research-card-container a {
+                &:nth-child(6n+1) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(green-1);
+                        }
+                    
+                        &::before {
+                            background: color(green-1);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(green-1), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+2) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(green-2);
+                        }
+                    
+                        &::before {
+                            background: color(green-2);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(green-2), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+3) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(green-3);
+                        }
+                    
+                        &::before {
+                            background: color(green-3);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(green-3), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+4) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(green-4);
+                        }
+                    
+                        &::before {
+                            background: color(green-4);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(green-4), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+5) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(green-3);
+                        }
+                    
+                        &::before {
+                            background: color(green-3);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(green-2), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+6) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(green-2);
+                        }
+                    
+                        &::before {
+                            background: color(green-2);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(green-2), 0.05);
+                        }
+                    }
+                }
+            }
+        }
+        
+        &#genes {
+            h2 {color: color(yellow-2);}
+            .read-more-cta {color: color(yellow-2);}
+        
+            .research-card-container a {
+                &:nth-child(6n+1) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(yellow-1);
+                        }
+                    
+                        &::before {
+                            background: color(yellow-1);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(yellow-1), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+2) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(yellow-2);
+                        }
+                    
+                        &::before {
+                            background: color(yellow-2);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(yellow-2), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+3) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(yellow-3);
+                        }
+                    
+                        &::before {
+                            background: color(yellow-3);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(yellow-3), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+4) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(yellow-4);
+                        }
+                    
+                        &::before {
+                            background: color(yellow-4);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(yellow-4), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+5) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(yellow-3);
+                        }
+                    
+                        &::before {
+                            background: color(yellow-3);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(yellow-2), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+6) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(yellow-2);
+                        }
+                    
+                        &::before {
+                            background: color(yellow-2);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(yellow-2), 0.05);
+                        }
+                    }
+                }
+            }
+        }
+        
+        &#epidemic {
+            h2 {color: color(orange-2);}
+            .read-more-cta {color: color(orange-2);}
+        
+            .research-card-container a {
+                &:nth-child(6n+1) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(orange-1);
+                        }
+                    
+                        &::before {
+                            background: color(orange-1);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(orange-1), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+2) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(orange-2);
+                        }
+                    
+                        &::before {
+                            background: color(orange-2);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(orange-2), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+3) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(orange-3);
+                        }
+                    
+                        &::before {
+                            background: color(orange-3);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(orange-3), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+4) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(orange-4);
+                        }
+                    
+                        &::before {
+                            background: color(orange-4);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(orange-4), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+5) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(orange-3);
+                        }
+                    
+                        &::before {
+                            background: color(orange-3);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(orange-2), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+6) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(orange-2);
+                        }
+                    
+                        &::before {
+                            background: color(orange-2);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(orange-2), 0.05);
+                        }
+                    }
+                }
+            }
+        }
+
+        &#origin {
+            h2 {color: color(red-3);}
+            .read-more-cta {color: color(red-3);}
+        
+            .research-card-container a {
+                &:nth-child(6n+1) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(red-1);
+                        }
+                    
+                        &::before {
+                            background: color(red-1);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(red-1), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+2) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(red-2);
+                        }
+                    
+                        &::before {
+                            background: color(red-2);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(red-2), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+3) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(red-3);
+                        }
+                    
+                        &::before {
+                            background: color(red-3);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(red-3), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+4) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(red-4);
+                        }
+                    
+                        &::before {
+                            background: color(red-4);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(red-4), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+5) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(red-3);
+                        }
+                    
+                        &::before {
+                            background: color(red-3);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(red-2), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+6) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(red-2);
+                        }
+                    
+                        &::before {
+                            background: color(red-2);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(red-2), 0.05);
+                        }
+                    }
+                }
+            }
+        }
+        &#govt {
+            h2 {color: color(violet-3);}
+            .read-more-cta {color: color(violet-3);}
+        
+            .research-card-container a {
+                &:nth-child(6n+1) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(violet-1);
+                        }
+                    
+                        &::before {
+                            background: color(violet-1);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(violet-1), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+2) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(violet-2);
+                        }
+                    
+                        &::before {
+                            background: color(violet-2);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(violet-2), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+3) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(violet-3);
+                        }
+                    
+                        &::before {
+                            background: color(violet-3);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(violet-3), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+4) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(violet-4);
+                        }
+                    
+                        &::before {
+                            background: color(violet-4);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(violet-4), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+5) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(violet-3);
+                        }
+                    
+                        &::before {
+                            background: color(violet-3);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(violet-2), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+6) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(violet-2);
+                        }
+                    
+                        &::before {
+                            background: color(violet-2);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(violet-2), 0.05);
+                        }
+                    }
+                }
+            }
+        }
+
+        &#research-ann {
+            h2 {color: color(indigo-3);}
+            .read-more-cta {color: color(indigo-3);}
+        
+            .research-card-container a {
+                &:nth-child(6n+1) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(indigo-1);
+                        }
+                    
+                        &::before {
+                            background: color(indigo-1);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(indigo-1), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+2) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(indigo-2);
+                        }
+                    
+                        &::before {
+                            background: color(indigo-2);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(indigo-2), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+3) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(indigo-3);
+                        }
+                    
+                        &::before {
+                            background: color(indigo-3);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(indigo-3), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+4) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(indigo-4);
+                        }
+                    
+                        &::before {
+                            background: color(indigo-4);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(indigo-4), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+5) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(indigo-3);
+                        }
+                    
+                        &::before {
+                            background: color(indigo-3);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(indigo-2), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+6) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(indigo-2);
+                        }
+                    
+                        &::before {
+                            background: color(indigo-2);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(indigo-2), 0.05);
+                        }
+                    }
+                }
+            }
+        }
+
+        &#strat {
+            h2 {color: color(cyan-2);}
+            .read-more-cta {color: color(cyan-2);}
+        
+            .research-card-container a {
+                &:nth-child(6n+1) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(cyan-1);
+                        }
+                    
+                        &::before {
+                            background: color(cyan-1);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(cyan-1), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+2) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(cyan-2);
+                        }
+                    
+                        &::before {
+                            background: color(cyan-2);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(cyan-2), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+3) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(cyan-3);
+                        }
+                    
+                        &::before {
+                            background: color(cyan-3);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(cyan-3), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+4) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(cyan-4);
+                        }
+                    
+                        &::before {
+                            background: color(cyan-4);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(cyan-4), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+5) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(cyan-3);
+                        }
+                    
+                        &::before {
+                            background: color(cyan-3);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(cyan-2), 0.05);
+                        }
+                    }
+                }
+                &:nth-child(6n+6) {
+                    .card {
+                        .data-fields .data-field-label {
+                            color:color(cyan-2);
+                        }
+                    
+                        &::before {
+                            background: color(cyan-2);
+                        }
+        
+                        &:hover, &:focus {
+                            background-color: rgba(color(cyan-2), 0.05);
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+
+        h2 {
+            margin: 0;
+            font-size: 1.8em;
+            text-align: center;
+            color: inherit;
+        } 
+    }
+}

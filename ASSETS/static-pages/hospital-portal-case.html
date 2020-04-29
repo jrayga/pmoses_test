@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- SEO/SMO Values-->
+    <title>Patient Case File: A0001 | Project Moses</title>
+    <meta itemprop="name" content="Project Moses">
+    <meta itemprop="url" content="https://projectmoses.ph/">
+    <meta name="description" content="Project Moses is a Crisis Response Toolbox that aims to be an all-in-one web dashboard for Filipinos in times of calamity and crisis.">
+
+    <!-- Schema -->
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="Project Moses">
+    <meta name="twitter:site" content="">
+
+    <!-- Facebook Opengraph data -->
+    <meta property="og:title" content="Welcome to Project Moses">
+    <meta property="og:description" content="Project Moses is a Crisis Response Toolbox that aims to be an all-in-one web dashboard for Filipinos in times of calamity and crisis.">
+    <meta property="og:image" content="./ASSETS/img/project-moses-social.jpg">
+    <meta property="og:url" itemprop="url" content="https://projectmoses.ph/">
+    <meta property="og:site_name" content="Project Moses">
+    <meta property="og:type" content="website">
+
+    <!-- FAVICONS START -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#299bd7">
+    <meta name="apple-mobile-web-app-title" content="Project Moses">
+    <meta name="application-name" content="Project Moses">
+    <meta name="msapplication-TileColor" content="#299bd7">
+    <meta name="theme-color" content="#299bd7">
+    <!-- FAVICONS END -->
+
+    <!-- GOOGLE ANALYTICS START -->
+
+    <!-- GOOGLE ANALYTICS END -->
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/hospital-portal.min.css">
+    <link rel="stylesheet" href="css/responsive.min.css">
+    <link rel="stylesheet" href="css/icons.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+</head>
+<body class="preload-transitions">
+    <div class="language-selector-bar" id="langBar">
+        <div class="language-selector">
+            <p><strong>English</strong> | <a href="">Select Language</a> <span class="icon right icon-cancel" id="langbarClose"></span></p>
+        </div>
+    </div>
+    <header>
+        <div class="header-logo">
+            <a href="/" title="Project Moses" alt="Project Moses"><img src="./ASSETS/img/main-logo.png" alt="Project Moses Logo" title="Project Moses"></a>
+        </div>
+        <div class="header-buttons for-wide">
+            <div class="button triage">
+                <a href="/triage">Feeling <strong>Sick?</strong></a>
+            </div>
+            <div class="button hospital">
+                <a href="hospital-login.html">Hospital Login</a>
+            </div>
+        </div>
+    </header>
+    <div class="bottom-cta-buttons-bar">
+        <div class="header-buttons">
+            <div class="button triage">
+                <a href="/triage">Feeling <strong>Sick?</strong></a>
+            </div>
+            <div class="button hospital">
+                <a href="hospital-login.html">Hospital Login</a>
+            </div>
+        </div>
+    </div>
+    <nav class="mobile">
+        <div class="nav-bar" id="mobile-nav-menulink"><span class="icon-th-menu icon left"></span>MENU</div>
+        <div class="nav-dropdown" id="mobile-nav-dropdown">
+            <a href="/" ><li>Home</li></a>
+            <a href="triage.html"><li>Self-Triage</li></a>
+            <li class="navlink" id="navlink-trackers">Real-Time Trackers</li>
+                <ul class="secondary-dropdown" id="nav-trackers">
+                    <a href="doh-tracker.html"><li>DOH nCoV Tracker</li></a>
+                    <a href="jhu-tracker.html"><li>JHU Interactive Map</li></a>
+                </ul>
+            <a href="hospital-directory.html"><li >Hospital Directory</li></a>
+            <li class="navlink" id="navlink-citizens">Citizens Patrol</li>
+                <ul class="secondary-dropdown" id="nav-citizens">
+                    <a href=""><li>Clinics</li></a>
+                    <a href=""><li>Grocery Stores</li></a>
+                    <a href=""><li>Pharmacies</li></a>
+                    <a href=""><li>Roads</li></a>
+                    <a href=""><li>Submit Report</li></a>
+                </ul>
+            <li class="navlink" id="navlink-news">Latest News</li>
+                <ul class="secondary-dropdown" id="nav-news">
+                    <a href="government-announcements.html"><li>Government Announcements</li></a>
+                    <a href="news-aggregator.html"><li>News Media</li></a>
+                </ul>
+            <li class="navlink" id="navlink-resources">Resources</li>
+                <ul class="secondary-dropdown" id="nav-resources">
+                    <a href="official-statements.html"><li>Official Statements Archive</li></a>
+                    <a href="faqs.html"><li>FAQs</li></a>
+                    <a href="emerging-research.html"><li>Emerging Research</li></a>
+                    <a href="useful-links.html"><li>Useful Links</li></a>
+                    <a href="covid-19-apps.html"><li>COVID-19 Apps</li></a>
+                </ul>
+        </div>
+    </nav>
+    <nav class="wide">
+        <div class="main-nav-bar">
+            <li><a href="/">Home</a></li>
+            <li><a href="triage.html">Self-Triage</a></li>
+            <li class="navlink" id="navlink-trackers-w">Real-Time Trackers</li>
+            <li ><a href="hospital-directory.html">Hospital Directory</a></li>
+            <li class="navlink" id="navlink-citizens-w">Citizens Patrol</li>
+            <li class="navlink" id="navlink-news-w">Latest News</li>
+            <li class="navlink" id="navlink-resources-w">Resources</li> 
+        </div>
+        <div class="nav-panel" id="nav-trackers-w"> 
+            <div class="panel-container">
+                <div class="col1">
+                    <h4>Real-Time COVID-19 Tracker Dashboards</h4>
+                    <p>These online tools are handy for getting both a overview of the how local and internal populations are faring. They feature real-time data organized for easy analysis and are maintained by leading organizations both within the Philippines and the world at large.</p>
+                </div>
+                <div class="col2 trackers">
+                    <a href="doh-tracker.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/doh.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Department of Health COVID-19 Tracker</h5>
+                                <p>This is the official and updated COVID-19 Case Tracker. Originally the DOH nCoV Tracker, the new version collates case data and health system capacity accross the Phiippines</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="jhu-tracker.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/jhu.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Johns Hopkins University Interactive Map</h5>
+                                <p>The JHU Coronavirus COVID-19 Global Cases Dashboard by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU) is an online dashboard featuring a real-time world map, US Map, and trends tracker</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-panel" id="nav-citizens-w"> 
+            <div class="panel-container">
+                <div class="col1">
+                    <h4>Citizens Patrol</h4>
+                    <p>We continuously collect and collate crowdsourced information about establishments and infrastructure so you know which ones are still open for business and use.</p>
+                    <p>If you have any information about a location, please contribute by submitting a Citizen Report!</p>
+                </div>
+                <div class="col2 citizens">
+                    <div class="citizens-cards-container">
+                        <div class="card">
+                            <div class="card-image-container"><img src="./ASSETS/img/icon-clinic.png" alt=""></div>
+                            <div class="card-text-container"><h6>Clinics</h6></div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image-container"><img src="./ASSETS/img/icon-grocery.png" alt=""></div>
+                            <div class="card-text-container"><h6>Grocery Stores</h6></div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image-container"><img src="./ASSETS/img/icon-drugstore.png" alt=""></div>
+                            <div class="card-text-container"><h6>Pharmacies</h6></div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image-container"><img src="./ASSETS/img/icon-road.png" alt=""></div>
+                            <div class="card-text-container"><h6>Roads</h6></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-left"><img src="./ASSETS/img/icon-submit-report.png" alt=""></div>
+                        <div class="card-right">
+                            <h6>Submit Citizen's Report Now</h6>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="nav-panel" id="nav-news-w"> 
+            <div class="panel-container">
+                <div class="col1">
+                    <h4>Latest News and Announcements</h4>
+                    <p>Keep yourself informed by staying up to date with the latest developments of the COVID-19 Pandemic in the Philippines and the rest of the global community.</p>
+                </div>
+                <div class="col2 news">
+                    <a href="government-announcements.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-govt-news.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Government Announcements</h5>
+                                <p>Browse through the archive of all the official announcements, press releases, resolutions, and briefings published by the Philippine Government</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="news-aggregator.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-news-media.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>News Media</h5>
+                                <p>The News Media Aggregator automatically collects the latest updates and reports of a curated list of trusted news sources</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-panel" id="nav-resources-w"> 
+            <div class="panel-container">
+                <div class="col1 resources">
+                    <h4>Resources and Tools</h4>
+                    <p>Our collection of online tools and platforms and content resources will help you and your loved ones stay safe during this time of crisis.</p>
+                </div>
+                <div class="col2 resources">
+                    <a href="official-statements.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-official-statements.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Official Statements Archive</h5>
+                                <p>An archive of all policies, statements, guidelines, reports, and advisories made by the Philippine government and its agencies.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="faqs.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-faq.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>FAQ<small>s</small></h5>
+                                <p>A collection of the most frequently asked and relevant inquiries and their answers</p>
+                            </div>
+
+                        </div>
+                    </a>
+                    <a href="emerging-research.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-research.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Emerging Research</h5>
+                                <p>A curated list of sources and links to research being done in the fight against COVID-19</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="useful-links.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-links.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Useful Links</h5>
+                                <p>Links to useful websites, including those for government agencies and interntional organizations tasked with managing the pandemic and its effects</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="covid-19-apps.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-apps.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>COVID-19 Apps</h5>
+                                <p>Online applications and tools meant to help you stay healthy and informed</p>
+                            </div>
+                            
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>                        
+    </nav>
+
+    <main class="hospital-portal">
+        <div class="modal case-status-change" id="change-to-qualified">
+            <div class="modal-box">
+                <div class="modal-head">
+                    <span class="modal-title">Change case Status</span>
+                    <span class="icon-cancel"></span>
+                </div>
+                <div class="modal-body">
+                    <h1><span>Current Status</span> <span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span> <span class="qualified-color">qualified</span></h1>
+                    <p>Are you sure that you’ve completely read and understood the case and confirm that this candidate needs a follow-up based on their symptoms, history, and pre-existing conditions?</p>
+                    <div class="checkbox-element change-status-check">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span  class="checkbox-text">I have fully evaluated this case.</span>
+                        </label>
+                    </div>
+                    <div class="update-case-button-group">
+                        <div class="button up qualified disabled">
+                            Upgrade Case to QUALIFIED
+                        </div>
+                        <div class="button cancel">
+                            Cancel Status Change
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div >
+        <div class="modal case-status-change hidden" id="change-to-default">
+            <div class="modal-box">
+                <div class="modal-head">
+                    <span class="modal-title">Change case Status</span>
+                    <span class="icon-cancel"></span>
+                </div>
+                <div class="modal-body">
+                    <h1><span>Current Status</span> <span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span> <span class="default-color">Self-Assessed</span></h1>
+                    <p>This is the default status. Are you sure you want to revert this case back to its initial state?</p>
+                    <div class="update-case-button-group">
+                        <div class="button up default">
+                            Upgrade Case to SELF-ASSESSED
+                        </div>
+                        <div class="button cancel">
+                            Cancel Status Change
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div >
+        <div class="modal case-status-change hidden" id="change-to-dismissed">
+            <div class="modal-box">
+                <div class="modal-head">
+                    <span class="modal-title">Change case Status</span>
+                    <span class="icon-cancel"></span>
+                </div>
+                <div class="modal-body">
+                    <h1><span>Current Status</span> <span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span> <span class="dismissed-color">Dismissed</span></h1>
+                    <p>Are you sure that you’ve completely read and understood the case and confirm that this candidate does not need a follow-up based on their symptoms, history, and pre-existing conditions?</p>
+                    <div class="checkbox-element change-status-check">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span  class="checkbox-text">I have fully evaluated this case.</span>
+                        </label>
+                    </div>
+                    <div class="field-element">
+                        <label for="" class="input-label actual">Reason(s) for Dismissal</label>
+                        <div class="input-field-container">
+                            <textarea class="input-field text"></textarea>
+                        </div>
+                    </div>
+                    <div class="update-case-button-group">
+                        <div class="button up dismissed disabled">
+                            Reclassify Case as DISMISSED
+                        </div>
+                        <div class="button cancel">
+                            Cancel Status Change
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal case-status-change hidden" id="change-to-unreachable">
+            <div class="modal-box">
+                <div class="modal-head">
+                    <span class="modal-title">Change case Status</span>
+                    <span class="icon-cancel"></span>
+                </div>
+                <div class="modal-body">
+                    <h1><span>Current Status</span> <span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span> <span class="unreachable-color">unreachable</span></h1>
+                    <p>Did you perform the due diligence in contacting the candidate multiple times using different methods?</p>
+                    <div class="checklist-group">
+                        <div class="checkbox-element change-status-check">
+                            <label class="checkbox-collect">
+                                <input type="checkbox" class="checkbox-visible">
+                                <span  class="checkbox-text">I have tried calling their Contact Number at least three (3) times.</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-element change-status-check">
+                            <label class="checkbox-collect">
+                                <input type="checkbox" class="checkbox-visible">
+                                <span  class="checkbox-text">I have sent an SMS message their Contact Number have received no response.</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-element change-status-check">
+                            <label class="checkbox-collect">
+                                <input type="checkbox" class="checkbox-visible">
+                                <span  class="checkbox-text">I have sent an email message their Email Address have received no response.</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="update-case-button-group">
+                        <div class="button up unreachable disabled">
+                            Reclassify Case as UNREACHABLE
+                        </div>
+                        <div class="button cancel">
+                            Cancel Status Change
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal case-status-change hidden" id="change-to-dropped">
+            <div class="modal-box">
+                <div class="modal-head">
+                    <span class="modal-title">Change case Status</span>
+                    <span class="icon-cancel"></span>
+                </div>
+                <div class="modal-body">
+                    <h1><span>Current Status</span> <span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span> <span class="dropped-color">dropped</span></h1>
+                    <p>Did you successfully talk to the candidate and concluded that they no longer need management based on what you discussed?</p>
+                    <div class="checkbox-element change-status-check">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span  class="checkbox-text">I have successfully contacted the candidate and discussed their case with them.</span>
+                        </label>
+                    </div>
+                    <div class="field-element">
+                        <label for="" class="input-label actual">Reason(s) for Dropping</label>
+                        <div class="input-field-container">
+                            <textarea class="input-field text"></textarea>
+                        </div>
+                    </div>
+                    <div class="update-case-button-group">
+                        <div class="button up dropped disabled">
+                            Reclassify Case as DROPPED
+                        </div>
+                        <div class="button cancel">
+                            Cancel Status Change
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal case-status-change hidden" id="change-to-elsewhere">
+            <div class="modal-box">
+                <div class="modal-head">
+                    <span class="modal-title">Change case Status</span>
+                    <span class="icon-cancel"></span>
+                </div>
+                <div class="modal-body">
+                    <h1><span>Current Status</span> <span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span> <span class="elsewhere-color">Managed Elsewhere</span></h1>
+                    <p>Did you successfully confirm with the candidate that they are already getting medical care elsewhere?</p>
+                    <div class="checkbox-element change-status-check">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span  class="checkbox-text">I have confirmed that the candidate is already being managed by another healthcare provider.</span>
+                        </label>
+                    </div>
+                    <div class="field-element">
+                        <label for="" class="input-label actual">Physician and/or Hospital Currently Managing Case</label>
+                        <div class="input-field-container">
+                            <input type="text" class="input-field text">
+                        </div>
+                    </div>
+                    <div class="update-case-button-group">
+                        <div class="button up elsewhere disabled">
+                            Reclassify Case as MANAGED ELSEWHERE
+                        </div>
+                        <div class="button cancel">
+                            Cancel Status Change
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal case-status-change hidden" id="change-to-referred">
+            <div class="modal-box">
+                <div class="modal-head">
+                    <span class="modal-title">Change case Status</span>
+                    <span class="icon-cancel"></span>
+                </div>
+                <div class="modal-body">
+                    <h1><span>Current Status</span> <span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span> <span class="referred-color">referred Elsewhere</span></h1>
+                    <p>Do you certify that you have done your due dligence in referring this case to a different healthcare provider and facility?</p>
+                    <div class="checkbox-element change-status-check">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span  class="checkbox-text">I have made sure that this case will be managed properly by the provider I referred the case to.</span>
+                        </label>
+                    </div>
+                    <div class="field-element">
+                        <label for="" class="input-label actual">Physician and/or Hospital Case was Referred to</label>
+                        <div class="input-field-container">
+                            <input type="text" class="input-field text">
+                        </div>
+                    </div>
+                    <div class="update-case-button-group">
+                        <div class="button up referred disabled">
+                            Reclassify Case as REFERRED ELSEWHERE
+                        </div>
+                        <div class="button cancel">
+                            Cancel Status Change
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal case-status-change hidden" id="change-to-in-progress">
+            <div class="modal-box">
+                <div class="modal-head">
+                    <span class="modal-title">Change case Status</span>
+                    <span class="icon-cancel"></span>
+                </div>
+                <div class="modal-body">
+                    <h1><span>Current Status</span> <span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span> <span class="in-progress-color">Management in-progress</span></h1>
+                    <p>Are you presently in the process of managing the case according to your hospital’s protocols?</p>
+                    <div class="checkbox-element change-status-check">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span  class="checkbox-text">I have contacted the candidate successfully and proceeded with work-up and management of their case.</span>
+                        </label>
+                    </div>
+                    <div class="update-case-button-group">
+                        <div class="button up in-progress disabled">
+                            Upgrade Case to MANAGEMENT IN-PROGRESS
+                        </div>
+                        <div class="button cancel">
+                            Cancel Status Change
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal case-status-change hidden" id="change-to-recovered">
+            <div class="modal-box">
+                <div class="modal-head">
+                    <span class="modal-title">Change case Status</span>
+                    <span class="icon-cancel"></span>
+                </div>
+                <div class="modal-body">
+                    <h1><span>Current Status</span> <span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span> <span class="recovered-color">recovered</span></h1>
+                    <p>Do you certify that this patient has recovered from COVID-19 and is now awaiting discharge or already discharged?</p>
+                    <div class="checkbox-element change-status-check">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span  class="checkbox-text">I confirm that this patient is now recovered.</span>
+                        </label>
+                    </div>
+                    <div class="update-case-button-group">
+                        <div class="button up recovered disabled">
+                            Upgrade Case to RECOVERED
+                        </div>
+                        <div class="button cancel">
+                            Cancel Status Change
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal case-status-change hidden" id="change-to-deceased">
+            <div class="modal-box">
+                <div class="modal-head">
+                    <span class="modal-title">Change case Status</span>
+                    <span class="icon-cancel"></span>
+                </div>
+                <div class="modal-body">
+                    <h1><span>Current Status</span> <span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span><span class="icon-chevron-down chevron-right"></span> <span class="deceased-color">deceased</span></h1>
+                    <p>Do you certify that this patient has died due to COVID-19 or complications arising from it?</p>
+                    <div class="checkbox-element change-status-check">
+                        <label class="checkbox-collect">
+                            <input type="checkbox" class="checkbox-visible">
+                            <span  class="checkbox-text">I confirm that this patient has died.</span>
+                        </label>
+                    </div>
+                    <div class="update-case-button-group">
+                        <div class="button up deceased disabled">
+                            Reclassify Case as DECEASED
+                        </div>
+                        <div class="button cancel">
+                            Cancel Status Change
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="tiny-affordances">
+            <div class="breadcrumb"><a href="hospital-portal.html">Hospital Portal</a> > <span class="current-location">Patient Case File: A0001</span></div>
+            <div class="user-greeting">Welcome, <a class="username" href="">Bruce Wayne</a></div>
+        </div>
+
+        <div class="case-file">
+            <section class="case-file-container probable">
+                <div class="top-section">
+                    <div class="case-id-bar">
+                        <span>CASE ID: <span id="caseId">A0001</span></span>
+                    </div>
+                    <div class="headline">
+                        <h1><span id="age">62</span> Year Old <span id="sex">Male</span> from <span id="loc2">Quezon City</span></h1>
+                        <h2>Classification: <a id="probable" href="#classification">Probable</a></h2>
+                        <h2 class="hidden" >Classification: <a id="confirmed" href="#classification">Confirmed</a></h2>
+                        <h2 class="hidden" >Classification: <a id="suspect" href="#classification">Suspect</a></h2>
+                        <h2>Self-Assessment: <span id="datetime">April 27, 2020 13:25</span></h2>
+                    </div>
+                </div>
+                <div class="case-section static">
+                    <div class="label-and-control">
+                        <div class="section-label">
+                            <h3>I. Personal Information</h3>
+                        </div>
+                        <div class="control">
+                            <span class="edit-button button" id="editSec1">
+                                Edit
+                            </span>
+                        </div>
+                    </div>
+                    <div class="case-section-card personal-info">
+                        <div class="info-item info-name">
+                            <div class="info-item-label">
+                                Full Name
+                            </div>
+                            <div class="info-item-value">
+                                <span id="fullName">Juan Dela Cruz</span>
+                            </div>
+                        </div>
+                        <div class="info-item info-dob">
+                            <div class="info-item-label">
+                                Date of Birth
+                            </div>
+                            <div class="info-item-value">
+                                <span id="birthdate">08/13/1968</span> (<span class="elderly" id="age">62</span>)
+                            </div>
+                        </div>
+                        <div class="info-item info-sex">
+                            <div class="info-item-label">
+                                Assigned Sex at Birth
+                            </div>
+                            <div class="info-item-value">
+                                <span id="sex-male">Male</span>
+                                <span id="sex-female" class="hidden">Female</span>
+                            </div>
+                        </div>
+                        <div class="info-item info-preggy">
+                            <div class="info-item-label">
+                                Pregnant
+                            </div>
+                            <div class="info-item-value">
+                                <span id="pregnant-na">N/A</span>
+                                <span id="pregnant-yes" class="hidden">YES</span>
+                                <span id="pregnant-no" class="hidden">NO</span>
+                            </div>
+                        </div>
+                        <div class="info-item info-hcw">
+                            <div class="info-item-label">
+                                Health Care Worker (Active)
+                            </div>
+                            <div class="info-item-value">
+                                <span id="hcw-yes" class="">YES</span>
+                                <span id="hcw-no" class="hidden">NO</span>
+                            </div>
+                        </div>
+                        <div class="info-item info-addy">
+                            <div class="info-item-label">
+                                Current Location
+                            </div>
+                            <div class="info-item-value">
+                                <span id="loc3">211 Dela Rosa Street, Barangay Katipunan</span>, <span id="loc2">Quezon City</span>, <span id="loc1">Metro Manila</span>
+                            </div>
+                        </div>
+                        <div class="info-item info-connum">
+                            <div class="info-item-label">
+                                Contact Number
+                            </div>
+                            <div class="info-item-value">
+                                <span id="contact-no"><a href="tel:+639163291030">09163291030</a></span>
+                            </div>
+                        </div>
+                        <div class="info-item info-email">
+                            <div class="info-item-label">
+                                Email Address
+                            </div>
+                            <div class="info-item-value">
+                                <span id="email"><a href="mailto:juandelacruz@gmail.com">juandelacruz<span class="tld">@gmail.com</span></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-section" id="classification">
+                    <div class="label-and-control">
+                        <div class="section-label">
+                            <h3>II. Case Classification</h3>
+                        </div>
+                    </div>
+                    <div class="case-section-card classification probable">
+                        <div class="info-item info-class">
+                            <div class="info-item-label">
+                                Current Classification
+                            </div>
+                            <div class="info-item-value">
+                                <div class="classy button current-class" id="probable-class">Probable</div>
+                                <div class="classy button" id="suspect-class">Suspect</div>
+                                <div class="classy button" id="confirmed-class">Confirmed</div>
+                            </div>
+                        </div>
+                        <div class="info-item info-testing">
+                            <div class="info-item-label">
+                                Tested for COVID-19?
+                            </div>
+                            <div class="info-item-value">
+                                <span class="testing-status" id="yes-good">YES (RT-PCR)</span>
+                                <span class="testing-status hidden" id="yes-bad">YES (IgM/IgG)</span>
+                                <span class="testing-status hidden" id="no">NO</span>
+                            </div>
+                        </div>
+                        <div class="info-item info-results">
+                            <div class="info-item-label">
+                                Test Results
+                            </div>
+                            <div class="info-item-value">
+                                <span class="test-result" id="positive"><span class="icon-icon-positive icon left"></span>Positive</span>
+                                <span class="test-result hidden" id="negative"><span class="icon-icon-negative icon left"></span>Negative</span>
+                                <span class="test-result hidden" id="unknown"><span class="icon-icon-uncertain icon left"></span>Inconclusive</span>
+                                <span class="test-result hidden" id="notyet"><span class="icon-icon-waiting icon left"></span>No Results Yet</span>
+                                <span class="test-result hidden" id="na">N/A</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-section static">
+                    <div class="label-and-control">
+                        <div class="section-label">
+                            <h3>III. Exposure History</h3>
+                        </div>
+                        <div class="control">
+                            <span class="edit-button button" id="editSec3">
+                                Edit
+                            </span>
+                        </div>
+                    </div>
+                    <div class="case-section-card exposure-history">
+                        <div class="row-white">
+                            <div class="info-item info-travel">
+                                <div class="info-item-label">
+                                    Traveled Outside of the Philippines since December 2019
+                                </div>
+                                <div class="info-item-value">
+                                    <span id="travel-yes"><span class="icon-check"></span></span>
+                                    <span class="hidden" id="travel-no"><span class="icon-cancel"></span></span>
+                                    <span class="hidden" id="travel-unknown" class="no-info">No Answer. Please ask during follow-up.</span>
+                                </div>
+                            </div>
+                        <div class="exposure-followup">
+                            <div class="info-item sub-item info-travel" id="country-list">
+                                <div class="info-item-label">
+                                    Countries Visited <small>Place names in <span class="red-text">Red</span> are classified as having Community Transmission</small>
+                                </div>
+                                <div class="info-item-value">
+                                    <li class="country bad">USA</li>
+                                    <li class="country">South Korea</li>
+                                    <li class="country">China</li>
+                                    <li class="country">Bolivia</li>
+                                </div>
+                            </div>
+                            <div class="info-item sub-item info-travel" id="country-14">
+                                <div class="info-item-label">
+                                    Symptoms Started <strong>within 14 Days</strong> of Travel
+                                </div>
+                                <div class="info-item-value">
+                                    <span class="hidden" id="travel-14-yes"><span class="icon-check"></span></span>
+                                    <span id="travel-14-no"><span class="icon-cancel"></span></span>
+                                    <span class="hidden" id="travel-14-unknown" class="no-info">No Answer. Please ask during follow-up.</span>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row-grey">
+                            <div class="info-item info-ppe">
+                                <div class="info-item-label">
+                                    Tended to a Probable or Confirmed COVID-19 Case without PPE
+                                </div>
+                                <div class="info-item-value">
+                                    <span id="ppe-yes"><span class="icon-check"></span></span>
+                                    <span class="hidden" id="ppe-no"><span class="icon-cancel"></span></span>
+                                    <span class="hidden" id="ppe-unknown" class="no-info">No Answer. Please ask during follow-up.</span>
+                                </div>
+                            </div>
+                            <div class="info-item sub-item info-ppe" id="ppe-14">
+                                <div class="info-item-label">
+                                    Symptoms Started <strong>within 14 Days</strong> of Close Contact
+                                </div>
+                                <div class="info-item-value">
+                                    <span class="hidden" id="ppe-14-yes"><span class="icon-check"></span></span>
+                                    <span class="hidden" id="ppe-14-no"><span class="icon-cancel"></span></span>
+                                    <span id="ppe-14-unknown" class="no-info">No Answer. Please ask during follow-up.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-white">
+                            <div class="info-item info-close-environ">
+                                <div class="info-item-label">
+                                    Stayed in a Close Environment with a Probable or Confirmed COVID-19 Case
+                                </div>
+                                <div class="info-item-value">
+                                    <span id="close-environment-yes"><span class="icon-check"></span></span>
+                                    <span class="hidden" id="close-environment-no"><span class="icon-cancel"></span></span>
+                                    <span class="hidden" id="close-environment-unknown" class="no-info">No Answer. Please ask during follow-up.</span>
+                                </div>
+                            </div>
+                            <div class="info-item sub-item info-close-environ" id="close-environment-14">
+                                <div class="info-item-label">
+                                    Symptoms Started <strong>within 14 Days</strong> of Close Contact
+                                </div>
+                                <div class="info-item-value">
+                                    <span class="hidden" id="close-environment-14-yes"><span class="icon-check"></span></span>
+                                    <span id="close-environment-14-no"><span class="icon-cancel"></span></span>
+                                    <span class="hidden" id="close-environment-14-unknown" class="no-info">No Answer. Please ask during follow-up.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-grey">
+                            <div class="info-item info-close-prox">
+                                <div class="info-item-label">
+                                    Traveled in Close Proximity with a Probable or Confirmed COVID-19 Case
+                                </div>
+                                <div class="info-item-value">
+                                    <span id="close-proximity-yes"><span class="icon-check"></span></span>
+                                    <span class="hidden" id="close-proximity-no"><span class="icon-cancel"></span></span>
+                                    <span class="hidden" id="close-proximity-unknown" class="no-info">No Answer. Please ask during follow-up.</span>
+                                </div>
+                            </div>
+                            <div class="info-item sub-item info-close-prox" id="close-proximity-14">
+                                <div class="info-item-label">
+                                    Symptoms Started <strong>within 14 Days</strong> of Close Contact
+                                </div>
+                                <div class="info-item-value">
+                                    <span id="close-proximity-14-yes"><span class="icon-check"></span></span>
+                                    <span class="hidden" id="close-proximity-14-no"><span class="icon-cancel"></span></span>
+                                    <span class="hidden" id="close-proximity-14-unknown" class="no-info">No Answer. Please ask during follow-up.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-white">
+                            <div class="info-item info-flu">
+                                <div class="info-item-label">
+                                    Home or Workplace has Someone with Flu-Like Symptoms
+                                </div>
+                                <div class="info-item-value">
+                                    <span class="hidden" id="flu-yes"><span class="icon-check"></span></span>
+                                    <span class="hidden" id="flu-no"><span class="icon-cancel"></span></span>
+                                    <span id="flu-unknown" class="no-info">No Answer. Please ask during follow-up.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-section interactive">
+                    <div class="label-and-control">
+                        <div class="section-label">
+                            <h3>IV. Reported Symptoms</h3>
+                        </div>
+                        <div class="control">
+                            <span class="save-button button" id="saveSec4">
+                                Save Changes
+                            </span>
+                            <span class="clear-button button" id="clearSec4">
+                                Revert
+                            </span>
+                        </div>
+                    </div>
+                    <div class="case-section-card symptoms-section">
+                        <div class="info-symptoms-checklist">
+                            <div class="info-item">
+                                <div class="checkbox-element symptom-checkbox">
+                                    <label class="checkbox-collect">
+                                        <input type="checkbox" class="checkbox-visible">
+                                        <span  class="checkbox-text">Fever<span class="details">(38°C or higher)</span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="checkbox-element symptom-checkbox">
+                                    <label class="checkbox-collect">
+                                        <input type="checkbox" class="checkbox-visible">
+                                        <span  class="checkbox-text">Dry Cough</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="checkbox-element symptom-checkbox">
+                                    <label class="checkbox-collect">
+                                        <input type="checkbox" class="checkbox-visible">
+                                        <span  class="checkbox-text">Fatigue</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="checkbox-element symptom-checkbox">
+                                    <label class="checkbox-collect">
+                                        <input type="checkbox" class="checkbox-visible">
+                                        <span  class="checkbox-text">Sputum Production<span class="details">(Phlegm)</span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="checkbox-element symptom-checkbox">
+                                    <label class="checkbox-collect">
+                                        <input type="checkbox" class="checkbox-visible">
+                                        <span  class="checkbox-text">Sore Throat</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="info-item">    
+                                <div class="checkbox-element symptom-checkbox">
+                                    <label class="checkbox-collect">
+                                        <input type="checkbox" class="checkbox-visible">
+                                        <span  class="checkbox-text">Headaches</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="checkbox-element symptom-checkbox">
+                                    <label class="checkbox-collect">
+                                        <input type="checkbox" class="checkbox-visible">
+                                        <span  class="checkbox-text">Myalgia<span class="details">(Muscle Pain)</span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="checkbox-element symptom-checkbox">
+                                    <label class="checkbox-collect">
+                                        <input type="checkbox" class="checkbox-visible">
+                                        <span  class="checkbox-text">Arthralgia<span class="details">(Joint Pain)</span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="checkbox-element symptom-checkbox">
+                                    <label class="checkbox-collect">
+                                        <input type="checkbox" class="checkbox-visible">
+                                        <span  class="checkbox-text">Chills</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="checkbox-element symptom-checkbox">
+                                    <label class="checkbox-collect">
+                                        <input type="checkbox" class="checkbox-visible">
+                                        <span  class="checkbox-text">Nausea</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="checkbox-element symptom-checkbox">
+                                    <label class="checkbox-collect">
+                                        <input type="checkbox" class="checkbox-visible">
+                                        <span  class="checkbox-text">Vomiting</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="checkbox-element symptom-checkbox">
+                                    <label class="checkbox-collect">
+                                        <input type="checkbox" class="checkbox-visible">
+                                        <span  class="checkbox-text">Nasal Congestion<span class="details">(Runny or Stuffed Nose)</span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="info-item">    
+                                <div class="checkbox-element symptom-checkbox">
+                                    <label class="checkbox-collect">
+                                        <input type="checkbox" class="checkbox-visible">
+                                        <span  class="checkbox-text">Diarrhea</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="checkbox-element symptom-checkbox">
+                                    <label class="checkbox-collect">
+                                        <input type="checkbox" class="checkbox-visible">
+                                        <span  class="checkbox-text">Difficulty Breathing</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="checkbox-element symptom-checkbox">
+                                    <label class="checkbox-collect">
+                                        <input type="checkbox" class="checkbox-visible">
+                                        <span  class="checkbox-text">Shortness of Breath<span class="details">(30 Breaths or more per minute)</span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-other-input">
+                            <div class="info-item-label">
+                                <h4>Additional Symptoms</h4>
+                                <p>Separate each symptom with a semicolon. Example: <strong>Hematuria; Migraines; Vertigo</strong></p>
+                            </div>
+                            <div class="info-item-value">
+                                <div class="input-field-container">
+                                    <textarea class="input-field text"></textarea>
+                                    <!-- div class="leftbar"></div -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-section interactive">
+                    <div class="label-and-control">
+                        <div class="section-label">
+                            <h3>V. Comorbidity</h3>
+                        </div>
+                        <div class="control">
+                            <span class="save-button button" id="saveSec5">
+                                Save Changes
+                            </span>
+                            <span class="clear-button button" id="clearSec5">
+                                Revert
+                            </span>
+                        </div>
+                    </div>
+                    <div class="case-section-card comorbidity">
+
+                        <div class="info-item info-comorbid">
+                            <div class="info-item-label">
+                                Case has Other Identified Illnesses and Conditions
+                            </div>
+                            <div class="info-item-value">
+                                <span id="comorbid-yes"><span class="icon-check"></span></span>
+                                <span class="hidden" id="comorbid-no"><span class="icon-cancel"></span></span>
+                                <span class="hidden" id="comorbid-unknown" class="no-info">No Answer. Please ask during follow-up.</span>
+                            </div>
+                        </div>
+                        <div class="info-other-input">
+                            <div class="info-item-label">
+                                <h4>Comorbid Diseases List</h4>
+                                <p>Separate each symptom with a semicolon. Example: <strong>Hypertension; IBD; Leukemia</strong></p>
+                            </div>
+                            <div class="info-item-value">
+                                <div class="input-field-container">
+                                    <textarea class="input-field text"></textarea>
+                                    <!-- div class="leftbar"></div -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+            <section class="case-status-update-container">
+                
+                <div class="case-status-update-box hidden" id="default">
+                    <div class="case-status-top-bar">
+                        <span>CASE STATUS</span>
+                    </div>
+                    <div class="box-proper">
+                        <h1>Self-Assessed</h1>
+                        <p>Please evaluate the current case and determine if the self-assessment is valid.</p>
+                        <p>If it is, upgrade the case’s status to <span class="qualified-color">QUALIFIED</span>. If not, reclassify the case as <span class="dismissed-color">DISMISSED</span>.</p>
+                        <div class="update-case-button-group">
+                            <div class="button up qualified">
+                                Upgrade Case to QUALIFIED
+                            </div>
+                            <div class="button down dismissed">
+                                Reclassify Case as DISMISSED
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-status-update-box hidden" id="dismissed">
+                    <div class="case-status-top-bar">
+                        <span>CASE STATUS</span>
+                    </div>
+                    <div class="box-proper">
+                        <h1>Dismissed</h1>
+                        <p>This case has been dismissed. That means that based on initial evaluation, the candidate's reported symptoms, history, and pre-existing conditions do not require a follow-up call and succeeding professional medical care.</p>
+                        <p>If you believe that the case does warrant a follow-up, you can upgrade the case’s status to <span class="qualified-color">QUALIFIED</span>.</p>
+                        <p>You may also revert this case to its initial status of <span class="default-color">SELF-ASSESSED</span>.</p>
+                        <div class="update-case-button-group">
+                            <div class="button up qualified">
+                                Upgrade Case to QUALIFIED
+                            </div>
+                            <div class="button down default">
+                                Revert Case to SELF-ASSESSED
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-status-update-box" id="qualified">
+                    <div class="case-status-top-bar">
+                        <span>CASE STATUS</span>
+                    </div>
+                    <div class="box-proper">
+                        <h1>Qualified</h1>
+                        <p>Since you’ve confirmed this case’s legitimate need for a follow-up, please contact the candidate as soon as possible:</p>
+                        <ul>
+                            <a class="number-link" href="tel:+63000000"><li class="button"><span class="icon-phone"></span>09162165262</li></a>
+                            <a class="email-link" href="mailto:xxxxx"><li class="button"><span class="icon-envelope"></span>clarkkent@gmail.com</li></a>
+                        </ul>
+                        <p>Once you’ve spoken to the candidate and gathered and validated their symptoms and history, based on your evaluation you may upgrade this case’s status to <span class="in-progress-color">Management In-Progress</span> or downgrade it to <span class="dropped-color">Dropped</span>.</p>
+                        <p>Alternatively, if the case is already being tended to by another healthcare provider, please change the case’s status to <span class="elsewhere-color">Managed Elsewhere</span>; or if you decide to forward this case to a different healthcare provider as a referral, to <span class="referred-color">Referred Elsewhere</span>.</p>
+                        <p>Lastly, if you cannot make contact with the candidate even after multiple and varied attempts, kindly downgrade this case’s status to <span class="unreachable-color">Unreachable</span>.</p>
+                        <div class="update-case-button-group">
+                            <div class="button up in-progress">
+                                Upgrade Case to MANAGEMENT IN-PROGRESS
+                            </div>
+                            <div class="button down dropped">
+                                Reclassify Case as DROPPED
+                            </div>
+                            <div class="button down elsewhere">
+                                Reclassify Case as MANAGED ELSEWHERE
+                            </div>
+                            <div class="button down referred">
+                                Reclassify Case as REFERRED ELSEWHERE
+                            </div>
+                            <div class="button down unreachable">
+                                Reclassify Case as UNREACHABLE
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-status-update-box hidden" id="dropped">
+                    <div class="case-status-top-bar">
+                        <span>CASE STATUS</span>
+                    </div>
+                    <div class="box-proper">
+                        <h1>Dropped</h1>
+                        <p>This case has been dropped. That means that based on the follow-up with the candidate, their reported symptoms, history, and pre-existing conditions do not require continued professional medical attention.</p>
+                        <p>If you believe that the case does warrant management, please contact the candidate once more to reaffirm the necessity of medical care and provide the appropriate management:</p>
+                            <ul>
+                                <a class="number-link" href="tel:+63000000"><li class="button"><span class="icon-phone"></span>09162165262</li></a>
+                                <a class="email-link" href="mailto:xxxxx"><li class="button"><span class="icon-envelope"></span>clarkkent@gmail.com</li></a>
+                            </ul>
+                        <p>Once you're done with that, you can upgrade the case’s status to <span class="in-progress-color">MANAGEMENT IN-PROGRESS</span>.</p>
+                        <p>Alternatively, if the case is already being tended to by another healthcare provider, please change the case’s status to <span class="elsewhere-color">Managed Elsewhere</span>; or if you decide to forward this case to a different healthcare provider as a referral, to <span class="referred-color">Referred Elsewhere</span>.</p>
+                        <p>You may also revert this case to its initial status of <span class="qualified-color">QUALIFIED</span>.</p>
+                        <div class="update-case-button-group">
+                            <div class="button up in-progress">
+                                Upgrade Case to MANAGEMENT IN-PROGRESS
+                            </div>
+                            <div class="button down elsewhere">
+                                Reclassify Case as MANAGED ELSEWHERE
+                            </div>
+                            <div class="button down referred">
+                                Reclassify Case as REFERRED ELSEWHERE
+                            </div>
+                            <div class="button down default">
+                                Revert Case to QUALIFIED
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-status-update-box hidden" id="elsewhere">
+                    <div class="case-status-top-bar">
+                        <span>CASE STATUS</span>
+                    </div>
+                    <div class="box-proper">
+                        <h1>Managed Elsewhere</h1>
+                        <p>This case is already being managed by another healthcare provider.</p>
+                        <p>If the candidate was referred to the other healthcare provider by you, please reclassify this case's status to <span class="referred-color">Referred Elsewhere</span>.</p>
+                        <p>You may also revert this case to its initial status of <span class="qualified-color">QUALIFIED</span>.</p>
+                        <div class="update-case-button-group">
+                            <div class="button up referred">
+                                Reclassify Case as REFERRED ELSEWHERE
+                            </div>
+                            <div class="button down default">
+                                Revert Case to QUALIFIED
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-status-update-box hidden" id="referred">
+                    <div class="case-status-top-bar">
+                        <span>CASE STATUS</span>
+                    </div>
+                    <div class="box-proper">
+                        <h1>Referred Elsewhere</h1>
+                        <p>You have referred this case to another healthcare provider.</p>
+                        <p>If the candidate secured their management on their own without your direct referral, please reclassify this case's status to <span class="elsewhere-color">Managed Elsewhere</span>.</p>
+                        <p>You may also revert this case to its initial status of <span class="qualified-color">QUALIFIED</span>.</p>
+                        <div class="update-case-button-group">
+                            <div class="button up elsewhere">
+                                Reclassify Case as MANAGED ELSEWHERE
+                            </div>
+                            <div class="button down default">
+                                Revert Case to QUALIFIED
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-status-update-box hidden" id="unreachable">
+                    <div class="case-status-top-bar">
+                        <span>CASE STATUS</span>
+                    </div>
+                    <div class="box-proper">
+                        <h1>Unreachable</h1>
+                        <p>This case has been deemed unreachable. That means that you could not contact with the candidate to conduct a follow-up in spite of continued and multiple attempts through both calls, text messages, and emails.</p>
+                        <p>If you would like to attempt contacting the candidate again, you may reach them via:</p>
+                        <ul>
+                            <a class="number-link" href="tel:+63000000"><li class="button"><span class="icon-phone"></span>09162165262</li></a>
+                            <a class="email-link" href="mailto:xxxxx"><li class="button"><span class="icon-envelope"></span>clarkkent@gmail.com</li></a>
+                        </ul>
+                        <p>If you are successful with communicating with the candidate, proceed with gathering and validating their symptoms and history. Based on your evaluation you may upgrade this case’s status to <span class="in-progress-color">Management In-Progress</span> or downgrade it to <span class="dropped-color">Dropped</span>.</p>
+                        <p>Alternatively, if the case is already being tended to by another healthcare provider, please change the case’s status to <span class="elsewhere-color">Managed Elsewhere</span>; or if you decide to forward this case to a different healthcare provider as a referral, to <span class="referred-color">Referred Elsewhere</span>.</p>
+                        <p>Lastly, may also revert this case to its initial status of <span class="qualified-color">QUALIFIED</span>.</p>
+                        <div class="update-case-button-group">
+                            <div class="button up in-progress">
+                                Upgrade Case to MANAGEMENT IN-PROGRESS
+                            </div>
+                            <div class="button down dropped">
+                                Reclassify Case as DROPPED
+                            </div>
+                            <div class="button down elsewhere">
+                                Reclassify Case as MANAGED ELSEWHERE
+                            </div>
+                            <div class="button down referred">
+                                Reclassify Case as REFERRED ELSEWHERE
+                            </div>
+                            <div class="button down default">
+                                Revert Case to QUALIFIED
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-status-update-box hidden" id="in-progress">
+                    <div class="case-status-top-bar">
+                        <span>CASE STATUS</span>
+                    </div>
+                    <div class="box-proper">
+                        <h1>Management <span style="white-space: nowrap;">In-Progress</span></h1>
+                        <p>If this patient’s care at your hospital has come to an end, please change the case’s status to either <span class="recovered-color">Recovered</span> or <span class="deceased-color">Deceased</span>, based on the outcome.</p>
+                        <div class="update-case-button-group">
+                            <div class="button up recovered">
+                                Upgrade Case to RECOVERED
+                            </div>
+                            <div class="button down deceased">
+                                Reclassify Case as DECEASED
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-status-update-box hidden" id="recovered">
+                    <div class="case-status-top-bar">
+                        <span>CASE STATUS</span>
+                    </div>
+                    <div class="box-proper">
+                        <h1>Recovered</h1>
+                        <p>This patient is deemed to have fully recovered from COVID-19.</p>
+                        <p>If you believe that this judgement is premature, you may downgrade this case back to <span class="in-progress-color">Management In-Progress</span>.</p>
+                        <p>Alternatively, you may revert this case's status to <span class="qualified-color">QUALIFIED</span> or <span class="default-color">SELF-ASSESSED</span>.</p>
+                        <div class="update-case-button-group">
+                            <div class="button up in-progress">
+                                Downgrade Case to MANAGEMENT IN-PROGRESS
+                            </div>
+                            <div class="button down qualified">
+                                Revert Case as QUALIFIED
+                            </div>
+                            <div class="button down default">
+                                Revert Case as SELF-ASSESSED
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-status-update-box hidden" id="deceased">
+                    <div class="case-status-top-bar">
+                        <span>CASE STATUS</span>
+                    </div>
+                    <div class="box-proper">
+                        <h1>Deceased</h1>
+                        <p>This patient has died.</p>
+                        <p>If this conclusion has been made in error, kindly downgrade this case back to <span class="in-progress-color">Management In-Progress</span>.</p> 
+                        <p>Alternatively, you may revert this case's status to <span class="qualified-color">QUALIFIED</span> or <span class="default-color">SELF-ASSESSED</span>.</p>
+                        <div class="update-case-button-group">
+                            <div class="button up in-progress">
+                                Downgrade Case to MANAGEMENT IN-PROGRESS
+                            </div>
+                            <div class="button down qualified">
+                                Revert Case as QUALIFIED
+                            </div>
+                            <div class="button down default">
+                                Revert Case as SELF-ASSESSED
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <span class="bottom-utility-link">Last Update: <span class="medium-dark" id="date-modified">04/28/2020 15:56</span><br><a href="">View Changelog</a></span>
+    </main>
+
+    <footer>
+        <section class="kneeler">
+            <div class="kneeler-proper">
+                <div class="about">
+                    <h4>About</h4>
+                    <p>Project Moses is a Crisis Response Toolbox that aims to be an all-in-one web dashboard for Filipinos in times of calamity and crisis mainly and should still be relevant even in times of peace. We are starting with a Virtual Triage that could match patients with hospitals. It is a publicly accessible collaboration tool using Information Communication Technology (ICT) meant to connect COVID-19 response actors.</p>
+                    <a href="about-project-moses.html">Learn More About the Project</a>
+                </div>
+            <div class="kneeler-links col1">
+                <h4>Tools</h4>
+                <li><a href="triage.html">Self-Triage Tool</a></li>
+                <li><a href="hospital-directory.html">Hospital Directory</a></li>
+                <li><a href="hospital-portal.html">Hospital Portal</a></li>
+            </div>
+            <div class="kneeler-links col2">
+                <h4>Info</h4>
+                <li><a href="clinics.html">Clinics</a></li>
+                <li><a href="grocery-stories.html">Grocery Stores</a></li>
+                <li><a href="pharmacies.html">Pharmacies</a></li>
+                <li><a href="roads.html">Roads</a></li>
+            </div>
+            <div class="kneeler-links col3">
+                <h4>News</h4>
+                <li><a href="government-announcements.html">Government Announcements</a></li>
+                <li><a href="news-aggregator.html">News Media Aggregator</a></li>
+            </div>
+            <div class="kneeler-links col4">
+                <h4>Resources</h4>
+                <li><a href="official-statements.html">Official Statements Archive</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="emerging-research.html">Emerging Research</a></li>
+                <li><a href="useful-links.html">Useful Links</a></li>
+                <li><a href="covid-19-apps.html">COVID-19 Apps</a></li>
+            </div>
+            </div>
+            <img src="./ASSETS/img/logo-white.png" alt="" class="white-logo">
+            <div class="socmed-container">
+                <a href="https://www.facebook.com/Bridge360PH" title="Like us on Facebook!" target="_blank"><span class="icon icon-facebook-square"></span></a>
+                <a href="https://twitter.com/bridge360PH" title="Follow us on Twitter!" target="_blank"><span class="icon icon-twitter-square"></span></a>
+                <a href="https://www.linkedin.com/company/bridge360ph/" title="Follow us on LinkedIn!" target="_blank"><span class="icon icon-linkedin-square"></span></a>
+            </div>
+        </section>
+        <section class="foot">
+            <p>2020 Copyright Bridge 360. All Rights Reserved.</p>
+        </section>
+
+    </footer>
+
+    <script src="js/main.min.js"></script>
+</body>
+
+
+</html>

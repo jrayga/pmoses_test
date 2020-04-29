@@ -1,0 +1,591 @@
+<div ng-if="isLoading" class="container">
+    <div class="row loader-row">
+        <div class="col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="!isLoading" class="container-fluid admin-page">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <p class="breadcrumbs">Admin > Main Dashboard</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 d-flex justify-content-end">
+            <button type="button" ng-click="logOut()" class="button">Admin Logout</button>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row mt-2">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <h3>Admin Tables</h3>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-sm-12 col-md-4 co-lg-4" ng-repeat="(k,v) in adminPages track by $index">
+            <button type="button" class="button table-button" ng-class="{'active' : v.active === true}"
+                ng-click="switchTable(v)">{{v.name}}</button>
+        </div>
+    </div>
+
+    <hr />
+
+    <div ng-if="sections.hospitals" class="row mt-3">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <table class="adminTable">
+                <caption>Approved Users</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Hospital Name</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Profession</th>
+                        <th scope="col">Position at Hospital</th>
+                        <th scope="col">User Name</th>
+                        <th scope="col">Email Address</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-if="hospitals.length > 0" ng-repeat="(k,v) in hospitals track by $index">
+                        <td data-label="Hospital Name">{{v.hospital_name}}</td>
+                        <td data-label="Full Name">{{v.person_name}}</td>
+                        <td data-label="Department">{{v.department}}</td>
+                        <td data-label="Profession">{{v.profession}}</td>
+                        <td data-label="Position at Hospital">{{v.position}}</td>
+                        <td data-label="User Name">{{v.username}}</td>
+                        <td data-label="Email Address">{{v.email}}</td>
+                        <td data-label="Options">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <button type="button" ng-click="deleteHospital(v.public_id)"
+                                        class="button disapproved-btn" title="BUTTON DISABLED" disabled>Delete
+                                        Hospital</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr ng-if="hospitals.length === 0">
+                        <td colspan="8" data-label="Message">
+                            <h3>No Registered Hospitals Found!</h3>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+            <div class="row" ng-if="pager.pages.length">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="pagination">
+                        <a ng-class="{disabled: pager.currentPage === 1}" href="">&laquo;</a>
+                        <a ng-repeat="page in pager.pages track by $index"
+                            ng-class="{active:vm.pager.currentPage === page}" ng-click="setPage(page)"
+                            href="">{{page}}</a>
+                        <a ng-class="{disabled:pager.currentPage === pager.totalPages}"
+                            ng-click="setPage(pager.totalPages)" href="">&raquo;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-end">
+                    <button type="button" ng-click="addHospital('add')" class="add-item-btn">+</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div ng-if="sections.submissions" class="row mt-3">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <table class="adminTable">
+                <caption>Hospital Request Access Submissions</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Hospital Name</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Profession</th>
+                        <th scope="col">Position at Hospital</th>
+                        <th scope="col">User Name</th>
+                        <th scope="col">Email Address</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-if="requestAccess.length > 0" ng-repeat="(k,v) in requestAccess track by $index">
+                        <td data-label="Hospital Name">{{v.hospital_name}}</td>
+                        <td data-label="Full Name">{{v.person_name}}</td>
+                        <td data-label="Department">{{v.department}}</td>
+                        <td data-label="Profession">{{v.profession}}</td>
+                        <td data-label="Position at Hospital">{{v.position}}</td>
+                        <td data-label="User Name">{{v.username}}</td>
+                        <td data-label="Email Address">{{v.email}}</td>
+                        <td data-label="Options">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <button type="button" ng-click="changeStatus(v.public_id, 'approve')"
+                                        class="button approved-btn">Approve</button>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <button type="button" ng-click="changeStatus(v.public_id, 'disapprove')"
+                                        class="button disapproved-btn">Disapprove</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr ng-if="requestAccess.length === 0">
+                        <td colspan="8" data-label="Message">
+                            <h3>No Hospitals Requests Found!</h3>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div ng-if="sections.apps" class="row mt-3">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <table class="adminTable">
+                <caption>Covid19 Apps</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">App Name</th>
+                        <th scope="col">App Type</th>
+                        <th scope="col">App URL</th>
+                        <th scope="col">App Devs</th>
+                        <th scope="col">App Image</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-if="apps.length > 0">
+                        <td data-label="App Name">CovidTracker</td>
+                        <td data-label="App Type">Case Trackers</td>
+                        <td data-label="App URL">
+                            <a href="" target="_blank">Sample URL</a>
+                        </td>
+                        <td data-label="App Devs">Devs Sample</td>
+                        <td data-label="App Image">
+                            <button type="button" class="button">See Image</button>
+                        </td>
+                        <td data-label="Options">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <button type="button" class="button edit-btn">Edit Details</button>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <button type="button" class="button disapproved-btn">Remove</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr ng-if="apps.length === 0">
+                        <td colspan="6" data-label="Message">
+                            <h3>No Covid19 Apps Found!</h3>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="row mt-2">
+                <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-end">
+                    <button type="button" ng-click="addEditApp('add')" class="add-item-btn">+</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div ng-if="sections.researches" class="row mt-3">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <table class="adminTable">
+                <caption>Emerging Researches</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Authors</th>
+                        <th scope="col">Date Published</th>
+                        <th scope="col">Institutions</th>
+                        <th scope="col">Abstract</th>
+                        <th scope="col">Link</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-if="researches.length > 0">
+                        <td data-label="Title">Sample Title</td>
+                        <td data-label="Authors">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur praesentium a
+                            debitis, vitae quae sed ipsa eveniet consequatur quidem voluptatem sequi tempora odio,
+                            recusandae pariatur consequuntur nam est eaque placeat!
+                        </td>
+                        <td data-label="Date Published">April 18, 2020 12:46AM</td>
+                        <td data-label="Institutions">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur praesentium a
+                            debitis, vitae quae sed ipsa eveniet consequatur quidem voluptatem sequi tempora odio,
+                            recusandae pariatur consequuntur nam est eaque placeat!
+                        </td>
+                        <td data-label="Abstract">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur praesentium a
+                            debitis, vitae quae sed ipsa eveniet consequatur quidem voluptatem sequi tempora odio,
+                            recusandae pariatur consequuntur nam est eaque placeat!
+                        </td>
+                        <td data-label="Link">
+                            <a href="" target="_blank">Test URL</a>
+                        </td>
+                        <td data-label="Options">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <button type="button" class="button edit-btn">Edit Details</button>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <button type="button" class="button disapproved-btn">Remove</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr ng-if="researches.length === 0">
+                        <td colspan="7" data-label="Message">
+                            <h3>No Researches Found!</h3>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="row mt-2">
+                <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-end">
+                    <button type="button" ng-click="addEditResearch('add')" class="add-item-btn">+</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div ng-if="sections.annoucements" class="row mt-3">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <table class="adminTable">
+                <caption>Government Annoucements</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Date Announced</th>
+                        <th scope="col">Source</th>
+                        <th scope="col">Source Link</th>
+                        <th scope="col">Announcement</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-if="annoucements.length > 0">
+                        <td data-label="Date Announced">April 18, 2020 12:46AM</td>
+                        <td data-label="Source">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur praesentium a
+                            debitis, vitae quae sed ipsa eveniet consequatur quidem voluptatem sequi tempora odio,
+                            recusandae pariatur consequuntur nam est eaque placeat!
+                        </td>
+                        <td data-label="Source Link">
+                            <a href="" target="_blank">Test URL</a>
+                        </td>
+                        <td data-label="Announcement">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur praesentium a
+                            debitis, vitae quae sed ipsa eveniet consequatur quidem voluptatem sequi tempora odio,
+                            recusandae pariatur consequuntur nam est eaque placeat!
+                        </td>
+                        <td data-label="Options">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <button type="button" class="button edit-btn">Edit Details</button>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <button type="button" class="button disapproved-btn">Remove</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr ng-if="annoucements.length === 0">
+                        <td colspan="5" data-label="Message">
+                            <h3>No Government Annoucements Found!</h3>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="row mt-2">
+                <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-end">
+                    <button type="button" ng-click="addEditAnnouncement('add')" class="add-item-btn">+</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Dialogs -->
+<script type="text/ng-template" id="AddOrEditApp">
+    <div class="ngdialog-message">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h4>{{appTemplateMSG}}</h4>
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+        
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="app_name">App Name</label>
+            <input type="text" id="app_name" name="app_name" ng-model="form.app_name" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="app_type">App Type</label>
+            <select id="app_type" name="app_type" ng-model="form.app_type" class="form-control">
+                <option value="Case Trackers">Case Trackers</option>
+                <option value="Self Assessment">Self Assessment</option>
+                <option value="Donation Platforms">Donation Platforms</option>
+                <option value="Transportation Groups & Tools">Transportation Groups & Tools</option>
+                <option value="Citizens in Action">Citizens in Action</option>
+                <option value="Government Efforts">Government Efforts</option>
+                <option value="For Developers">For Developers</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="app_link">App URL</label>
+            <input type="text" id="app_link" name="app_link" ng-model="form.app_link" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="app_devs">App Devs</label>
+            <input type="text" id="app_devs" name="app_devs" ng-model="form.app_devs" class="form-control" />
+        </div>
+    </div>
+   
+    <div class="row mt-1">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="appImageUpload">* Only png or jpg files are
+                allowed. <small>5mb Max file size and please follow the image format of 300px width x 160px height.</small></label>
+            <input id="appImageUpload" name="appImageUpload" type="file" class="form-control" tabindex="15"
+                nv-file-select="" accept=".jpg,.png" uploader="appImageUpload"
+                filters="enforceMaxFileSize, imageFilter" />
+        </div>
+    </div>
+
+    <div class="row" ng-if="uploadingImage">
+        <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+            <div class="uploading-loader"></div>
+        </div>
+    </div>
+
+    <div class="row mt-2" ng-if="!uploadingImage">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <button type="button" class="button" ng-click="appImageUpload.cancelAll()"
+                ng-disabled="!appImageUpload.isUploading">
+                <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+            </button>
+            <button type="button" class="button" ng-click="appImageUpload.uploadAll()"
+                ng-disabled="!appImageUpload.getNotUploadedItems().length">
+                <span class="glyphicon glyphicon-upload"></span> Upload
+            </button>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="ngdialog-buttons">
+        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog('Cancel')">Save</button>
+        <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="confirm('Save')">Close</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="AddOrEditResearch">
+    <div class="ngdialog-message">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h4>{{appTemplateMSG}}</h4>
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+        
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="category">Research Category</label>
+            <select id="category" name="category" ng-model="form.category" class="form-control">
+                <option value="Data Modelling">Data Modelling</option>
+                <option value="COVID19 Genes">COVID19 Genes</option>
+                <option value="Epidemic Calculator">Epidemic Calculator</option>
+                <option value="COVID19 Origin">COVID19 Origin</option>
+                <option value="Effective Government Actions">Effective Government Actions</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" ng-model="form.title" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="authors">Authors</label>
+            <textarea type="text" id="authors" name="authors" ng-model="form.authors" class="form-control-textarea" rows="5"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="date_published">Date Published</label>
+            <input type="date" id="date_published" name="date_published" ng-model="form.date_published" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="institutions">Institutions</label>
+            <input type="text" id="institutions" name="institutions" ng-model="form.institutions" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="abstract">Abstract</label>
+            <textarea type="text" id="abstract" name="abstract" ng-model="form.abstract" class="form-control-textarea" rows="10"></textarea>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="ngdialog-buttons">
+        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog('Cancel')">Save</button>
+        <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="confirm('Save')">Close</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="AddOrEditAnnouncement">
+    <div class="ngdialog-message">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h4>{{appTemplateMSG}}</h4>
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+        
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="date_announced">Date Published</label>
+            <input type="date" id="date_announced" name="date_announced" ng-model="form.date_announced" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="source">Source</label>
+            <input type="text" id="source" name="source" ng-model="form.source" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="source_link">Source Link</label>
+            <input type="text" id="source_link" name="source_link" ng-model="form.source_link" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="announcement">Announcement</label>
+            <textarea type="text" id="announcement" name="announcement" ng-model="form.announcement" class="form-control-textarea" rows="10"></textarea>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="ngdialog-buttons">
+        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog('Cancel')">Save</button>
+        <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="confirm('Save')">Close</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="AddOrEditHospitals">
+    <div class="ngdialog-message">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h4>{{appTemplateMSG}}</h4>
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+        
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="hospital_name">Hospital Name</label>
+            <input type="text" id="hospital_name" name="hospital_name" ng-model="form.hospital_name" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="person_name">Person Name</label>
+            <input type="text" id="person_name" name="person_name" ng-model="form.person_name" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="department">Department</label>
+            <input type="text" id="department" name="department" ng-model="form.department" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="profession">Profession</label>
+            <input type="text" id="profession" name="profession" ng-model="form.profession" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="position">Position</label>
+            <input type="text" id="position" name="position" ng-model="form.position" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" ng-model="form.username" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" ng-model="form.password" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" ng-model="form.email" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <label for="contact_num">Contact Number</label>
+            <input type="text" id="contact_num" name="contact_num" ng-model="form.contact_num" is-number class="form-control" />
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="ngdialog-buttons">
+        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog('Cancel')">Save</button>
+        <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="confirm('Save')">Close</button>
+    </div>
+</script>

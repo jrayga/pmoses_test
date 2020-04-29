@@ -1,0 +1,56 @@
+<div ng-if="isLoading" class="container">
+    <div class="row loader-row">
+        <div class="col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="!isLoading" class="hospital-portal">
+    <div class="breadcrumb"><a href="#hospital-portal">Hospital Portal</a> > <span class="current-location">Please
+            Login</span></div>
+    <section class="login">
+        <div class="login-form">
+            <div class="description">
+                <h1>Hello.</h1>
+                <p>Welcome to the <strong>Project Moses Hospital Portal</strong>. Using this tool, you can submit
+                    information so that the public and your fellow front-liners are always up to date on your hospital’s
+                    status. You’ll also gain access to our real-time dashboard which collates critical PUI cases
+                    reported on our Self-Triage Tool.</p>
+                <h5>To start using the Hospital Portal, please log in.</h5>
+            </div>
+            <div class="form-actual">
+                <div class="form-fields">
+                    <div class="field-element">
+                        <label for="username" class="input-label">Username</label>
+                        <div class="input-field-container">
+                            <input type="text" name="username" id="username" class="input-field text"
+                                ng-model="loginForm.username" ng-keypress="($event.charCode==13)?login():return"
+                                tabindex="1">
+                            <div class="leftbar"></div>
+                        </div>
+                    </div>
+                    <div class="field-element">
+                        <label for="password" class="input-label">Password</label>
+                        <div class="input-field-container">
+                            <input type="password" name="password" id="password" class="input-field text"
+                                ng-model="loginForm.password" ng-keypress="($event.charCode==13)?login():return"
+                                tabindex="2">
+                            <div class="leftbar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ok button" ng-click="login()" tabindex="3">
+                    Log Me In
+                </div>
+                <span class="forgot-password"><a href="" tabindex="4">Forgot your Password?</a></span>
+            </div>
+        </div>
+        <span class="bottom-utility-link">No Account? <a href="#/request-access" tabindex="5">Request
+                Access</a></span>
+    </section>
+</div>

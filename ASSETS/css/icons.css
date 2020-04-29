@@ -1,0 +1,225 @@
+@font-face {
+    font-family: 'icomoon';
+    src:    url('../fonts/icomoon.eot?2pt924');
+    src:    url('../fonts/icomoon.eot?2pt924#iefix') format('embedded-opentype'),
+            url('../fonts/icomoon.ttf?2pt924') format('truetype'),
+            url('../fonts/icomoon.woff?2pt924') format('woff'),
+            url('../fonts/icomoon.svg?2pt924#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+/* Better Font Rendering =========== */
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-govt:before {
+  content: "\e932";
+}
+.icon-private:before {
+  content: "\e933";
+}
+.icon-clinic:before {
+  content: "\e92d";
+}
+.icon-drugstore:before {
+  content: "\e92e";
+}
+.icon-grocery:before {
+  content: "\e92f";
+}
+.icon-road:before {
+  content: "\e930";
+}
+.icon-flag-close-contact:before {
+  content: "\e926";
+}
+.icon-flag-travel:before {
+  content: "\e927";
+}
+.icon-flag-hcw:before {
+  content: "\e928";
+}
+.icon-flag-pregnant:before {
+  content: "\e929";
+}
+.icon-flag-elderly:before {
+  content: "\e92a";
+}
+.icon-flag-comorbid:before {
+  content: "\e92b";
+}
+.icon-update-hospital:before {
+  content: "\e925";
+}
+.icon-symptom-sore-throat-new:before {
+  content: "\e917";
+}
+.icon-icon-negative:before {
+  content: "\e921";
+}
+.icon-icon-positive:before {
+  content: "\e922";
+}
+.icon-icon-uncertain:before {
+  content: "\e923";
+}
+.icon-icon-waiting:before {
+  content: "\e924";
+}
+.icon-social-distancing:before {
+  content: "\e920";
+}
+.icon-env-church:before {
+  content: "\e91c";
+}
+.icon-env-classroom:before {
+  content: "\e91d";
+}
+.icon-env-home:before {
+  content: "\e91e";
+}
+.icon-env-office:before {
+  content: "\e91f";
+}
+.icon-help:before {
+  content: "\e931";
+}
+.icon-symptom-breath:before {
+  content: "\e913";
+}
+.icon-symptom-cough:before {
+  content: "\e914";
+}
+.icon-symptom-fever:before {
+  content: "\e915";
+}
+.icon-symptom-sick:before {
+  content: "\e916";
+}
+.icon-icon-supplies:before {
+  content: "\e90b";
+}
+.icon-icon-hospital:before {
+  content: "\e90c";
+}
+.icon-icon-test:before {
+  content: "\e90d";
+}
+.icon-icon-patient:before {
+  content: "\e90e";
+}
+.icon-cancel:before {
+  content: "\e905";
+}
+.icon-twitter-square:before {
+  content: "\e901";
+}
+.icon-facebook-square:before {
+  content: "\e907";
+}
+.icon-map:before {
+  content: "\e902";
+}
+.icon-search:before {
+  content: "\e903";
+}
+.icon-chevron-down:before {
+  content: "\e904";
+}
+.icon-check:before {
+  content: "\e912";
+}
+.icon-calendar:before {
+  content: "\e911";
+}
+.icon-filter:before {
+  content: "\e909";
+}
+.icon-sort-amount-desc:before {
+  content: "\e90a";
+}
+.icon-linkedin-square:before {
+  content: "\e908";
+}
+.icon-bin:before {
+  content: "\e935";
+}
+.icon-checkbox-unchecked:before {
+  content: "\e91a";
+}
+.icon-checkbox-checked:before {
+  content: "\e91b";
+}
+.icon-floppy:before {
+  content: "\e934";
+}
+.icon-disk:before {
+  content: "\e934";
+}
+.icon-save:before {
+  content: "\e934";
+}
+.icon-store:before {
+  content: "\e934";
+}
+.icon-mobile:before {
+  content: "\e918";
+}
+.icon-phone:before {
+  content: "\e919";
+}
+.icon-th-menu:before {
+  content: "\e906";
+}
+.icon-location_on:before {
+  content: "\e900";
+}
+.icon-place:before {
+  content: "\e900";
+}
+.icon-room:before {
+  content: "\e900";
+}
+.icon-edit:before {
+  content: "\e92c";
+}
+.icon-male:before {
+  content: "\e90f";
+}
+.icon-gender:before {
+  content: "\e90f";
+}
+.icon-man:before {
+  content: "\e90f";
+}
+.icon-sex:before {
+  content: "\e90f";
+}
+.icon-female:before {
+  content: "\e910";
+}
+.icon-gender1:before {
+  content: "\e910";
+}
+.icon-sex1:before {
+  content: "\e910";
+}
+.icon-woman:before {
+  content: "\e910";
+}
+.icon-envelope:before {
+  content: "\e936";
+}

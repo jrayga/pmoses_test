@@ -1,0 +1,316 @@
+
+.mobile-controls {
+    background: color(light);
+    padding: 0.8em 1em;
+    position: sticky;
+    top: 0;
+    box-shadow:  0 5px 10px rgba(0,0,0,0.015), 0 3px 3px rgba(0,0,0,0.1);
+    z-index: 800;
+
+    .displaying {
+        margin: 0 0 0.5em 0;
+    }   
+    .superline {
+        display: block;
+        font-size: 0.6em;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        color: color(blue-dark);
+    }
+
+    .search-terms {
+        font-size: 0.85em;
+        letter-spacing: 1px;
+        font-weight: 300;
+    }
+    
+    .sorter-and-filter {
+        display: flex;
+        justify-content: space-between;
+
+        .sorter-wrap {
+            flex: 4;
+        }
+        .filter-search-wrap {
+            flex: 2;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+    }
+
+    .sorter, .filter, .search {
+        display: flex;
+        align-items: center;
+    }
+
+    .sorter {
+        border: 1px solid color(grey);
+        padding: 0.2em 0.5em;
+        border-radius: 5px;
+        position: relative;
+        height: 100%;
+        width: 48vw;
+        max-width: 175px;
+
+        &::after {
+            font-family: 'icomoon' !important;
+            content: '\e904';
+            position: absolute;
+            right: 0.3em;
+            top: 50%;
+            font-size: 80%;
+            transform: translateY(-50%);
+        }
+    }
+
+    .filter, .search {
+        border: 1px solid color(grey);
+        border-radius: 5px;
+        padding: 0.2em 0.25em;
+        text-align: center;
+    }
+    .search {
+        margin-left: 0.25em;
+    }
+
+}
+
+.wide-controls {
+    padding: 0.5em 2em;
+    display: none;
+    //position: sticky;
+    //top: 46px;
+    //z-index: 800;
+    //background: color(lightest);
+    //border-bottom: 1px solid color(medium);
+    
+    .row1, .row2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0.75em 0;
+    }
+
+    .label {
+        font-size: 0.7em;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: color(blue-dark);
+        width: 100px;
+        margin-bottom: 0.5em;
+        display: flex;
+        align-items: center;
+
+        &.refine {
+            width: auto;
+            margin-right: 2em;
+        }
+    }
+
+    .narrower {
+        font-size: 0.7em;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: color(blue-dark);
+    }
+
+    .control-item {
+        display: inline-block;
+        font-size: 0.9em;
+        font-weight: 400;
+        border: 1px solid color(dark);
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-bottom: 0.5em;
+        position: relative;
+        color: color(grey);
+        transition: 250ms ease-in-out;
+        cursor: pointer;
+
+        strong {
+            font-weight: 500;
+        }
+
+        &:hover, &:focus {
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.15);
+            border-color: color(blue-4);
+            color: color(blue-4);
+        }
+
+        &:active, &.quick-filter-selected {
+            border-color: color(blue-4);
+            background: color(blue-4);
+            color: color(lightest);
+            font-weight: 500;
+            box-shadow: unset;
+        }
+
+        &.dropdown {
+            border-color: color(grey);
+
+            &::after {
+                font-family: 'icomoon' !important;
+                content: '\e904';
+                top: 50%;
+                color: inherit;
+                margin-left: 0.5em;
+                display: inline-block;
+                transition: 200ms ease;
+                font-size:0.8em;
+            }
+
+            &:hover, &:focus {
+                border-color: color(signature) !important;
+                color: color(signature);
+            }
+
+            &:active {
+                border-color: color(signature) !important;
+                font-weight: 500;
+            }
+        }
+
+        &.admitting {
+            &:hover, &:focus {
+                border-color: color(cyan-3) !important;
+                color: color(cyan-3);
+            }
+
+            &:active, &.quick-filter-selected {
+                border-color: color(cyan-3) !important;
+                background: color(cyan-3);
+                color: color(lightest);
+                font-weight: 500;
+                box-shadow: unset;
+            }
+        } 
+        
+        &.supplies {
+            &:hover, &:focus {
+                border-color: color(orange-2) !important;
+                color: color(orange-2);
+            }
+
+            &:active, &.quick-filter-selected {
+                border-color: color(orange-2) !important;
+                background: color(orange-2);
+                color: color(lightest);
+                font-weight: 500;
+                box-shadow: unset;
+            }
+        }
+
+        &.designated {
+            &:hover, &:focus {
+                border-color: color(indigo-3) !important;
+                color: color(indigo-3);
+            }
+
+            &:active, &.quick-filter-selected {
+                border-color: color(indigo-3) !important;
+                background: color(indigo-3);
+                color: color(lightest);
+                font-weight: 500;
+                box-shadow: unset;
+            }
+        }
+        
+        &.test  {
+            &:hover, &:focus {
+                border-color: color(violet-3) !important;
+                color: color(violet-3);
+            }
+
+            &:active, &.quick-filter-selected {
+                border-color: color(violet-3) !important;
+                background: color(violet-3);
+                color: color(lightest);
+                font-weight: 500;
+                box-shadow: unset;
+            }
+        }
+    }
+
+    .displaying {
+
+        .search-terms {
+
+            .control-item {
+                border-color: color(blue-4);
+                background: rgba(color(blue-3), 0.2);
+                color: color(blue-4);
+                font-weight: 500;
+    
+                &.term {
+                    position: relative;
+        
+                    &:hover, &:focus {
+                        color: color(lightest);
+                        border-color: color(red-4);
+                        background: color(red-4);
+                        padding-right: 1.5em;
+        
+                        &::after {
+                            font-family: 'icomoon' !important;
+                            content: '\e905';
+                            top: 50%;
+                            transform: translateY(-50%);
+                            position: absolute;
+                            right: 0.5em;
+                            color: inherit;
+                            transition: 100ms ease;
+                            font-size:0.8em;
+                            font-style: normal;
+                        }
+        
+                    }
+        
+                    &:active {
+                        border-color: color(red-2);
+                        color: color(red-2);
+                        font-style: normal;
+                        box-shadow: unset;
+                    }
+                }
+            }
+
+        }
+    }
+
+
+
+    .sorting {
+    }
+
+    .filters {
+    }
+
+    .filter-buttons {
+
+        .admitting {
+
+        }
+
+        .supplies {
+
+        }
+
+        .designated {
+
+
+        }
+
+        .test {
+
+        }
+
+    }
+
+    .dropdown {
+        
+    }
+    
+}

@@ -1,0 +1,63 @@
+@-webkit-keyframes slideToRight {
+  0% {
+    opacity          : 0;
+    -webkit-transform: translateX(-25vw) rotate(-90deg);
+    transform        : translateX(-25vw) rotate(-90deg);
+  }
+
+  100% {
+    opacity          : 1;
+    -webkit-transform: translateX(0px) rotate(-90deg);
+    transform        : translateX(0px) rotate(-90deg);
+  }
+}
+
+@keyframes slideToRight {
+  0% {
+    opacity          : 0;
+    -webkit-transform: translateX(-25vw) rotate(-90deg);
+    transform        : translateX(-25vw) rotate(-90deg);
+  }
+
+  100% {
+    opacity          : 1;
+    -webkit-transform: translateX(0px) rotate(-90deg);
+    transform        : translateX(0px) rotate(-90deg);
+  }
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(-45%) rotate(-180deg);
+    transform        : translateY(-45%) rotate(-180deg);
+  }
+
+  50% {
+    -webkit-transform: translateY(-60%) rotate(-180deg);
+    transform        : translateY(-60%) rotate(-180deg);
+  }
+
+  100% {
+    -webkit-transform: translateY(-35%) rotate(-180deg);
+    transform        : translateY(-35%) rotate(-180deg);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(-45%) rotate(-180deg);
+    transform        : translateY(-45%) rotate(-180deg);
+  }
+
+  50% {
+    -webkit-transform: translateY(-60%) rotate(-180deg);
+    transform        : translateY(-60%) rotate(-180deg);
+  }
+
+  100% {
+    -webkit-transform: translateY(-35%) rotate(-180deg);
+    transform        : translateY(-35%) rotate(-180deg);
+  }
+}
+
+/*# sourceMappingURL=animations.css.map */

@@ -1,0 +1,493 @@
+.update-case-page {
+    width  : 100%;
+    height : 100%;
+    padding: 1.5rem 3rem !important;
+}
+
+.update-case-page .breadcrumbs {
+    font-size: 12px;
+    color    : #757575;
+}
+
+.update-case-page .welcome-msg {
+    font-size : 12px;
+    color     : #757575;
+    text-align: end;
+}
+
+.update-case-page .case-id-box {
+    width          : 100%;
+    height         : 30px;
+    background     : #238acf;
+    border-radius  : 5px;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    flex-wrap      : wrap;
+    color          : #ffffff;
+    font-weight    : 500;
+}
+
+.update-case-page .patient-name-address {
+    font-weight: 500;
+}
+
+.update-case-page .status-and-date {
+    font-size: 16px;
+}
+
+.update-case-page .case-status-header {
+    width          : 100%;
+    height         : 30px;
+    background     : #47b6e6;
+    border-radius  : 5px;
+    display        : flex;
+    flex-wrap      : wrap;
+    align-items    : center;
+    justify-content: center;
+    color          : #ffffff;
+    font-weight    : 500;
+}
+
+.update-case-page .box {
+    width        : 100%;
+    height       : auto;
+    background   : #fcfcfc;
+    border       : 1px solid black;
+    border-radius: 5px;
+    padding      : 2rem 1rem;
+}
+
+.update-case-page .box .title {
+    text-align : center;
+    font-weight: 500;
+    color      : #47b6e6;
+}
+
+.update-case-page .box .btn {
+    width : 100%;
+    height: 40px;
+    margin: 5px auto;
+}
+
+.update-case-page .edit-btn {
+    width      : 15%;
+    font-size  : 12px;
+    background : #238acf;
+    color      : #ffffff;
+    font-weight: 600;
+}
+
+.update-case-page .hospital-details-container {
+    width    : 100%;
+    height   : auto;
+    font-size: 13px;
+    color    : #373737;
+}
+
+.update-case-page .case-update-btn {
+    width    : 100%;
+    font-size: 12px;
+}
+
+.update-case-page .hospital-card-detail {
+    -webkit-transition: all 200ms ease-in-out;
+    transition        : all 200ms ease-in-out;
+    margin            : 10px auto;
+    cursor            : pointer;
+}
+
+.update-case-page .hospital-card-detail .left-bar {
+    width        : 2%;
+    border-radius: 8px 0px 0px 8px;
+}
+
+.update-case-page .save-changes-btn {
+    width      : 100%;
+    background : #238acf;
+    color      : #ffffff;
+    font-weight: 600;
+    font-size  : x-small;
+}
+
+.update-case-page .cancel-btn {
+    width      : 100%;
+    background : #ffffff;
+    color      : #c3455f;
+    border     : 1px solid #c3455f;
+    font-weight: 600;
+    font-size  : x-small;
+}
+
+.update-case-page .text-area {
+    width : 100%;
+    resize: none;
+}
+
+/* STYLE OF CHECKBOXES START */
+/* The container */
+.checkbox-container {
+    /* display            : block !important; */
+    position              : relative !important;
+    padding-left          : 35px !important;
+    margin-bottom         : 12px !important;
+    cursor                : pointer !important;
+    font-size             : 22px !important;
+    -webkit-user-select   : none !important;
+    -moz-user-select      : none !important;
+    -ms-user-select       : none !important;
+    user-select           : none !important;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+    position: absolute !important;
+    opacity : 0 !important;
+    cursor  : pointer !important;
+    height  : 0 !important;
+    width   : 0 !important;
+}
+
+/* Create a custom checkbox */
+.custom-checkmark {
+    position        : absolute !important;
+    top             : 0 !important;
+    left            : 0 !important;
+    height          : 25px !important;
+    width           : 25px !important;
+    background-color: #ffffff !important;
+    border          : 1px solid black;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input~.custom-checkmark {
+    background-color: #ccc !important;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked~.custom-checkmark {
+    background-color: #2196F3 !important;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.custom-checkmark:after {
+    content : "" !important;
+    position: absolute !important;
+    display : none !important;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked~.custom-checkmark:after {
+    display: block !important;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .custom-checkmark:after {
+    left             : 3px !important;
+    top              : 2px !important;
+    width            : 9px !important;
+    height           : 15px !important;
+    border           : solid white !important;
+    border-width     : 0 3px 3px 0 !important;
+    -webkit-transform: rotate(45deg) !important;
+    -ms-transform    : rotate(45deg) !important;
+    transform        : rotate(45deg) !important;
+}
+
+/* STYLE OF CHECKBOXES END */
+
+/* LABELS START */
+.update-case-page .card-titles-yes {
+    color         : #238acf;
+    font-weight   : 600;
+    text-transform: uppercase;
+}
+
+.update-case-page .card-titles-no {
+    color         : #c03b56;
+    font-weight   : 600;
+    text-transform: uppercase;
+}
+
+.update-case-page .self-assessed-label {
+    color      : #47b6e6;
+    font-weight: 800;
+}
+
+.update-case-page .dropped-label {
+    color      : #707070;
+    font-weight: 800;
+}
+
+.update-case-page .confirmed-label {
+    color      : #1a4456;
+    font-weight: 800;
+}
+
+.update-case-page .management-label {
+    color      : #377b26;
+    font-weight: 800;
+}
+
+.update-case-page .unreachable-label {
+    color      : #c03b56;
+    font-weight: 800;
+}
+
+.update-case-page .dismissed-label {
+    color      : #e17646;
+    font-weight: 800;
+}
+
+.update-case-page .elsewhere-label {
+    color      : #8946e1;
+    font-weight: 800;
+}
+
+.update-case-page .referred-label {
+    color      : #191b4a;
+    font-weight: 800;
+}
+
+.update-case-page .recovered-label {
+    color      : #238acf;
+    font-weight: 800;
+}
+
+.update-case-page .deceased-label {
+    color      : #000000;
+    font-weight: 800;
+}
+
+/* LABELS END */
+
+/* LEFT BARS START */
+.update-case-page .hospital-card-detail .left-bar.self-assessed {
+    color     : #47b6e6;
+    background: #47b6e6;
+}
+
+.update-case-page .hospital-card-detail .left-bar.dropped {
+    color     : #707070;
+    background: #707070;
+}
+
+.update-case-page .hospital-card-detail .left-bar.confirmed {
+    color     : #1a4456;
+    background: #1a4456;
+}
+
+.update-case-page .hospital-card-detail .left-bar.management {
+    color     : #377b26;
+    background: #377b26;
+}
+
+.update-case-page .hospital-card-detail .left-bar.unreachable {
+    color     : #c03b56;
+    background: #c03b56;
+}
+
+.update-case-page .hospital-card-detail .left-bar.dismissed {
+    color     : #e17646;
+    background: #e17646;
+}
+
+.update-case-page .hospital-card-detail .left-bar.elsewhere {
+    color     : #8946e1;
+    background: #8946e1;
+}
+
+.update-case-page .hospital-card-detail .left-bar.referred {
+    color     : #191b4a;
+    background: #191b4a;
+}
+
+.update-case-page .hospital-card-detail .left-bar.recovered {
+    color     : #238acf;
+    background: #238acf;
+}
+
+.update-case-page .hospital-card-detail .left-bar.deceased {
+    color     : #000000;
+    background: #000000;
+}
+
+.update-case-page .hospital-card-detail .left-bar.expoure-history {
+    color     : #105da1;
+    background: #105da1;
+}
+
+.update-case-page .hospital-card-detail .left-bar.reported-symptoms-and-comorbidity {
+    color     : #092674;
+    background: #092674;
+}
+
+/* LEFT BARS END */
+
+.update-case-page .hospital-card-detail .hospital-card-detail-bottom {
+    padding              : 1rem 2rem;
+    /* border-radius     : 5px; */
+    border               : 1px solid black;
+    -webkit-transition   : all 200ms ease-in-out;
+    transition           : all 200ms ease-in-out;
+    width                : 100%;
+    height               : auto;
+    background           : #fcfcfc;
+    line-height          : 2;
+    overflow-wrap        : break-word;
+}
+
+.update-case-page .hospital-card-detail .hospital-card-detail-bottom p {
+    font-size: 15px;
+}
+
+.update-case-page .hospital-card-detail .hospital-card-detail-bottom .items {
+    display  : flex;
+    flex-wrap: wrap;
+}
+
+.update-case-page .hospital-card-detail .hospital-card-detail-bottom .items p {
+    padding: 1.8rem;
+}
+
+.update-case-page .hospital-card-detail small {
+    display: block;
+    margin : 5px 0;
+    color  : #727272;
+}
+
+/* .update-case-page .hospital-card-detail p {
+    margin     : 0.75em 0;
+    line-height: 1.5;
+  } */
+
+.update-case-page .hospital-card-detail span {
+    display           : block;
+    -webkit-transition: 100ms ease;
+    transition        : 100ms ease;
+}
+
+.update-case-page .hospital-card-detail span::after {
+    font-family      : 'icomoon' !important;
+    content          : '\e904';
+    -webkit-transform: rotate(-90deg);
+    transform        : rotate(-90deg);
+    display          : inline-block;
+    margin-left      : 0.25em;
+}
+
+.update-case-page .hospital-card-detail span:hover,
+.update-case-page .hospital-card-detail span:focus {
+    font-weight: 600;
+}
+
+.update-case-page .hospital-card-detail span:active {
+    font-weight    : 600;
+    text-decoration: underline;
+}
+
+/* BOTTOM CARDS START */
+.update-case-page .hospital-card-detail span.self-assessed {
+    color: #47b6e6;
+}
+
+.update-case-page .hospital-card-detail span.dropped {
+    color: #707070;
+}
+
+.update-case-page .hospital-card-detail span.confirmed {
+    color: #1a4456;
+}
+
+.update-case-page .hospital-card-detail span.management {
+    color: #377b26;
+}
+
+.update-case-page .hospital-card-detail span.unreachable {
+    color: #c03b56;
+}
+
+.update-case-page .hospital-card-detail span.dismissed {
+    color: #e17646;
+}
+
+.update-case-page .hospital-card-detail span.elsewhere {
+    color: #8946e1;
+}
+
+.update-case-page .hospital-card-detail span.referred {
+    color: #191b4a;
+}
+
+.update-case-page .hospital-card-detail span.recovered {
+    color: #238acf;
+}
+
+.update-case-page .hospital-card-detail span.deceased {
+    color: #000000;
+}
+
+.update-case-page .hospital-card-detail:hover .hospital-card-detail-bottom,
+.update-case-page .hospital-card-detail:focus .hospital-card-detail-bottom {
+    border            : 1px solid;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.05);
+    box-shadow        : 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.update-case-page .hospital-card-detail:hover .hospital-card-detail-bottom.self-assessed,
+.update-case-page .hospital-card-detail:focus .hospital-card-detail-bottom.self-assessed {
+    border-color: #47b6e6;
+}
+
+.update-case-page .hospital-card-detail:hover .hospital-card-detail-bottom.dropped,
+.update-case-page .hospital-card-detail:focus .hospital-card-detail-bottom.dropped {
+    border-color: #707070;
+}
+
+.update-case-page .hospital-card-detail:hover .hospital-card-detail-bottom.confirmed,
+.update-case-page .hospital-card-detail:focus .hospital-card-detail-bottom.confirmed {
+    border-color: #1a4456;
+}
+
+.update-case-page .hospital-card-detail:hover .hospital-card-detail-bottom.management,
+.update-case-page .hospital-card-detail:focus .hospital-card-detail-bottom.management {
+    border-color: #377b26;
+}
+
+.update-case-page .hospital-card-detail:hover .hospital-card-detail-bottom.unreachable,
+.update-case-page .hospital-card-detail:focus .hospital-card-detail-bottom.unreachable {
+    border-color: #c03b56;
+}
+
+.update-case-page .hospital-card-detail:hover .hospital-card-detail-bottom.dismissed,
+.update-case-page .hospital-card-detail:focus .hospital-card-detail-bottom.dismissed {
+    border-color: #e17646;
+}
+
+.update-case-page .hospital-card-detail:hover .hospital-card-detail-bottom.elsewhere,
+.update-case-page .hospital-card-detail:focus .hospital-card-detail-bottom.elsewhere {
+    border-color: #8946e1;
+}
+
+.update-case-page .hospital-card-detail:hover .hospital-card-detail-bottom.referred,
+.update-case-page .hospital-card-detail:focus .hospital-card-detail-bottom.referred {
+    border-color: #191b4a;
+}
+
+.update-case-page .hospital-card-detail:hover .hospital-card-detail-bottom.recovered,
+.update-case-page .hospital-card-detail:focus .hospital-card-detail-bottom.recovered {
+    border-color: #238acf;
+}
+
+.update-case-page .hospital-card-detail:hover .hospital-card-detail-bottom.deceased,
+.update-case-page .hospital-card-detail:focus .hospital-card-detail-bottom.deceased {
+    border-color: #000000;
+}
+
+/* BOTTOM CARDS END */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 880px) and (-webkit-min-device-pixel-ratio: 2) {
+    .update-case-page {
+        padding: 0 !important;
+    }
+}

@@ -1,0 +1,180 @@
+footer {
+    background: color(blue-2);
+    //margin-bottom: 4.5em;
+
+    .kneeler {
+        padding: 2em 2em 1em 2em; 
+        color: color(lightest);
+
+        h4 {
+            display: block;
+            height: 40px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        li {
+            list-style-type: none;
+            margin: 0 0 1.25em 0;
+            transition: 100ms ease;
+            
+            
+            a {
+                position: relative;
+                    
+                &:active {
+                    font-weight: 600;
+                }
+    
+                &::before {
+                    content: ' ';
+                    position: absolute;
+                    height: 2px;
+                    background: color(lightest);
+                    bottom: -4px;
+                    width: 100%;
+                    transition: 250ms ease-in-out;
+                    transform: scaleX(0);
+                    transform-origin: left;
+                }
+    
+                &:hover, &:focus {
+                    color: color(lightest);
+    
+                    &::before {
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+
+        p {
+            font-weight: 200;
+            margin-block-end: 1em;
+        }
+
+        /*.kneeler-links {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+            //grid-gap: 1em;
+        }*/
+
+        .kneeler-proper {
+            display: grid;
+            column-gap: 0.5em;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto auto auto;
+            grid-template-areas: 
+                "about"
+                "col1"
+                "col2"
+                "col3"
+                "col4"
+            ;
+        }
+
+        .kneeler-links {
+            &.col1 {
+                grid-area: col1;
+            }
+            &.col2 {
+                grid-area: col2;
+            }
+            &.col3 {
+                grid-area: col3;
+            }
+            &.col4 {
+                grid-area: col4;
+            }
+        }
+
+        .about {
+            grid-area: about;            
+            line-height: 1.5;
+                        
+            a {
+                font-weight: 500;
+                position: relative;
+
+                &::after {
+                    font-family: 'icomoon' !important;
+                    content: '\e904';
+                    position: absolute;
+                    top: 45%;
+                    transform: translateY(-45%) rotate(-90deg);
+                    font-size: 80%;
+                    transition: 200ms linear;
+                    right: -1.5em;
+                }
+
+                &:active {
+                    font-weight: 600;
+                }
+    
+                &::before {
+                    content: ' ';
+                    position: absolute;
+                    height: 2px;
+                    background: color(lightest);
+                    bottom: -4px;
+                    width: 100%;
+                    transition: 250ms ease-in-out;
+                    transform: scaleX(0);
+                    transform-origin: left;
+                }
+    
+                &:hover, &:focus {
+                    color: color(lightest);
+    
+                    &::before {
+                        transform: scaleX(1);
+                    }
+                }
+
+            }
+
+            margin-bottom: 1em;
+        }
+
+        .white-logo {
+            display: block;
+            margin: 2em auto 0.5em auto;
+        }
+
+        .socmed-container {
+            display: block;
+            font-size: 1.6em;
+            margin: 0.6em auto 0 auto;
+            text-align: center;
+
+            a {
+                &::before {
+                    content: '';
+                    height: unset;
+                }
+            }
+
+            .icon {
+                margin: 0 0.25em;
+                transition: 100ms ease-in-out;
+                cursor: pointer;
+                display: inline-block;
+
+                &:hover, &:focus {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+    }
+
+    .foot {
+        background: color(blue-3);
+        color: color(lightest);
+        text-align: center;
+        padding: 0.4em;
+    }
+
+}

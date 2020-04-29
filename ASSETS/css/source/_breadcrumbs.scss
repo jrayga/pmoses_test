@@ -1,0 +1,58 @@
+.tiny-affordances {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2em 32px 1em 32px;
+
+    .breadcrumb, .user-greeting {
+        margin: 0;
+    }
+}
+
+.breadcrumb {
+    color: color(blue-dark);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    font-size: 0.75em;
+    display: block;
+    margin: 2em auto 1em 32px;
+    opacity: 0.8;
+    
+    a {
+        transition: 50ms linear;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            font-weight: 400;
+        }
+    }
+}
+
+.current-location {
+    font-weight: 500;
+    color: (signature);
+}
+
+.user-greeting {
+    color: color(blue-dark);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    font-size: 0.75em;
+    display: block;
+    opacity: 0.8;
+    
+    a {
+        transition: 50ms linear;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            font-weight: 700;
+        }
+    }
+}
+
+.username {
+    transition: 100ms;
+    font-weight: 500;
+    color: (signature);
+}

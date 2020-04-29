@@ -1,0 +1,59 @@
+<div ng-if="isLoading" class="container">
+    <div class="row loader-row">
+        <div class="col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="!isLoading" class="hospital-login-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <p class="breadcrumbs">
+                    Admin > Login Page
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container login-container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="hospital-details-container">
+                    <div class="hospital-card-detail">
+                        <div class="left-bar blue">
+                            <h3><strong>Hello ADMIN.</strong></h3>
+                            <p><strong>Please log in.</strong></p>
+                        </div>
+                        <div class="hospital-card-detail-bottom blue">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="input-field-text" type="text" ng-model="loginForm.username"
+                                        name="username" ng-keypress="($event.charCode==13)?loginAdmin():return"
+                                        id="username" placeholder="User Name">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="input-field-text" type="password" ng-model="loginForm.password"
+                                        name="password" ng-keypress="($event.charCode==13)?loginAdmin():return"
+                                        id="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <button type="button" class="button login-btn" ng-click="loginAdmin()">Log in
+                                        ></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

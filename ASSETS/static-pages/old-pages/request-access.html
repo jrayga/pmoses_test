@@ -1,0 +1,126 @@
+<div ng-if="isLoading" class="container">
+    <div class="row loader-row">
+        <div class="col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="!isLoading" class="request-access-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <p class="breadcrumbs">
+                    Hospital Portal > Request Access to the Hospital Portal
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container login-container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="hospital-details-container">
+                    <div class="hospital-card-detail">
+                        <div class="left-bar blue">
+                            <h3><strong>Thank you for your service and your interest in the fight against COVID-19.
+                                </strong></h3>
+                            <p>If you wish to gain access to the Hospital Portal, please provide the information
+                                required in the form below.
+                            </p>
+                            <p>We need to vet all accounts we create as we want to make sure that only personnel
+                                authorized to represent their respective hospitals gain access due to the sensitive
+                                nature of the data collected. Our staff will evaluate your application and get back to
+                                you within a day or two. Stay safe! </p>
+                        </div>
+                        <div class="hospital-card-detail-bottom blue">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="input-field-text" type="text"
+                                        ng-model="requestAccessForm.hospital_name" name="hospital_name"
+                                        id="hospital_name" placeholder="Hospital">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="input-field-text" type="text" ng-model="requestAccessForm.person_name"
+                                        name="person_name" id="person_name" placeholder="Full Name">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="input-field-text" type="text" ng-model="requestAccessForm.department"
+                                        name="department" id="department" placeholder="Department">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="input-field-text" type="text" ng-model="requestAccessForm.profession"
+                                        name="profession" id="profession" placeholder="Profession">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="input-field-text" type="text" ng-model="requestAccessForm.position"
+                                        name="positionAtHospital" id="positionAtHospital"
+                                        placeholder="Position at Hospital">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="input-field-text" type="text" ng-model="requestAccessForm.username"
+                                        name="username" id="username" placeholder="User Name">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="input-field-text" type="password"
+                                        ng-model="requestAccessForm.password" name="password" id="password"
+                                        placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="input-field-text" type="email" ng-model="requestAccessForm.email"
+                                        name="emailAddress" id="emailAddress" placeholder="Email Address">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="input-field-text" type="text" ng-model="requestAccessForm.contact_num"
+                                        name="contact_num" maxlength="11" id="contact_num" placeholder="Contact Number"
+                                        is-number>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <button type="button" class="button submit-btn"
+                                        ng-click="submitApplication()">Submit Application</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <p class="message">
+                    Clicking 'Submit Application' means that you have read and agree to <u><strong><a href="">our terms
+                                of
+                                use and
+                                data
+                                privacy policy</a></strong></u> that you hereby certify that the above information
+                    you've
+                    provided is true
+                    and
+                    correct to the best of your knowledge and that you are an authorized representative of the hospital
+                    you have encoded in this form.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

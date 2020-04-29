@@ -1,0 +1,430 @@
+nav {
+    margin: 0;
+    width : 100%;
+
+    &.mobile {
+        background: color(signature);
+
+        .nav-bar {
+            text-align: center;
+            color     : color(lightest);
+            font-size : 1.15em;
+            padding   : 0.3em 0;
+            cursor    : pointer;
+
+            &:hover,
+            &:focus {
+                background: color(blue-3);
+                color     : color(lightest);
+            }
+
+            &:active {
+                background: color(blue-4);
+            }
+        }
+
+        .nav-dropdown {
+
+            background: color(blue-1);
+            overflow-y: hidden;
+            transition: all 300ms ease-in-out;
+            max-height: 0;
+
+            li {
+                padding        : 0.8em 0 0.8em 1em;
+                list-style-type: none;
+                color          : color(lightest);
+                cursor         : pointer;
+                border-bottom  : 1px solid color(blue-2);
+
+                &.current {
+                    font-weight: 600;
+                }
+
+                &:hover,
+                &:focus {
+                    background: color(blue-2);
+                    color     : color(lightest);
+
+                    /*&::after {
+                        font-family: 'icomoon' !important;
+                        content    : '\e904';
+                        position   : absolute;
+                        animation  : slideToRight 200ms 0s linear;
+                        transform  : rotate(-90deg);
+                        right      : 1em;
+                    }*/
+                }
+
+                &:active {
+                    background: color(blue-4);
+                }
+
+                &.navlink {
+                    position: relative;
+
+                    &::after {
+                        font-family: 'icomoon' !important;
+                        content    : '\e904';
+                        position   : absolute;
+                        transform  : rotate(0deg);
+                        transition : 200ms linear;
+                        right      : 1em;
+                    }
+
+                    &.dropdown-active {
+                        background   : color(blue-2);
+                        border-bottom: 1px solid color(blue-2);
+
+                        &::after {
+                            font-family: 'icomoon' !important;
+                            content    : '\e904';
+                            transform  : rotate(-180deg);
+                            transition : 200ms linear;
+                        }
+                    }
+                }
+            }
+
+            .secondary-dropdown {
+                background   : color(blue-light);
+                padding      : 0;
+                border-bottom: none;
+                overflow-y   : hidden;
+                transition   : all 200ms linear;
+                max-height   : 0;
+
+                li {
+                    padding-left : 1.8em;
+                    border-bottom: 1px solid color(blue-1);
+
+                    &:hover,
+                    &:focus {
+                        background: color(blue-3);
+                        color     : color(lightest);
+                    }
+
+                    &:active {
+                        background: color(blue-4);
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    &.wide {
+        display   : none;
+        background: color(signature);
+        position  : sticky;
+        top       : 0;
+        z-index   : 999;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.02), 0 3px 3px rgba(0, 0, 0, 0.20);
+
+        .main-nav-bar {
+            background     : color(signature);
+            display        : flex;
+            justify-content: space-between;
+            padding        : 0 2em;
+            align-items    : center;
+        }
+
+        li {
+            list-style-type: none;
+            padding        : 1em 1em;
+            text-align     : center;
+            color          : color(lightest);
+            font-size      : 0.9em;
+            cursor         : pointer;
+
+            &.current {
+                font-weight: 600;
+            }
+
+            &:hover,
+            &:focus {
+                background: color(blue-1);
+                color     : color(lightest);
+            }
+
+            &:active {
+                background: color(blue-2);
+            }
+        }
+
+        .navlink {
+            position     : relative;
+            padding-right: 2em;
+
+            &::after {
+                font-family: 'icomoon' !important;
+                content    : '\e904';
+                position   : absolute;
+                top        : 50%;
+                transform  : translateY(-45%) rotate(0deg);
+                font-size  : 80%;
+                transition : 200ms linear;
+                right      : 1em;
+            }
+
+            &.dropdown-open {
+                background: color(blue-1);
+                position  : relative;
+
+                &::before {
+                    content         : ' ';
+                    position        : absolute;
+                    height          : 2px;
+                    background      : transparent;
+                    bottom          : 10px;
+                    width           : calc(100% - 3em);
+                    transition      : 250ms ease-in-out;
+                    transform       : scaleX(0);
+                    transform-origin: left;
+                    animation       : delayer 1.5s;
+                }
+
+                &:hover,
+                &:focus {
+                    color: color(lightest);
+
+                    &::before {
+                        transform: scaleX(1);
+                    }
+
+                    &::after {
+                        font-family: 'icomoon' !important;
+                        content    : '\e904';
+                        font-weight: 900;
+                    }
+                }
+
+                &:active {
+                    background: color(blue-1);
+                }
+
+                &::after {
+                    font-family: 'icomoon' !important;
+                    content    : '\e904';
+                    position   : absolute;
+                    top        : 50%;
+                    transform  : translateY(-45%) rotate(-180deg);
+                    font-size  : 80%;
+                    transition : 200ms linear;
+                    right      : 1em;
+                }
+            }
+
+        }
+
+        .nav-panel {
+            overflow-y: hidden;
+            max-height: 0;
+            transition: all 300ms linear;
+            z-index   : 999;
+
+            .panel-container {
+                background: color(blue-1);
+                padding   : 2em 3em;
+                color     : color(lightest);
+            }
+
+            .col1 {
+                p {
+                    margin-top      : 1em;
+                    line-height     : 1.5;
+                    margin-block-end: 1em;
+                    padding-right   : 1em;
+                    font-weight     : 300;
+                    font-size       : 0.9em;
+                }
+
+                border-bottom: 1px solid color(lightest);
+            }
+
+            .col2 {
+                margin: 0 1em;
+
+                .card {
+                    border       : 2px solid rgba(color(lightest), 0.04);
+                    display      : flex;
+                    padding      : 0.85em 2.5em 0.85em 0.85em;
+                    border-radius: 10px;
+                    transition   : 100ms ease-in-out;
+                    cursor       : pointer;
+                    margin       : 1em 0;
+
+                    &.current {
+                        border        : 2px solid rgba(color(lightest), 0.6);
+                        pointer-events: none;
+                        cursor        : pointer;
+                    }
+
+                    img {
+                        text-align: center;
+                        height    : 100px;
+                    }
+
+                    .card-left {
+                        max-width   : 125px;
+                        margin-right: 1.5em;
+                    }
+
+                    .card-right {
+
+                        h5,
+                        p {
+                            line-height: 1.5;
+                        }
+
+                        h5 {
+                            text-transform: uppercase;
+                        }
+
+                        p {
+                            margin-block-start: 0.5em;
+                            font-weight       : 300;
+                            font-size         : 0.85em;
+                        }
+                    }
+
+                    &:hover,
+                    &:focus {
+                        color       : color(lightest);
+                        //box-shadow:   12px 12px 20px #54bef0, -12px -12px 20px #54bef0;
+                        border      : 2px solid color(lightest);
+                        position    : relative;
+
+                        &::after {
+                            font-family: 'icomoon' !important;
+                            content    : '\e904';
+                            position   : absolute;
+                            right      : 1em;
+                            top        : 50%;
+                            transform  : translateY(-50%) rotate(-90deg);
+                            animation  : slideToRight 300ms;
+                        }
+                    }
+
+                    &:active {
+                        background: color(blue-2);
+                    }
+
+                }
+
+                &.citizens {
+                    .card {
+                        display: flex;
+                        padding: 0.5em 2em 0.5em 0.85em;
+
+                        img {
+                            text-align: center;
+                            height    : 40px;
+                            width     : auto;
+                        }
+
+                        .card-left {
+                            max-width   : 125px;
+                            margin-right: 1.5em;
+                        }
+
+                        .card-right {
+                            display: block;
+                            margin : auto 0;
+
+                            h6 {
+                                line-height: 1.2;
+                            }
+                        }
+                    }
+
+                }
+
+                .citizens-cards-container {
+                    display        : flex;
+                    justify-content: space-between;
+
+                    .card {
+                        display      : block;
+                        padding      : 1vw 4vw;
+                        border-radius: 10px;
+                        transition   : 100ms ease-in-out;
+                        cursor       : pointer;
+                        margin-bottom: 1em;
+
+                        .card-image-container {
+                            height       : 125px;
+                            margin-bottom: 0.5em;
+                            display      : flex;
+                            align-items  : center;
+                        }
+
+                        img {
+                            width  : 70px;
+                            height : auto;
+                            margin : 0 auto;
+                            display: block;
+                        }
+
+                        .card-text-container {
+                            display       : flex;
+                            align-items   : center;
+                            flex-direction: column;
+                        }
+
+                        h6 {
+                            text-align: center;
+                        }
+
+                        &:hover,
+                        &:focus {
+
+                            &::after {
+                                display: none;
+                            }
+                        }
+
+                    }
+                }
+
+                &.resources {
+                    .card {
+                        padding      : 0.5em 2em 0.5em 0.85em;
+                        border-radius: 10px;
+                        margin       : 0.5em 0;
+
+                        img {
+                            height: 45px;
+                        }
+
+                        .card-left {
+                            max-width  : 55px;
+                            display    : flex;
+                            align-items: center;
+                        }
+
+                        h5,
+                        p {
+                            line-height: 1.2;
+                        }
+
+                        h5 {
+                            text-transform: uppercase;
+                            font-size     : 1.1em;
+                        }
+
+                        p {
+                            margin-block-start: 0.4em;
+                            font-weight       : 300;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+    }
+
+}

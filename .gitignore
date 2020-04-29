@@ -1,0 +1,3 @@
+node_modules/*
+dist/public/min/*
+dist/public/min-safe/*

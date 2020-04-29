@@ -1,0 +1,402 @@
+@media (max-width:352px) {
+    .citizens-patrol {
+        .button.ok {
+            &:hover, &:focus {
+                &::after {
+                content: none;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 425px) {
+
+    .citizens-patrol {
+        .citizens-report-form {
+            .form-proper {
+                .form-element .field-element {
+                    .button-group-yn {
+                        display: flex;
+                        max-width: 400px;
+    
+                        .button-radio {
+                            margin: 0 auto;
+                        }
+    
+                        .button-wrapper {
+                            margin-right: 0.5em;
+
+                            &:nth-last-child(1) {
+                                margin-right: 0;
+                            }
+                        }
+
+                        &.wide {
+                            display: block;
+                            max-width: 570px;
+
+                            .button-radio {
+                                margin: 0.5em auto 0.5em 0;
+                            }
+
+                            .button-wrapper {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+
+                    .time {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+
+                        .input-field-container {
+                            margin-bottom: 0 !important;
+                            margin: 0;
+                            width: auto;
+
+                            .input-field.text {
+                                margin-bottom: 0 !important;
+                            }
+
+                        }
+
+                        span {
+                            margin: 0 0.5em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 500px) {
+
+    .citizens-patrol {
+
+        .citizens-proper { 
+    
+            .citizens-card-container { 
+        
+                .card { 
+    
+                    .top-row { 
+
+        
+                        .details { 
+        
+                            .contact-no {
+                                border-top: 1px solid color(medium);
+                                padding-top: 0.5em;
+                                display: flex;
+                                justify-content: space-between;
+                                
+                                .info-actual { 
+                                    width: auto;
+                                    text-align: right;
+                                }
+                            }
+                        }
+                    }
+        
+                    .bottom-row { 
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-areas: "col1 col2";
+    
+                        .col2 { 
+                            display: block;
+                        }
+                
+                    }
+    
+                }
+            }
+        }
+
+        .top-intro {
+            grid-template-columns: 3fr 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: 
+                "textbox imagebox";
+    
+            .image-community {
+                max-height: 180px;
+            }
+        }
+
+        .citizens-report-form {
+            .form-proper {
+                .form-element .field-element {
+                    .button-group-yn {
+
+                        &.wide {
+                            display: flex;
+                            max-width: 570px;
+
+                            .button-radio {
+                                margin: 0 auto;
+                            }
+        
+                            .button-wrapper {
+                                margin-right: 0.5em;
+    
+                                &:nth-last-child(1) {
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 760px) {
+    .citizens-patrol {
+
+        .breadcrumb {
+            display: block;
+        }
+
+        .search-container {
+   
+            .search-banner {
+   
+                h1 {
+                    font-size: 3em;
+                }
+   
+                .search-form {
+                    display: grid;
+                }
+            }
+
+        }
+
+        .wide-controls {
+            display: block;
+
+            .row-2 {
+                //margin-bottom: 0;
+            }
+        }
+
+        .citizens-proper { 
+            margin-top: 0;
+
+            .citizens-card-container { 
+        
+                .card { 
+
+
+                    &:nth-child(1) {
+                        margin-top: 0em;
+                    }
+        
+                    .top-row { 
+                        h1 { 
+                            font-size: 1.7em;
+                            margin-bottom: 0;
+                        }
+        
+                        .details { 
+        
+                            .addy { 
+                                padding-bottom: 0.5em;
+        
+                                h2 { 
+                                    font-size: 1.1em;
+                                }
+                            }
+        
+                            .contact-no {
+                                border-top: none;
+                                padding-top: 0;
+                                padding-bottom: 0.5em;
+                            }
+                        }
+                    }
+        
+                    .bottom-row { 
+                        border-top: 1px solid color(medium);
+
+                        &.three-rows {
+                            align-items: flex-start;
+                            grid-template-columns: 1fr 1fr 1fr;
+                            grid-template-areas: "col1 col2 col3";
+
+                            .col3 { 
+                                display: block;
+                            }
+                        }
+        
+        
+                    }
+        
+                }
+            }
+        }
+
+        .top-intro {
+            margin: 1em 2em;
+        }
+
+        .citizens-report-form {
+
+            .form-proper {
+                grid-template-columns: 25% auto;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.09), 0 3px 6px rgba(0,0,0,0.09);
+    
+                .label-blue {
+                    display: block;
+                }
+    
+                .form-element {
+                    padding: 0.5em 2em 0.5em 1em;
+                    border-right: 1px solid color(medium);
+    
+                    &:nth-child(2) {
+                        padding-top: 2em;
+                        border-radius: 0 10px 0 0;
+                        border-top: 1px solid color(medium);
+                    }
+                    &:nth-last-child(1) {
+                        padding-bottom: 2em;
+                        border-radius: 0 0 10px 0;
+                        border-bottom: 1px solid color(medium);
+                    }
+    
+                    &.keep-labels {
+                        margin-top: calc(-0.5em - 11px);
+    
+                        .field-element .input-label.context {
+                            display: block;
+                            font-size: 0.6em;
+                            text-transform: uppercase;
+                            letter-spacing: 0.25em;
+                        }
+                    }
+    
+                    .field-element {
+    
+                        .input-label {
+                            &.actual, &.context {
+                                display: none;
+                            }
+    
+                            &.bottom-hint {
+                                display: block;
+                            }
+                        }
+    
+                        .input-field-container {
+    
+                            .valuation {
+                                display: block;
+                            }
+                        }
+    
+                    }
+                }
+            }
+        }
+    
+    }
+}
+
+@media (min-width: 900px) {
+
+    .citizens-patrol {
+
+        .wide-controls {
+
+            .displaying, .refining, .filters {
+                display: flex;
+            }
+        }
+
+        .citizens-proper { 
+
+    
+            .citizens-card-container { 
+        
+                .card { 
+        
+                    a.citizens-edit-link {
+                        display: block;
+                    }
+                    
+                    .feature {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+        
+                    .top-row { 
+                        padding: 0 0.75em 0 1.25em;
+        
+                        h1 { 
+                            font-size: 1.95em;
+                            margin-bottom: 0;
+                        }
+        
+                        .details { 
+                            display: flex;
+                            justify-content: space-between;
+
+                            .contact-no {
+                                .info-actual { 
+                                    width: auto;
+                                    text-align: right;
+                                    margin-left: 20vh;
+                                }
+                            }
+                        }
+                    } 
+                    
+                    .bottom-cta { 
+                        &::before {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .citizens-patrol {
+
+        .search-container {
+
+            .slider-control {
+                display: flex;
+            }
+        }
+
+    }
+}
+@media (min-width: 1370px) {
+    .citizens-patrol {
+
+        .citizens-proper { 
+    
+            .citizens-card-container { 
+                .card { 
+                    .top-row { 
+                        .details { 
+                            .contact-no {
+                                .info-actual { 
+                                    margin-left: 33vh;
+                                }
+                            }
+                        }
+                    }        
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- SEO/SMO Values-->
+    <title>Government Announcements | Project Moses</title>
+    <meta itemprop="name" content="Project Moses">
+    <meta itemprop="url" content="https://projectmoses.ph/">
+    <meta name="description" content="Project Moses is a Crisis Response Toolbox that aims to be an all-in-one web dashboard for Filipinos in times of calamity and crisis.">
+
+    <!-- Schema -->
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="Project Moses">
+    <meta name="twitter:site" content="">
+
+    <!-- Facebook Opengraph data -->
+    <meta property="og:title" content="Welcome to Project Moses">
+    <meta property="og:description" content="Project Moses is a Crisis Response Toolbox that aims to be an all-in-one web dashboard for Filipinos in times of calamity and crisis.">
+    <meta property="og:image" content="./ASSETS/img/project-moses-social.jpg">
+    <meta property="og:url" itemprop="url" content="https://projectmoses.ph/">
+    <meta property="og:site_name" content="Project Moses">
+    <meta property="og:type" content="website">
+
+    <!-- FAVICONS START -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#299bd7">
+    <meta name="apple-mobile-web-app-title" content="Project Moses">
+    <meta name="application-name" content="Project Moses">
+    <meta name="msapplication-TileColor" content="#299bd7">
+    <meta name="theme-color" content="#299bd7">
+    <!-- FAVICONS END -->
+
+    <!-- GOOGLE ANALYTICS START -->
+
+    <!-- GOOGLE ANALYTICS END -->
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/misc.min.css">
+    <link rel="stylesheet" href="css/responsive.min.css">
+    <link rel="stylesheet" href="css/icons.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+</head>
+<body class="preload-transitions">
+    <div class="language-selector-bar" id="langBar">
+        <div class="language-selector">
+            <p><strong>English</strong> | <a href="">Select Language</a> <span class="icon right icon-cancel" id="langbarClose"></span></p>
+        </div>
+    </div>
+    <header>
+        <div class="header-logo">
+            <a href="/" title="Project Moses" alt="Project Moses"><img src="./ASSETS/img/main-logo.png" alt="Project Moses Logo" title="Project Moses"></a>
+        </div>
+        <div class="header-buttons for-wide">
+            <div class="button triage">
+                <a href="/triage">Feeling <strong>Sick?</strong></a>
+            </div>
+            <div class="button hospital">
+                <a href="">Hospital Login</a>
+            </div>
+        </div>
+    </header>
+    <div class="bottom-cta-buttons-bar">
+        <div class="header-buttons">
+            <div class="button triage">
+                <a href="/triage">Feeling <strong>Sick?</strong></a>
+            </div>
+            <div class="button hospital">
+                <a href="">Hospital Login</a>
+            </div>
+        </div>
+    </div>
+    <nav class="mobile">
+        <div class="nav-bar" id="mobile-nav-menulink"><span class="icon-th-menu icon left"></span>MENU</div>
+        <div class="nav-dropdown" id="mobile-nav-dropdown">
+            <li class=""><a href="/" >Home</a></li>
+            <li><a href="triage.html">Self-Triage</a></li>
+            <li class="navlink" id="navlink-trackers">Real-Time Trackers</li>
+                <ul class="secondary-dropdown" id="nav-trackers">
+                    <li><a href="doh-tracker.html">DOH nCoV Tracker</a></li>
+                    <li><a href="jhu-tracker.html">JHU Interactive Map</a></li>
+                </ul>
+            <li><a href="hospital-directory.html">Hospital Directory</a></li>
+            <li class="navlink" id="navlink-citizens">Citizens Patrol</li>
+                <ul class="secondary-dropdown" id="nav-citizens">
+                    <li><a href="">Clinics</a></li>
+                    <li><a href="">Grocery Stores</a></li>
+                    <li><a href="">Pharmacies</a></li>
+                    <li><a href="">Roads</a></li>
+                    <li><a href="">Submit Report</a></li>
+                </ul>
+            <li class="navlink" id="navlink-news">Latest News</li>
+                <ul class="secondary-dropdown" id="nav-news">
+                    <li class="current"><a href="government-announcements.html">Government Announcements</a></li>
+                    <li><a href="news-aggregator.html">News Media</a></li>
+                </ul>
+            <li class="navlink" id="navlink-resources">Resources</li>
+                <ul class="secondary-dropdown" id="nav-resources">
+                    <li><a href="official-statements.html">Official Statements Archive</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="emerging-research.html">Emerging Research</a></li>
+                    <li><a href="useful-links.html">Useful Links</a></li>
+                    <li><a href="covid-19-apps.html">COVID-19 Apps</a></li>
+                </ul>
+        </div>
+    </nav>
+    <nav class="wide">
+        <div class="main-nav-bar">
+            <li class=""><a href="/">Home</a></li>
+            <li><a href="triage.html">Self-Triage</a></li>
+            <li class="navlink" id="navlink-trackers-w">Real-Time Trackers</li>
+            <li><a href="hospital-directory.html">Hospital Directory</a></li>
+            <li class="navlink" id="navlink-citizens-w">Citizens Patrol</li>
+            <li class="navlink" id="navlink-news-w">Latest News</li>
+            <li class="navlink" id="navlink-resources-w">Resources</li> 
+        </div>
+        <div class="nav-panel" id="nav-trackers-w"> 
+            <div class="panel-container">
+                <div class="col1">
+                    <h4>Real-Time COVID-19 Tracker Dashboards</h4>
+                    <p>These online tools are handy for getting both a overview of the how local and internal populations are faring. They feature real-time data organized for easy analysis and are maintained by leading organizations both within the Philippines and the world at large.</p>
+                </div>
+                <div class="col2 trackers">
+                    <a href="doh-tracker.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/doh.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Department of Health COVID-19 Tracker</h5>
+                                <p>This is the official and updated COVID-19 Case Tracker. Originally the DOH nCoV Tracker, the new version collates case data and health system capacity accross the Phiippines</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="jhu-tracker.html">
+                        <div class="card  ">
+                            <div class="card-left"><img src="./ASSETS/img/jhu.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Johns Hopkins University Interactive Map</h5>
+                                <p>The JHU Coronavirus COVID-19 Global Cases Dashboard by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU) is an online dashboard featuring a real-time world map, US Map, and trends tracker</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-panel" id="nav-citizens-w"> 
+            <div class="panel-container">
+                <div class="col1">
+                    <h4>Citizens Patrol</h4>
+                    <p>We continuously collect and collate crowdsourced information about establishments and infrastructure so you know which ones are still open for business and use.</p>
+                    <p>If you have any information about a location, please contribute by submitting a Citizen Report!</p>
+                </div>
+                <div class="col2 citizens">
+                    <div class="citizens-cards-container">
+                        <div class="card">
+                            <div class="card-image-container"><img src="./ASSETS/img/icon-clinic.png" alt=""></div>
+                            <div class="card-text-container"><h6>Clinics</h6></div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image-container"><img src="./ASSETS/img/icon-grocery.png" alt=""></div>
+                            <div class="card-text-container"><h6>Grocery Stores</h6></div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image-container"><img src="./ASSETS/img/icon-drugstore.png" alt=""></div>
+                            <div class="card-text-container"><h6>Pharmacies</h6></div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image-container"><img src="./ASSETS/img/icon-road.png" alt=""></div>
+                            <div class="card-text-container"><h6>Roads</h6></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-left"><img src="./ASSETS/img/icon-submit-report.png" alt=""></div>
+                        <div class="card-right">
+                            <h6>Submit Citizen's Report Now</h6>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="nav-panel" id="nav-news-w"> 
+            <div class="panel-container">
+                <div class="col1">
+                    <h4>Latest News and Announcements</h4>
+                    <p>Keep yourself informed by staying up to date with the latest developments of the COVID-19 Pandemic in the Philippines and the rest of the global community.</p>
+                </div>
+                <div class="col2 news">
+                    <a href="government-announcements.html">
+                        <div class="card current">
+                            <div class="card-left"><img src="./ASSETS/img/icon-govt-news.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Government Announcements</h5>
+                                <p>Browse through the archive of all the official announcements, press releases, resolutions, and briefings published by the Philippine Government</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="news-aggregator.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-news-media.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>News Media</h5>
+                                <p>The News Media Aggregator automatically collects the latest updates and reports of a curated list of trusted news sources</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-panel" id="nav-resources-w"> 
+            <div class="panel-container">
+                <div class="col1 resources">
+                    <h4>Resources and Tools</h4>
+                    <p>Our collection of online tools and platforms and content resources will help you and your loved ones stay safe during this time of crisis.</p>
+                </div>
+                <div class="col2 resources">
+                    <a href="official-statements.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-official-statements.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Official Statements Archive</h5>
+                                <p>An archive of all policies, statements, guidelines, reports, and advisories made by the Philippine government and its agencies.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="faqs.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-faq.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>FAQ<small>s</small></h5>
+                                <p>A collection of the most frequently asked and relevant inquiries and their answers</p>
+                            </div>
+
+                        </div>
+                    </a>
+                    <a href="emerging-research.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-research.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Emerging Research</h5>
+                                <p>A curated list of sources and links to research being done in the fight against COVID-19</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="useful-links.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-links.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>Useful Links</h5>
+                                <p>Links to useful websites, including those for government agencies and interntional organizations tasked with managing the pandemic and its effects</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="covid-19-apps.html">
+                        <div class="card">
+                            <div class="card-left"><img src="./ASSETS/img/icon-apps.png" alt=""></div>
+                            <div class="card-right">
+                                <h5>COVID-19 Apps</h5>
+                                <p>Online applications and tools meant to help you stay healthy and informed</p>
+                            </div>
+                            
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>                        
+    </nav>
+
+    <main>
+        <div class="modal1" style="display:none;">
+            <div class="gov-first modal govt-ann"> 
+                <div class="modal-box">
+                    <div class="modal-head">
+                        <span class="modal-title">Announcement</span>
+                        <span class="icon-cancel" onclick="closeFirst()" style="cursor:pointer;"></span>
+                    </div>
+                    <div class="modal-body">
+                        <span class="ann-date">Date: <strong>April 19, 2020</strong></span>
+                        <span class="ann-source">Source: <strong>Presidential Spokesperson Harry Roque</strong></span>
+                        <div class="main-content">
+                            <p>On human rights concerns during the enhanced community quarantine period:</p>
+                            <p>The Palace takes note on the efforts of the local government units (LGUs) on how they devise and operationalize social distancing and other preventive measures under the enhanced community quarantine (ECQ).</p>
+                            <p>We give due credit to these efforts happening on the ground, along with other interventions, in order to make the ECQ effective in containing the spread of the coronavirus 2019 (Covid-19).</p>
+                            <p>There are, however, concerns on alleged human rights violations by LGUs against ECQ offenders who disobeyed the rules and health protocols. As we are not fully aware of the details of such violations, we will appreciate receipt of detailed information of the same for proper action by the appropriate agencies.</p>
+                            <p>Under the current circumstances we are in, the LGUs enforce the law as reasonably strict as possible for the full protection of our people. While such protection measures spell the difference between life and death, they are implemented well within the rule of law, and are respectful of the human dignity and human rights of everyone.</p>
+                            <p>In addition, the Department of Interior and Local Government (DILG), which supervises both the LGUs and the Philippine National Police (PNP), is committed to uphold human rights at all times and will not tolerate any violation during this period of ECQ.</p>
+                            <p>In all this, we cannot overstate the need for everyone to observe social distancing, curfew hours, and other protocols in these difficult times. As necessary, please stay at home. Please do not violate any of the ECQ rules. This entails everyone’s cooperation. We need to fight this pandemic together."</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal2" style="display:none;">
+            <div class="gov-second modal govt-ann"> 
+                <div class="modal-box">
+                    <div class="modal-head">
+                        <span class="modal-title">Announcement</span>
+                        <span class="icon-cancel" onclick="closeSecond()" style="cursor:pointer;"></span>
+                    </div>
+                    <div class="modal-body">
+                        <span class="ann-date">Date: <strong>April 18, 2020</strong></span>
+                        <span class="ann-source">Source: <strong>Cabinet Secretary Karlo Nograles (IATF)</strong></span>
+                        <div class="main-content">
+                            <p>"Sa mga kababayan natin at sa mga kaibigan natin sa media, magandang umaga po. Magandang umaga din po sa ating mga frontliners na nangunguna sa kampanya natin labang sa Covid-19.</p>
+
+                            <p>Yesterday, the IATF held its last meeting for the week after which we issued IATF Resolution No. 25. The following are the contents of the said resolution.</p>
+
+                            <p>The IATF adopts a national-government-enabled, Local Government Unit (LGU)-led, and people-centered response to the COVID-19 health event. In materializing the aforementioned general principles, all agencies are directed to recommend sector-specific plans, strategies and targets to the IATF. The National Task Force (NTF) COVID-19 is likewise directed to develop the necessary operational plans. LGUs are enjoined to pursue regional cooperation in leading the fight against COVID-19.</p>
+
+                            <p>Ipinapagtibay po ng IATF ang isang kampanya laban sa Covid-19 na pinangungunahan ng mga LGU sa tulong ng national government na nakasentro sa interes at kapakanan ng taumbayan. Para matupad ito, lahat po ng ahensya ng gobyerno ay inaatasang magrekomenda ng mga plano, istratehiya, at layunin sa IATF na nakatutok sa mga sektor ng lipunan. Ang NTF ay inaatasan din na bumuo ng mga operational plan habang ang mga LGU naman ay hinihikayat na magsa-gawa ng pangrehiyong pakikipag-ugnayan hinggil sa ating kampanya laban sa Covid-19.</p>
+
+                            <p>“The Department of the Interior and Local Government (DILG), in coordination with Local Government Units (LGUs), shall hereafter lead the contact-tracing efforts of the government. For this purpose, the Department of Health (DOH) and the DILG are directed to enter into a data-sharing agreement (DSA) in accordance with Republic Act No. 10173 or the Data Privacy Act.”</p>
+
+                            <p>The DOH guidelines for the utilization of rapid antibody test kits as presented and amended are hereby approved. Aprubado po ang mga patakaran ng DOH ukol sa paggamit ng rapid antibody test kits.</p>
+
+                            <p>The NTF Sub-group on Food Security established under Resolution No. 22, series of 2020, is hereby reorganized into the NTF Task Group on Food Security, with the Department of Agriculture (DA) as chair, and the Department of Trade and Industry (DTI), National Economic and Development Authority (NEDA), Department of Social Welfare and Development (DSWD), Department of Budget and Management (DBM), Department of Education (DepEd), Department of Science and Technology (DOST), the National Security Council (NSC), the DILG, and such other agencies as may be determined by the chair, as members.</p>
+
+                            <p>Ang NTF Sub-group on Food Security ay ni-reorganize at ginawang NTF Task Group on Food Security sa ilalim ng pamumuno ng DA bilang chair, at binubuo ng mga sumusunod na ahensya: ang DTI, NEDA, DSWD, DBM, DepEd, DOST, NSC, at DILG.</p>
+
+                            <p>With a view to assist and support sugar farmers and the sugar industry, the recommendation of the DA to encourage LGUs to include sugar in their relief good packages is adopted. Aprubado po ang rekomendasyon ng DA na hikayatin ang mga LGU na isama ang asukal sa mga relief goods sa kani-kanilang lugar upang tulungan ang ating sugar industry.</p>
+
+                            <p>The NTF Chief Implementer is hereby authorized to establish, reorganize, and abolish NTF sub-task groups as may be necessary to carry out the government’s response to the COVID-19 health event. Si NTF Chief Implementer Sec. Carlito Galvez ay pinahihintulutan na bumuo, bumuwag, at i-reorganize  ang mga NTF sub-task groups kung kinakailangan upang paigtingin ang kampanya ng gobyerno laban sa Covid-19."</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal3" style="display:none;">
+            <div class="gov-third modal govt-ann"> 
+                <div class="modal-box">
+                    <div class="modal-head">
+                        <span class="modal-title">Announcement</span>
+                        <span class="icon-cancel" onclick="closeThird()" style="cursor:pointer;"></span>
+                    </div>
+                    <div class="modal-body">
+                        <span class="ann-date">Date: <strong>April 17, 2020</strong></span>
+                        <span class="ann-source">Source: <strong>Cabinet Secretary Karlo Nograles (IATF)</strong></span>
+                        <div class="main-content">
+                            <p>"Before I wrap up and answer questions from the media, we would like to share few more updates with the public.
+                            </p>
+
+                            <p>Kahapon po nabanggit ko na inilunsad na ng DOF ang Small Business Wage Subsidy o SBWS Program para tulungan ang mga maliliit na negosyo. Kahapon naman po inilunsad ng Department of Tourism ang isang online training program para sa ating mga tourism stakeholders para maka-adjust po sa sinasabing “new normal” sa industriya.</p>
+
+                            <p>According to the DOT, the program called DOT Online Training will cover two subject areas: 1) Tourism Enterprise, which involves monitoring, evaluating and learning from past and present situations to enable tourism stakeholders to prepare better for the future; and 2) Filipino Brand of Service, which applies the seven Filipino values or ""7Ms"" that characterize Filipino hospitality, namely May Likha, Makatao, Makakalikasan, Makabansa, Masayahin, May–Bayanihan and May–Pag–asa.</p>
+
+                            <p>Sa ating mga stakeholders sa turismo, makakasali po kayo via Zoom video–conferencing, tulad po ng ginagawa namin sa mga meeting namin sa IATF. Pumunta lang po kayo sa website ng DOT para po sa mga detalye. Salamat po sa DOT. Aside from holding meetings online using different applications, the ECQ has compelled those of us fortunate to have internet connections to go online to perform tasks that would ordinarily require us to leave our homes. Ngayon, may mga bumibili ng groceries at tinapay online at pinapa-deliver na lang. May mga nago-online banking o nagbabayad ng mga bills online.</p>
+
+                            <p>While this has helped many of us cope with the limitations brought about by the ECQ, the National Bureau of Investigation Cybercrime Division and Bangko Sentral ng Pilipinas report a 100% increase in phishing cases––phishing spelled with a “P” and “H”––and warn everyone to be cautious when it comes to your bank details.Bale ang modus operandi ng phishing ay may taong magpapanggap na empleyado ng bangko mo at hihingin nila ang detalye ng account mo tulad ng account number o password. Wag nyo pong ibigay; hindi po hihingin ng banko nyo yan - kahit kelan man, kahit sa ano mang pagkakataon.</p>
+
+                            <p>Wina-warn din po tayo na mag-ingat po sa mga humihingi ng donasyon online; may mga kriminal na nagpapanggap na kasapi sa mga respetadong institusyon. We encourage everyone to double-check and verify these requests for donations. Mas mainam po na magbigay sa mga personal na kakilala natin o personal na inendorso ng malalapit sa atin.Kung may mga reklamo po kayo hinggil dito, pwede nyo pong i-report ito sa NBI website. Salamat po sa NBI at BSP.</p>
+
+                            <p>Ngayon, nung IATF briefing nung Miyerkules, nabanggit ko na nasa 16 na po ang testing centers sa buong bansa. Yesterday, the DOH announced that it has accredited one more institution, the Chinese General Hospital in Manila, bringing the number of testing centers in the country to 17.</p>
+
+                            <p>So, as of today, the following are the DOH-accredited testing sites nationwide: </p>
+
+                            <p>Research Institute for Tropical Medicine in Muntinlupa City</p>
+
+                            <p>Baguio General Hospital and Medical Center in Baguio City</p>
+    
+                            <p>San Lazaro Hospital in Manila City</p>
+    
+                            <p>Vicente Sotto Memorial Medical Center in Cebu City</p>
+    
+                            <p>Southern Philippines Medical Center in Davao City</p>
+    
+                            <p>University of the Philippines National Institutes of Health in Manila City</p>
+    
+                            <p>Lung Center of the Philippines in Quezon City</p>
+    
+                            <p>Western Visayas Medical Center in Iloilo City</p>
+    
+                            <p>Bicol Public Health Laboratory in Legazpi City</p>
+    
+                            <p>St. Luke’s Medical Center in Quezon City</p>
+    
+                            <p>Victoriano Luna Hospital in Quezon City</p>
+    
+                            <p>The Medical City in Pasig City</p>
+    
+                            <p>Makati Medical Center in Makati City</p>
+    
+                            <p>Molecular Diagnostics Laboratory in Mandaluyong City</p>
+    
+                            <p>St. Luke’s Medical Center in Taguig City</p>
+    
+                            <p>Philippine Red Cross in Mandaluyong</p>
+    
+                            <p>Chinese General Hospital in Manila City."</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal4" style="display:none;">
+            <div class="gov-fourth modal govt-ann"> 
+                <div class="modal-box">
+                    <div class="modal-head">
+                        <span class="modal-title">Announcement</span>
+                        <span class="icon-cancel" onclick="closeFourth()" style="cursor:pointer;"></span>
+                    </div>
+                    <div class="modal-body">
+                        <span class="ann-date">Date: <strong>April 17, 2020</strong></span>
+                        <span class="ann-source">Source: <strong>Secretary Ernesto M. Pernia, PhD (SOSP)</strong></span>
+                        <div class="main-content">
+                            <p>"After reflection during Holy Week, and consultations with my family and close colleagues, I have decided to resign from my post as Secretary of Socioeconomic Planning. This is due partly to personal reasons and partly to differences in development philosophy with a few of my fellow Cabinet members.
+                            </p>
+
+                            <p>I would like to thank the President for appointing me to the position. It has been an honor and privilege to have served the country under his administration for the past nearly four years.</p>
+
+                            <p>I must also thank my NEDA family for their trust and confidence in my leadership of the agency in crafting and pursuing the goals of the Philippine Development Plan 2017-2022 towards our country’s Ambisyon Natin 2040, as well as evaluating and reviewing flagship infrastructure projects for approval by the President-chaired NEDA Board and their eventual implementation.</p>
+
+                            <p>I leave NEDA knowing that we have initiated and implemented meaningful changes that will help the country overcome these challenging times and on to a higher growth trajectory."</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal5" style="display:none;">
+            <div class="gov-fifth modal govt-ann"> 
+                <div class="modal-box">
+                    <div class="modal-head">
+                        <span class="modal-title">Announcement</span>
+                        <span class="icon-cancel" onclick="closeFifth()" style="cursor:pointer;"></span>
+                    </div>
+                    <div class="modal-body">
+                        <span class="ann-date">Date: <strong>April 17, 2020</strong></span>
+                        <span class="ann-source">Source: <strong>Spokesperson Atty. Brian Hosaka (Former SC)</strong></span>
+                        <div class="main-content">
+                            <p>"The Supreme Court concluded this morning, 17 April 2020, its Special En Banc Session presided over by Chief Justice Diosdado M. Peralta. The Special En Banc Session was conducted through an online platform with all 15 Supreme Court Justices in attendance.
+                            </p>
+
+                            <p>The following were taken up during the meeting:</p>
+
+                            <p>1. G.R. No. 252117 (In the matter of the urgent petition for the release of prisoners on humanitarian grounds in the midst of the Covid-19 Pandemic, Dionisio S. Almonte, et al. vs. People of the Philippines, et al.) - The Supreme Court, without giving due course to the Petition, ordered respondents to file a Comment by April 24, 2020.  This period is non-extendible. Respondents are ordered to take the necessary interim preventive measures required by this national emergency (COVID 19) and provide a verified report to the Court within the same period.</p>
+
+                            <p>2. G.R. No. 252118 (Dino S. De Leon vs. Rodrigo Roa Duterte) - No action was taken by the Supreme Court since the case is still being deliberated."</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal6" style="display:none;">
+            <div class="gov-sixth modal govt-ann"> 
+                <div class="modal-box">
+                    <div class="modal-head">
+                        <span class="modal-title">Announcement</span>
+                        <span class="icon-cancel" onclick="closeSixth()" style="cursor:pointer;"></span>
+                    </div>
+                    <div class="modal-body">
+                        <span class="ann-date">Date: <strong>April 17, 2020</strong></span>
+                        <span class="ann-source">Source: <strong>Cabinet Secretary Karlo Nograles (IATF)</strong></span>
+                        <div class="main-content">
+                            <p>"Magandang umaga po sa mga kababayan natin, sa mga kaibigan natin sa media, at sa ating mga frontliners. Sa mga nanood ngayon, thank you po for taking the time to learn the latest updates regarding the government’s measures to address the Covid-19 outbreak.
+                            </p>
+
+                            <p>Unang-na po, we would like to assure the public that the government continues to work to ensure that supplies of produce and food essentials remain stable during the Enhanced Community Quarantine. Sinisugurado pa ng gobyerno na hindi tayo mauubusan ng pagkain at bigas sa gitna ng ECQ. Para tuloy-tuloy po ang daloy ng agricultural cargo, inextend po ng Department of Agriculture ang validity ng 91,274 Food Passes na ibinigay sa mga trucker at supplier ng pagkain. To ensure continued access to affordable rice, the DA has directed the NFA to buy palay at 21 pesos to beef up the NFA’s 30-day buffer stock. According to the DA, the country should have sufficient rice supply good for 84 days by the end of June.</p>
+
+                            <p>Bukod dito, tinulungan po ng DA ang 114,649 na hirap na magsasaka at mangingisda sa ilalim ng SureAid at Recovery Project.Kasama po ng DA sa pagpapa-abot ng tulong pinansyal ang Department of Labor and Employment at Department of Social Welfare and Development.</p>
+
+                            <p>The DSWD reports that as of yesterday it was able to distribute an additional 1.3 billion pesos’ worth of emergency subsidies to 236,331 low income, non-4Ps families on top of the 3.72 million 4Ps beneficiaries that have already received assistance. The DSWD has also extended 65 billion pesos’ worth of emergency subsidies to 1,228 LGUs for disbursement to Assistance to Individuals in Crisis Situation (AICS) beneficiaries.</p>
+
+                            <p>Ngayon pagdating naman po sa ating manggagawa, nirereport po ng DOLE na nabigyan na po mg ayuda ang 236,412 na mga manggagawa sa ilalim ng COVID-19 Adjustment Measures Program o CAMP. Nais ko lang po na i-announce na tuloy po nating tutulungan ang mga manggagawa, pero sa ibang programa naman - ito ang Small Business Wage Subsidy o SBWS Program na iru-roll out po ng Department of Finance</p>
+
+                            <p>Kahit po ang mga empleyadong nakatanggap ng ayuda mula sa DOLE CAMP program ay maaari ring tumanggap ng ayuda sa SBWS, pero ayon sa DOF sila ay eligible lamang para sa unang buwan.Ngayon, sino ang maaaring mag-apply? Ang mag-aapply po ay ang mga small business employers para sa kanilang mga empleyado sa pamamagitan ng My.SSS account. Uulitin ko po––ang mag-aapply po ay ang mga employers para sa empleyado nila, hindi ang mismong empleyado.</p>
+
+                            <p>Sino po eligible para sa programang ito? Qualified po ang mga  sumusunod: small businesses, o lahat ng hindi kasama sa listahan ng BIR Large Taxpayers Service; at mga maliit na negosyo na napilitang magsara pansamantala o magsuspinde ng trabaho dahil sa ECQ o pinayagang mag-operate ng skeleton force. Lahat ng apektadong small businesses ay tutulungan, ngunit ang unang makakatanggap ng tulong na ito ay ang mga negosyong sumusunod sa patakaran ng SSS at BIR.
+                            </p>
+
+                            <p>Ano naman ang kwalipikasyon para sa mga empleyadong tatanggap nito? Una, dapat nagtatrabaho sa isang eligible small business. Pangalawa, aktibong empleyado ng nasabing small business hanggang March 1, 2020 ngunit hindi nakatanggap ng sweldo ng dalawang linggo o higit pa, dahil sa pansamantalang pagsara ng negosyo. Pangatlo, kahit anong contract status; halimbawa: regular, probationary, regular seasonal, project-based,  o fixed-term. Pang-apat, sertipikado ng employer na pasok sa criteria na nabanggit.</p>
+
+                            <p>Pag ang empleyado sa isang negosyo ay makatanggap ng ayudang ito mula sa gobyerno, dalawa po ang kundisyon: para sa small business, hindi nila pwede tanggalin sa trabaho ang empleyadong nakatanggap ng wage subsidy; para sa empleyado, hindi sya maaaring magresign sa loob ng ECQ period.</p>
+
+                            <p>Para malaman po ng isang employer kung pre-qualified sya, pwede pong pumunta sa BIR website at i-click ang SBWS icon. Pag kayo naman po ay qualified, pumunta lang po kayo sa SSS website para mag-apply at gamitin nyo ang inyong My.SSS accounts.The application period for the SBWS is from April 16 to 30, while the distribution of the first tranche will be from May 1 to 15. The second tranche may be released between May 16 to 31 depending on the ECQ. Salamat po sa DOF, BIR, at SSS."</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal7" style="display:none;">
+            <div class="gov-seventh modal govt-ann"> 
+                <div class="modal-box">
+                    <div class="modal-head">
+                        <span class="modal-title">Announcement</span>
+                        <span class="icon-cancel" onclick="closeSeventh()" style="cursor:pointer;"></span>
+                    </div>
+                    <div class="modal-body">
+                        <span class="ann-date">Date: <strong>April 17, 2020</strong></span>
+                        <span class="ann-source">Source: <strong>Cabinet Secretary Karlo Nograles (IATF)</strong></span>
+                        <div class="main-content">
+                            <p>"As the IATF repeatedly stresses, improving our testing capabilities is one of government’s top priorities. Yesterday we announced that we have 16 testing centers nationwide, and the DOH reports that more will be operational soon once they are certified. To complement these efforts, the Department of Science and Technology (DOST) has announced that it will set up sample collecting booths nationwide to facilitate government’s expanded testing efforts.
+                            </p>
+
+                            <p>As part of this initiative, the regional offices of DOST will partner with the DOH in setting up the specimen collection booths across the country. Initially, the DOST plans to set up at least 132 specimen collection booths in different regions nationwide. Salamat po sa DOST at DOH.</p>
+
+                            <p>Another priority of the government is to prevent Covid-19 from spreading, and a key component of this effort is restricting the movement of the general populace. Yan po ang purpose ng ECQ. Simple lang po ang prinsipyo nito: pag nasa bahay po kayo, hindi kayo mahahawa. At kung kayo naman ay po may sakit pero walang simtomas, di kayo makakahawa ng iba. The President himself has acknowledged that this has not been easy for all of us. Kahit si Presidente, inamin nya na naiinip na sya.</p>
+
+                            <p>The importance of social distancing is the rationale behind the PNP’s efforts to strictly enforce the ECQ. According to the PNP, Joint Task Force COVID Shield has already started to set up mobile checkpoints in EDSA and other major thoroughfares of Metro Manila following multiple reports of violations of the ECQ. These mobile checkpoints inside Metro Manila are manned and supervised by personnel of the PNP-Highway Patrol Group, who are tasked to check if private vehicle owners are complying with the guidelines of the ECQ. Nakikipag-ugnayan po sila sa MMDA para sa pagtatag ng mga mobile checkpoints sa ibang lugar dito sa Metro Manila.</p>
+
+                            <p>PNP-HPG personnel manning the mobile checkpoints within Metro Manila will be tasked to check if the driver of the private vehicle is allowed to go outside the individual’s house under the ECQ guidelines and falls under the list of exemptions previously announced by the IATF.</p>
+
+                            <p>We recognize that we have to find ways to expedite or speed up passage through our checkpoints. As of yesterday, at least 200 scanners are now being used in various quarantine control points or QCPs in Metro Manila as part of the expansion of the implementation of our online identification system called RapidPass, which we launched earlier. This system seeks to expedite the movement of health workers and other frontliners amid the strict implementation of the enhanced community quarantine.</p>
+
+                            <p> Pero kung mahaba man ang pila sa mga checkpoint, pakiusap po namin sa ating kababayan ay pahabain ang inyong pasensya. Please be patient with law enforcement officers as they are just doing their jobs. Ika nga, trabaho lang, walang personalan. They have been directed to be strict, because being lax could have dire consequences for us all. Let us keep in mind that our police are also frontliners, and they, too, are vulnerable to infection in the course of doing their duties. According to the PNP, there are already 59 PNP personnel who have contracted the virus. Tatlo po sa mga na-infect na pulis ay pumanaw na.
+                            </p>
+
+                            <p>Despite the risks, our police continue to work 24/7 to keep us safe. Not only that, they have also gone beyond the call of duty and have raised 69.1 million pesos from uniformed personnel and civilian employees for the Team PNP Bayanihan Fund, which seeks to augment the national government’s cash subsidy and social amelioration programs to assist poor families affected by the ECQ measures. Sa ating mga pulis, maraming salamat po.</p>
+
+                            <p>The three PNP personnel whose lives were lost to Covid-19 are not the only losses we mourn. Kasama po dito ang mga doktor at medical health workers na nagkasakit habang ginagampanan ang kanilang tungkulin; heroes who lost their lives on the frontlines of our battle against this disease.</p>
+
+                            <p>Said the other day that today’s heroes wear white; dadagdagan ko po. Our heroes also don and represent our country’s colors. One of them is Ambassador Bernardita Catalla, who succumbed to the disease while serving as our country’s representative to Beirut. In her honor, Philippine flags in all DFA offices in the Philippines and abroad will be flown at half-mast. Yesterday, 13 lives were claimed by Covid-19; this brings the total number of deaths in the country to 362. Umaabot na po sa 5,660 ang nahawa sa Covid-19 sa buong bansa; kahapon po may 207 bagong kaso.</p>
+
+                            <p>But, as Mahatma Gandhi once said, “in the midst of death, life persists; in the midst of darkness, light persists.” Kahapon, 82 po ang naka-recover sa Covid-19. Lahat-lahat, 435 na ang nana-recover sa sakit na ito. Yesterday was the fifth straight day that the number of daily recoveries had increased. For this, we again thank all the medical personnel who tirelessly work to treat the sick at the risk of their own safety. Kahapon ang ikalimang sunud-sunod na araw kung saan nakapagtala tayo ng pagtaas sa bilang ng mga gumagaling sa karamdaman.  Maraming salamat po sa ating mga doktor, nars, at mga health care workers at frontliners po natin.</p>
+
+                            <p>We need to stress, however, that all of us can play a role in influencing the numbers we in government report every day. Lahat po tayo, may maaambag para pababain ang bilang ng nagkakasakit at namamatay dahil sa Covid-19. Kailangan po natin na sundin ang payo ng ating mga doktor: manatili sa ating tahanan at wag lumabas kung di kailangan; magsuot ng mask at maghugas ng kamay. Bahay muna, buhay muna.</p>
+
+                            <p>Sama-sama, magtatagumpay tayo laban sa Covid-19. Together, we heal as one.</p>
+
+                            <p>Maraming salamat po, magandang umaga po uli"</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="announcements">
+            <section class="header">
+                <h1>Government Announcements</h1>
+                <p>Listed below are all the official announcements, press releases, resolutions, and briefings we have collected to make it easier for you to keep up to date.</p>
+            </section>
+            <section class="announcements-container">
+                <div class="header-row">
+                    <span class="date">DATE</span>
+                    <span class="source">SOURCE</span>
+                    <span class="announcement-content">ANNOUNCEMENT</span>
+                </div>
+                <a onclick="firstannouncement()">
+                <div class="card">
+                    <div class="data-fields">
+                        <span class="data-field-label">
+                            Date
+                        </span>
+                        <span class="data-field-content">
+                            April 19, 2020
+                        </span>
+                        <span class="data-field-label">
+                            Source
+                        </span>
+                        <span class="data-field-content">
+                            Presidential Spokesperson Harry Roque
+                        </span>
+                        <span class="data-field-label">
+                            Announcement
+                        </span>
+                        <span class="data-field-content">
+                            On human rights concerns during the enhanced community quarantine period: The Palace takes note on the efforts of the local government units (LGUs) on how they devise and operationalize social distancing and other preventive measures under the enhanced community quarantine (ECQ). We give due credit to these efforts happening on the ground, along with other interventions, in order to make the ECQ effective in containing the spread of the coronavirus 2019 (Covid-19). There are, however, concerns on alleged human rights violations by LGUs against ECQ offenders who disobeyed the rules and health protocols.  As we are not fully aware of the details of such violations, we will appreciate receipt of detailed information of the same for proper action by the appropriate agencies. Under the current circumstances we are in, the LGUs enforce the law as reasonably strict as possible for the full protection of our people.  While such protection measures spell the difference between life and death, they are implemented well within the rule of law, and are respectful of the human dignity and human rights of everyone. In addition, the Department of Interior and Local Government (DILG), which supervises both the LGUs and the Philippine National Police (PNP), is committed to uphold human rights at all times and will not tolerate any violation during this period of ECQ. In all this, we cannot overstate the need for everyone to observe social distancing, curfew hours, and other protocols in these difficult times.  As necessary, please stay at home. Please do not violate any of the ECQ rules. This entails everyone’s cooperation. We need to fight this pandemic together.
+                        </span>
+                    </div>
+                    <div class="read-more-button-container">
+                        <span class="read-more-cta">
+                            Read More
+                        </span>
+                    </div>
+                </div>
+                </a>
+                <a onclick="secondannouncement()">
+                <div class="card">
+                    <div class="data-fields">
+                        <span class="data-field-label">
+                            Date
+                        </span>
+                        <span class="data-field-content">
+                            April 18, 2020
+                        </span>
+                        <span class="data-field-label">
+                            Source
+                        </span>
+                        <span class="data-field-content">
+                            Cabinet Secretary Karlo Nograles (IATF)
+                       </span>
+                        <span class="data-field-label">
+                            Announcement
+                        </span>
+                        <span class="data-field-content">
+                            "Sa mga kababayan natin at sa mga kaibigan natin sa media, magandang umaga po. Magandang umaga din po sa ating mga frontliners na nangunguna sa kampanya natin labang sa Covid-19.
+
+                            Yesterday, the IATF held its last meeting for the week after which we issued IATF Resolution No. 25. The following are the contents of the said resolution.
+
+
+                            The IATF adopts a national-government-enabled, Local Government Unit (LGU)-led, and people-centered response to the COVID-19 health event. In materializing the aforementioned general principles, all agencies are directed to recommend sector-specific plans, strategies and targets to the IATF. The National Task Force (NTF) COVID-19 is likewise directed to develop the necessary operational plans. LGUs are enjoined to pursue regional cooperation in leading the fight against COVID-19.
+
+
+                            Ipinapagtibay po ng IATF ang isang kampanya laban sa Covid-19 na pinangungunahan ng mga LGU sa tulong ng national government na nakasentro sa interes at kapakanan ng taumbayan. Para matupad ito, lahat po ng ahensya ng gobyerno ay inaatasang magrekomenda ng mga plano, istratehiya, at layunin sa IATF na nakatutok sa mga sektor ng lipunan. Ang NTF ay inaatasan din na bumuo ng mga operational plan habang ang mga LGU naman ay hinihikayat na magsa-gawa ng pangrehiyong pakikipag-ugnayan hinggil sa ating kampanya laban sa Covid-19.
+
+
+                            Paragraph (B) of IATF Resolution No. 22, series of 2020, is hereby amended, to wit:
+
+
+                            “The Department of the Interior and Local Government (DILG), in coordination with Local Government Units (LGUs), shall hereafter lead the contact-tracing efforts of the government. For this purpose, the Department of Health (DOH) and the DILG are directed to enter into a data-sharing agreement (DSA) in accordance with Republic Act No. 10173 or the Data Privacy Act.”
+
+
+                            Maaalala po natin na sa IATF Resolution No. 22, inatasan ang Office of Civil Defense na manguna sa contact-tracing efforts ng gobyerno. Kahapon po nadesisyunan po ng IATF na ang DILG na po, sa tulong ng ating mga LGU, ang mangunguna sa contact-tracing efforts. Ang DILG ay inatasan na pumasok sa isang data-sharing agreement kasama ang DOH alinsunod sa Data Privacy Act.
+
+
+                            The DOH guidelines for the utilization of rapid antibody test kits as presented and amended are hereby approved. Aprubado po ang mga patakaran ng DOH ukol sa paggamit ng rapid antibody test kits.
+
+
+                            The NTF Sub-group on Food Security established under Resolution No. 22, series of 2020, is hereby reorganized into the NTF Task Group on Food Security, with the Department of Agriculture (DA) as chair, and the Department of Trade and Industry (DTI), National Economic and Development Authority (NEDA), Department of Social Welfare and Development (DSWD), Department of Budget and Management (DBM), Department of Education (DepEd), Department of Science and Technology (DOST), the National Security Council (NSC), the DILG, and such other agencies as may be determined by the chair, as members.
+
+
+                            Ang NTF Sub-group on Food Security ay ni-reorganize at ginawang NTF Task Group on Food Security sa ilalim ng pamumuno ng DA bilang chair, at binubuo ng mga sumusunod na ahensya: ang DTI, NEDA, DSWD, DBM, DepEd, DOST, NSC, at DILG.
+
+
+                            With a view to assist and support sugar farmers and the sugar industry, the recommendation of the DA to encourage LGUs to include sugar in their relief good packages is adopted. Aprubado po ang rekomendasyon ng DA na hikayatin ang mga LGU na isama ang asukal sa mga relief goods sa kani-kanilang lugar upang tulungan ang ating sugar industry.
+
+
+                            The NTF Chief Implementer is hereby authorized to establish, reorganize, and abolish NTF sub-task groups as may be necessary to carry out the government’s response to the COVID-19 health event. Si NTF Chief Implementer Sec. Carlito Galvez ay pinahihintulutan na bumuo, bumuwag, at i-reorganize  ang mga NTF sub-task groups kung kinakailangan upang paigtingin ang kampanya ng gobyerno laban sa Covid-19."
+                        </span>
+                    </div>
+                    <div class="read-more-button-container">
+                        <span class="read-more-cta">
+                            Read More
+                        </span>
+                    </div>
+                </div>
+                </a>
+                <a onclick="thirdannouncement()">
+                <div class="card">
+                    <div class="data-fields">
+                        <span class="data-field-label">
+                            Date
+                        </span>
+                        <span class="data-field-content">
+                            April 17, 2020
+                        </span>
+                        <span class="data-field-label">
+                            Source
+                        </span>
+                        <span class="data-field-content">
+                            Cabinet Secretary Karlo Nograles (IATF)
+                        </span>
+                        <span class="data-field-label">
+                            Announcement
+                        </span>
+                        <span class="data-field-content">
+                            "Before I wrap up and answer questions from the media, we would like to share few more updates with the public.
+
+                            Kahapon po nabanggit ko na inilunsad na ng DOF ang Small Business Wage Subsidy o SBWS Program para tulungan ang mga maliliit na negosyo. Kahapon naman po inilunsad ng Department of Tourism ang isang online training program para sa ating mga tourism stakeholders para maka-adjust po sa sinasabing “new normal” sa industriya.        
+
+                            According to the DOT, the program called DOT Online Training will cover two subject areas: 1) Tourism Enterprise, which involves monitoring, evaluating and learning from past and present situations to enable tourism stakeholders to prepare better for the future; and 2) Filipino Brand of Service, which applies the seven Filipino values or ""7Ms"" that characterize Filipino hospitality, namely May Likha, Makatao, Makakalikasan, Makabansa, Masayahin, May–Bayanihan and May–Pag–asa.
+
+                            Sa ating mga stakeholders sa turismo, makakasali po kayo via Zoom video–conferencing, tulad po ng ginagawa namin sa mga meeting namin sa IATF. Pumunta lang po kayo sa website ng DOT para po sa mga detalye. Salamat po sa DOT.
+
+                            Aside from holding meetings online using different applications, the ECQ has compelled those of us fortunate to have internet connections to go online to perform tasks that would ordinarily require us to leave our homes. Ngayon, may mga bumibili ng groceries at tinapay online at pinapa-deliver na lang. May mga nago-online banking o nagbabayad ng mga bills online.
+
+                            While this has helped many of us cope with the limitations brought about by the ECQ, the National Bureau of Investigation Cybercrime Division and Bangko Sentral ng Pilipinas report a 100% increase in phishing cases––phishing spelled with a “P” and “H”––and warn everyone to be cautious when it comes to your bank details.
+
+                            Bale ang modus operandi ng phishing ay may taong magpapanggap na empleyado ng bangko mo at hihingin nila ang detalye ng account mo tulad ng account number o password. Wag nyo pong ibigay; hindi po hihingin ng banko nyo yan - kahit kelan man, kahit sa ano mang pagkakataon.
+
+                            Wina-warn din po tayo na mag-ingat po sa mga humihingi ng donasyon online; may mga kriminal na nagpapanggap na kasapi sa mga respetadong institusyon. We encourage everyone to double-check and verify these requests for donations. Mas mainam po na magbigay sa mga personal na kakilala natin o personal na inendorso ng malalapit sa atin.
+
+                            Kung may mga reklamo po kayo hinggil dito, pwede nyo pong i-report ito sa NBI website. Salamat po sa NBI at BSP.
+
+                            Ngayon, nung IATF briefing nung Miyerkules, nabanggit ko na nasa 16 na po ang testing centers sa buong bansa. Yesterday, the DOH announced that it has accredited one more institution, the Chinese General Hospital in Manila, bringing the number of testing centers in the country to 17.
+
+                            So, as of today, the following are the DOH-accredited testing sites nationwide: 
+
+                            Research Institute for Tropical Medicine in Muntinlupa City
+
+                            Baguio General Hospital and Medical Center in Baguio City
+
+                            San Lazaro Hospital in Manila City
+
+                            Vicente Sotto Memorial Medical Center in Cebu City
+
+                            Southern Philippines Medical Center in Davao City
+
+                            University of the Philippines National Institutes of Health in Manila City
+
+                            Lung Center of the Philippines in Quezon City
+
+                            Western Visayas Medical Center in Iloilo City
+
+                            Bicol Public Health Laboratory in Legazpi City
+
+                            St. Luke’s Medical Center in Quezon City
+
+                            Victoriano Luna Hospital in Quezon City
+
+                            The Medical City in Pasig City
+
+                            Makati Medical Center in Makati City
+
+                            Molecular Diagnostics Laboratory in Mandaluyong City
+
+                            St. Luke’s Medical Center in Taguig City
+
+                            Philippine Red Cross in Mandaluyong
+
+                            Chinese General Hospital in Manila City."
+                        </span>
+                    </div>
+                    <div class="read-more-button-container">
+                        <span class="read-more-cta">
+                            Read More
+                        </span>
+                    </div>
+                </div>
+                </a>
+                <a onclick="fourthannouncement()">
+                    <div class="card">
+                        <div class="data-fields">
+                            <span class="data-field-label">
+                                Date
+                            </span>
+                            <span class="data-field-content">
+                                April 17, 2020
+                            </span>
+                            <span class="data-field-label">
+                                Source
+                            </span>
+                            <span class="data-field-content">
+                                Secretary Ernesto M. Pernia, PhD (SOSP)
+                            </span>
+                            <span class="data-field-label">
+                                Announcement
+                            </span>
+                            <span class="data-field-content">
+                                "After reflection during Holy Week, and consultations with my family and close colleagues, I have decided to resign from my post as Secretary of Socioeconomic Planning. This is due partly to personal reasons and partly to differences in development philosophy with a few of my fellow Cabinet members.
+
+                                I would like to thank the President for appointing me to the position. It has been an honor and privilege to have served the country under his administration for the past nearly four years.
+
+                                I must also thank my NEDA family for their trust and confidence in my leadership of the agency in crafting and pursuing the goals of the Philippine Development Plan 2017-2022 towards our country’s Ambisyon Natin 2040, as well as evaluating and reviewing flagship infrastructure projects for approval by the President-chaired NEDA Board and their eventual implementation.
+
+                                I leave NEDA knowing that we have initiated and implemented meaningful changes that will help the country overcome these challenging times and on to a higher growth trajectory."
+                            </span>
+                        </div>
+                        <div class="read-more-button-container">
+                            <span class="read-more-cta">
+                                Read More
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                <a onclick="fifthannouncement()">
+                    <div class="card">
+                        <div class="data-fields">
+                                <span class="data-field-label">
+                                    Date
+                                </span>
+                                <span class="data-field-content">
+                                    April 17, 2020
+                                </span>
+                                <span class="data-field-label">
+                                    Source
+                                </span>
+                                <span class="data-field-content">
+                                    Spokesperson Atty. Brian Hosaka (Former SC)
+                                </span>
+                                <span class="data-field-label">
+                                    Announcement
+                                </span>
+                                <span class="data-field-content">
+                                    "The Supreme Court concluded this morning, 17 April 2020, its Special En Banc Session presided over by Chief Justice Diosdado M. Peralta. The Special En Banc Session was conducted through an online platform with all 15 Supreme Court Justices in attendance. 
+
+                                    The following were taken up during the meeting:
+
+                                    1.	G.R. No. 252117 (In the matter of the urgent petition for the release of prisoners on humanitarian grounds in the midst of the Covid-19 Pandemic, Dionisio S. Almonte, et al. vs. People of the Philippines, et al.) - The Supreme Court, without giving due course to the Petition, ordered respondents to file a Comment by April 24, 2020.  This period is non-extendible. Respondents are ordered to take the necessary interim preventive measures required by this national emergency (COVID 19) and provide a verified report to the Court within the same period.
+
+                                    2.	G.R. No. 252118 (Dino S. De Leon vs. Rodrigo Roa Duterte) - No action was taken by the Supreme Court since the case is still being deliberated."    
+                                </span>
+                            </div>
+                            <div class="read-more-button-container">
+                                <span class="read-more-cta">
+                                    Read More
+                                </span>
+                        </div>
+                    </div>
+                </a>
+                <a onclick="sixthannouncement()">
+                    <div class="card">
+                        <div class="data-fields">
+                            <span class="data-field-label">
+                                Date
+                            </span>
+                            <span class="data-field-content">
+                                April 17, 2020
+                            </span>
+                            <span class="data-field-label">
+                                Source
+                            </span>
+                            <span class="data-field-content">
+                                Cabinet Secretary Karlo Nograles (IATF)
+                            </span>
+                            <span class="data-field-label">
+                                Announcement
+                            </span>
+                            <span class="data-field-content">
+                                "Magandang umaga po sa mga kababayan natin, sa mga kaibigan natin sa media, at sa ating mga frontliners. Sa mga nanood ngayon, thank you po for taking the time to learn the latest updates regarding the government’s measures to address the Covid-19 outbreak.
+
+                                Unang-na po, we would like to assure the public that the government continues to work to ensure that supplies of produce and food essentials remain stable during the Enhanced Community Quarantine. Sinisugurado pa ng gobyerno na hindi tayo mauubusan ng pagkain at bigas sa gitna ng ECQ. Para tuloy-tuloy po ang daloy ng agricultural cargo, inextend po ng Department of Agriculture ang validity ng 91,274 Food Passes na ibinigay sa mga trucker at supplier ng pagkain. To ensure continued access to affordable rice, the DA has directed the NFA to buy palay at 21 pesos to beef up the NFA’s 30-day buffer stock. According to the DA, the country should have sufficient rice supply good for 84 days by the end of June.
+
+                                Bukod dito, tinulungan po ng DA ang 114,649 na hirap na magsasaka at mangingisda sa ilalim ng SureAid at Recovery Project.
+
+                                Kasama po ng DA sa pagpapa-abot ng tulong pinansyal ang Department of Labor and Employment at Department of Social Welfare and Development.
+
+                                The DSWD reports that as of yesterday it was able to distribute an additional 1.3 billion pesos’ worth of emergency subsidies to 236,331 low income, non-4Ps families on top of the 3.72 million 4Ps beneficiaries that have already received assistance. The DSWD has also extended 65 billion pesos’ worth of emergency subsidies to 1,228 LGUs for disbursement to Assistance to Individuals in Crisis Situation (AICS) beneficiaries.
+
+                                Para po mapabilis ang pag-labas ng ayuda, sinabi po ng DSWD na tinanggal na po sa proseso ng pagbigay ng ayuda ang validation stage para agad maibigay ang 5,000 to 8,000 pesos na Social Amelioration Program cash aid sa mga pamilyang nangangailangan. Under the amended measure, the validation of beneficiaries will be conducted after the pay out of the subsidies. This way, LGUs will be able to proceed with the distribution of the cash aid within 24 hours upon receipt of the funds from the DSWD.
+
+
+                                Ngayon pagdating naman po sa ating manggagawa, nirereport po ng DOLE na nabigyan na po mg ayuda ang 236,412 na mga manggagawa sa ilalim ng COVID-19 Adjustment Measures Program o CAMP. Nais ko lang po na i-announce na tuloy po nating tutulungan ang mga manggagawa, pero sa ibang programa naman - ito ang Small Business Wage Subsidy o SBWS Program na iru-roll out po ng Department of Finance
+
+                                Ano po ang SBWS? Ang SBWS ay programa ng gobyerno na magbibigay ng ayuda sa 3.4 milyong empleyado ng 1.5 milyong small businesses nationwide na apektado ng quarantine. The total budget for this initiative is 51 billion pesos. Bale sa programang ito, may matatanggap na 5,000 to 8,000 pesos bawat empleyado, bawat buwan, na ibibigay sa loob ng dalawang buwan. 
+
+
+                                Kahit po ang mga empleyadong nakatanggap ng ayuda mula sa DOLE CAMP program ay maaari ring tumanggap ng ayuda sa SBWS, pero ayon sa DOF sila ay eligible lamang para sa unang buwan.
+
+                                Ngayon, sino ang maaaring mag-apply? Ang mag-aapply po ay ang mga small business employers para sa kanilang mga empleyado sa pamamagitan ng My.SSS account. Uulitin ko po––ang mag-aapply po ay ang mga employers para sa empleyado nila, hindi ang mismong empleyado.
+
+                                Sino po eligible para sa programang ito? Qualified po ang mga  sumusunod: small businesses, o lahat ng hindi kasama sa listahan ng BIR Large Taxpayers Service; at mga maliit na negosyo na napilitang magsara pansamantala o magsuspinde ng trabaho dahil sa ECQ o pinayagang mag-operate ng skeleton force. Lahat ng apektadong small businesses ay tutulungan, ngunit ang unang makakatanggap ng tulong na ito ay ang mga negosyong sumusunod sa patakaran ng SSS at BIR.
+
+                                Ano naman ang kwalipikasyon para sa mga empleyadong tatanggap nito? Una, dapat nagtatrabaho sa isang eligible small business. Pangalawa, aktibong empleyado ng nasabing small business hanggang March 1, 2020 ngunit hindi nakatanggap ng sweldo ng dalawang linggo o higit pa, dahil sa pansamantalang pagsara ng negosyo. Pangatlo, kahit anong contract status; halimbawa: regular, probationary, regular seasonal, project-based,  o fixed-term. Pang-apat, sertipikado ng employer na pasok sa criteria na nabanggit.
+
+                                Pag ang empleyado sa isang negosyo ay makatanggap ng ayudang ito mula sa gobyerno, dalawa po ang kundisyon: para sa small business, hindi nila pwede tanggalin sa trabaho ang empleyadong nakatanggap ng wage subsidy; para sa empleyado, hindi sya maaaring magresign sa loob ng ECQ period.
+
+                                Para malaman po ng isang employer kung pre-qualified sya, pwede pong pumunta sa BIR website at i-click ang SBWS icon. Pag kayo naman po ay qualified, pumunta lang po kayo sa SSS website para mag-apply at gamitin nyo ang inyong My.SSS accounts.
+
+                                The application period for the SBWS is from April 16 to 30, while the distribution of the first tranche will be from May 1 to 15. The second tranche may be released between May 16 to 31 depending on the ECQ. Salamat po sa DOF, BIR, at SSS."
+                            </span>
+                        </div>
+                        <div class="read-more-button-container">
+                            <span class="read-more-cta">
+                                Read More
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                <a onclick="seventhannouncement()">
+                    <div class="card">
+                        <div class="data-fields">
+                            <span class="data-field-label">
+                                Date
+                            </span>
+                            <span class="data-field-content">
+                                April 17, 2020
+                            </span>
+                            <span class="data-field-label">
+                                Source
+                            </span>
+                            <span class="data-field-content">
+                                Cabinet Secretary Karlo Nograles (IATF)
+                            </span>
+                            <span class="data-field-label">
+                                Announcement
+                            </span>
+                            <span class="data-field-content">
+                                "As the IATF repeatedly stresses, improving our testing capabilities is one of government’s top priorities. Yesterday we announced that we have 16 testing centers nationwide, and the DOH reports that more will be operational soon once they are certified. To complement these efforts, the Department of Science and Technology (DOST) has announced that it will set up sample collecting booths nationwide to facilitate government’s expanded testing efforts.
+
+                                As part of this initiative, the regional offices of DOST will partner with the DOH in setting up the specimen collection booths across the country. Initially, the DOST plans to set up at least 132 specimen collection booths in different regions nationwide. Salamat po sa DOST at DOH.
+
+                                Another priority of the government is to prevent Covid-19 from spreading, and a key component of this effort is restricting the movement of the general populace. Yan po ang purpose ng ECQ. Simple lang po ang prinsipyo nito: pag nasa bahay po kayo, hindi kayo mahahawa. At kung kayo naman ay po may sakit pero walang simtomas, di kayo makakahawa ng iba.
+
+                                The President himself has acknowledged that this has not been easy for all of us. Kahit si Presidente, inamin nya na naiinip na sya.
+
+
+                                [waiting for the transcription to insert what he said about LDR]
+
+
+                                The importance of social distancing is the rationale behind the PNP’s efforts to strictly enforce the ECQ. According to the PNP, Joint Task Force COVID Shield has already started to set up mobile checkpoints in EDSA and other major thoroughfares of Metro Manila following multiple reports of violations of the ECQ. These mobile checkpoints inside Metro Manila are manned and supervised by personnel of the PNP-Highway Patrol Group, who are tasked to check if private vehicle owners are complying with the guidelines of the ECQ. Nakikipag-ugnayan po sila sa MMDA para sa pagtatag ng mga mobile checkpoints sa ibang lugar dito sa Metro Manila.
+
+                                PNP-HPG personnel manning the mobile checkpoints within Metro Manila will be tasked to check if the driver of the private vehicle is allowed to go outside the individual’s house under the ECQ guidelines and falls under the list of exemptions previously announced by the IATF.
+
+                                We recognize that we have to find ways to expedite or speed up passage through our checkpoints. As of yesterday, at least 200 scanners are now being used in various quarantine control points or QCPs in Metro Manila as part of the expansion of the implementation of our online identification system called RapidPass, which we launched earlier. This system seeks to expedite the movement of health workers and other frontliners amid the strict implementation of the enhanced community quarantine.
+
+                                The 200 scanners were already distributed to 48 QCPs, mostly located at the boundaries of Metro Manila and the provinces of Laguna, Rizal, Cavite, and Bulacan, where most Metro Manila workers come from. The implementation of the RapidPass system is expected to address the long queues of private and non-cargo vehicles at the QCPs, as policemen and soldiers manning the control points will no longer need to individually check the identification cards and other home quarantine exemption documents of the occupants.
+
+                                Pero kung mahaba man ang pila sa mga checkpoint, pakiusap po namin sa ating kababayan ay pahabain ang inyong pasensya. Please be patient with law enforcement officers as they are just doing their jobs. Ika nga, trabaho lang, walang personalan. They have been directed to be strict, because being lax could have dire consequences for us all.
+
+                                Let us keep in mind that our police are also frontliners, and they, too, are vulnerable to infection in the course of doing their duties. According to the PNP, there are already 59 PNP personnel who have contracted the virus. Tatlo po sa mga na-infect na pulis ay pumanaw na.
+
+                                Despite the risks, our police continue to work 24/7 to keep us safe. Not only that, they have also gone beyond the call of duty and have raised 69.1 million pesos from uniformed personnel and civilian employees for the Team PNP Bayanihan Fund, which seeks to augment the national government’s cash subsidy and social amelioration programs to assist poor families affected by the ECQ measures. Sa ating mga pulis, maraming salamat po.
+
+                                The three PNP personnel whose lives were lost to Covid-19 are not the only losses we mourn. Kasama po dito ang mga doktor at medical health workers na nagkasakit habang ginagampanan ang kanilang tungkulin; heroes who lost their lives on the frontlines of our battle against this disease.
+
+                                said the other day that today’s heroes wear white; dadagdagan ko po. Our heroes also don and represent our country’s colors. One of them is Ambassador Bernardita Catalla, who succumbed to the disease while serving as our country’s representative to Beirut. In her honor, Philippine flags in all DFA offices in the Philippines and abroad will be flown at half-mast.
+
+                                Yesterday, 13 lives were claimed by Covid-19; this brings the total number of deaths in the country to 362. Umaabot na po sa 5,660 ang nahawa sa Covid-19 sa buong bansa; kahapon po may 207 bagong kaso.
+
+
+                                But, as Mahatma Gandhi once said, “in the midst of death, life persists; in the midst of darkness, light persists.” Kahapon, 82 po ang naka-recover sa Covid-19. Lahat-lahat, 435 na ang nana-recover sa sakit na ito. Yesterday was the fifth straight day that the number of daily recoveries had increased. For this, we again thank all the medical personnel who tirelessly work to treat the sick at the risk of their own safety. Kahapon ang ikalimang sunud-sunod na araw kung saan nakapagtala tayo ng pagtaas sa bilang ng mga gumagaling sa karamdaman.  Maraming salamat po sa ating mga doktor, nars, at mga health care workers at frontliners po natin.
+
+                                We need to stress, however, that all of us can play a role in influencing the numbers we in government report every day. Lahat po tayo, may maaambag para pababain ang bilang ng nagkakasakit at namamatay dahil sa Covid-19. Kailangan po natin na sundin ang payo ng ating mga doktor: manatili sa ating tahanan at wag lumabas kung di kailangan; magsuot ng mask at maghugas ng kamay. Bahay muna, buhay muna.
+
+                                Sama-sama, magtatagumpay tayo laban sa Covid-19. Together, we heal as one. 
+
+                                Maraming salamat po, magandang umaga po uli"
+                            </span>
+                        </div>
+                        <div class="read-more-button-container">
+                            <span class="read-more-cta">
+                                Read More
+                            </span>
+                        </div>
+                        </div>
+                    </a>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <section class="kneeler">
+            <div class="kneeler-proper">
+                <div class="about">
+                    <h4>About</h4>
+                    <p>Project Moses is a Crisis Response Toolbox that aims to be an all-in-one web dashboard for Filipinos in times of calamity and crisis mainly and should still be relevant even in times of peace. We are starting with a Virtual Triage that could match patients with hospitals. It is a publicly accessible collaboration tool using Information Communication Technology (ICT) meant to connect COVID-19 response actors.</p>
+                    <a href="about-project-moses.html">Learn More About the Project</a>
+                </div>
+            <div class="kneeler-links col1">
+                <h4>Tools</h4>
+                <li><a href="triage.html">Self-Triage Tool</a></li>
+                <li><a href="hospital-directory.html">Hospital Directory</a></li>
+                <li><a href="hospital-portal.html">Hospital Portal</a></li>
+            </div>
+            <div class="kneeler-links col2">
+                <h4>Info</h4>
+                <li><a href="clinics.html">Clinics</a></li>
+                <li><a href="grocery-stories.html">Grocery Stores</a></li>
+                <li><a href="pharmacies.html">Pharmacies</a></li>
+                <li><a href="roads.html">Roads</a></li>
+            </div>
+            <div class="kneeler-links col3">
+                <h4>News</h4>
+                <li><a href="government-announcements.html">Government Announcements</a></li>
+                <li><a href="news-aggregator.html">News Media Aggregator</a></li>
+            </div>
+            <div class="kneeler-links col4">
+                <h4>Resources</h4>
+                <li><a href="official-statements.html">Official Statements Archive</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="emerging-research.html">Emerging Research</a></li>
+                <li><a href="useful-links.html">Useful Links</a></li>
+                <li><a href="covid-19-apps.html">COVID-19 Apps</a></li>
+            </div>
+            </div>
+            <img src="./ASSETS/img/logo-white.png" alt="" class="white-logo">
+            <div class="socmed-container">
+                <a href="https://www.facebook.com/Bridge360PH" title="Like us on Facebook!" target="_blank"><span class="icon icon-facebook-square"></span></a>
+                <a href="https://twitter.com/bridge360PH" title="Follow us on Twitter!" target="_blank"><span class="icon icon-twitter-square"></span></a>
+                <a href="https://www.linkedin.com/company/bridge360ph/" title="Follow us on LinkedIn!" target="_blank"><span class="icon icon-linkedin-square"></span></a>
+            </div>
+        </section>
+        <section class="foot">
+            <p>2020 Copyright Bridge 360. All Rights Reserved.</p>
+        </section>
+
+    </footer>
+
+    <script src="js/modal.js"></script>
+
+    <script src="js/main.min.js"></script>
+</body>
+
+
+</html>

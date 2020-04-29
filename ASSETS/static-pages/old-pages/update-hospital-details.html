@@ -1,0 +1,787 @@
+<style>
+    /* UPDATE HOSPITAL INFO PAGE START */
+    .update-hospital-info-page {
+        height: 100%;
+        width: 100%;
+        padding: 1rem 2rem !important;
+        color: #707070;
+    }
+
+    .update-hospital-info-page .breadcrumbs {
+        font-size: 12px;
+    }
+
+    .update-hospital-info-page .main-msg-row {
+        text-align: center;
+        color: #000000;
+    }
+
+    .update-hospital-info-page .main-msg-row h3 {
+        font-weight: 600;
+    }
+
+    .update-hospital-info-page .main-msg-row p {
+        font-weight: 300;
+    }
+
+    .update-hospital-info-page .hospital-details-container {
+        padding: 0px 7rem;
+    }
+
+    .update-hospital-info-page .hospital-details-container.covid-admissions {
+        height: 80%;
+    }
+
+    .update-hospital-info-page .hospital-card-detail.covid-admissions {
+        height: 100%;
+    }
+
+    .update-hospital-info-page .hospital-card-detail {
+        -webkit-transition: all 200ms ease-in-out;
+        transition: all 200ms ease-in-out;
+        display: flex;
+    }
+
+    .update-hospital-info-page .input-field-text {
+        width: 100%;
+        margin: 0.5rem auto;
+        padding: 1rem;
+        padding-left: 2rem;
+        height: 40px;
+        border-radius: 3px;
+        border: 1px solid #ababab;
+    }
+
+    .update-hospital-info-page .input-field-text::-webkit-input-placeholder {
+        font-style: italic;
+        color: #cccccc;
+        font-weight: 200;
+    }
+
+    .update-hospital-info-page .input-field-text:-ms-input-placeholder {
+        font-style: italic;
+        color: #cccccc;
+        font-weight: 200;
+    }
+
+    .update-hospital-info-page .input-field-text::-ms-input-placeholder {
+        font-style: italic;
+        color: #cccccc;
+        font-weight: 200;
+    }
+
+    .update-hospital-info-page .input-field-text-mini {
+        width: 100%;
+        margin: 0.5rem auto;
+        padding: 1rem;
+        height: 40px;
+        border-radius: 3px;
+        border: 1px solid #ababab;
+    }
+
+    .update-hospital-info-page .input-field-text-mini::-webkit-input-placeholder {
+        font-style: italic;
+        color: #cccccc;
+        font-weight: 200;
+    }
+
+    .update-hospital-info-page .input-field-text-mini:-ms-input-placeholder {
+        font-style: italic;
+        color: #cccccc;
+        font-weight: 200;
+    }
+
+    .update-hospital-info-page .input-field-text-mini::-ms-input-placeholder {
+        font-style: italic;
+        color: #cccccc;
+        font-weight: 200;
+    }
+
+    .update-hospital-info-page .input-field-textarea {
+        width: 100%;
+        margin: 0.5rem auto;
+        padding: 1rem;
+        border-radius: 3px;
+        border: 1px solid #ababab;
+    }
+
+    .update-hospital-info-page .input-field-textarea::-webkit-input-placeholder {
+        font-style: italic;
+        color: #cccccc;
+        font-weight: 200;
+    }
+
+    .update-hospital-info-page .input-field-textarea:-ms-input-placeholder {
+        font-style: italic;
+        color: #cccccc;
+        font-weight: 200;
+    }
+
+    .update-hospital-info-page .input-field-textarea::-ms-input-placeholder {
+        font-style: italic;
+        color: #cccccc;
+        font-weight: 200;
+    }
+
+    .update-hospital-info-page .hospital-policies-btn {
+        width: 100%;
+        color: #238acf;
+        border-radius: 3px;
+        height: 40px;
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    .update-hospital-info-page .selected-btn-yes {
+        background: #238acf;
+        color: #ffffff;
+    }
+
+    .update-hospital-info-page .selected-btn-no {
+        background: #c03b56;
+        color: #ffffff;
+    }
+
+    .update-hospital-info-page .update-info-btn {
+        width: 100%;
+        color: #ffffff;
+        background-color: #238acf;
+        border-radius: 3px;
+        font-size: 18px
+    }
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 880px) and (-webkit-min-device-pixel-ratio: 2) {
+        .update-hospital-info-page {
+            padding: 0 !important;
+        }
+
+        .update-hospital-info-page .hospital-card-detail {
+            flex-wrap: wrap !important;
+        }
+
+        .update-hospital-info-page .hospital-card-detail .left-bar {
+            display: none !important;
+        }
+
+        .update-hospital-info-page .hospital-details-container {
+            padding: 0 !important;
+            width: 100% !important;
+        }
+
+        .update-hospital-info-page .bottom-msg {
+            padding: 1rem 1rem !important;
+        }
+    }
+
+    .update-hospital-info-page .hospital-card-detail .left-bar {
+        width: 24%;
+        border-radius: 20px 0px 0px 20px;
+        padding: 1rem;
+        text-align: end;
+    }
+
+    .update-hospital-info-page .hospital-card-detail .full-address-row {
+        height: 214px;
+    }
+
+    .update-hospital-info-page .hospital-card-detail .hospital-policies-row {
+        height: 370px;
+    }
+
+    .update-hospital-info-page .hospital-card-detail .covid-19-addmisions-row {
+        height: 205px;
+    }
+
+    .update-hospital-info-page .hospital-card-detail .inventory-row {
+        height: 820px;
+    }
+
+    .update-hospital-info-page .hospital-card-detail .resources-row {
+        height: 715px;
+    }
+
+    .update-hospital-info-page .hospital-card-detail .pin-location {
+        text-align: end;
+        font-size: 13px;
+    }
+
+    .update-hospital-info-page .hospital-card-detail .hospital-policies-label {
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .update-hospital-info-page .hospital-card-detail .other-label {
+        font-size: 14px;
+        font-weight: 450;
+    }
+
+    .update-hospital-info-page .hospital-card-detail small {
+        font-style: italic;
+    }
+
+    .update-hospital-info-page .bottom-msg {
+        padding: 1rem 8rem;
+        font-style: italic;
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .update-hospital-info-page .hospital-card-detail .left-bar.blue {
+        color: #ffffff;
+        background: #238acf;
+    }
+
+    .update-hospital-info-page .hospital-card-detail .hospital-card-detail-bottom {
+        padding: 1rem;
+        border-radius: 0 0 5px 5px;
+        border: 1px solid black;
+        -webkit-transition: all 200ms ease-in-out;
+        transition: all 200ms ease-in-out;
+        width: 100%;
+        height: auto;
+    }
+
+    .update-hospital-info-page .hospital-card-detail .hospital-name {
+        font-weight: 500;
+    }
+
+    .update-hospital-info-page .hospital-card-detail .headline {
+        font-weight: 500;
+    }
+
+    .update-hospital-info-page .hospital-card-detail small {
+        display: block;
+        margin: 5px 0;
+        color: #727272;
+    }
+
+    .update-hospital-info-page .hospital-card-detail p {
+        margin: 0.75em 0;
+        line-height: 1.5;
+    }
+
+    .update-hospital-info-page .hospital-card-detail span {
+        display: block;
+        -webkit-transition: 100ms ease;
+        transition: 100ms ease;
+    }
+
+    .update-hospital-info-page .hospital-card-detail span::after {
+        font-family: 'icomoon' !important;
+        content: '\e904';
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        display: inline-block;
+        margin-left: 0.25em;
+    }
+
+    .update-hospital-info-page .hospital-card-detail span:hover,
+    .update-hospital-info-page .hospital-card-detail span:focus {
+        font-weight: 600;
+    }
+
+    .update-hospital-info-page .hospital-card-detail span:active {
+        font-weight: 600;
+        text-decoration: underline;
+    }
+
+    .update-hospital-info-page .hospital-card-detail span.blue {
+        color: #238acf;
+    }
+
+    .update-hospital-info-page .hospital-card-detail:hover .hospital-card-detail-bottom,
+    .update-hospital-info-page .hospital-card-detail:focus .hospital-card-detail-bottom {
+        border: 1px solid;
+        -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .update-hospital-info-page .hospital-card-detail:hover .hospital-card-detail-bottom.blue,
+    .update-hospital-info-page .hospital-card-detail:focus .hospital-card-detail-bottom.blue {
+        border-color: #238acf;
+    }
+
+    /* UPDATE HOSPITAL INFO PAGE END */
+</style>
+
+<div ng-if="isLoadingDetails" class="container">
+    <div class="row loader-row">
+        <div class="col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="!isLoadingDetails" class="update-hospital-info-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <p class="breadcrumbs">Hospital Portal > <a href="#/hospital-portal">Main Dashboard</a> > Update
+                    Hospital
+                    Information</p>
+            </div>
+        </div>
+        <div class="row mt-4 main-msg-row">
+            <div class="col-sm-12 col-md-12 col-lg12">
+                <h3>Update Hospital Information</h3>
+                <p> All fields except Notes are required. You can leave the numerical fields blank
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="hospital-details-container">
+                    <div class="hospital-card-detail">
+                        <div class="left-bar blue">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p>NAME</p>
+                                </div>
+                            </div>
+                            <div class="row mt-2 full-address-row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p>FULL ADDRESS</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p>CONTACT NUMBER(s)</p>
+                                </div>
+                            </div>
+                            <div class="row mt-4 hospital-policies-row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p>HOSPITAL POLICIES</p>
+                                </div>
+                            </div>
+                            <div class="row covid-19-addmisions-row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p>COVID-19 ADMISSIONS</p>
+                                </div>
+                            </div>
+                            <div class="row mt-1 inventory-row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p>INVENTORY</p>
+                                </div>
+                            </div>
+                            <div class="row mt-1 resources-row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p>RESOURCES</p>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p>MORGUE</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p>OTHER NOTES</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hospital-card-detail-bottom blue">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="input-field-text" type="text" ng-model="hospitalInfo.hospital_name"
+                                        name="fullName" id="fullName" placeholder="User Name">
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="input-field-text" type="text" ng-model="hospitalInfo.address_1"
+                                        name="region" id="region" placeholder="Region">
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="input-field-text" type="text" ng-model="hospitalInfo.address_2"
+                                        name="city" id="city" placeholder="City">
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="input-field-text" type="text" ng-model="hospitalInfo.address_3"
+                                        name="fullAddress" id="fullAddress" placeholder="Full Address">
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="pin-location">Pin Location on Google Maps</p>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <input class="input-field-text" type="text" ng-model="hospitalInfo.contact_num"
+                                        name="contact_num" id="contact_num" placeholder="Contact Number">
+                                    <small>Seperate numbers with semicolon</small>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="hospital-policies-label">ADMITTING CONFIRMED COVID-19 PATIENTS</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <button type="button" ng-click="hospitalInfo.admitting_confirmed = 'yes'"
+                                                class="button hospital-policies-btn"
+                                                ng-class="{'selected-btn-yes': hospitalInfo.admitting_confirmed === 'yes'}">Yes
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <button type="button" ng-click="hospitalInfo.admitting_confirmed = 'no'"
+                                                class="button hospital-policies-btn"
+                                                ng-class="{'selected-btn-no': hospitalInfo.admitting_confirmed === 'no'}">No
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="hospital-policies-label">ACCEPTING PATIENTS FOR TESTING</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <button type="button" ng-click="hospitalInfo.accepting_for_test = 'yes'"
+                                                class="button hospital-policies-btn"
+                                                ng-class="{'selected-btn-yes': hospitalInfo.accepting_for_test === 'yes'}">Yes
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <button type="button" ng-click="hospitalInfo.accepting_for_test = 'no'"
+                                                class="button hospital-policies-btn"
+                                                ng-class="{'selected-btn-no': hospitalInfo.accepting_for_test === 'no'}">No
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="hospital-policies-label">DESIGNATED COVID-19 REFERAL HOSPITAL</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <button type="button" ng-click="hospitalInfo.designated_for_covid = 'yes'"
+                                                class="button hospital-policies-btn"
+                                                ng-class="{'selected-btn-yes': hospitalInfo.designated_for_covid === 'yes'}">Yes
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <button type="button" ng-click="hospitalInfo.designated_for_covid = 'no'"
+                                                class="button hospital-policies-btn"
+                                                ng-class="{'selected-btn-no': hospitalInfo.designated_for_covid === 'no'}">No
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="hospital-policies-label">REQUESTING SUPPLIES</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <button type="button" ng-click="hospitalInfo.requesting_supplies = 'yes'"
+                                                class="button hospital-policies-btn"
+                                                ng-class="{'selected-btn-yes': hospitalInfo.requesting_supplies === 'yes'}">Yes
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <button type="button" ng-click="hospitalInfo.requesting_supplies = 'no'"
+                                                class="button hospital-policies-btn"
+                                                ng-class="{'selected-btn-no': hospitalInfo.requesting_supplies === 'no'}">No
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">CONFIRMED COVID-19 PATIENTS ADMITTED</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini"
+                                                ng-model="hospitalInfo.num_confirmed_covid" type="number" min="0"
+                                                name="confirmed" id="confirmed">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">COVID-19 PATIENTS UNDER INVESTIGATION (PUI)</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini" ng-model="hospitalInfo.num_pui"
+                                                type="number" min="0" name="PUICount" id="PUICount">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">COVID-19 TESTING KITS</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini" ng-model="hospitalInfo.num_covid_kits"
+                                                type="number" min="0" name="testingKits" id="testingKits">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">AVAILABLE ALCOHOL (In ML)</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini" ng-model="hospitalInfo.num_alcohol"
+                                                type="number" min="0" name="availableAlcohol" id="availableAlcohol">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">DISPOSABLE FACE MASKS</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini" ng-model="hospitalInfo.num_face_masks"
+                                                type="number" min="0" name="disposableFaceMask" id="disposableFaceMask">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">DISPOSABLE SURGICAL GLOVES (Pairs)</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini"
+                                                ng-model="hospitalInfo.num_surgical_gloves" type="number" min="0"
+                                                name="disposableSurgicalGloves" id="disposableSurgicalGloves">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">DISPOSABLE HOODS</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini" ng-model="hospitalInfo.num_hoods"
+                                                type="number" min="0" name="disposableHoods" id="disposableHoods">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">FACE SHIELDS</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini" ng-model="hospitalInfo.num_face_shield"
+                                                type="number" min="0" name="faceShields" id="faceShields">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">SHOE COVERS</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini" ng-model="hospitalInfo.num_shoe_covers"
+                                                type="number" min="0" name="shoeCovers" id="shoeCovers">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">BODY BAGS</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini" ng-model="hospitalInfo.num_body_bags"
+                                                type="number" min="0" name="bodyBags" id="bodyBags">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">AVAILABLE RESPIRATORS</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini" ng-model="hospitalInfo.num_respirators"
+                                                type="number" min="0" name="availableRespirators"
+                                                id="availableRespirators">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">AVAILABLE AMBULANCES</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini" ng-model="hospitalInfo.num_ambulance"
+                                                type="number" min="0" name="availableAmbilances"
+                                                id="availableAmbilances">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">BEDS ASSIGNED FOR PATIENTS UNDER INVESTIGATION (PUI)</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini" ng-model="hospitalInfo.num_beds_pui"
+                                                type="number" min="0" name="bedsForPUI" id="bedsForPUI">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">BEDS ASSIGNED FOR CONFIRMED COVID-19 PATIENTS</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini"
+                                                ng-model="hospitalInfo.num_beds_confirmed" type="number" min="0"
+                                                name="bedsForConfirmed" id="bedsForConfirmed">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">PHYSICIANS AVAILABLE AND CAPABLE OF MANAGING COVID-19</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini"
+                                                ng-model="hospitalInfo.num_doctors_for_covid" type="number" min="0"
+                                                name="physicians" id="physicians">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">NURSES AVAILABLE AND CAPABLE OF MANAGING COVID-19</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini"
+                                                ng-model="hospitalInfo.num_nurses_for_covid" type="number" min="0"
+                                                name="nurses" id="nurses">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p class="other-label">MEDICAL STAFF AVAILABLE AND CAPABLE OF MANAGING COVID-19</p>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-2 col-lg-2">
+                                            <input class="input-field-text-mini"
+                                                ng-model="hospitalInfo.num_medstaff_for_covid" type="number" min="0"
+                                                name="medicalStaffs" id="medicalStaffs">
+                                        </div>
+                                        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+                                            <p>This is </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-12 col-md-2 col-lg-2">
+                                    <button type="button" ng-click="hospitalInfo.morgue = 'yes'"
+                                        class="button hospital-policies-btn"
+                                        ng-class="{'selected-btn-yes': hospitalInfo.morgue === 'yes'}">Yes
+                                    </button>
+                                </div>
+                                <div class="col-sm-12 col-md-2 col-lg-2">
+                                    <button type="button" ng-click="hospitalInfo.morgue = 'no'"
+                                        class="button hospital-policies-btn"
+                                        ng-class="{'selected-btn-no': hospitalInfo.morgue === 'no'}">No
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <textarea class="input-field-textarea" name="other-notes"
+                                        ng-model="hospitalInfo.notes" id="other-notes" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <button type="button" class="button update-info-btn" ng-click="updateInfo()">Update
+                                        Hospital
+                                        Information</button>
+                                </div>
+                            </div>
+                            <div class="row mt-3 text-center">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <a href="#/hospital-portal">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 co-md-12 col-lg-12">
+                <p class="bottom-msg">By clicking 'Update Hospital Information' you hereby certify that you are a duly
+                    authorized
+                    representative of the Hospital and that the above information you've provided is true and correct to
+                    the best of your knowledge. </p>
+            </div>
+        </div>
+    </div>
+</div>

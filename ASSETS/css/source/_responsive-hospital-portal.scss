@@ -1,0 +1,487 @@
+@media (max-width:352px) {
+    .hospital-portal {
+        .button.ok {
+            &:hover, &:focus {
+                &::after {
+                content: none;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 425px) {
+    .update-info-form {
+        .form-proper {
+            .form-element .field-element {
+                .button-group-yn {
+                    display: flex;
+                    max-width: 270px;
+                    margin-left: 5px;
+
+                    .button-yes, .button-no {
+                        margin: 0 auto;
+                    }
+
+                    .button-wrapper:nth-child(1) {
+                        margin-right: 0.5em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 570px) {
+
+    .case-file {
+        .case-file-container {
+
+            .case-section { 
+        
+                .case-section-card { 
+    
+                    &.classification {
+                        display: grid;
+
+                        .info-class, .info-testing, .info-results {
+                            display: flex;
+                            justify-content: space-between;
+    
+                            .info-item-value {
+                                display: flex;
+                                justify-content: space-between;
+                            }
+                        }
+
+                        .info-testing, .info-results {
+                            align-items: center;
+                        }
+    
+                        .classy.button {
+                            margin-right: 1em;
+    
+                            &:nth-last-child(1) {
+                                margin-right: 0;
+                                margin-bottom: 0.5em;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media (min-width: 760px) {
+    .hospital-portal {
+        .tiny-affordances {
+            display: flex;
+        }
+    }
+
+    .login-form {
+        flex-direction: row;
+        .description,.form-actual {flex:1};
+        .description{
+            border-radius: 10px 0 0 10px;
+        }
+        .form-actual{
+            border-radius: 0 10px 10px 0;
+        }
+        .description.request {
+            position: relative;
+
+            .sticky-text {
+                position: sticky;
+                z-index: 600;
+                top: 2em;
+                margin-bottom: 1em;
+            }
+        }
+    }
+
+    
+    .update-info-form {
+        .form-proper {
+            grid-template-columns: 25% auto;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.09), 0 3px 6px rgba(0,0,0,0.09);
+
+            .label-blue {
+                display: block;
+            }
+
+            .form-element {
+                padding: 0.5em 2em 0.5em 1em;
+                border-right: 1px solid color(medium);
+
+                &:nth-child(2) {
+                    padding-top: 2em;
+                    border-radius: 0 10px 0 0;
+                    border-top: 1px solid color(medium);
+                }
+                &:nth-last-child(1) {
+                    padding-bottom: 2em;
+                    border-radius: 0 0 10px 0;
+                    border-bottom: 1px solid color(medium);
+                }
+
+                &.keep-labels {
+                    margin-top: calc(-0.5em - 11px);
+
+                    .field-element .input-label.context {
+                        display: block;
+                        font-size: 0.6em;
+                        text-transform: uppercase;
+                        letter-spacing: 0.25em;
+                    }
+                }
+
+                .field-element {
+
+                    .input-label {
+                        &.actual, &.context {
+                            display: none;
+                        }
+
+                        &.bottom-hint {
+                            display: block;
+                        }
+                    }
+
+                    .input-field-container {
+
+                        .valuation {
+                            display: block;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    .dashboard {
+
+        .case-docket {
+
+            .header-row {
+                display: grid;
+            }
+            
+            .case-card {
+
+                .data-fields {
+                    display: grid;
+                    align-items: center;
+                }
+    
+                .data-field-label {
+                    display: none;
+                }
+    
+                .data-field-content {
+                    text-align: center;
+                }
+    
+                &:hover, &:focus {
+    
+                    &::after {
+                        display: block;
+                    }
+                }
+            }
+
+            .view-case-cta {
+                display: none;
+            }
+
+            .section-control {
+                padding-bottom: 0.5em;
+                border-bottom: none;
+
+                .section-name {
+                    margin: 0 auto 0 0;
+                    display: flex;
+                    align-items: center;
+
+                    span {
+                        text-align: left;
+                        color: color(dark);
+                        font-size: 0.75em;
+                        font-weight: 400;
+                    }
+    
+                    .title {
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        font-size: 1.15em;
+                        margin-right: 0.25em;
+                    }
+                }
+    
+                .control-wrapper {
+                    display: flex;
+                }
+            }
+        }
+    
+    }
+
+
+}
+
+@media (min-width: 832px) {
+    .login-form .description.request .sticky-text {
+        top: 5em;
+    }
+
+    .dashboard {
+        .hospital-info {
+
+            .name-and-update {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                h1 {
+                    font-size: 2.5em;
+                }
+
+                .update-hospital-button {
+                    margin: 0;
+
+
+                    .update-hinfo {
+                        padding-right: 0.8em;
+
+                        &::after {
+                            content: none;
+                        }
+                    }
+
+                    &:hover, &:focus {
+                        .update-hinfo {
+                            border: color(blue-3);
+                            background: color(blue-3);
+                            padding-right: 2em;
+                            position: relative;
+    
+                            &::after {
+                                font-family: 'icomoon' !important;
+                                content: '\e904';
+                                position: absolute;
+                                right: 1em;
+                                top: 50%;
+                                transform: translateY(-50%) rotate(-90deg);
+                                animation: slideToRight 300ms;
+                                font-size: 1em;
+                                color: color(lightest);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .hospital-stats .info-section-card {
+                grid-template-rows: repeat(4, 1fr);
+                grid-template-areas: 
+                "admitting confirmed"
+                "testing ."
+                "supplies pui"
+                "designated .";
+            }
+
+        }
+
+        .case-docket {
+
+            .section-control {
+
+                .control-wrapper {
+                    .control-group.find {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+
+    .case-file {
+        grid-template-areas: 
+            "file update"
+            "file update";
+    
+        .case-file-container {
+
+            .top-section { 
+                text-align: center;
+            
+                .headline { 
+            
+                    h1 { 
+                        font-size: 2em;
+                    }
+    
+                    h2 {
+                        font-size: 1em;
+                        font-weight: 400;
+                        margin: 0.2em 0;
+    
+                        span {
+                            font-size: 1em;
+                            display: inline;
+
+                            &#datetime {
+                                font-size: 1em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .case-section { 
+
+                &:nth-last-child(1) {
+                    margin-bottom: 0;
+
+                    .case-section-card {
+                        margin-bottom: 0;
+                    }
+                }
+        
+                .label-and-control { 
+            
+                    .section-label { 
+                        margin: 0 auto 0 8px;
+                    }
+            
+                    .control { 
+                        display: block;
+                        margin-right: 5px;
+                    }
+                }
+            
+                .case-section-card { 
+
+
+    
+                    &.personal-info {
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-rows: repeat(4, 1fr);
+                        grid-template-areas: 
+                            "fullname addy"
+                            "dob addy"
+                            "sex connum"
+                            "preggy email"
+                            "hcw .";
+
+                        .info-item {
+                            display: grid;
+                            grid-template-columns: 200px 1fr;
+                            
+                            &.info-addy, &.info-connum, &.info-email {
+                                grid-template-columns: 110px 1fr;
+                            }
+                        }
+                    }
+
+                    &.exposure-history {
+                    }
+            
+
+                }
+            }
+
+        }
+    
+        .case-status-update-container {
+
+            .case-status-update-box {
+                position: sticky;
+                top: 60px;
+
+            }
+
+        }
+
+    }
+}
+
+@media (min-width: 1145px) {
+
+
+    .case-file {
+   
+        .case-file-container {
+
+            .case-section { 
+        
+                .case-section-card { 
+    
+                    &.exposure-history {
+
+                        .info-item {
+                            max-width: 1000px;
+                            
+                            &#country-list {
+                                align-items: flex-start;
+                                display: flex;
+                                max-width: 1000px;
+                            }
+                        
+                            .info-item-value {
+                                width: 255px;
+                                text-align: left;
+                                
+                                .no-info {
+                                    display: block;
+                                }
+                            }
+                        
+                        }
+                    }
+            
+                }
+            }
+
+        }
+    
+        .case-file-update-container {
+
+        }
+    }
+    
+}
+
+@media (min-width: 2260px) {
+
+    .case-file {
+   
+        .case-file-container {
+
+            .case-section { 
+        
+                .case-section-card { 
+    
+                    &.exposure-history {
+
+                        .row-white, .row-grey {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                        }
+                    }
+            
+                }
+            }
+
+        }
+    
+        .case-file-update-container {
+
+        }
+    }
+}

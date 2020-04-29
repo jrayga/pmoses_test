@@ -1,0 +1,175 @@
+/* HOSPITAL DETAILS START */
+.hospital-details-page {
+    padding: 1.5rem 3rem !important;
+}
+
+.hospital-details-page .breadcrumbs {
+    font-size: 12px;
+}
+
+.hospital-details-page .contact-number-header {
+    margin: 12px auto;
+}
+
+.hospital-details-page .contact-numbers {
+    margin     : 12px auto;
+    font-weight: 600;
+}
+
+.hospital-details-page .card-headers {
+    margin-left: 15px;
+}
+
+/* .hospital-details-page .hospital-details-container {} */
+
+.hospital-details-page .hospital-details-container.covid-admissions {
+    height: 80%;
+}
+
+.hospital-details-page .hospital-card-detail.covid-admissions {
+    height: 100%;
+}
+
+.hospital-details-page .hospital-card-detail {
+    -webkit-transition: all 200ms ease-in-out;
+    transition        : all 200ms ease-in-out;
+    margin            : 1em 1rem;
+}
+
+.hospital-details-page .hospital-card-detail .left-bar {
+    width        : 3%;
+    border-radius: 19px 6px 4px 28px;
+}
+
+.hospital-details-page .hospital-card-detail .left-bar.green {
+    color     : #339d1e;
+    background: #339d1e;
+}
+
+.hospital-details-page .hospital-card-detail .left-bar.yellow {
+    color     : #ceb227;
+    background: #ceb227;
+}
+
+.hospital-details-page .hospital-card-detail .left-bar.red {
+    color     : #7b1728;
+    background: #7b1728;
+}
+
+.hospital-details-page .hospital-card-detail .left-bar.orange {
+    color     : #e18446;
+    background: #e18446;
+}
+
+.hospital-details-page .hospital-card-detail .left-bar.blue {
+    color     : #1a4456;
+    background: #1a4456;
+}
+
+.hospital-details-page .hospital-card-detail .hospital-card-detail-bottom {
+    padding           : 1rem 2rem;
+    border-radius     : 0 0 5px 5px;
+    border            : 1px solid black;
+    -webkit-transition: all 200ms ease-in-out;
+    transition        : all 200ms ease-in-out;
+    width             : 100%;
+    height            : auto;
+}
+
+.hospital-details-page .hospital-card-detail .hospital-name {
+    font-weight: 500;
+}
+
+.hospital-details-page .hospital-card-detail .headline {
+    font-weight: 500;
+}
+
+.hospital-details-page .hospital-card-detail small {
+    display: block;
+    margin : 5px 0;
+    color  : #727272;
+}
+
+.hospital-details-page .hospital-card-detail p {
+    margin     : 0.75em 0;
+    line-height: 1.5;
+}
+
+.hospital-details-page .hospital-card-detail span {
+    display           : block;
+    -webkit-transition: 100ms ease;
+    transition        : 100ms ease;
+}
+
+.hospital-details-page .hospital-card-detail span::after {
+    font-family      : 'icomoon' !important;
+    content          : '\e904';
+    -webkit-transform: rotate(-90deg);
+    transform        : rotate(-90deg);
+    display          : inline-block;
+    margin-left      : 0.25em;
+}
+
+.hospital-details-page .hospital-card-detail span:hover,
+.hospital-details-page .hospital-card-detail span:focus {
+    font-weight: 600;
+}
+
+.hospital-details-page .hospital-card-detail span:active {
+    font-weight    : 600;
+    text-decoration: underline;
+}
+
+.hospital-details-page .hospital-card-detail span.green {
+    color: #339d1e;
+}
+
+.hospital-details-page .hospital-card-detail span.yellow {
+    color: #ceb227;
+}
+
+.hospital-details-page .hospital-card-detail span.red {
+    color: #7b1728;
+}
+
+.hospital-details-page .hospital-card-detail span.orange {
+    color: #e18446;
+}
+
+.hospital-details-page .hospital-card-detail span.blue {
+    color: #1a4456;
+}
+
+.hospital-details-page .hospital-card-detail:hover .hospital-card-detail-bottom,
+.hospital-details-page .hospital-card-detail:focus .hospital-card-detail-bottom {
+    border            : 1px solid;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.05);
+    box-shadow        : 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.hospital-details-page .hospital-card-detail:hover .hospital-card-detail-bottom.green,
+.hospital-details-page .hospital-card-detail:focus .hospital-card-detail-bottom.green {
+    border-color: #339d1e;
+}
+
+.hospital-details-page .hospital-card-detail:hover .hospital-card-detail-bottom.yellow,
+.hospital-details-page .hospital-card-detail:focus .hospital-card-detail-bottom.yellow {
+    border-color: #ceb227;
+}
+
+.hospital-details-page .hospital-card-detail:hover .hospital-card-detail-bottom.red,
+.hospital-details-page .hospital-card-detail:focus .hospital-card-detail-bottom.red {
+    border-color: #7b1728;
+}
+
+.hospital-details-page .hospital-card-detail:hover .hospital-card-detail-bottom.orange,
+.hospital-details-page .hospital-card-detail:focus .hospital-card-detail-bottom.orange {
+    border-color: #e18446;
+}
+
+.hospital-details-page .hospital-card-detail:hover .hospital-card-detail-bottom.blue,
+.hospital-details-page .hospital-card-detail:focus .hospital-card-detail-bottom.blue {
+    border-color: #1a4456;
+}
+
+/* HOSPITAL DETAILS END */

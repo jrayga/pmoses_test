@@ -1,0 +1,352 @@
+@import "_colors.scss";
+@import "_searchbar.scss";
+
+
+.above-the-fold {
+    margin: 0 2em;
+
+    .triage-cta-container {
+        margin: 1em 0 0 0;
+        background: url(../img/coronavirus.jpg) no-repeat center;
+        background-size: cover;
+    }
+
+    .triage-cta {
+        background: rgba(0,0,0,0.5);
+        padding: 1em;
+        border-radius: 10px;
+        color: color(lightest);
+        transition: 150ms ease;
+
+        &:hover, &:focus {
+            box-shadow: 0 3px 6px rgba(0,0,0,0.05), 0 3px 6px rgba(0,0,0,0.05);
+        }
+    }
+
+    .left {
+
+        h3 {
+            margin-bottom: 0.25em;
+        }
+        .button {
+            margin-top: 1em;
+            display: block;
+            width: 200px;
+            padding: 0.75em 0;
+            border: 1px solid white;
+            &::after {
+                font-family: 'icomoon' !important;
+                content: '\e904';
+                transform: rotate(-90deg);
+                display: inline-block;
+                margin-left: 0.25em;
+            }
+        }
+    }
+
+    .right {
+
+        .ncov-img-container {
+            border-radius: 0 10px 10px 0;
+            display: none;
+            background: url(../img/coronavirus.jpg) no-repeat center;
+            height: 100%;
+            background-size: 265%;
+        }
+
+    }
+
+
+    .open-places-container {
+        margin-top: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .open-places {
+    }
+
+    .open-places-top {
+        background: color(blue-dark);
+        padding: 0.5em 1em;
+        border-radius: 10px 10px 0 0;
+        text-align: center;
+        color: color(lightest);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+    }
+
+    .open-places-main {
+        border: 2px solid color(blue-dark);
+        border-radius: 0 0 10px 10px;
+        padding: 1em;
+        padding-bottom: calc(1em - 2px);
+
+        .stat{
+            letter-spacing: 0.1em;
+            text-align: center;
+
+            small {
+                text-transform: uppercase;
+                display: flex;
+                height: 30px;
+                align-items: center;
+                justify-content: center;
+            }
+
+            h2 {
+                font-weight: 700;
+            }
+
+            &.clinics {
+                h2 {
+                    color: color(red-4);
+                }
+            }
+
+            &.grocery {
+                h2 {
+                    color: color(green-2);
+                }
+            }
+
+            &.drugstore {
+                h2 {
+                    color: color(orange-3);
+                }
+            }
+
+            &.road {
+                h2 {
+                    color: color(yellow-2);
+                }
+            }
+        }
+
+        .button {
+            display: block;
+            max-width: 450px;
+            margin: 1em auto 0 auto;
+
+            &:hover, &:focus {
+                background: color(blue-dark);
+                color: color(lightest);
+            }
+
+            &:active {
+                background: color(blue-4);
+                border-color: color(blue-4);
+                transform: scale(1.05);
+            }
+        }
+    }
+
+}
+    
+.hospital-search {
+    margin: 1em 0;
+    background: url(../img/hospital-banner.jpg) center;
+    background-size: cover;
+    padding: 2em 2em;
+    color: color(lightest);
+    text-align: center;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+
+    .hospital-search-content {
+        margin: 0 auto;
+
+        h1 {
+            text-shadow: 0 10px 20px rgba(0,0,0,0.25), 0 6px 6px rgba(0,0,0,0.30);
+            font-size: 2.8em;
+        }
+
+        h5 {
+            text-shadow: 0 10px 20px rgba(0,0,0,0.25), 0 6px 6px rgba(0,0,0,0.30);
+        }
+
+
+    }
+}
+
+.news-callouts {
+    padding: 1em 2em;
+
+    .section-headline {
+        display: inline-block;
+        h2 {
+            font-size: 2em;
+            font-weight: 500;
+        }
+        border-bottom: 4px solid color(signature);
+    }
+
+    .latest-news-container {
+        margin: 1em 0;
+
+        .news-image {
+            img {
+                width: 80vw;
+                max-width: 500px;
+            }
+            margin-bottom: 0.5em;
+        }
+
+        .news-info {
+            display: block;
+            margin: auto 0;
+            .news-headline {
+                display: inline-block;
+                font-size: 1.6em;
+                border-bottom: 4px solid color(signature);
+                font-weight: 500;
+            }
+            small {
+                display: block;
+                margin: 5px 0;
+                color: color(gray);
+            }
+            p {
+                margin: 0.75em 0;
+                line-height: 1.5;
+            }
+            .button {
+                display: block;
+                width: 150px;
+                border: 2px solid color(signature);
+                color: color(signature);
+                &::after {
+                    font-family: 'icomoon' !important;
+                    content: '\e904';
+                    transform: rotate(-90deg);
+                    display: inline-block;
+                    margin-left: 0.25em;
+                }
+
+                &:hover, &:focus {
+                    background: color(signature);
+                    color: color(lightest);
+                }
+
+                &:active {
+                    background: color(blue-3);
+                }
+            }
+
+        }
+    }
+
+    .other-news-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+        grid-gap: 1em;
+    }
+
+    .other-news-card {
+        display: block;
+        transition: all 200ms ease-in-out;
+        cursor: pointer;
+        margin: 1em 0;
+
+        .top-bar {
+            display: block;
+            height: 20px;
+            width: 100%;
+            border-radius: 5px 5px 0 0;
+
+
+            &.green {
+                color: color(green-2);
+                background: color(green-2);
+            }
+    
+            &.yellow {
+                color: color(yellow-2);
+                background: color(yellow-2);
+            }
+    
+            &.red {
+                color: color(red-4);
+                background: color(red-4);
+            }
+        }
+
+        .other-news-card-bottom {
+            padding: 10px;
+            border-radius: 0 0 5px 5px;
+            border: 1px solid transparent;
+            transition: all 200ms ease-in-out;
+        }
+
+        .news-headline {
+            font-weight: 500;
+        }
+
+        small {
+            display: block;
+            margin: 5px 0;
+            color: color(gray);
+        }
+        p {
+            margin: 0.75em 0;
+            line-height: 1.5;
+        }
+        span {
+            display: block;
+            transition: 100ms ease;
+
+            &::after {
+                font-family: 'icomoon' !important;
+                content: '\e904';
+                transform: rotate(-90deg);
+                display: inline-block;
+                margin-left: 0.25em;
+            }
+
+            &:hover, &:focus {
+                font-weight: 600;
+            }
+
+            &:active {
+                font-weight: 600;
+                text-decoration: underline;
+            }
+
+            &.green {
+                color: color(green-2);
+            }
+    
+            &.yellow {
+                color: color(yellow-2);
+            }
+    
+            &.red {
+                color: color(red-4);
+            }
+        }
+
+        
+        &:hover, &:focus {
+
+            .other-news-card-bottom {
+                border: 1px solid;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.05), 0 3px 6px rgba(0,0,0,0.05);
+
+                &.green {
+                    border-color: color(green-2);
+                }
+        
+                &.yellow {
+                    border-color: color(yellow-2);
+                }
+        
+                &.red {
+                    border-color: color(red-4);
+                }
+            }
+        }
+
+    }
+}

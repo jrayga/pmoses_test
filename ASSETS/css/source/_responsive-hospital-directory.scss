@@ -1,0 +1,182 @@
+@media (min-width: 550px) {
+    .directory-card-container {
+
+        .top-info, .thirdrow, .mobile-only-area {
+            padding: 0 0.75em 0 1.25em;
+        }
+
+        .top-info .icons-score-wrap .square {
+            display: flex;
+
+        }
+
+        .misc-info {
+            display: grid;
+            padding-top: 0.75em;
+            padding-bottom: 0.25em;
+        }
+
+        .mobile-only-area {
+            display: none;
+        }
+
+        .number-of-cases {
+    
+            &.wide {
+                font-size: 0.85em;
+                display: flex;
+            }
+    
+            &.mobile {
+                display: none;
+            }
+        }
+
+        .bottom-cta {
+            margin-top: 0;
+            padding: 1em 0;
+        }
+    }
+}
+
+@media (min-width: 700px) {
+    .directory-card-container {
+        .top-info .name-addy {
+            h1 {
+                font-size: 1.95em;
+                margin-bottom: 0.15em
+            }
+            h2 {
+                font-size: 1.1em;
+                font-weight: 450;
+            }
+        }
+
+        .bottom-cta {
+            
+            span {
+                margin-left: 0;
+            }
+    
+            &::before {
+                content: '\e904';
+                position: absolute;
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 760px) {
+    .hospital-directory {
+        .mobile-controls {
+            display: none;
+        }
+        .wide-controls {
+            display: block;
+        }
+
+        .directory-proper {
+            margin-top: 1em;
+        }
+
+        .directory-card-container {
+            .misc-info {
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: auto;
+                grid-template-areas: 
+                    "col1 col2 col3";
+            }
+        }
+    }
+
+    .hospital-info {
+        .top-info {
+            display: flex;
+        }
+
+        .info-sections {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-template-areas: 
+                "policy admissions"
+                "inventory resources";
+        }
+        
+    }
+}
+
+@media (min-width: 950px) {
+    .hospital-directory .wide-controls {
+
+        .displaying {
+            //width: 560px;
+        }
+        .displaying, .filters, .sorting {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            grid-gap: 1em;
+            column-gap: 1em;
+        }
+
+        .sorting {
+            grid-template-columns: 60px 1fr;
+        }
+    }
+}
+
+
+@media (min-width: 1015px) {
+
+    .hospital-directory .breadcrumb, .searcher {
+        display: block;
+    }
+    
+    .search-form {
+        display: grid;
+    }
+
+    .head-and-deck {
+        h1 {
+            font-size: 2.25em;
+            line-height: 1.4;
+        }
+    }
+
+    .hospital-info {
+        .top-info {
+            h1 {
+                font-size: 3em;
+                font-weight: 400;
+            }
+            h2 {
+                font-size: 1.7em;
+                font-weight: 550;
+            }
+
+            .icons-score-wrap {
+                
+                .square, .score {
+                    width: 3em;
+                    height: 3em;
+        
+                    img {
+                        width: 2em;
+                        height: 2em;
+                    }
+
+                    span {
+                        font-size: 1.65em;
+                    }
+                }
+
+                .score {
+                    &::after {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+}

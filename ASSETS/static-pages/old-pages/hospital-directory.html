@@ -1,0 +1,195 @@
+<section class="hospital-directory">
+    <div class="hospital-directory-content">
+        <div class="search-form">
+            <div class="search-field">
+                <select name="province" id="province" class="select-field">
+                    <option value="Metro Manila">Metro Manila</option>
+                </select>
+            </div>
+            <div class="search-field">
+                <select name="city" id="city" class="select-field">
+                    <option value="Quezon City">Quezon City</option>
+                </select>
+            </div>
+            <div class="search-field">
+                <span class="icon icon-search"></span>
+                <input type="text" class="input-field-text" placeholder="Name of Hospital">
+            </div>
+            <button type="button" class="button">Find Now</button>
+        </div>
+    </div>
+</section>
+<section class="container-fluid hospital-directory-main">
+    <div class="hospital-directory-main-content">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h3>Welcome to the Project Moses Hospital Directory</h3>
+                <p>Our partner hospitals and volunteer network have done their best to provide the most accurate and
+                    up-to-date information on the many hospitals scattered throughout the Philippines. Here, you can
+                    search
+                    and browse for the healthcare institution that best fits your needs, and you can find out more about
+                    what facilities they have available for your care. </p>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-1 col-lg-1 d-flex align-items-center justify-content-center">
+                <p class="label">DISPLAYING</p>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="row full-width">
+                    <div class="col-sm-12 col-md-3 col-lg-3">
+                        <select name="province" id="province" class="select-field">
+                            <option disabled selected value>Metro Manila</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-3">
+                        <select name="city" id="city" class="select-field">
+                            <option disabled selected value>Quezon City</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <select name="hospital" id="hospital" class="select-field select-long">
+                            <option disabled selected value>Hospital Name: </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-center">
+                        <p class="label">SORT BY</p>
+                    </div>
+                    <div class="col-sm-12 col-md-8 col-lg-8">
+                        <select name="sortBy" id="sortBy" class="select-field select-long">
+                            <option value="Readiness Score (High to Low)">
+                                Readiness Score (High to Low)
+                            </option>
+                            <option value="Readiness Score (Low to High)">
+                                Readiness Score (Low to High)
+                            </option>
+                            <option value="Hospital Name (A to Z)">
+                                Hospital Name (A to Z)
+                            </option>
+                            <option value="Hospital Name (Z to A)">
+                                Hospital Name (Z to A)
+                            </option>
+                            <option value="COVID 19 Patients (High to Low)">
+                                COVID 19 Patients (High to Low)
+                            </option>
+                            <option value="COVID 19 Patients (Low to High)">
+                                COVID 19 Patients (Low to High)
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-1 col-lg-1 d-flex align-items-center justify-content-center">
+                <p class="label">QUICK FILTER</p>
+            </div>
+            <div class="col-sm-12 col-md-11 col-lg-11 d-flex align-items-center">
+                <div class="row full-width">
+                    <div class="col-sm-12 col-md-2 col-lg-2">
+                        <div isteven-multi-select max-height="250px" input-model="readinessScores"
+                            selection-mode="multiple" max-labels="1" output-model="quickFilters.readinessScores"
+                            button-label="name" helper-elements="reset" item-label="name maker" tick-property="ticked">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-3">
+                        <button type="button" class="button" ng-style="quickFilterButtons.acp"
+                            ng-click="quickFilterButton('ACP')">Admitting COVID-19
+                            Patients</button>
+                    </div>
+                    <div class="col-sm-12 col-md-2 col-lg-2">
+                        <button type="button" class="button" ng-style="quickFilterButtons.rs"
+                            ng-click="quickFilterButton('RS')">Requesting
+                            Supplies</button>
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-3">
+                        <button type="button" class="button" ng-style="quickFilterButtons.dch"
+                            ng-click="quickFilterButton('DCH')">Designated COVID-19
+                            Hospital</button>
+                    </div>
+                    <div class="col-sm-12 col-md-2 col-lg-2">
+                        <button type="button" class="button" ng-style="quickFilterButtons.apt"
+                            ng-click="quickFilterButton('APT')">Accepting Patient for
+                            Testing</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-sm-12 col-md-5 col-lg-5 d-flex align-items-center">
+                <div class="row full-width">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <button type="button" class="button" ng-style="quickFilterButtons.dch"
+                            ng-click="quickFilterButton('DCH')">Designated COVID-19
+                            Hospital</button>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <button type="button" class="button" ng-style="quickFilterButtons.apt"
+                            ng-click="quickFilterButton('APT')">Accepting Patient for
+                            Testing</button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="hospital-details-container">
+                    <div class="hospital-card-detail d-flex">
+                        <div class="left-bar green"></div>
+                        <div class="hospital-card-detail-bottom green">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <h4 class="hospital-name">Lorem, ipsum dolor sit amet</h4>
+                                    <h5 class="headline">CNN PHILIPPINES | March 26, 2020 8:30AM</h5>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos vitae, deleniti
+                                        natus
+                                        necessitatibus, quibusdam delectus.</p>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos vitae, deleniti
+                                        natus
+                                        necessitatibus, quibusdam delectus.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos vitae, deleniti
+                                        natus
+                                        necessitatibus, quibusdam delectus.</p>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row mt-4">
+                                <div class="col-sm-12 col-md-12 col-lg-12 view-hospital-listing">
+                                    <a href="#/hospital-details/Metro Manila/Quezon City/Philippine General Hospital">VIEW
+                                        HOSPITAL LISTING</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <p class="let-us-know">Can't Find a Specific Hospital?
+                    <a class="let-us-know-link" href="">Let us
+                        know!</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

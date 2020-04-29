@@ -1,0 +1,30 @@
+
+.language-selector-bar {
+    display: block;
+    background: color(lighter);
+    padding: 0.5em 2em;
+    transition: 300ms ease;
+    overflow-y: hidden;
+
+    .language-selector {
+        margin: 0 0 0 auto;
+        display: block;
+        width: 38vh;
+        text-align: right;
+        position: relative;
+
+        p .icon {
+            position: absolute; 
+            top: 2.5px;
+            cursor: pointer;
+
+            &:hover, &:focus {
+                color: color(red-1);
+            }
+
+            &:active {
+                color: color(red-2)
+            }
+        }
+    }
+}

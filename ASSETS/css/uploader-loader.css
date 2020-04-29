@@ -1,0 +1,27 @@
+.uploading-loader {
+    display: inline-block;
+    width  : 80px;
+    height : 80px;
+}
+
+.uploading-loader:after {
+    content      : " ";
+    display      : block;
+    width        : 64px;
+    height       : 64px;
+    margin       : 8px;
+    border-radius: 50%;
+    border       : 6px solid #299bd7;
+    border-color : #299bd7 transparent #299bd7 transparent;
+    animation    : uploading-loader 1.2s linear infinite;
+}
+
+@keyframes uploading-loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

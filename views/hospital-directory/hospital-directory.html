@@ -1,0 +1,270 @@
+<div ng-if="isLoading" class="container">
+    <div class="row loader-row">
+        <div class="col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="!isLoading" class="hospital-directory">
+    <!-- div class="modal filters">
+        <div class="modal-box">
+            <div class="modal-head">
+                <span class="modal-title">Filters</span>
+                <span class="icon-cancel"></span>
+            </div>
+            <div class="modal-body">
+                <div class="filter-toggles">
+                    <span class="score-filter label">Readiness Score</span>
+                    <label for="admitting" class="admitting">Admitting COVID-19 Patients</label>
+                    <label for="supplies" class="supplies">Requesting Supplies</label>
+                    <label for="designated" class="designated">Designated COVID-19 Hospital</label>
+                    <label for="test" class="test">Accepting Patients for Testing</label>
+                </div>
+            </div>
+        </div>
+    </div -->
+
+    <section class="searcher">
+        <div class="search-form">
+            <div class="search-field">
+                <span class="icon icon-map"></span>
+                <input type="text" ng-keypress="($event.charCode==13)?searchHospital():return"
+                    ng-model="searchHospitalForm.region" class="input-field-text" placeholder="Region">
+            </div>
+            <div class="search-field">
+                <span class="icon icon-place"></span>
+                <input type="text" ng-keypress="($event.charCode==13)?searchHospital():return"
+                    ng-model="searchHospitalForm.city" class="input-field-text" placeholder="City or Municipality">
+            </div>
+            <div class="search-field">
+                <span class="icon icon-search"></span>
+                <input type="text" ng-keypress="($event.charCode==13)?searchHospital():return"
+                    ng-model="searchHospitalForm.hospitalName" class="input-field-text" placeholder="Name of Hospital">
+            </div>
+            <div class="button" ng-click="searchHospital()"><span>Find Now</span></div>
+        </div>
+    </section>
+    <div class="breadcrumb"><a href="#/hospital-directory">Hospital Directory</a> > <span class="current-location">Main
+            Dashboard</span></div>
+    <section class="head-and-deck">
+        <h1>Welcome to the Project Moses Hospital Directory</h1>
+        <p>Our partner hospitals and volunteer network have done their best to provide the most accurate and up-to-date
+            information on the many hospitals scattered throughout the Philippines. Here, you can search and browse for
+            the healthcare institution that best fits your needs, and you can find out more about what facilities they
+            have available for your care.</p>
+    </section>
+    <!-- <div class="mobile-controls">
+        <div class="displaying">
+            <span class="superline">Displaying</span>
+            <span class="search-terms">Metro Manila > Quezon City > St Lukes</span>
+        </div>
+        <div class="sorter-and-filter">
+            <div class="sorter-wrap">
+                <div class="sorter">
+                    <span>Score (Descending)</span>
+                </div>
+            </div>
+            <div class="filter-search-wrap">
+                <div class="filter"><span class="icon icon-filter left"></span>Filter</div>
+                <div class="search"><span class="icon icon-search left"></span>Find</div>
+            </div>
+        </div>
+    </div> -->
+    <div class="wide-controls">
+        <div class="row1">
+            <div class="displaying">
+                <div class="label"><span>displaying</span></div>
+                <div class="search-terms" ng-if="inputedSearchForm.region !== undefined">
+                    <div ng-if="!displayFields.region" ng-click="removeDisplay('region')" class="term control-item">
+                        {{inputedSearchForm.region === 'null' ? 'No inputed region' : inputedSearchForm.region}}</div>
+                    <div ng-if="!displayFields.city" ng-click="removeDisplay('city')" class="term control-item">
+                        {{inputedSearchForm.city === 'null' ? 'No inputed city' : inputedSearchForm.city}}</div>
+                    <div ng-if="!displayFields.hospitalName" ng-click="removeDisplay('hospitalName')"
+                        class="term control-item">Hospital Name:
+                        <strong>{{inputedSearchForm.hospitalName === 'null' ? 'No inputed hospital name' : inputedSearchForm.hospitalName}}</strong>
+                    </div>
+                </div>
+                <div class="search-terms" ng-if="inputedSearchForm.region === undefined">
+                    <p>All Hospitals</p>
+                </div>
+            </div>
+            <div class="sorting">
+                <div class="label"><span>sort by</span></div>
+                <!-- <div class="sorter dropdown control-item">Readiness Score (High to Low)</div> -->
+                <select class="sorter dropdown control-item" ng-model="filter.sortBy" ng-change="sortBySelect()"
+                    style="color: #000000;">
+                    <!-- <option value="Readiness Score (High to Low)">
+                    Readiness Score (High to Low)
+                </option>
+                <option value="Readiness Score (Low to High)">
+                    Readiness Score (Low to High)
+                </option> -->
+                    <option value="Hospital Name (A to Z)">
+                        Hospital Name (A to Z)
+                    </option>
+                    <option value="Hospital Name (Z to A)">
+                        Hospital Name (Z to A)
+                    </option>
+                    <option value="COVID 19 Patients (High to Low)">
+                        COVID 19 Patients (High to Low)
+                    </option>
+                    <option value="COVID 19 Patients (Low to High)">
+                        COVID 19 Patients (Low to High)
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="row2">
+            <div class="filters">
+                <div class="label"><span>quick filter</span></div>
+                <div class="filter-buttons">
+                    <!-- <div class="readiness-score-multi-select" isteven-multi-select max-height="250px"
+                        input-model="readinessScores" selection-mode="multiple" max-labels="1"
+                        output-model="quickFilters.readinessScores" button-label="name" helper-elements="all reset"
+                        item-label="name maker" tick-property="ticked" on-item-click="setReadinessScore()"
+                        on-reset="setReadinessScore('reset')" on-select-all="setReadinessScore('all')">
+                    </div> -->
+                    <!-- <select class="score-filter dropdown control-item">
+                        <option selected disabled value="">Readiness Score</option>
+                    </select> -->
+                    <!-- <div class="score-filter dropdown control-item">Readiness Score</div> -->
+                    <div ng-click="quickFilterButton('ACP')" ng-style="quickFilterButtons.acp"
+                        class="admitting control-item">Admitting COVID-19 Patients
+                    </div>
+                    <div ng-click="quickFilterButton('RS')" ng-style="quickFilterButtons.rs"
+                        class="supplies control-item">Requesting Supplies</div>
+                    <div ng-click="quickFilterButton('DCH')" ng-style="quickFilterButtons.dch"
+                        class="designated control-item">Designated COVID-19
+                        Hospital</div>
+                    <div ng-click="quickFilterButton('APT')" ng-style="quickFilterButtons.apt"
+                        class="test control-item">Accepting Patients for Testing
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-if="isLoadingHospitals" class="container">
+        <div class="row loader-row">
+            <div class="col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
+                <div class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section ng-if="!isLoadingHospitals" class="directory-proper">
+
+        <div class="directory-card-container" ng-if="hospitals.length > 0">
+            <div ng-repeat="(k,v) in hospitals track by $index">
+                <div class="card hospital ready-high">
+                    <div class="top-info">
+                        <div class="name-addy">
+                            <h1>{{v.hospital_name}}</h1>
+                            <h2>{{v.address_2}}, {{v.address_1}}</h2>
+                        </div>
+                        <div class="icons-score-wrap">
+                            <div ng-if="v.designated_for_covid === 'yes'" class="square designated"
+                                title="Designated COVID-19 Referral Hospital"><img src="./ASSETS/img/icon-hospital.png"
+                                    alt="">
+                            </div>
+                            <div ng-if="v.requesting_supplies === 'yes'" class="square supplies"
+                                title="Hospital is Requesting Supplies"><img src="./ASSETS/img/icon-supply.png" alt="">
+                            </div>
+                            <div ng-if="v.num_covid_kits > 0" class="square test" title="COVID-19 Test Kits Availale">
+                                <img src="./ASSETS/img/icon-test.png" alt=""></div>
+                            <div ng-if="v.admitting_confirmed === 'yes'" class="square admitting"
+                                title="Hospital is Admitting Confirmed Cases"><img src="./ASSETS/img/icon-patient.png"
+                                    alt="">
+                            </div>
+                            <div class="score" title="Readiness Score">
+                                <span>9.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thirdrow">
+                        <div>
+                            <p>{{v.address_3}}</p>
+                        </div>
+                        <div class="number-of-cases wide">Confirmed COVID-19 Patients<span
+                                class="answer black">{{v.num_confirmed_covid}}</span>
+                        </div>
+                    </div>
+                    <div class="misc-info">
+                        <div class="col1">
+                            <div>
+                                <span class="feature-point">Designated COVID-19 Referral Hospital</span>
+                                <span ng-if="v.designated_for_covid === 'yes'" class="answer good">yes</span>
+                                <span ng-if="v.designated_for_covid === 'no'" class="answer meh">no</span>
+                            </div>
+                            <div>
+                                <span class="feature-point">Requesting Supplies</span>
+                                <span ng-if="v.requesting_supplies === 'yes'" class="answer bad">yes</span>
+                                <span ng-if="v.requesting_supplies === 'no'" class="answer good">no</span>
+                            </div>
+                        </div>
+                        <div class="col2">
+                            <div>
+                                <span class="feature-point">Accepting Patients for Testing</span>
+                                <span ng-if="v.accepting_for_test === 'yes'" class="answer good">yes</span>
+                                <span ng-if="v.accepting_for_test === 'no'" class="answer meh">no</span>
+                            </div>
+                            <div>
+                                <span class="feature-point">Admitting Confirmed COVID-19 Patients</span>
+                                <span ng-if="v.admitting_confirmed === 'yes'" class="answer good">yes</span>
+                                <span ng-if="v.admitting_confirmed === 'no'" class="answer meh">no</span>
+                            </div>
+                        </div>
+                        <div class="col3">
+                            <div>
+                                <span class="feature-point">Contact Number(s)</span>
+                                <span class="answer black">
+                                    <a ng-repeat="c in v.contact_num | limitTo : 2 track by $index" href="tel:{{c}}">
+                                        {{c}}
+                                        <br />
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-only-area">
+                        <div class="icons-score-wrap">
+                            <div ng-if="v.designated_for_covid === 'yes'" class="square designated"><img
+                                    src="./ASSETS/img/icon-hospital.png" alt=""></div>
+                            <div ng-if="v.requesting_supplies === 'yes'" class="square supplies"><img
+                                    src="./ASSETS/img/icon-supply.png" alt=""></div>
+                            <div ng-if="v.accepting_for_test === 'yes'" class="square test"><img
+                                    src="./ASSETS/img/icon-test.png" alt=""></div>
+                            <div ng-if="v.admitting_confirmed === 'yes'" class="square admitting"><img
+                                    src="./ASSETS/img/icon-patient.png" alt=""></div>
+                        </div>
+                        <span class="number-of-cases mobile">Confirmed COVID-19 Patients<span
+                                class="answer black">{{v.num_confirmed_covid}}</span></span>
+                    </div>
+                    <div class="bottom-cta" ng-click="goToDetails(v.hospital_public_id)">
+                        <span>View Hospital Listing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="hospitals.length === 0" class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    <h1>No Hospital(s) Found!</h1>
+                </div>
+            </div>
+        </div>
+
+        <span class="bottom-utility-link">Can't find a specific hospital? <a href="">Let us know!</a></span>
+    </section>
+</div>

@@ -1,0 +1,227 @@
+<div ng-if="isLoadingDetails" class="container">
+    <div class="row loader-row">
+        <div class="col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="!isLoadingDetails" class="container-fluid hospital-portal-dashboard">
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-6">
+            <p class="breadcrumbs">Hospital Portal > Main Dashboard</p>
+        </div>
+        <div class="col-sm-6 col-md-6 col-md-6">
+            <p class="welcome-msg">Welcome, {{hospitalInfo.hospital_name}}</p>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-sm-12 col-md-10 col-lg-10">
+            <h3 class="hospital-name-label">{{hospitalInfo.hospital_name}}</h3>
+        </div>
+        <div class="col-sm-12 col-md-2 col-lg-2">
+            <button type="button" class="button update-hospital-btn"><a href="#/update-hospital-info">Update Hospital
+                    Info</a></button>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="main-card">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <p>Admitting COVID-19 Patients <span
+                                ng-class="{'card-titles-yes' : hospitalInfo.admitting_confirmed === 'yes', 'card-titles-no' : hospitalInfo.admitting_confirmed === 'no'}">{{hospitalInfo.admitting_confirmed}}</span>
+                        </p>
+                        <p>Accepting Patient for Testing <span
+                                ng-class="{'card-titles-yes' : hospitalInfo.accepting_for_test === 'yes', 'card-titles-no' : hospitalInfo.accepting_for_test === 'no'}">{{hospitalInfo.accepting_for_test}}</span>
+                        </p>
+                        <p>Requesting Supplies <span
+                                ng-class="{'card-titles-yes' : hospitalInfo.requesting_supplies === 'yes', 'card-titles-no' : hospitalInfo.requesting_supplies === 'no'}">{{hospitalInfo.requesting_supplies}}</span>
+                        </p>
+                        <p>Designated COVID-19 Hospital <span
+                                ng-class="{'card-titles-yes' : hospitalInfo.designated_for_covid === 'yes', 'card-titles-no' : hospitalInfo.designated_for_covid === 'no'}">{{hospitalInfo.designated_for_covid}}</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-md-1 col-lg-1"></div>
+                    <div class="col-sm-12 col-md-5 col-lg-5 nex-col">
+                        <p>Number of Confirmed COVID-19 Patients <span
+                                class="card-titles-no">{{hospitalInfo.num_confirmed_covid}}</span></p>
+                        <p>Number of COVID-19 Patients Under Investigation (PUI) <span
+                                class="card-titles-no">{{hospitalInfo.num_pui}}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row mt-2">
+        <div class="col-sm-12 col-md-2 col-lg-2 d-flex align-items-center">
+            <p class="cases-label"><strong>ASSIGNED CASES</strong></p>
+        </div>
+        <div class=" col-sm-12 col-md-3 col-lg-3 offset-md-4 offset-lg-4 d-flex align-items-center">
+            <p class="labels">SHOW</p>
+            <select name="casesFilter" ng-model="dashboardFilters.caseFilter" id="casesFilter"
+                class="filter-cases-select">
+                <option selected value="All Cases">All Cases</option>
+                <option value="Self-Assessed">Self-Assessed</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Dismissed">Dismissed</option>
+                <option value="Unreachable">Unreachable</option>
+                <option value="Dropped">Dropped</option>
+                <option value="Referred Elsewhere">Referred Elsewhere</option>
+                <option value="Already Getting Treatment">Already Getting Treatment</option>
+                <option value="Management In-Progress">Management In-Progress</option>
+                <option value="Recovered">Recovered</option>
+                <option value="Deceased">Deceased</option>
+            </select>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 d-flex align-items-center">
+            <p class="labels">FIND</p>
+            <input type="text" ng-model="dashboardFilters.searchFilter" name="find-field" id="find-field"
+                class="input-field-text" />
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="table-header">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="col-sm-12 col-md-1 col-lg-1">
+                        <p ng-click="setOrder('caseID')">Case ID
+                            <span
+                                ng-if="dashboardFilters.caseID!== ''">{{dashboardFilters.caseID === 'DESC' ? '↓' : '↑'}}</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-md-2 col-lg-2">
+                        <p ng-click="setOrder('selfAssessment')">Self-Assessment Date & Time
+                            <span
+                                ng-if="dashboardFilters.selfAssessment !== ''">{{dashboardFilters.selfAssessment === 'DESC' ? '↓' : '↑'}}</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-md-1 col-lg-1">
+                        <p ng-click="setOrder('location')">Location
+                            <span
+                                ng-if="dashboardFilters.location !== ''">{{dashboardFilters.location === 'DESC' ? '↓' : '↑'}}</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-md-1 col-lg-1">
+                        <p ng-click="setOrder('age')">Age
+                            <span
+                                ng-if="dashboardFilters.age !== ''">{{dashboardFilters.age === 'DESC' ? '↓' : '↑'}}</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-md-2 col-lg-2">
+                        <p ng-click="setOrder('comorbidity')">Comorbidity
+                            <span
+                                ng-if="dashboardFilters.comorbidity !== ''">{{dashboardFilters.comorbidity === 'DESC' ? '↓' : '↑'}}</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-md-2 col-lg-2">
+                        <p ng-click="setOrder('sysmptomSeverity')">Sysmptom Severity
+                            <span
+                                ng-if="dashboardFilters.sysmptomSeverity !== ''">{{dashboardFilters.sysmptomSeverity === 'DESC' ? '↓' : '↑'}}</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-md-2 col-lg-2">
+                        <p ng-click="setOrder('exposure')">Exposure to COVID-19
+                            <span
+                                ng-if="dashboardFilters.exposure !== ''">{{dashboardFilters.exposure === 'DESC' ? '↓' : '↑'}}</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-md-1 col-lg-1">
+                        <p ng-click="setOrder('caseStatus')">Case Status
+                            <span
+                                ng-if="dashboardFilters.caseStatus !== ''">{{dashboardFilters.caseStatus === 'DESC' ? '↓' : '↑'}}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!isLoadingCases" class="row mt-2">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="hospital-details-container" ng-repeat="(k,v) in mockData track by $index">
+                <a href="#/update-case/{{v.case_id}}" class="hospital-card-detail d-flex">
+                    <div class="left-bar" ng-class="{
+                        'self-assessed' : v.case_status === 'self assessed',
+                        'dropped' : v.case_status === 'dropped',
+                        'confirmed' : v.case_status === 'confirmed',
+                        'management' : v.case_status === 'management in-progress',
+                        'unreachable' : v.case_status === 'unreachable',
+                        'dismissed' : v.case_status === 'dismissed',
+                        'elsewhere' : v.case_status === 'managed elsewhere',
+                        'referred' : v.case_status === 'referred elsewhere',
+                        'management' : v.case_status === 'management in-progress',
+                        'recovered' : v.case_status === 'recovered',
+                        'deceased' : v.case_status === 'deceased'
+                    }"></div>
+                    <div class="hospital-card-detail-bottom" ng-class="{
+                        'self-assessed' : v.case_status === 'self assessed',
+                        'dropped' : v.case_status === 'dropped',
+                        'confirmed' : v.case_status === 'confirmed',
+                        'management' : v.case_status === 'management in-progress',
+                        'unreachable' : v.case_status === 'unreachable',
+                        'dismissed' : v.case_status === 'dismissed',
+                        'elsewhere' : v.case_status === 'managed elsewhere',
+                        'referred' : v.case_status === 'referred elsewhere',
+                        'management' : v.case_status === 'management in-progress',
+                        'recovered' : v.case_status === 'recovered',
+                        'deceased' : v.case_status === 'deceased'
+                    }">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-sm-12 col-md-1 col-lg-1">
+                                <p>{{v.case_id}}</p>
+                            </div>
+                            <div class="col-sm-12 col-md-2 col-lg-2">
+                                <p>{{v.self_assessment_date_time | date : "medium"}}</p>
+                            </div>
+                            <div class="col-sm-12 col-md-1 col-lg-1">
+                                <p>{{v.location}}</p>
+                            </div>
+                            <div class="col-sm-12 col-md-1 col-lg-1">
+                                <p>{{v.age}}</p>
+                            </div>
+                            <div class="col-sm-12 col-md-2 col-lg-2">
+                                <p>{{v.comorbidity}}</p>
+                            </div>
+                            <div class="col-sm-12 col-md-2 col-lg-2">
+                                <p>{{v.sysmptom_severity}}</p>
+                            </div>
+                            <div class="col-sm-12 col-md-2 col-lg-2">
+                                <p>{{v.exposure_to_covid}}</p>
+                            </div>
+                            <div class="col-sm-12 col-md-1 col-lg-1">
+                                <p ng-class="{
+                                    'self-assessed-label' : v.case_status === 'self assessed',
+                                    'dropped-label' : v.case_status === 'dropped',
+                                    'confirmed-label' : v.case_status === 'confirmed',
+                                    'management-label' : v.case_status === 'management in-progress',
+                                    'unreachable-label' : v.case_status === 'unreachable',
+                                    'dismissed-label' : v.case_status === 'dismissed',
+                                    'elsewhere-label' : v.case_status === 'managed elsewhere',
+                                    'referred-label' : v.case_status === 'referred elsewhere',
+                                    'management-label' : v.case_status === 'management in-progress',
+                                    'recovered-label' : v.case_status === 'recovered',
+                                    'deceased-label' : v.case_status === 'deceased'
+                                }">{{v.case_status}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div ng-if="isLoadingCases" class="row mt-2">
+        <div class="col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div> -->
+</div>

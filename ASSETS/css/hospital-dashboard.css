@@ -1,0 +1,417 @@
+/* HOSPITAL PORTAL PAGE END */
+.hospital-portal-dashboard {
+    height : 100%;
+    width  : 100%;
+    padding: 1rem 2rem !important;
+    color  : #707070;
+}
+
+.hospital-portal-dashboard .breadcrumbs {
+    font-size: 12px;
+}
+
+.hospital-portal-dashboard .welcome-msg {
+    font-size : 12px;
+    text-align: end;
+}
+
+.hospital-portal-dashboard .hospital-name-label {
+    font-weight: 500;
+    color      : #000000;
+}
+
+.hospital-portal-dashboard .update-hospital-btn {
+    background: #299bd7;
+    border    : 2px solid transparent;
+    color     : #ffffff;
+    width     : 100%;
+    font-size : 16px;
+}
+
+.hospital-portal-dashboard .main-card {
+    padding      : 1rem 2rem;
+    border-radius: 12px;
+    border       : 1px solid #b1b1b1;
+    width        : 100%;
+    height       : 100%;
+    color        : #000000;
+    line-height  : 2;
+    background   : #fcfcfc
+}
+
+.hospital-portal-dashboard .main-card span {
+    float: right;
+}
+
+.hospital-portal-dashboard .cases-label {
+    color: #000000;
+}
+
+.hospital-portal-dashboard .main-card .nex-col {
+    line-height: 3.5;
+}
+
+.hospital-portal-dashboard .labels {
+    margin: 0px 15px 0px 0px;
+}
+
+.hospital-portal-dashboard .filter-cases-select {
+    padding-left    : 1rem;
+    height          : 35px;
+    background-color: #ffffff;
+    width           : 100%;
+    border-radius   : 13px;
+    border          : 1.5px solid #ababab;
+}
+
+.hospital-portal-dashboard .input-field-text {
+    width        : 100%;
+    padding      : 1rem;
+    padding-left : 2rem;
+    height       : 35px;
+    border-radius: 13px;
+    border       : 1.5px solid #ababab;
+}
+
+.hospital-portal-dashboard .input-field-text::-webkit-input-placeholder {
+    font-style : italic;
+    color      : #cccccc;
+    font-weight: 200;
+}
+
+.hospital-portal-dashboard .input-field-text:-ms-input-placeholder {
+    font-style : italic;
+    color      : #cccccc;
+    font-weight: 200;
+}
+
+.hospital-portal-dashboard .input-field-text::-ms-input-placeholder {
+    font-style : italic;
+    color      : #cccccc;
+    font-weight: 200;
+}
+
+.hospital-portal-dashboard .table-header {
+    width              : 100%;
+    height             : 100%;
+    border-radius      : 10px;
+    border             : 1px solid #238acf;
+    background-color   : #238acf;
+    /* display         : flex;
+    flex-direction     : row;
+    flex-wrap          : wrap;
+    justify-content    : center; */
+    color              : #ffffff;
+    padding            : 1rem 2rem;
+}
+
+.hospital-portal-dashboard .table-header p {
+    /* margin : 1rem; */
+    font-size : 15px;
+    cursor    : pointer;
+    text-align: center;
+}
+
+.hospital-portal-dashboard .table-header p>span {
+    font-weight: 600;
+}
+
+.hospital-portal-dashboard .hospital-details-container {
+    width    : 100%;
+    height   : auto;
+    font-size: 13px;
+    color    : #373737;
+}
+
+.hospital-portal-dashboard .hospital-card-detail {
+    -webkit-transition: all 200ms ease-in-out;
+    transition        : all 200ms ease-in-out;
+    margin            : 10px auto;
+    cursor            : pointer;
+}
+
+.hospital-portal-dashboard .hospital-card-detail .left-bar {
+    width        : 1.5%;
+    border-radius: 8px 0px 0px 8px;
+}
+
+/* LABELS START */
+.hospital-portal-dashboard .card-titles-yes {
+    color         : #238acf;
+    font-weight   : 600;
+    text-transform: uppercase;
+}
+
+.hospital-portal-dashboard .card-titles-no {
+    color         : #c03b56;
+    font-weight   : 600;
+    text-transform: uppercase;
+}
+
+.hospital-portal-dashboard .self-assessed-label {
+    color      : #47b6e6;
+    font-weight: 800;
+}
+
+.hospital-portal-dashboard .dropped-label {
+    color      : #707070;
+    font-weight: 800;
+}
+
+.hospital-portal-dashboard .confirmed-label {
+    color      : #1a4456;
+    font-weight: 800;
+}
+
+.hospital-portal-dashboard .management-label {
+    color      : #377b26;
+    font-weight: 800;
+}
+
+.hospital-portal-dashboard .unreachable-label {
+    color      : #c03b56;
+    font-weight: 800;
+}
+
+.hospital-portal-dashboard .dismissed-label {
+    color      : #e17646;
+    font-weight: 800;
+}
+
+.hospital-portal-dashboard .elsewhere-label {
+    color      : #8946e1;
+    font-weight: 800;
+}
+
+.hospital-portal-dashboard .referred-label {
+    color      : #191b4a;
+    font-weight: 800;
+}
+
+.hospital-portal-dashboard .recovered-label {
+    color      : #238acf;
+    font-weight: 800;
+}
+
+.hospital-portal-dashboard .deceased-label {
+    color      : #000000;
+    font-weight: 800;
+}
+
+
+/* LABELS END */
+
+/* LEFT BARS START */
+.hospital-portal-dashboard .hospital-card-detail .left-bar.self-assessed {
+    color     : #47b6e6;
+    background: #47b6e6;
+}
+
+.hospital-portal-dashboard .hospital-card-detail .left-bar.dropped {
+    color     : #707070;
+    background: #707070;
+}
+
+.hospital-portal-dashboard .hospital-card-detail .left-bar.confirmed {
+    color     : #1a4456;
+    background: #1a4456;
+}
+
+.hospital-portal-dashboard .hospital-card-detail .left-bar.management {
+    color     : #377b26;
+    background: #377b26;
+}
+
+.hospital-portal-dashboard .hospital-card-detail .left-bar.unreachable {
+    color     : #c03b56;
+    background: #c03b56;
+}
+
+.hospital-portal-dashboard .hospital-card-detail .left-bar.dismissed {
+    color     : #e17646;
+    background: #e17646;
+}
+
+.hospital-portal-dashboard .hospital-card-detail .left-bar.elsewhere {
+    color     : #8946e1;
+    background: #8946e1;
+}
+
+.hospital-portal-dashboard .hospital-card-detail .left-bar.referred {
+    color     : #191b4a;
+    background: #191b4a;
+}
+
+.hospital-portal-dashboard .hospital-card-detail .left-bar.recovered {
+    color     : #238acf;
+    background: #238acf;
+}
+
+.hospital-portal-dashboard .hospital-card-detail .left-bar.deceased {
+    color     : #000000;
+    background: #000000;
+}
+
+/* LEFT BARS END */
+
+.hospital-portal-dashboard .hospital-card-detail .hospital-card-detail-bottom {
+    padding           : 1rem 1rem;
+    border-radius     : 0 0 5px 5px;
+    border            : 1px solid black;
+    -webkit-transition: all 200ms ease-in-out;
+    transition        : all 200ms ease-in-out;
+    width             : 100%;
+    height            : auto;
+}
+
+.hospital-portal-dashboard .hospital-card-detail .hospital-card-detail-bottom p {
+    text-align    : center;
+    text-transform: capitalize;
+}
+
+.hospital-portal-dashboard .hospital-card-detail .hospital-card-detail-bottom .items {
+    display  : flex;
+    flex-wrap: wrap;
+}
+
+.hospital-portal-dashboard .hospital-card-detail .hospital-card-detail-bottom .items p {
+    padding: 1.8rem;
+}
+
+.hospital-portal-dashboard .hospital-card-detail small {
+    display: block;
+    margin : 5px 0;
+    color  : #727272;
+}
+
+/* .hospital-portal-dashboard .hospital-card-detail p {
+    margin     : 0.75em 0;
+    line-height: 1.5;
+  } */
+
+.hospital-portal-dashboard .hospital-card-detail span {
+    display           : block;
+    -webkit-transition: 100ms ease;
+    transition        : 100ms ease;
+}
+
+.hospital-portal-dashboard .hospital-card-detail span::after {
+    font-family      : 'icomoon' !important;
+    content          : '\e904';
+    -webkit-transform: rotate(-90deg);
+    transform        : rotate(-90deg);
+    display          : inline-block;
+    margin-left      : 0.25em;
+}
+
+.hospital-portal-dashboard .hospital-card-detail span:hover,
+.hospital-portal-dashboard .hospital-card-detail span:focus {
+    font-weight: 600;
+}
+
+.hospital-portal-dashboard .hospital-card-detail span:active {
+    font-weight    : 600;
+    text-decoration: underline;
+}
+
+/* BOTTOM CARDS START */
+.hospital-portal-dashboard .hospital-card-detail span.self-assessed {
+    color: #47b6e6;
+}
+
+.hospital-portal-dashboard .hospital-card-detail span.dropped {
+    color: #707070;
+}
+
+.hospital-portal-dashboard .hospital-card-detail span.confirmed {
+    color: #1a4456;
+}
+
+.hospital-portal-dashboard .hospital-card-detail span.management {
+    color: #377b26;
+}
+
+.hospital-portal-dashboard .hospital-card-detail span.unreachable {
+    color: #c03b56;
+}
+
+.hospital-portal-dashboard .hospital-card-detail span.dismissed {
+    color: #e17646;
+}
+
+.hospital-portal-dashboard .hospital-card-detail span.elsewhere {
+    color: #8946e1;
+}
+
+.hospital-portal-dashboard .hospital-card-detail span.referred {
+    color: #191b4a;
+}
+
+.hospital-portal-dashboard .hospital-card-detail span.recovered {
+    color: #238acf;
+}
+
+.hospital-portal-dashboard .hospital-card-detail span.deceased {
+    color: #000000;
+}
+
+.hospital-portal-dashboard .hospital-card-detail:hover .hospital-card-detail-bottom,
+.hospital-portal-dashboard .hospital-card-detail:focus .hospital-card-detail-bottom {
+    border            : 1px solid;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.05);
+    box-shadow        : 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.hospital-portal-dashboard .hospital-card-detail:hover .hospital-card-detail-bottom.self-assessed,
+.hospital-portal-dashboard .hospital-card-detail:focus .hospital-card-detail-bottom.self-assessed {
+    border-color: #47b6e6;
+}
+
+.hospital-portal-dashboard .hospital-card-detail:hover .hospital-card-detail-bottom.dropped,
+.hospital-portal-dashboard .hospital-card-detail:focus .hospital-card-detail-bottom.dropped {
+    border-color: #707070;
+}
+
+.hospital-portal-dashboard .hospital-card-detail:hover .hospital-card-detail-bottom.confirmed,
+.hospital-portal-dashboard .hospital-card-detail:focus .hospital-card-detail-bottom.confirmed {
+    border-color: #1a4456;
+}
+
+.hospital-portal-dashboard .hospital-card-detail:hover .hospital-card-detail-bottom.management,
+.hospital-portal-dashboard .hospital-card-detail:focus .hospital-card-detail-bottom.management {
+    border-color: #377b26;
+}
+
+.hospital-portal-dashboard .hospital-card-detail:hover .hospital-card-detail-bottom.unreachable,
+.hospital-portal-dashboard .hospital-card-detail:focus .hospital-card-detail-bottom.unreachable {
+    border-color: #c03b56;
+}
+
+.hospital-portal-dashboard .hospital-card-detail:hover .hospital-card-detail-bottom.dismissed,
+.hospital-portal-dashboard .hospital-card-detail:focus .hospital-card-detail-bottom.dismissed {
+    border-color: #e17646;
+}
+
+.hospital-portal-dashboard .hospital-card-detail:hover .hospital-card-detail-bottom.elsewhere,
+.hospital-portal-dashboard .hospital-card-detail:focus .hospital-card-detail-bottom.elsewhere {
+    border-color: #8946e1;
+}
+
+.hospital-portal-dashboard .hospital-card-detail:hover .hospital-card-detail-bottom.referred,
+.hospital-portal-dashboard .hospital-card-detail:focus .hospital-card-detail-bottom.referred {
+    border-color: #191b4a;
+}
+
+.hospital-portal-dashboard .hospital-card-detail:hover .hospital-card-detail-bottom.recovered,
+.hospital-portal-dashboard .hospital-card-detail:focus .hospital-card-detail-bottom.recovered {
+    border-color: #238acf;
+}
+
+.hospital-portal-dashboard .hospital-card-detail:hover .hospital-card-detail-bottom.deceased,
+.hospital-portal-dashboard .hospital-card-detail:focus .hospital-card-detail-bottom.deceased {
+    border-color: #000000;
+}
+
+/* BOTTOM CARDS END */
+
+/* HOSPITAL PORTAL PAGE END */

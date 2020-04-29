@@ -1,0 +1,149 @@
+<div ng-if="isLoadingDetails" class="container">
+    <div class="row loader-row">
+        <div class="col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="!isLoadingDetails">
+    <section class="searcher">
+        <div class="search-form">
+            <div class="search-field">
+                <span class="icon icon-map"></span>
+                <input type="text" class="input-field-text" placeholder="Region">
+            </div>
+            <div class="search-field">
+                <span class="icon icon-place"></span>
+                <input type="text" class="input-field-text" placeholder="City">
+            </div>
+            <div class="search-field">
+                <span class="icon icon-search"></span>
+                <input type="text" class="input-field-text" placeholder="Name of Hospital">
+            </div>
+            <div class="button"><span>Find Now</span></div>
+        </div>
+    </section>
+    <div class="container-fluid hospital-details-page">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <p class="breadcrumbs">{{ selectedHospitalDetails.region }} > {{ selectedHospitalDetails.city }} >
+                    {{ selectedHospitalDetails.hospitalName }}</p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <h2>{{selectedHospitalDetails.hospitalName}}</h2>
+                <h4>{{ selectedHospitalDetails.city }}, {{ selectedHospitalDetails.region }}</h4>
+                <h5>University of the Philippines Manila, Taft Ave, Ermita</h5>
+                <div class="row mt-2">
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <p class="contact-number-header">Contact Number(s)</p>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <p class="contact-numbers">(02) 8554 8400</p>
+                        <p class="contact-numbers">(02) 8554 8400</p>
+                        <p class="contact-numbers">(02) 8554 8400</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <p class="card-headers">HOSPITAL POLICIES</p>
+                <div class="hospital-details-container">
+                    <div class="hospital-card-detail d-flex">
+                        <div class="left-bar green"></div>
+                        <div class="hospital-card-detail-bottom green">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <p class="card-headers">COVID-19 ADMISSIONS</p>
+                <div class="hospital-details-container covid-admissions">
+                    <div class="hospital-card-detail covid-admissions d-flex">
+                        <div class="left-bar red"></div>
+                        <div class="hospital-card-detail-bottom red">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <p class="card-headers">INVENTORY</p>
+                <div class="hospital-details-container">
+                    <div class="hospital-card-detail d-flex">
+                        <div class="left-bar blue"></div>
+                        <div class="hospital-card-detail-bottom blue">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <p class="card-headers">RESOURCES</p>
+                <div class="hospital-details-container">
+                    <div class="hospital-card-detail d-flex">
+                        <div class="left-bar orange"></div>
+                        <div class="hospital-card-detail-bottom orange">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <p>NOTES</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium facilis vel dolores, harum,
+                    culpa
+                    saepe labore in quisquam cumque delectus error deleniti atque a placeat id, ad non. Id, facere!</p>
+            </div>
+        </div>
+    </div>
+</div>

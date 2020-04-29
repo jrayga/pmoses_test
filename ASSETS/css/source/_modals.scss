@@ -1,0 +1,339 @@
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    background: rgba(color(darkest), 0.8);
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    transition: 400ms ease-in-out;
+
+    .modal-box {
+        margin: auto;
+        max-height: 90vh;
+        width: 90vw;
+        max-width: 800px;
+        background-color: color(lightest);
+        border-radius: 10px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.15);
+        transition: 400ms ease-in-out;
+    }
+
+    .modal-head {
+        border-radius: 10px 10px 0 0;
+        padding: 0.5em 1em 0.5em 1.5em;
+        align-items: center;
+        position: relative;
+        display: block;
+        text-align: center;
+        background: color(signature);
+
+
+        span {
+            color: color(lightest);
+            font-weight: 600;
+            transition: 200ms;
+            text-transform: uppercase;
+
+            &.icon-cancel {
+                position: absolute;
+                right: 1em;
+
+                &:hover, &:focus {
+                    color: color(red-3);
+                    font-weight: 800;
+                }
+            }
+        }
+
+    }
+
+    .modal-title {
+    }
+
+    .modal-body {
+        padding: 0.75em 1.5em;
+
+        p {
+            color: color(dark);
+            line-height: 1.7;
+            font-size: 0.9em;
+            margin-block-end: 0.75em;
+            font-weight: 350;
+
+            strong {
+                font-weight: 450;
+            }
+
+            &:nth-last-child(1) {
+                margin-block-end: 0.25em;
+            }
+        }
+    }
+
+    
+    &.case-status-change {
+
+        .modal-body {
+
+            h1 {
+                font-size: 1.25em;
+                text-align: center;
+                font-weight: 450;
+                margin-bottom: 0.25em;
+
+                span {
+                    font-weight: 800;
+                    text-transform: uppercase;
+                    color: rgba(color(dark), 0.8);
+
+
+                    &.icon-chevron-down.chevron-right {
+                        color: color(dark);
+                        display: inline-block;
+                        font-weight: 100;
+                        font-size: 0.8em;
+                        transform: rotate(-90deg);
+                        margin: 0 -3px;
+                    }
+
+                    &.default-color { color: color(default); }
+                    &.dropped-color { color: color(dropped); }
+                    &.qualified-color { color: color(qualified); }
+                    &.unreachable-color { color: color(unreachable); }
+                    &.dismissed-color { color: color(dismissed); }
+                    &.elsewhere-color { color: color(elsewhere); }
+                    &.referred-color { color: color(referred); }
+                    &.in-progress-color { color: color(in-progress); }
+                    &.recovered-color { color: color(recovered); }
+                    &.deceased-color { color: color(deceased); }
+                }
+            }
+
+            p {
+                text-align: center;
+            }
+
+            .checklist-group {
+                max-width: 600px;
+                margin: 0 auto;
+                display: block;
+                
+                .checkbox-element.change-status-check {
+                    justify-content: flex-start;
+                }
+            }
+
+            .checkbox-element.change-status-check { 
+                margin: 0.75em auto;
+                display: flex;
+                justify-content: center;
+
+                .checkbox-text {
+                    font-size: 0.9em;
+                    font-weight: 400;
+                    line-height: 1.5;
+
+                    .details {
+                        display: block;
+                        font-size: 0.6em;
+                    }
+                
+                    &::before {
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                
+                    &:hover, &:focus {
+                        color: color(signature);
+                    }
+                }
+                
+                input[type=checkbox] {
+                    display: none;
+                
+                    &:checked ~ .checkbox-text {
+                        font-weight: 500;
+                        color: color(dark);
+                
+                        &::before {
+                            content: '\e91b';
+                            color: color(signature)
+                        }
+                    }
+                
+                }
+            }
+
+            textarea {
+                height: 7.25em !important;
+                padding-top: 1em !important;
+                padding-bottom: 1em !important;
+                line-height: 1.7 !important;
+            }
+
+            .update-case-button-group {
+                margin: 0.5em 0;
+
+                .button {
+                    margin-bottom: 0.5em;
+                    position: relative;
+
+                    &:nth-last-child(1) {
+                        margin-bottom: 0;
+                    }
+
+                    &.up {
+                        font-weight: 500;
+                        color: color(lightest);
+                        border: 2px solid;
+
+                        &.default { background-color: color(default); border-color: color(default)}
+                        &.dropped { background-color: color(dropped); border-color: color(dropped)}
+                        &.qualified { background-color: color(qualified); border-color: color(qualified)}
+                        &.unreachable { background-color: color(unreachable); border-color: color(unreachable)}
+                        &.dismissed { background-color: color(dismissed); border-color: color(dismissed)}
+                        &.elsewhere { background-color: color(elsewhere); border-color: color(elsewhere)}
+                        &.referred { background-color: color(referred); border-color: color(referred)}
+                        &.in-progress { background-color: color(in-progress); border-color: color(in-progress)}
+                        &.recovered { background-color: color(recovered); border-color: color(recovered)}
+                        &.deceased { background-color: color(deceased); border-color: color(deceased)}
+
+                        &:hover, &:focus {
+                            &.default {
+                                background-color: rgba(color(default), 0.05);
+                                border-color: color(default);
+                                color: color(default);
+                                //text-shadow: 0 0 0.5px color(default), 0 0 0.5px color(default);
+                            }
+                            &.dropped {
+                                background-color: rgba(color(dropped), 0.05);
+                                border-color: color(dropped);
+                                color: color(dropped);
+                                //text-shadow: 0 0 0.5px color(dropped), 0 0 0.5px color(dropped);
+                            }
+                            &.qualified {
+                                background-color: rgba(color(qualified), 0.05);
+                                border-color: color(qualified);
+                                color: color(qualified);
+                                //text-shadow: 0 0 0.5px color(qualified), 0 0 0.5px color(qualified);
+                            }
+                            &.unreachable {
+                                background-color: rgba(color(unreachable), 0.05);
+                                border-color: color(unreachable);
+                                color: color(unreachable);
+                                //text-shadow: 0 0 0.5px color(unreachable), 0 0 0.5px color(unreachable);
+                            }
+                            &.dismissed {
+                                background-color: rgba(color(dismissed), 0.05);
+                                border-color: color(dismissed);
+                                color: color(dismissed);
+                                //text-shadow: 0 0 0.5px color(dismissed), 0 0 0.5px color(dismissed);
+                            }
+                            &.elsewhere {
+                                background-color: rgba(color(elsewhere), 0.05);
+                                border-color: color(elsewhere);
+                                color: color(elsewhere);
+                                //text-shadow: 0 0 0.5px color(elsewhere), 0 0 0.5px color(elsewhere);
+                            }
+                            &.referred {
+                                background-color: rgba(color(referred), 0.05);
+                                border-color: color(referred);
+                                color: color(referred);
+                                //text-shadow: 0 0 0.5px color(referred), 0 0 0.5px color(referred);
+                            }
+                            &.in-progress {
+                                background-color: rgba(color(in-progress), 0.05);
+                                border-color: color(in-progress);
+                                color: color(in-progress);
+                                //text-shadow: 0 0 0.5px color(in-progress), 0 0 0.5px color(in-progress);
+                            }
+                            &.recovered {
+                                background-color: rgba(color(recovered), 0.05);
+                                border-color: color(recovered);
+                                color: color(recovered);
+                                //text-shadow: 0 0 0.5px color(recovered), 0 0 0.5px color(recovered);
+                            }
+                            &.deceased {
+                                background-color: rgba(color(deceased), 0.05);
+                                border-color: color(deceased);
+                                color: color(deceased);
+                                //text-shadow: 0 0 0.5px color(deceased), 0 0 0.5px color(deceased);
+                            }
+                        }
+
+                        &.disabled {
+                            background: color(light);
+                            border-color: color(medium);
+                            cursor: default;
+                            pointer-events: none;
+                            color: color(medium);
+            
+                            span {
+                                color: rgba(color(grey),0.7);
+                            }
+            
+                            &::after {
+                                content: none;
+                            }
+                        }
+                    }
+
+                    &.cancel {
+                        border-color: rgba(color(medium), 0.5);
+                        color: color(dark);
+                        opacity: 0.6;
+                        
+                        span {
+                            color: color(dark);
+                            margin: 0 2.5em;
+                            opacity: 0.6;
+                        }
+            
+                        &:hover, &:focus {
+                            border-color: color(grey);
+                            color: color(grey);
+                            opacity: 1;
+                            background: transparent;
+            
+                            span {
+                                opacity: 1;
+                            }        
+                        }
+                    }
+
+
+                }
+            }
+        }
+        
+    }
+
+    &.govt-ann {
+        .modal-body {
+            padding-right: 1em;
+
+            .ann-date, .ann-source {
+                display: block;
+                font-size: 0.8em;
+                margin: 0.25em 0;
+                font-weight: 300;
+
+                strong {
+                    font-weight: 500;
+                    text-transform: uppercase;
+                }
+            }
+
+            .main-content {
+                border-top: 1px solid color(medium);
+                margin: 0.5em 0 1em 0;
+                padding-top: 0.5em;
+                padding-right: 0.5em;
+                overflow-y: auto;
+                max-height: 68vh;
+            }
+        }
+    }
+}

@@ -1,0 +1,157 @@
+<div ng-if="isLoading" class="container">
+    <div class="row loader-row">
+        <div class="col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-if="!isLoading" class="hospital-portal">
+
+    <div ng-if="requestAccessModal" class="modal request-access-submitted" ng-click="closeRequestAccessModal()">
+        <div class="modal-box">
+            <div class="modal-head">
+                <span class="modal-title">Your Request Has Been Submitted</span>
+                <span class="icon-cancel" ng-click="closeRequestAccessModal()"></span>
+            </div>
+            <div class="modal-body">
+                <p><strong>Thank you for your application!</strong> We’ll evaluate and verify the information you’ve
+                    provided. If everything checks out, expect an email, text, or call from us informing you that your
+                    account is now active and that you can start using the Hospital Portal.</p>
+                <p>The Project Moses Team would like to extend our deep appreciation for the work you’re doing to help
+                    the Filipino people.</p>
+                <p>Stay safe!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="breadcrumb"><a href="#/hospital-portal">Hospital Portal</a> > <span class="current-location">Request
+            Access to the Hospital Portal</span></div>
+    <section class="login">
+        <div class="login-form">
+            <div class="description request">
+                <div class="sticky-text">
+                    <h1>Thank you for your service and your interest in the fight against COVID-19.</h1>
+                    <p>If you wish to gain access to the Hospital Portal, please provide the information required in the
+                        form below.</p>
+                    <p>We need to vet all accounts we create as we want to make sure that only personnel authorized to
+                        represent their respective hospitals gain access due to the sensitive nature of the data
+                        collected. Our staff will evaluate your application and get back to you within a day or two.
+                        Stay safe!</p>
+                </div>
+            </div>
+            <div class="form-actual">
+                <!-- span class="required-reminder">All fields are <strong>required</strong>.</span -->
+                <div class="form-fields">
+                    <div class="field-element">
+                        <label for="" class="input-label">Hospital (Specify Site)</label>
+                        <div class="input-field-container">
+                            <input type="text" ng-model="requestAccessForm.hospital_name" class="input-field text"
+                                tabindex="1" placeholder="Required">
+                            <div class="leftbar"></div>
+                        </div>
+                    </div>
+                    <div class="field-element">
+                        <label for="" class="input-label">Complete Name</label>
+                        <div class="input-field-container">
+                            <input type="text" ng-model="requestAccessForm.person_name" class="input-field text"
+                                tabindex="2" placeholder="Required">
+                            <div class="leftbar"></div>
+                        </div>
+                    </div>
+                    <div class="field-element">
+                        <label for="" class="input-label">Department</label>
+                        <div class="input-field-container">
+                            <input type="text" ng-model="requestAccessForm.department" class="input-field text combobox"
+                                tabindex="3" placeholder="Required">
+                            <span class="combobox-dropper icon-chevron-down"></span>
+                            <div class="leftbar"></div>
+                            <div class="dropdown-panel">
+                                <li class="no-input-yet">Start typing...</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field-element">
+                        <label for="" class="input-label">Profession</label>
+                        <div class="input-field-container">
+                            <input type="text" ng-model="requestAccessForm.profession" class="input-field text combobox"
+                                tabindex="4" placeholder="Required">
+                            <span class="combobox-dropper icon-chevron-down"></span>
+                            <div class="leftbar"></div>
+                            <div class="dropdown-panel">
+                                <li ng-mousedown="changeProfession('Physician')">Physician</li>
+                                <li ng-mousedown="changeProfession('Nurse')">Nurse</li>
+                                <li ng-mousedown="changeProfession('Allied Medical Professional')">Allied Medical
+                                    Professional</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field-element">
+                        <label for="" class="input-label">Position at Hospital</label>
+                        <div class="input-field-container">
+                            <input type="text" ng-model="requestAccessForm.position" class="input-field text combobox"
+                                tabindex="5" placeholder="Required">
+                            <span class="combobox-dropper icon-chevron-down"></span>
+                            <div class="leftbar"></div>
+                            <div class="dropdown-panel">
+                                <li ng-mousedown="changePosition('Clinical Clerk')">Clinical Clerk</li>
+                                <li ng-mousedown="changePosition('Intern')">Intern</li>
+                                <li ng-mousedown="changePosition('Resident')">Resident</li>
+                                <li ng-mousedown="changePosition('Jr. Consultant')">Jr. Consultant</li>
+                                <li ng-mousedown="changePosition('Sr. Consultant')">Sr. Consultant</li>
+                                <li ng-mousedown="changePosition('Chairperson')">Chairperson</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field-element">
+                        <label for="" class="input-label">Desired Username</label>
+                        <div class="input-field-container">
+                            <input type="text" ng-model="requestAccessForm.username" class="input-field text"
+                                tabindex="6" placeholder="Required">
+                            <div class="leftbar"></div>
+                        </div>
+                    </div>
+                    <div class="field-element">
+                        <label for="" class="input-label">Desired Password</label>
+                        <div class="input-field-container">
+                            <input type="password" ng-model="requestAccessForm.password" class="input-field text"
+                                tabindex="7" placeholder="Required">
+                            <div class="leftbar"></div>
+                        </div>
+                    </div>
+                    <div class="field-element">
+                        <label for="" class="input-label">Personal Email Address</label>
+                        <div class="input-field-container">
+                            <input type="email" ng-model="requestAccessForm.email" class="input-field text" tabindex="8"
+                                placeholder="Required">
+                            <div class="leftbar"></div>
+                        </div>
+                    </div>
+                    <div class="field-element">
+                        <label for="" class="input-label">Personal Contact Number</label>
+                        <div class="input-field-container">
+                            <input type="tel" ng-model="requestAccessForm.contact_num" class="input-field text"
+                                tabindex="9" placeholder="Required">
+                            <div class="leftbar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ok button" ng-click="submitApplication()" tabindex="10">
+                    Submit Application
+                </div>
+            </div>
+        </div>
+        <p class="disclaimer">
+            Clicking <strong>‘Submit Application’</strong> means that you have read and agree to <a href=""
+                target="_blank" tabindex="11">our terms of use and data privacy policy</a>, that you hereby certify that
+            the above information you’ve provided is true and correct to the best of your knowledge and that you are an
+            authorized representative of the hospital you have encoded in this form.
+        </p>
+    </section>
+</div>

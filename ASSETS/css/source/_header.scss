@@ -1,0 +1,70 @@
+header {
+    margin: 0.5em 1em 0 1em;
+}
+
+.header-logo {
+
+    img {
+        width: 100%;
+        max-width: 300px;
+        margin: 1em auto;
+        display: block;
+    }
+}
+
+.header-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.5em;
+    grid-gap: 0.5em;
+    margin-bottom: 1em;
+
+    .triage {
+        border: none;
+        background: color(signature);
+        border: 2px solid transparent;
+        color: color(lightest);
+
+        &:hover, &:focus {
+            border: 2px solid color(blue-2);
+            background: transparent;
+            color: color(blue-2);
+            font-weight: 600;
+        }
+
+        &:active {
+            background: color(blue-3);
+        }
+    }
+
+    .hospital {
+        border: 1px solid color(blue-dark);
+        color: color(blue-dark);
+        background: transparent;
+
+        &:hover, &:focus {
+            background: color(blue-dark);
+            color: color(lightest);
+            font-weight: 600;
+        }
+
+        &:active {
+            background: color(blue-4);
+        }
+    }
+
+    &.for-wide {
+        display: none;
+    }
+}
+
+.bottom-cta-buttons-bar {
+    display: none;
+    position: fixed;
+    background: color(lightest);
+    bottom: 0;
+    width: 100vw;
+    padding: 1em 0.5em 0 0.5em;
+    z-index: 999;
+    box-shadow:  0 -5px 10px rgba(0,0,0,0.08), 0 -3px 3px rgba(0,0,0,0.10);
+}

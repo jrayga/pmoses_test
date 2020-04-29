@@ -1,0 +1,236 @@
+<div class="hospital-directory">
+
+    <section class="searcher">
+        <div class="search-form">
+            <div class="search-field">
+                <span class="icon icon-map"></span>
+                <input type="text" ng-keypress="($event.charCode==13)?searchHospital():return"
+                    ng-model="searchHospitalForm.region" class="input-field-text" placeholder="Region">
+            </div>
+            <div class="search-field">
+                <span class="icon icon-place"></span>
+                <input type="text" ng-keypress="($event.charCode==13)?searchHospital():return"
+                    ng-model="searchHospitalForm.city" class="input-field-text" placeholder="City or Municipality">
+            </div>
+            <div class="search-field">
+                <span class="icon icon-search"></span>
+                <input type="text" ng-keypress="($event.charCode==13)?searchHospital():return"
+                    ng-model="searchHospitalForm.hospitalName" class="input-field-text" placeholder="Name of Hospital">
+            </div>
+            <div class="button" ng-click="searchHospital()"><span>Find Now</span></div>
+        </div>
+    </section>
+
+    <div ng-if="isLoadingDetails" class="container">
+        <div class="row loader-row">
+            <div class="col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
+                <div class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-if="!isLoadingDetails">
+        <div class="breadcrumb"><a href="#/hospital-details/{{hospital_public_id}}">{{hospitalDetails.address_1}}</a> >
+            <a href="">{{hospitalDetails.address_2}}</a> > <span
+                class="current-location">{{hospitalDetails.hospital_name}}</span></div>
+
+        <section class="hospital-info">
+            <div class="top-info">
+                <div class="col1">
+                    <h1>{{hospitalDetails.hospital_name}}</h1>
+                    <h2>{{hospitalDetails.address_2}}, {{hospitalDetails.address_1}}</h2>
+                    <p>{{hospitalDetails.address_3}}</p>
+                </div>
+                <div class="col2">
+                    <div class="icons-score-wrap">
+                        <div ng-if="hospitalDetails.designated_for_covid === 'yes'" class="square designated"
+                            title="Designated COVID-19 Referral Hospital"><img src="./ASSETS/img/icon-hospital.png" alt=""></div>
+                        <div ng-if="hospitalDetails.requesting_supplies === 'yes'" class="square supplies"
+                            title="Hospital is Requesting Supplies"><img src="./ASSETS/img/icon-supply.png" alt=""></div>
+                        <div ng-if="hospitalDetails.num_covid_kits > 0" class="square test"
+                            title="COVID-19 Test Kits Availale"><img src="./ASSETS/img/icon-test.png" alt="">
+                        </div>
+                        <div ng-if="hospitalDetails.admitting_confirmed === 'yes'" class="square admitting"
+                            title="Hospital is Admitting Confirmed Cases"><img src="./ASSETS/img/icon-patient.png" alt=""></div>
+                        <div class="score ready-high" title="Readiness Score"><span>9.0</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-num-container">
+                <div class="contact-info label">Contact Number(s)</div>
+                <div class="con-numbers">
+                    <li ng-repeat="x in hospitalDetails.contact_num | limitTo:3 track by $index">
+                        <a href="tel:{{x}}" title="Call Now!">(02) {{x}}</a>
+                    </li>
+                </div>
+            </div>
+            <div class="info-sections">
+                <div class="info-card-wrapper policy">
+                    <div class="info-section-label">
+                        <span>Hospital Policies</span>
+                    </div>
+                    <div class="info-section-card">
+                        <div class="info-item">
+                            <span class="feature-point">Designated COVID-19 Referral Hospital</span>
+                            <span ng-if="hospitalDetails.designated_for_covid === 'yes'"
+                                class="answer poli good">yes</span>
+                            <span ng-if="hospitalDetails.designated_for_covid === 'no'"
+                                class="answer poli meh">no</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Requesting Supplies</span>
+                            <span ng-if="hospitalDetails.requesting_supplies === 'yes'"
+                                class="answer poli bad">yes</span>
+                            <span ng-if="hospitalDetails.requesting_supplies === 'no'"
+                                class="answer poli good">no</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Accepting Patients for Testing</span>
+                            <span ng-if="hospitalDetails.accepting_for_test === 'yes'"
+                                class="answer poli good">yes</span>
+                            <span ng-if="hospitalDetails.accepting_for_test === 'no'" class="answer poli meh">no</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Admitting Confirmed COVID-19 Patients</span>
+                            <span ng-if="hospitalDetails.admitting_confirmed === 'yes'"
+                                class="answer poli good">yes</span>
+                            <span ng-if="hospitalDetails.admitting_confirmed === 'no'" class="answer poli meh">no</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-card-wrapper admissions">
+                    <div class="info-section-label">
+                        <span>COVID-19 Admissions</span>
+                    </div>
+                    <div class="info-section-card">
+                        <div class="info-item">
+                            <span class="feature-point">Confirmed COVID-19 Patients Admitted</span>
+                            <span class="answer">{{hospitalDetails.num_confirmed_covid}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">COVID-19 Patients Under Investigation (PUIs) Admitted</span>
+                            <span class="answer">{{hospitalDetails.num_pui}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-card-wrapper inventory">
+                    <div class="info-section-label">
+                        <span>Inventory</span>
+                    </div>
+                    <div class="info-section-card">
+                        <div class="info-item">
+                            <span class="feature-point">RT-PCR COVID-19 Testing Kits</span>
+                            <span class="answer high">{{hospitalDetails.num_covid_kits}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Rapid IgM-igG Combined Antibody Testing Kits</span>
+                            <span class="answer high">{{hospitalDetails.num_antibody_testing_kits}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Bottles of Isopropyl Alcohol</span>
+                            <span class="answer high">{{hospitalDetails.num_alcohol}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Bottles of Disinfectant (Hospital Grade)</span>
+                            <span class="answer med">{{hospitalDetails.num_of_disinfectants}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Disposable Face Masks</span>
+                            <span class="answer med">{{hospitalDetails.num_face_masks}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Pairs of Disposable Surgical Gloves</span>
+                            <span class="answer med">{{hospitalDetails.num_surgical_gloves}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Goggles</span>
+                            <span class="answer low">{{hospitalDetails.num_of_goggles}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Face Shields</span>
+                            <span class="answer low">{{hospitalDetails.num_face_shield}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Disposable Hoods</span>
+                            <span class="answer low">{{hospitalDetails.num_hoods}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Shoe Covers</span>
+                            <span class="answer low">{{hospitalDetails.num_shoe_covers}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Body Bags</span>
+                            <span class="answer low">{{hospitalDetails.num_body_bags}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-card-wrapper resources">
+                    <div class="info-section-label">
+                        <span>Resources</span>
+                    </div>
+                    <div class="info-section-card">
+                        <div class="info-item">
+                            <span class="feature-point">Available Ventilators</span>
+                            <span class="answer high">{{hospitalDetails.num_ventilators}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Available Ambulances</span>
+                            <span class="answer high">{{hospitalDetails.num_ambulance}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Available Morgue Freezer Space</span>
+                            <span class="answer low">{{hospitalDetails.num_morgue_freezers_space}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Available Negative Pressure Rooms</span>
+                            <span class="answer high">{{hospitalDetails.num_negative_pressure_rooms}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Beds Assigned for Confirmed COVID-19 Cases</span>
+                            <span class="answer high">{{hospitalDetails.num_beds_confirmed}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Beds Assigned for Probable/Suspect COVID-19 PUIs</span>
+                            <span class="answer high">{{hospitalDetails.num_beds_pui}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Physicians available and capable of managing COVID-19
+                                Cases</span>
+                            <span class="answer high">{{hospitalDetails.num_doctors_for_covid}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Nurses available and capable of managing COVID-19
+                                Cases</span>
+                            <span class="answer high">99</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="feature-point">Allied Medical Professionals available and capable of
+                                managing
+                                COVID-19 Cases</span>
+                            <span class="answer high">{{hospitalDetails.num_medstaff_for_covid}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="notes-section">
+                <span class="notes-label">NOTES</span>
+                <div class="note-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione explicabo sunt similique
+                        dignissimos
+                        magni? Beatae sequi consequuntur maxime voluptatum quas provident, aut aspernatur repudiandae
+                        sit
+                        quae modi dolorem quidem enim?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti perspiciatis reiciendis
+                        animi ratione, quasi voluptatum maxime dolore quod voluptates nam cum. Accusamus quam, ipsa et
+                        inventore dicta consectetur quibusdam?</p>
+                </div>
+            </div>
+        </section>
+        <span class="bottom-utility-link">Do you work at this hospital? <a href="#/hospital-portal">Update Hospital Info Now!</a></span>
+    </div>
+</div>

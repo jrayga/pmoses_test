@@ -1,0 +1,280 @@
+/* HOSPITAL LOGIN START */
+.hospital-login-page {
+    height : 100%;
+    width  : 100%;
+    padding: 1rem 2rem !important;
+    color  : #707070;
+}
+
+.hospital-login-page .breadcrumbs {
+    font-size: 12px;
+}
+
+.hospital-login-page .login-container {
+    height : 100%;
+    width  : 100%;
+    padding: 1rem 5rem;
+}
+
+.hospital-login-page .login-container .request-access {
+    text-align : center;
+    line-height: 5;
+}
+
+.hospital-login-page .contact-number-header {
+    margin: 12px auto;
+}
+
+.hospital-login-page .contact-numbers {
+    margin     : 12px auto;
+    font-weight: 600;
+}
+
+.hospital-login-page .card-headers {
+    margin-left: 15px;
+}
+
+.hospital-login-page .input-field-text {
+    width       : 100%;
+    margin      : 0.5rem 0;
+    padding     : 1rem;
+    padding-left: 2rem;
+    height      : 40px;
+}
+
+.hospital-login-page .input-field-text::-webkit-input-placeholder {
+    font-style : italic;
+    color      : #cccccc;
+    font-weight: 200;
+}
+
+.hospital-login-page .input-field-text:-ms-input-placeholder {
+    font-style : italic;
+    color      : #cccccc;
+    font-weight: 200;
+}
+
+.hospital-login-page .input-field-text::-ms-input-placeholder {
+    font-style : italic;
+    color      : #cccccc;
+    font-weight: 200;
+}
+
+.hospital-login-page .login-btn {
+    width        : 100%;
+    color        : #238acf;
+    border-radius: 3px;
+    height       : 40px;
+}
+
+.hospital-login-page .forgot-password {
+    text-align : center;
+    line-height: 4;
+    font-style : italic;
+}
+
+/* .hospital-login-page .hospital-details-container {} */
+
+.hospital-login-page .hospital-details-container.covid-admissions {
+    height: 80%;
+}
+
+.hospital-login-page .hospital-card-detail.covid-admissions {
+    height: 100%;
+}
+
+.hospital-login-page .hospital-card-detail {
+    -webkit-transition   : all 200ms ease-in-out;
+    transition           : all 200ms ease-in-out;
+    /* margin            : 1em 1rem; */
+    display              : flex;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 880px) and (-webkit-min-device-pixel-ratio: 2) {
+    .hospital-login-page {
+        padding: 0 !important;
+    }
+
+    .hospital-login-page .login-container {
+        padding: 0 !important;
+        margin : 2rem auto !important;
+    }
+
+    .hospital-login-page .hospital-card-detail {
+        flex-wrap: wrap !important;
+    }
+}
+
+.hospital-login-page .hospital-card-detail .left-bar {
+    width        : 100%;
+    border-radius: 20px 0px 0px 20px;
+    padding      : 3rem;
+}
+
+.hospital-login-page .hospital-card-detail .left-bar.blue {
+    color     : #ffffff;
+    background: #238acf;
+}
+
+.hospital-login-page .hospital-card-detail .hospital-card-detail-bottom {
+    padding           : 4rem 2rem;
+    border-radius     : 0 0 5px 5px;
+    border            : 1px solid black;
+    -webkit-transition: all 200ms ease-in-out;
+    transition        : all 200ms ease-in-out;
+    width             : 100%;
+    height            : auto;
+}
+
+.hospital-login-page .hospital-card-detail .hospital-name {
+    font-weight: 500;
+}
+
+.hospital-login-page .hospital-card-detail .headline {
+    font-weight: 500;
+}
+
+.hospital-login-page .hospital-card-detail small {
+    display: block;
+    margin : 5px 0;
+    color  : #727272;
+}
+
+.hospital-login-page .hospital-card-detail p {
+    margin     : 0.75em 0;
+    line-height: 1.5;
+}
+
+.hospital-login-page .hospital-card-detail span {
+    display           : block;
+    -webkit-transition: 100ms ease;
+    transition        : 100ms ease;
+}
+
+.hospital-login-page .hospital-card-detail span::after {
+    font-family      : 'icomoon' !important;
+    content          : '\e904';
+    -webkit-transform: rotate(-90deg);
+    transform        : rotate(-90deg);
+    display          : inline-block;
+    margin-left      : 0.25em;
+}
+
+.hospital-login-page .hospital-card-detail span:hover,
+.hospital-login-page .hospital-card-detail span:focus {
+    font-weight: 600;
+}
+
+.hospital-login-page .hospital-card-detail span:active {
+    font-weight    : 600;
+    text-decoration: underline;
+}
+
+.hospital-login-page .hospital-card-detail span.blue {
+    color: #238acf;
+}
+
+.hospital-login-page .hospital-card-detail:hover .hospital-card-detail-bottom,
+.hospital-login-page .hospital-card-detail:focus .hospital-card-detail-bottom {
+    border            : 1px solid;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.05);
+    box-shadow        : 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.hospital-login-page .hospital-card-detail:hover .hospital-card-detail-bottom.blue,
+.hospital-login-page .hospital-card-detail:focus .hospital-card-detail-bottom.blue {
+    border-color: #238acf;
+}
+
+/* HOSPITAL LOGIN END */
+
+/* ADMIN DASHBOARD PAGE START */
+.admin-page {
+    height : 100%;
+    width  : auto;
+    padding: 1rem 2rem !important;
+    color  : #707070;
+}
+
+.admin-page .breadcrumbs {
+    font-size: 12px;
+}
+
+.admin-page .approved-btn {
+    background : #379bcb;
+    color      : #FFFFFF;
+    font-size  : 14px;
+    width      : 100%;
+    font-weight: 600;
+}
+
+.admin-page .edit-btn {
+    background : #fab442;
+    color      : #FFFFFF;
+    font-size  : 14px;
+    width      : 100%;
+    font-weight: 600;
+}
+
+.admin-page .disapproved-btn {
+    background : #ff0000;
+    color      : #FFFFFF;
+    font-size  : 14px;
+    width      : 100%;
+    font-weight: 600;
+}
+
+.admin-page .ul-pages {
+    display: block;
+}
+
+.admin-page .ul-pages>li {
+    display: inline;
+    margin : 0rem 2rem;
+}
+
+.admin-page .active {
+    background : #299bd7;
+    color      : #FFFFFF;
+    font-size  : 14px;
+    font-weight: 500;
+}
+
+.admin-page .table-button {
+    width : 100%;
+    height: 50px;
+    margin: 1rem auto;
+}
+
+.admin-page .add-item-btn {
+    background-color           : #299bd7;
+    width                      : 60px;
+    height                     : 60px;
+    border-radius              : 100%;
+    background                 : #299bd7;
+    border                     : none;
+    outline                    : none;
+    color                      : #FFFFFF;
+    font-size                  : 36px;
+    box-shadow                 : 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transition                 : .3s;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.admin-page .pagination {
+    display: inline-block;
+}
+
+.admin-page .pagination a {
+    color          : black;
+    float          : left;
+    padding        : 8px 16px;
+    text-decoration: none;
+}
+
+.admin-page .pagination a.active {
+    background-color: #4CAF50;
+    color           : white;
+}
+
+/* ADMIN DASHBOARD PAGE END */

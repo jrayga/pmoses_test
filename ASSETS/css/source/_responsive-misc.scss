@@ -1,0 +1,123 @@
+@media (min-width: 405px) {
+    .announcements h1 {
+        font-size: 3.052em;
+    }
+}
+
+@media (min-width: 600px) {
+    .faqs .subnav {
+        display: flex;
+    }
+    .research .subnav {
+        display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .announcements .announcements-container {
+        .header-row {
+            display: grid;
+        }
+
+        .card {
+            padding-right: 2em;
+
+            .data-fields {
+                display: grid;
+            }
+
+            .data-field-label, .read-more-cta {
+                display: none;
+            }
+
+            .data-field-content {
+                text-align: center;
+
+                &:nth-child(6) {
+                    text-align: left;
+                }
+            }
+
+            &:hover, &:focus {
+
+                &::after {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .announcements .data-field-content:nth-last-child(1) {
+        border-left: 1px solid rgba(color(medium), 0.5);
+        padding-left: 1em;
+        justify-content: flex-start !important;
+    }
+
+    .research .research-container {
+        .card {
+            padding: 1em 2em;
+        }
+    }
+}
+
+@media (min-width: 780px) {
+    
+    .apps .subnav {
+        display: flex;
+    }
+}
+
+@media (min-width: 832px) {
+    .research {
+        .research-group {
+    
+            &:target {
+                &::before {
+                    content: "";
+                    display: block;
+                    height: 60px;
+                    margin: -60px 0 0;
+                }
+            }
+        }
+    }
+    .apps {
+        .app-group {
+    
+            &:target {
+                &::before {
+                    content: "";
+                    display: block;
+                    height: 125px;
+                    margin: -125px 0 0;
+                }
+            }
+        }
+    }
+    .faqs {
+        .question-group {
+            &:target {
+                &::before {
+                    content: "";
+                    display: block;
+                    height: 115px;
+                    margin: -115px 0 0;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    
+    .tracker-iframe {
+        &.jhu {
+            .jhu-wide {
+                display: block;
+            }
+            .jhu-mobile {
+                display: none;
+            }
+        }
+    }
+}

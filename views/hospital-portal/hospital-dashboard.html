@@ -1,0 +1,783 @@
+<div ng-if="isLoadingDetails" class="container">
+    <div class="row loader-row">
+        <div class="col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="!isLoadingDetails" class="hospital-portal dashboard">
+    <div class="breadcrumb"><a href="#/hospital-portal">Hospital Portal</a> > <span class="current-location">Main
+            Dashboard</span></div>
+
+    <section class="hospital-info">
+        <div class="name-and-update">
+            <div class="">
+                <h1>{{hospitalInfo.hospital_name}}</h1>
+            </div>
+            <div class="update-hospital-button">
+                <a href="#/update-hospital-info">
+                    <div class="button update-hinfo">
+                        <span class="icon-update-hospital"></span>
+                        <span>Update Hospital Info</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="hospital-stats">
+            <div class="info-card-wrapper">
+                <div class="info-section-card">
+                    <div class="info-item admitting">
+                        <span class="feature-point">Admitting Confirmed COVID-19 Patients</span>
+                        <span ng-if="hospitalInfo.admitting_confirmed === 'yes'" class="answer">YES</span>
+                        <span ng-if="hospitalInfo.admitting_confirmed === 'no'" class="answer grey">NO</span>
+                    </div>
+                    <div class="info-item testing">
+                        <span class="feature-point">Accepting Patients for Testing</span>
+                        <span ng-if="hospitalInfo.accepting_for_test === 'yes'" class="answer">YES</span>
+                        <span ng-if="hospitalInfo.accepting_for_test === 'no'" class="answer grey">NO</span>
+                    </div>
+                    <div class="info-item supplies">
+                        <span class="feature-point">Requesting Supplies</span>
+                        <span ng-if="hospitalInfo.requesting_supplies === 'yes'" class="answer">YES</span>
+                        <span ng-if="hospitalInfo.requesting_supplies === 'no'" class="answer grey">NO</span>
+                    </div>
+                    <div class="info-item designated">
+                        <span class="feature-point">Designated COVID-19 Referral Hospital</span>
+                        <span ng-if="hospitalInfo.designated_for_covid === 'yes'" class="answer">YES</span>
+                        <span ng-if="hospitalInfo.designated_for_covid === 'no'" class="answer grey">NO</span>
+                    </div>
+                    <div class="info-item confirmed-patients">
+                        <span class="feature-point">Confirmed COVID-19 Patients</span>
+                        <span class="answer">{{hospitalInfo.num_confirmed_covid}}</span>
+                    </div>
+                    <div class="info-item pui-patients">
+                        <span class="feature-point">Number of COVID-19 Patients Under Investigation (PUIs)</span>
+                        <span class="answer">{{hospitalInfo.num_pui}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="case-docket">
+        <div class="section-control">
+            <div class="section-name">
+                <span class="title">Assigned Cases</span>
+                <span>(Displaying 20 of 100)</span>
+            </div>
+            <div class="control-wrapper">
+                <div class="control-group show">
+                    <span class="control-label">SHOW</span>
+                    <div class="control-item dropdown">
+                        <span>All Statuses</span>
+                    </div>
+                    <div class="control-item dropdown">
+                        <span>All Classifications</span>
+                    </div>
+                </div>
+                <div class="control-group find">
+                    <span class="control-label">FIND</span>
+                    <input type="text" class="control-item case-searcher">
+                </div>
+            </div>
+        </div>
+        <div class="header-row">
+            <span class="case-id">CASE ID</span>
+            <span class="date">Assessment Date<small>MM/DD/YYYY</small></span>
+            <span class="location">Location</span>
+            <span class="age">Age</span>
+            <span class="flag">Flagged Conditions?</span>
+            <span class="status">Case Classification</span>
+            <span class="status">Status</span>
+        </div>
+
+        <a href="case-file.html">
+            <div class="case-card default">
+                <div class="data-fields">
+                    <span class="data-field-label">
+                        Case ID
+                    </span>
+                    <span class="data-field-content">
+                        A0001
+                    </span>
+                    <span class="data-field-label">
+                        Assessment Date<small>(MM/DD/YYYY)</small>
+                    </span>
+                    <span class="data-field-content">
+                        04/24/2020
+                    </span>
+                    <span class="data-field-label">
+                        Location
+                    </span>
+                    <span class="data-field-content">
+                        Manila City<small>Metro Manila</small>
+                    </span>
+                    <span class="data-field-label">
+                        Age
+                    </span>
+                    <span class="data-field-content">
+                        62
+                    </span>
+                    <span class="data-field-label">
+                        Flagged Conditions?
+                    </span>
+                    <span class="data-field-content">
+                        <span class="flag yes">Yes</span>
+                        <span class="flag no hidden">No</span>
+                    </span>
+                    <span class="data-field-label">
+                        Case Classification
+                    </span>
+                    <span class="data-field-content">
+                        <span class="classification probable">Probable</span>
+                        <span class="classification hidden suspect">Suspect</span>
+                        <span class="classification hidden confirmed">CONFIRMED</span>
+                    </span>
+                    <span class="data-field-label">
+                        Status
+                    </span>
+                    <span class="data-field-content">
+                        <span class="status">Self-Assessed</span>
+                        <span class="status hidden">Dropped</span>
+                        <span class="status hidden">Qualified</span>
+                        <span class="status hidden">Unreachable</span>
+                        <span class="status hidden">Dismissed</span>
+                        <span class="status hidden">Managed Elsewhere</span>
+                        <span class="status hidden">Referred Elsewhere</span>
+                        <span class="status hidden">Management In-Progress</span>
+                        <span class="status hidden">Recovered</span>
+                        <span class="status hidden">Deceased</span>
+                    </span>
+                </div>
+                <div class="view-case-button-container">
+                    <span class="view-case-cta">
+                        View Case File
+                    </span>
+                </div>
+                <div class="view-case-drawer">
+                    <span>View Case File</span>
+                </div>
+            </div>
+        </a>
+        <a href="case-file.html">
+            <div class="case-card qualified">
+                <div class="data-fields">
+                    <span class="data-field-label">
+                        Case ID
+                    </span>
+                    <span class="data-field-content">
+                        A0001
+                    </span>
+                    <span class="data-field-label">
+                        Assessment Date<small>(MM/DD/YYYY)</small>
+                    </span>
+                    <span class="data-field-content">
+                        04/24/2020
+                    </span>
+                    <span class="data-field-label">
+                        Location
+                    </span>
+                    <span class="data-field-content">
+                        Bacolod City<small>Western Visayas</small>
+                    </span>
+                    <span class="data-field-label">
+                        Age
+                    </span>
+                    <span class="data-field-content">
+                        62
+                    </span>
+                    <span class="data-field-label">
+                        Flagged Conditions?
+                    </span>
+                    <span class="data-field-content">
+                        <span class="flag yes hidden">Yes</span>
+                        <span class="flag no ">No</span>
+                    </span>
+                    <span class="data-field-label">
+                        Case Classification
+                    </span>
+                    <span class="data-field-content">
+                        <span class="classification hidden probable">Probable</span>
+                        <span class="classification suspect">Suspect</span>
+                        <span class="classification hidden confirmed">CONFIRMED</span>
+                    </span>
+                    <span class="data-field-label">
+                        Status
+                    </span>
+                    <span class="data-field-content">
+                        <span class="status hidden">Self-Assessed</span>
+                        <span class="status hidden">Dropped</span>
+                        <span class="status ">Qualified</span>
+                        <span class="status hidden">Unreachable</span>
+                        <span class="status hidden">Dismissed</span>
+                        <span class="status hidden">Managed Elsewhere</span>
+                        <span class="status hidden">Referred Elsewhere</span>
+                        <span class="status hidden">Management In-Progress</span>
+                        <span class="status hidden">Recovered</span>
+                        <span class="status hidden">Deceased</span>
+                    </span>
+                </div>
+                <div class="view-case-button-container">
+                    <span class="view-case-cta">
+                        View Case File
+                    </span>
+                </div>
+                <div class="view-case-drawer">
+                    <span>View Case File</span>
+                </div>
+            </div>
+        </a>
+        <a href="case-file.html">
+            <div class="case-card dismissed">
+                <div class="data-fields">
+                    <span class="data-field-label">
+                        Case ID
+                    </span>
+                    <span class="data-field-content">
+                        A0001
+                    </span>
+                    <span class="data-field-label">
+                        Assessment Date<small>(MM/DD/YYYY)</small>
+                    </span>
+                    <span class="data-field-content">
+                        04/24/2020
+                    </span>
+                    <span class="data-field-label">
+                        Location
+                    </span>
+                    <span class="data-field-content">
+                        Pateros<small>Metro Manila</small>
+                    </span>
+                    <span class="data-field-label">
+                        Age
+                    </span>
+                    <span class="data-field-content">
+                        62
+                    </span>
+                    <span class="data-field-label">
+                        Flagged Conditions?
+                    </span>
+                    <span class="data-field-content">
+                        <span class="flag yes hidden">Yes</span>
+                        <span class="flag no">No</span>
+                    </span>
+                    <span class="data-field-label">
+                        Case Classification
+                    </span>
+                    <span class="data-field-content">
+                        <span class="classification hidden probable">Probable</span>
+                        <span class="classification hidden suspect">Suspect</span>
+                        <span class="classification confirmed">CONFIRMED</span>
+                    </span>
+                    <span class="data-field-label">
+                        Status
+                    </span>
+                    <span class="data-field-content">
+                        <span class="status hidden">Self-Assessed</span>
+                        <span class="status hidden">Dropped</span>
+                        <span class="status hidden">Qualified</span>
+                        <span class="status hidden">Unreachable</span>
+                        <span class="status ">Dismissed</span>
+                        <span class="status hidden">Managed Elsewhere</span>
+                        <span class="status hidden">Referred Elsewhere</span>
+                        <span class="status hidden">Management In-Progress</span>
+                        <span class="status hidden">Recovered</span>
+                        <span class="status hidden">Deceased</span>
+                    </span>
+                </div>
+                <div class="view-case-button-container">
+                    <span class="view-case-cta">
+                        View Case File
+                    </span>
+                </div>
+                <div class="view-case-drawer">
+                    <span>View Case File</span>
+                </div>
+            </div>
+        </a>
+        <a href="case-file.html">
+            <div class="case-card unreachable">
+                <div class="data-fields">
+                    <span class="data-field-label">
+                        Case ID
+                    </span>
+                    <span class="data-field-content">
+                        A0001
+                    </span>
+                    <span class="data-field-label">
+                        Assessment Date<small>(MM/DD/YYYY)</small>
+                    </span>
+                    <span class="data-field-content">
+                        04/24/2020
+                    </span>
+                    <span class="data-field-label">
+                        Location
+                    </span>
+                    <span class="data-field-content">
+                        Manila City<small>Metro Manila</small>
+                    </span>
+                    <span class="data-field-label">
+                        Age
+                    </span>
+                    <span class="data-field-content">
+                        62
+                    </span>
+                    <span class="data-field-label">
+                        Flagged Conditions?
+                    </span>
+                    <span class="data-field-content">
+                        <span class="flag yes">Yes</span>
+                        <span class="flag no hidden">No</span>
+                    </span>
+                    <span class="data-field-label">
+                        Case Classification
+                    </span>
+                    <span class="data-field-content">
+                        <span class="classification probable">Probable</span>
+                        <span class="classification hidden suspect">Suspect</span>
+                        <span class="classification hidden confirmed">CONFIRMED</span>
+                    </span>
+                    <span class="data-field-label">
+                        Status
+                    </span>
+                    <span class="data-field-content">
+                        <span class="status hidden">Self-Assessed</span>
+                        <span class="status hidden">Dropped</span>
+                        <span class="status hidden">Qualified</span>
+                        <span class="status ">Unreachable</span>
+                        <span class="status hidden">Dismissed</span>
+                        <span class="status hidden">Managed Elsewhere</span>
+                        <span class="status hidden">Referred Elsewhere</span>
+                        <span class="status hidden">Management In-Progress</span>
+                        <span class="status hidden">Recovered</span>
+                        <span class="status hidden">Deceased</span>
+                    </span>
+                </div>
+                <div class="view-case-button-container">
+                    <span class="view-case-cta">
+                        View Case File
+                    </span>
+                </div>
+                <div class="view-case-drawer">
+                    <span>View Case File</span>
+                </div>
+            </div>
+        </a>
+        <a href="case-file.html">
+            <div class="case-card dropped">
+                <div class="data-fields">
+                    <span class="data-field-label">
+                        Case ID
+                    </span>
+                    <span class="data-field-content">
+                        A0001
+                    </span>
+                    <span class="data-field-label">
+                        Assessment Date<small>(MM/DD/YYYY)</small>
+                    </span>
+                    <span class="data-field-content">
+                        04/24/2020
+                    </span>
+                    <span class="data-field-label">
+                        Location
+                    </span>
+                    <span class="data-field-content">
+                        Manila City<small>Metro Manila</small>
+                    </span>
+                    <span class="data-field-label">
+                        Age
+                    </span>
+                    <span class="data-field-content">
+                        62
+                    </span>
+                    <span class="data-field-label">
+                        Flagged Conditions?
+                    </span>
+                    <span class="data-field-content">
+                        <span class="flag yes">Yes</span>
+                        <span class="flag no hidden">No</span>
+                    </span>
+                    <span class="data-field-label">
+                        Case Classification
+                    </span>
+                    <span class="data-field-content">
+                        <span class="classification probable">Probable</span>
+                        <span class="classification hidden suspect">Suspect</span>
+                        <span class="classification hidden confirmed">CONFIRMED</span>
+                    </span>
+                    <span class="data-field-label">
+                        Status
+                    </span>
+                    <span class="data-field-content">
+                        <span class="status hidden">Self-Assessed</span>
+                        <span class="status ">Dropped</span>
+                        <span class="status hidden">Qualified</span>
+                        <span class="status hidden">Unreachable</span>
+                        <span class="status hidden">Dismissed</span>
+                        <span class="status hidden">Managed Elsewhere</span>
+                        <span class="status hidden">Referred Elsewhere</span>
+                        <span class="status hidden">Management In-Progress</span>
+                        <span class="status hidden">Recovered</span>
+                        <span class="status hidden">Deceased</span>
+                    </span>
+                </div>
+                <div class="view-case-button-container">
+                    <span class="view-case-cta">
+                        View Case File
+                    </span>
+                </div>
+                <div class="view-case-drawer">
+                    <span>View Case File</span>
+                </div>
+            </div>
+        </a>
+        <a href="case-file.html">
+            <div class="case-card referred">
+                <div class="data-fields">
+                    <span class="data-field-label">
+                        Case ID
+                    </span>
+                    <span class="data-field-content">
+                        A0001
+                    </span>
+                    <span class="data-field-label">
+                        Assessment Date<small>(MM/DD/YYYY)</small>
+                    </span>
+                    <span class="data-field-content">
+                        04/24/2020
+                    </span>
+                    <span class="data-field-label">
+                        Location
+                    </span>
+                    <span class="data-field-content">
+                        Manila City<small>Metro Manila</small>
+                    </span>
+                    <span class="data-field-label">
+                        Age
+                    </span>
+                    <span class="data-field-content">
+                        62
+                    </span>
+                    <span class="data-field-label">
+                        Flagged Conditions?
+                    </span>
+                    <span class="data-field-content">
+                        <span class="flag yes">Yes</span>
+                        <span class="flag no hidden">No</span>
+                    </span>
+                    <span class="data-field-label">
+                        Case Classification
+                    </span>
+                    <span class="data-field-content">
+                        <span class="classification probable">Probable</span>
+                        <span class="classification hidden suspect">Suspect</span>
+                        <span class="classification hidden confirmed">CONFIRMED</span>
+                    </span>
+                    <span class="data-field-label">
+                        Status
+                    </span>
+                    <span class="data-field-content">
+                        <span class="status hidden">Self-Assessed</span>
+                        <span class="status hidden">Dropped</span>
+                        <span class="status hidden">Qualified</span>
+                        <span class="status hidden">Unreachable</span>
+                        <span class="status hidden">Dismissed</span>
+                        <span class="status hidden">Managed Elsewhere</span>
+                        <span class="status ">Referred Elsewhere</span>
+                        <span class="status hidden">Management In-Progress</span>
+                        <span class="status hidden">Recovered</span>
+                        <span class="status hidden">Deceased</span>
+                    </span>
+                </div>
+                <div class="view-case-button-container">
+                    <span class="view-case-cta">
+                        View Case File
+                    </span>
+                </div>
+                <div class="view-case-drawer">
+                    <span>View Case File</span>
+                </div>
+            </div>
+        </a>
+        <a href="case-file.html">
+            <div class="case-card in-progress">
+                <div class="data-fields">
+                    <span class="data-field-label">
+                        Case ID
+                    </span>
+                    <span class="data-field-content">
+                        A0001
+                    </span>
+                    <span class="data-field-label">
+                        Assessment Date<small>(MM/DD/YYYY)</small>
+                    </span>
+                    <span class="data-field-content">
+                        04/24/2020
+                    </span>
+                    <span class="data-field-label">
+                        Location
+                    </span>
+                    <span class="data-field-content">
+                        Manila City<small>Metro Manila</small>
+                    </span>
+                    <span class="data-field-label">
+                        Age
+                    </span>
+                    <span class="data-field-content">
+                        62
+                    </span>
+                    <span class="data-field-label">
+                        Flagged Conditions?
+                    </span>
+                    <span class="data-field-content">
+                        <span class="flag yes">Yes</span>
+                        <span class="flag no hidden">No</span>
+                    </span>
+                    <span class="data-field-label">
+                        Case Classification
+                    </span>
+                    <span class="data-field-content">
+                        <span class="classification probable">Probable</span>
+                        <span class="classification hidden suspect">Suspect</span>
+                        <span class="classification hidden confirmed">CONFIRMED</span>
+                    </span>
+                    <span class="data-field-label">
+                        Status
+                    </span>
+                    <span class="data-field-content">
+                        <span class="status hidden">Self-Assessed</span>
+                        <span class="status hidden">Dropped</span>
+                        <span class="status hidden">Qualified</span>
+                        <span class="status hidden">Unreachable</span>
+                        <span class="status hidden">Dismissed</span>
+                        <span class="status hidden">Managed Elsewhere</span>
+                        <span class="status hidden">Referred Elsewhere</span>
+                        <span class="status ">Management In-Progress</span>
+                        <span class="status hidden">Recovered</span>
+                        <span class="status hidden">Deceased</span>
+                    </span>
+                </div>
+                <div class="view-case-button-container">
+                    <span class="view-case-cta">
+                        View Case File
+                    </span>
+                </div>
+                <div class="view-case-drawer">
+                    <span>View Case File</span>
+                </div>
+            </div>
+        </a>
+        <a href="case-file.html">
+            <div class="case-card managed-elsewhere">
+                <div class="data-fields">
+                    <span class="data-field-label">
+                        Case ID
+                    </span>
+                    <span class="data-field-content">
+                        A0001
+                    </span>
+                    <span class="data-field-label">
+                        Assessment Date<small>(MM/DD/YYYY)</small>
+                    </span>
+                    <span class="data-field-content">
+                        04/24/2020
+                    </span>
+                    <span class="data-field-label">
+                        Location
+                    </span>
+                    <span class="data-field-content">
+                        Manila City<small>Metro Manila</small>
+                    </span>
+                    <span class="data-field-label">
+                        Age
+                    </span>
+                    <span class="data-field-content">
+                        62
+                    </span>
+                    <span class="data-field-label">
+                        Flagged Conditions?
+                    </span>
+                    <span class="data-field-content">
+                        <span class="flag yes">Yes</span>
+                        <span class="flag no hidden">No</span>
+                    </span>
+                    <span class="data-field-label">
+                        Case Classification
+                    </span>
+                    <span class="data-field-content">
+                        <span class="classification probable">Probable</span>
+                        <span class="classification hidden suspect">Suspect</span>
+                        <span class="classification hidden confirmed">CONFIRMED</span>
+                    </span>
+                    <span class="data-field-label">
+                        Status
+                    </span>
+                    <span class="data-field-content">
+                        <span class="status hidden">Self-Assessed</span>
+                        <span class="status hidden">Dropped</span>
+                        <span class="status hidden">Qualified</span>
+                        <span class="status hidden">Unreachable</span>
+                        <span class="status hidden">Dismissed</span>
+                        <span class="status ">Managed Elsewhere</span>
+                        <span class="status hidden">Referred Elsewhere</span>
+                        <span class="status hidden">Management In-Progress</span>
+                        <span class="status hidden">Recovered</span>
+                        <span class="status hidden">Deceased</span>
+                    </span>
+                </div>
+                <div class="view-case-button-container">
+                    <span class="view-case-cta">
+                        View Case File
+                    </span>
+                </div>
+                <div class="view-case-drawer">
+                    <span>View Case File</span>
+                </div>
+            </div>
+        </a>
+        <a href="case-file.html">
+            <div class="case-card recovered">
+                <div class="data-fields">
+                    <span class="data-field-label">
+                        Case ID
+                    </span>
+                    <span class="data-field-content">
+                        A0001
+                    </span>
+                    <span class="data-field-label">
+                        Assessment Date<small>(MM/DD/YYYY)</small>
+                    </span>
+                    <span class="data-field-content">
+                        04/24/2020
+                    </span>
+                    <span class="data-field-label">
+                        Location
+                    </span>
+                    <span class="data-field-content">
+                        Manila City<small>Metro Manila</small>
+                    </span>
+                    <span class="data-field-label">
+                        Age
+                    </span>
+                    <span class="data-field-content">
+                        62
+                    </span>
+                    <span class="data-field-label">
+                        Flagged Conditions?
+                    </span>
+                    <span class="data-field-content">
+                        <span class="flag yes">Yes</span>
+                        <span class="flag no hidden">No</span>
+                    </span>
+                    <span class="data-field-label">
+                        Case Classification
+                    </span>
+                    <span class="data-field-content">
+                        <span class="classification probable">Probable</span>
+                        <span class="classification hidden suspect">Suspect</span>
+                        <span class="classification hidden confirmed">CONFIRMED</span>
+                    </span>
+                    <span class="data-field-label">
+                        Status
+                    </span>
+                    <span class="data-field-content">
+                        <span class="status hidden">Self-Assessed</span>
+                        <span class="status hidden">Dropped</span>
+                        <span class="status hidden">Qualified</span>
+                        <span class="status hidden">Unreachable</span>
+                        <span class="status hidden">Dismissed</span>
+                        <span class="status hidden">Managed Elsewhere</span>
+                        <span class="status hidden">Referred Elsewhere</span>
+                        <span class="status hidden">Management In-Progress</span>
+                        <span class="status ">Recovered</span>
+                        <span class="status hidden">Deceased</span>
+                    </span>
+                </div>
+                <div class="view-case-button-container">
+                    <span class="view-case-cta">
+                        View Case File
+                    </span>
+                </div>
+                <div class="view-case-drawer">
+                    <span>View Case File</span>
+                </div>
+            </div>
+        </a>
+        <a href="case-file.html">
+            <div class="case-card deceased">
+                <div class="data-fields">
+                    <span class="data-field-label">
+                        Case ID
+                    </span>
+                    <span class="data-field-content">
+                        A0001
+                    </span>
+                    <span class="data-field-label">
+                        Assessment Date<small>(MM/DD/YYYY)</small>
+                    </span>
+                    <span class="data-field-content">
+                        04/24/2020
+                    </span>
+                    <span class="data-field-label">
+                        Location
+                    </span>
+                    <span class="data-field-content">
+                        Manila City<small>Metro Manila</small>
+                    </span>
+                    <span class="data-field-label">
+                        Age
+                    </span>
+                    <span class="data-field-content">
+                        62
+                    </span>
+                    <span class="data-field-label">
+                        Flagged Conditions?
+                    </span>
+                    <span class="data-field-content">
+                        <span class="flag yes">Yes</span>
+                        <span class="flag no hidden">No</span>
+                    </span>
+                    <span class="data-field-label">
+                        Case Classification
+                    </span>
+                    <span class="data-field-content">
+                        <span class="classification probable">Probable</span>
+                        <span class="classification hidden suspect">Suspect</span>
+                        <span class="classification hidden confirmed">CONFIRMED</span>
+                    </span>
+                    <span class="data-field-label">
+                        Status
+                    </span>
+                    <span class="data-field-content">
+                        <span class="status hidden">Self-Assessed</span>
+                        <span class="status hidden">Dropped</span>
+                        <span class="status hidden">Qualified</span>
+                        <span class="status hidden">Unreachable</span>
+                        <span class="status hidden">Dismissed</span>
+                        <span class="status hidden">Managed Elsewhere</span>
+                        <span class="status hidden">Referred Elsewhere</span>
+                        <span class="status hidden">Management In-Progress</span>
+                        <span class="status hidden">Recovered</span>
+                        <span class="status ">Deceased</span>
+                    </span>
+                </div>
+                <div class="view-case-button-container">
+                    <span class="view-case-cta">
+                        View Case File
+                    </span>
+                </div>
+                <div class="view-case-drawer">
+                    <span>View Case File</span>
+                </div>
+            </div>
+        </a>
+
+    </section> -->
+
+</div>
